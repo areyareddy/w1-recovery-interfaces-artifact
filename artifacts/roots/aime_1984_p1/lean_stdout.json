@@ -1,0 +1,1 @@
+{"messages": [{"severity": "error", "pos": {"line": 15, "column": 6}, "endPos": {"line": 15, "column": 92}, "data": "tactic 'simp' failed, nested error:\nmaximum recursion depth has been reached\nuse `set_option maxRecDepth <num>` to increase limit\nuse `set_option diagnostics true` to get diagnostic information"}], "env": 5, "ast": []}

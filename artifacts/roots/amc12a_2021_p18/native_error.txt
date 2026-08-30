@@ -1,0 +1,116 @@
+
+Error 1:
+
+Corresponding Code:
+```lean4
+      · norm_num
+    rw [h₄₂]
+    have h₄₃ : f (25 : ℚ) = (25 : ℝ) := by
+      have h₄₄ : f (25 : ℚ) = (25 : ℝ) := by
+        have h₄₅ : f (25 : ℚ) = (25 : ℝ) := <error>by
+          have h₄₆ : f (25 : ℚ) = f (5 * 5 : ℚ) := by norm_num
+          rw [h₄₆]
+          have h₄₇ : f (5 * 5 : ℚ) = f (5 : ℚ) + f (5 : ℚ) := by
+            apply h₀
+            · norm_num
+
+            ... --[Truncated]-- ...
+          <;> norm_num</error>
+        exact h₄₅
+
+```
+
+Error Message: unsolved goals
+f : ℚ → ℝ
+h₀ : ∀ x > 0, ∀ y > 0, f (x * y) = f x + f y
+h₁ : ∀ (p : ℕ), p.Prime → f ↑p = ↑p
+h₂ : f 1 = 0
+h₃ : ∀ (p : ℕ), p.Prime → f (1 / ↑p) = -↑p
+h₄₁ : f (25 / 11) = f (25 * (1 / 11))
+h₄₂ : f (25 * (1 / 11)) = f 25 + f (1 / 11)
+h₄₆ : f 25 = f (5 * 5)
+h₄₇ : f (5 * 5) = f 5 + f 5
+h₄₈ : f 5 = 5
+⊢ False
+
+Error 2:
+
+Corresponding Code:
+```lean4
+        simpa [Nat.cast_inj] using h₄₇
+      exact h₄₅
+    rw [h₄₃, h₄₄]
+    <;> norm_num
+    <;> <error>linarith</error>
+  
+
+```
+
+Error Message: linarith failed to find a contradiction
+f : ℚ → ℝ
+h₀ : ∀ x > 0, ∀ y > 0, f (x * y) = f x + f y
+h₁ : ∀ (p : ℕ), p.Prime → f ↑p = ↑p
+h₂ : f 1 = 0
+h₃ : ∀ (p : ℕ), p.Prime → f (1 / ↑p) = -↑p
+h₄₁ : f (25 / 11) = f (25 * (1 / 11))
+h₄₂ : f (25 * (1 / 11)) = f 25 + f (1 / 11)
+h₄₃ : f 25 = 25
+h₄₄ : f (1 / 11) = -11
+⊢ False
+failed
+
+Error 3:
+
+Corresponding Code:
+```lean4
+        linarith
+      exact h₄₀
+    exact h₃₆
+  
+  have h₄ : f (25 / 11 : ℚ) = -1 := <error>by
+    have h₄₁ : f (25 / 11 : ℚ) = f (25 * (1 / 11 : ℚ)) := by norm_num
+    rw [h₄₁]
+    have h₄₂ : f (25 * (1 / 11 : ℚ)) = f (25 : ℚ) + f (1 / 11 : ℚ) := by
+      apply h₀
+      · norm_num
+
+      ... --[Truncated]-- ...
+    <;> linarith</error>
+  
+
+```
+
+Error Message: unsolved goals
+f : ℚ → ℝ
+h₀ : ∀ x > 0, ∀ y > 0, f (x * y) = f x + f y
+h₁ : ∀ (p : ℕ), p.Prime → f ↑p = ↑p
+h₂ : f 1 = 0
+h₃ : ∀ (p : ℕ), p.Prime → f (1 / ↑p) = -↑p
+h₄₁ : f (25 / 11) = f (25 * (1 / 11))
+h₄₂ : f (25 * (1 / 11)) = f 25 + f (1 / 11)
+h₄₃ : f 25 = 25
+h₄₄ : f (1 / 11) = -11
+⊢ False
+
+Error 4:
+
+Corresponding Code:
+```lean4
+    <;> norm_num
+    <;> linarith
+  
+  have h₅ : f (25 /. 11 : ℚ) < 0 := by
+    rw [<error>h₄</error>]
+    <;> norm_num
+
+```
+
+Error Message: tactic 'rewrite' failed, did not find instance of the pattern in the target expression
+  f (25 / 11)
+f : ℚ → ℝ
+h₀ : ∀ x > 0, ∀ y > 0, f (x * y) = f x + f y
+h₁ : ∀ (p : ℕ), p.Prime → f ↑p = ↑p
+h₂ : f 1 = 0
+h₃ : ∀ (p : ℕ), p.Prime → f (1 / ↑p) = -↑p
+h₄ : f (25 / 11) = -1
+⊢ f (25 /. 11) < 0

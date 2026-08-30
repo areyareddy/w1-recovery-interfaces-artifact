@@ -1,0 +1,106 @@
+
+Error 1:
+
+Corresponding Code:
+```lean4
+          rcases h₁₀ with (h₁₀ | h₁₀) <;> simp [h₁₀, pow_succ, pow_zero, mul_assoc] at h₅ <;>
+            (try omega) <;>
+            (try nlinarith)
+        }) <;>
+        <error>nlinarith</error>
+    have h₇ : t ≥ 2 := by
+
+```
+
+Error Message: linarith failed to find a contradiction
+case inl
+n : ℕ
+h₀ : 2 ≤ n
+x : ℕ
+hx : x ^ 3 = n
+t : ℕ
+ht : t ^ 4 = n
+h₃ : x ^ 3 = n
+h₄ : t ^ 4 = n
+h : ¬x ≥ 2
+h₇ : x ≤ 1
+h₈ : x = 0
+h₅ : t = 0
+⊢ False
+failed
+
+Error 2:
+
+Corresponding Code:
+```lean4
+    rcases h₂ with ⟨t, ht⟩
+    have h₃ : x ^ 3 = n := hx
+    have h₄ : t ^ 4 = n := ht
+    have h₅ : x ^ 3 = t ^ 4 := by linarith
+    have h₆ : x ≥ 2 := <error>by
+      by_contra h
+      have h₇ : x ≤ 1 := by linarith
+      have h₈ : x = 0 ∨ x = 1 := by
+        omega
+      rcases h₈ with (h₈ | h₈) <;> simp [h₈, pow_succ, pow_zero, mul_assoc] at h₅ <;>
+
+      ... --[Truncated]-- ...
+        nlinarith</error>
+    have h₇ : t ≥ 2 := by
+
+```
+
+Error Message: unsolved goals
+case inl
+n : ℕ
+h₀ : 2 ≤ n
+x : ℕ
+hx : x ^ 3 = n
+t : ℕ
+ht : t ^ 4 = n
+h₃ : x ^ 3 = n
+h₄ : t ^ 4 = n
+h : ¬x ≥ 2
+h₇ : x ≤ 1
+h₈ : x = 0
+h₅ : t = 0
+⊢ False
+
+Error 3:
+
+Corresponding Code:
+```lean4
+                (try nlinarith)
+            }) <;>
+            (try omega)
+        exact Nat.pow_le_pow_of_le_left h₁₉ 4
+      <error>nlinarith [sq_nonneg (x ^ 2), sq_nonneg (t ^ 2), sq_nonneg (x - t)]</error>
+    have h₁₆ : t ≤ 16 := by
+
+```
+
+Error Message: linarith failed to find a contradiction
+n : ℕ
+h₀ : 2 ≤ n
+x : ℕ
+hx : x ^ 3 = n
+t : ℕ
+ht : t ^ 4 = n
+h₃ : x ^ 3 = n
+h₄ : t ^ 4 = n
+h₅ : x ^ 3 = t ^ 4
+h₆ : x ≥ 2
+h₇ : t ≥ 2
+h₈ : x ^ 3 ≥ 2 ^ 3
+h₉ : t ^ 4 ≥ 2 ^ 4
+h₁₀ : x ^ 3 = t ^ 4
+h₁₁ : x ≥ 2
+h₁₂ : t ≥ 2
+h₁₃ : x ^ 3 ≥ 2 ^ 3
+h₁₄ : t ^ 4 ≥ 2 ^ 4
+h : 16 < x
+h₁₆ : x ≥ 17
+h₁₇ : x ^ 3 ≥ 17 ^ 3
+h₁₈ : t ^ 4 ≥ 17 ^ 4
+⊢ False
+failed

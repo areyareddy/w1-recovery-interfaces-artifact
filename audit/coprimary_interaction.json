@@ -1,0 +1,190 @@
+{
+  "interaction": [
+    {
+      "G0": -0.125,
+      "G1": -0.025,
+      "I": 0.1,
+      "ci95_hi": 0.225,
+      "ci95_lo": 0.0,
+      "cohort": "primary_eval",
+      "n_roots": 40,
+      "resolved": false
+    },
+    {
+      "G0": -0.075,
+      "G1": 0,
+      "I": 0.075,
+      "ci95_hi": 0.225,
+      "ci95_lo": -0.075,
+      "cohort": "eval_block2",
+      "n_roots": 40,
+      "resolved": false
+    },
+    {
+      "G0": 0.046512,
+      "G1": 0.046512,
+      "I": 0,
+      "ci95_hi": 0.093023,
+      "ci95_lo": -0.093023,
+      "cohort": "full_pool_dev",
+      "n_roots": 43,
+      "resolved": false
+    }
+  ],
+  "pairwise_family": [
+    {
+      "cohort": "primary_eval",
+      "contrast": "C-A",
+      "n_pairs": 40,
+      "p_exact": 0.015625,
+      "p_holm": 0.078125,
+      "significant_holm": false,
+      "significant_raw": true,
+      "x_only": 0,
+      "y_only": 7
+    },
+    {
+      "cohort": "primary_eval",
+      "contrast": "B-A",
+      "n_pairs": 40,
+      "p_exact": 0.125,
+      "p_holm": 0.5,
+      "significant_holm": false,
+      "significant_raw": false,
+      "x_only": 1,
+      "y_only": 6
+    },
+    {
+      "cohort": "primary_eval",
+      "contrast": "D-B",
+      "n_pairs": 40,
+      "p_exact": 0.25,
+      "p_holm": 0.75,
+      "significant_holm": false,
+      "significant_raw": false,
+      "x_only": 0,
+      "y_only": 3
+    },
+    {
+      "cohort": "primary_eval",
+      "contrast": "E-A",
+      "n_pairs": 21,
+      "p_exact": 0.375,
+      "p_holm": 0.75,
+      "significant_holm": false,
+      "significant_raw": false,
+      "x_only": 1,
+      "y_only": 4
+    },
+    {
+      "cohort": "primary_eval",
+      "contrast": "D-C",
+      "n_pairs": 40,
+      "p_exact": 1.0,
+      "p_holm": 1.0,
+      "significant_holm": false,
+      "significant_raw": false,
+      "x_only": 0,
+      "y_only": 1
+    },
+    {
+      "cohort": "eval_block2",
+      "contrast": "C-A",
+      "n_pairs": 40,
+      "p_exact": 0.007812,
+      "p_holm": 0.03125,
+      "significant_holm": true,
+      "significant_raw": true,
+      "x_only": 0,
+      "y_only": 8
+    },
+    {
+      "cohort": "eval_block2",
+      "contrast": "D-B",
+      "n_pairs": 40,
+      "p_exact": 0.125,
+      "p_holm": 0.375,
+      "significant_holm": false,
+      "significant_raw": false,
+      "x_only": 1,
+      "y_only": 6
+    },
+    {
+      "cohort": "eval_block2",
+      "contrast": "B-A",
+      "n_pairs": 40,
+      "p_exact": 0.507812,
+      "p_holm": 1.0,
+      "significant_holm": false,
+      "significant_raw": false,
+      "x_only": 3,
+      "y_only": 6
+    },
+    {
+      "cohort": "eval_block2",
+      "contrast": "D-C",
+      "n_pairs": 40,
+      "p_exact": 1.0,
+      "p_holm": 1.0,
+      "significant_holm": false,
+      "significant_raw": false,
+      "x_only": 1,
+      "y_only": 1
+    },
+    {
+      "cohort": "full_pool_dev",
+      "contrast": "C-A",
+      "n_pairs": 43,
+      "p_exact": 0.0625,
+      "p_holm": 0.3125,
+      "significant_holm": false,
+      "significant_raw": false,
+      "x_only": 0,
+      "y_only": 5
+    },
+    {
+      "cohort": "full_pool_dev",
+      "contrast": "E-A",
+      "n_pairs": 23,
+      "p_exact": 0.0625,
+      "p_holm": 0.3125,
+      "significant_holm": false,
+      "significant_raw": false,
+      "x_only": 0,
+      "y_only": 5
+    },
+    {
+      "cohort": "full_pool_dev",
+      "contrast": "D-B",
+      "n_pairs": 43,
+      "p_exact": 0.125,
+      "p_holm": 0.375,
+      "significant_holm": false,
+      "significant_raw": false,
+      "x_only": 1,
+      "y_only": 6
+    },
+    {
+      "cohort": "full_pool_dev",
+      "contrast": "D-C",
+      "n_pairs": 43,
+      "p_exact": 0.5,
+      "p_holm": 1.0,
+      "significant_holm": false,
+      "significant_raw": false,
+      "x_only": 2,
+      "y_only": 0
+    },
+    {
+      "cohort": "full_pool_dev",
+      "contrast": "B-A",
+      "n_pairs": 43,
+      "p_exact": 0.625,
+      "p_holm": 1.0,
+      "significant_holm": false,
+      "significant_raw": false,
+      "x_only": 3,
+      "y_only": 1
+    }
+  ]
+}

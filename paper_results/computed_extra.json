@@ -1,0 +1,400 @@
+{
+  "block_separation": {
+    "blocks": {
+      "cprime_block1": 40,
+      "cprime_block2": 40,
+      "restart": 40
+    },
+    "pooled_total_must_never_be": 120,
+    "rule": "C' block 1, C' block 2 and the restart arms are repeat observations of the same 40 theorems. They are reported separately and never summed into a larger n.",
+    "shared_theorems": 40
+  },
+  "discordant": {
+    "eval_block2.B-A": {
+      "both": 3,
+      "n": 40,
+      "x_only": 3,
+      "y_only": 6
+    },
+    "eval_block2.C-A": {
+      "both": 1,
+      "n": 40,
+      "x_only": 0,
+      "y_only": 8
+    },
+    "eval_block2.D-B": {
+      "both": 0,
+      "n": 40,
+      "x_only": 1,
+      "y_only": 6
+    },
+    "eval_block2.D-C": {
+      "both": 0,
+      "n": 40,
+      "x_only": 1,
+      "y_only": 1
+    },
+    "full_pool_dev.B-A": {
+      "both": 4,
+      "n": 43,
+      "x_only": 3,
+      "y_only": 1
+    },
+    "full_pool_dev.C-A": {
+      "both": 0,
+      "n": 43,
+      "x_only": 0,
+      "y_only": 5
+    },
+    "full_pool_dev.D-B": {
+      "both": 1,
+      "n": 43,
+      "x_only": 1,
+      "y_only": 6
+    },
+    "full_pool_dev.D-C": {
+      "both": 0,
+      "n": 43,
+      "x_only": 2,
+      "y_only": 0
+    },
+    "full_pool_dev.E-A": {
+      "both": 0,
+      "n": 23,
+      "x_only": 0,
+      "y_only": 5
+    },
+    "primary_eval.B-A": {
+      "both": 3,
+      "n": 40,
+      "x_only": 1,
+      "y_only": 6
+    },
+    "primary_eval.C-A": {
+      "both": 2,
+      "n": 40,
+      "x_only": 0,
+      "y_only": 7
+    },
+    "primary_eval.D-B": {
+      "both": 1,
+      "n": 40,
+      "x_only": 0,
+      "y_only": 3
+    },
+    "primary_eval.D-C": {
+      "both": 1,
+      "n": 40,
+      "x_only": 0,
+      "y_only": 1
+    },
+    "primary_eval.E-A": {
+      "both": 1,
+      "n": 21,
+      "x_only": 1,
+      "y_only": 4
+    }
+  },
+  "execution_ledger": {
+    "allocation_branches": 200,
+    "control_branches": 242,
+    "core_branches": 536,
+    "core_serving_hours": 7.510635514259338,
+    "core_verifier_hours": 2.6974060146943923,
+    "paper_branches": 978,
+    "paper_serving_hours": 12.355536858240763,
+    "paper_verifier_hours": 4.08193150383327,
+    "parts": {
+      "allocation_split2_eval": {
+        "branches": 80,
+        "serving_seconds": 2609.1628272533417,
+        "verifier_seconds": 892.3772311998764
+      },
+      "allocation_split3_eval": {
+        "branches": 120,
+        "serving_seconds": 2917.7085909843445,
+        "verifier_seconds": 426.76505249994807
+      },
+      "arm_f": {
+        "branches": 21,
+        "serving_seconds": 980.2665009498596,
+        "verifier_seconds": 251.07190630000696
+      },
+      "core": {
+        "branches": 536,
+        "serving_seconds": 27038.287851333618,
+        "verifier_seconds": 9710.661652899813
+      },
+      "cprime_block1": {
+        "branches": 40,
+        "serving_seconds": 2446.4395701885223,
+        "verifier_seconds": 574.1557959999191
+      },
+      "cprime_block2": {
+        "branches": 40,
+        "serving_seconds": 1994.7395994663239,
+        "verifier_seconds": 499.9269981001271
+      },
+      "eprime": {
+        "branches": 21,
+        "serving_seconds": 690.2079231739044,
+        "verifier_seconds": 90.24930720000339
+      },
+      "restart": {
+        "branches": 120,
+        "serving_seconds": 5803.1198263168335,
+        "verifier_seconds": 2249.7454696000786
+      }
+    }
+  },
+  "native_subset_verification": {
+    "full_pool_dev.A": {
+      "n": 23,
+      "verified": 5
+    },
+    "full_pool_dev.B": {
+      "n": 23,
+      "verified": 6
+    },
+    "full_pool_dev.C": {
+      "n": 23,
+      "verified": 0
+    },
+    "full_pool_dev.D": {
+      "n": 23,
+      "verified": 0
+    },
+    "full_pool_dev.E": {
+      "n": 23,
+      "verified": 0
+    },
+    "primary_eval.A": {
+      "n": 21,
+      "verified": 5
+    },
+    "primary_eval.B": {
+      "n": 21,
+      "verified": 1
+    },
+    "primary_eval.C": {
+      "n": 21,
+      "verified": 0
+    },
+    "primary_eval.D": {
+      "n": 21,
+      "verified": 0
+    },
+    "primary_eval.E": {
+      "n": 21,
+      "verified": 2
+    }
+  },
+  "per_arm_verification": {
+    "eval_block2.A": {
+      "n": 40,
+      "verified": 9
+    },
+    "eval_block2.B": {
+      "n": 40,
+      "verified": 6
+    },
+    "eval_block2.C": {
+      "n": 40,
+      "verified": 1
+    },
+    "eval_block2.D": {
+      "n": 40,
+      "verified": 1
+    },
+    "full_pool_dev.A": {
+      "n": 43,
+      "verified": 5
+    },
+    "full_pool_dev.B": {
+      "n": 43,
+      "verified": 7
+    },
+    "full_pool_dev.C": {
+      "n": 43,
+      "verified": 0
+    },
+    "full_pool_dev.D": {
+      "n": 43,
+      "verified": 2
+    },
+    "full_pool_dev.E": {
+      "n": 23,
+      "verified": 0
+    },
+    "primary_eval.A": {
+      "n": 40,
+      "verified": 9
+    },
+    "primary_eval.B": {
+      "n": 40,
+      "verified": 4
+    },
+    "primary_eval.C": {
+      "n": 40,
+      "verified": 2
+    },
+    "primary_eval.D": {
+      "n": 40,
+      "verified": 1
+    },
+    "primary_eval.E": {
+      "n": 21,
+      "verified": 2
+    }
+  },
+  "reviewer_analyses": {
+    "absolute_similarity": [
+      {
+        "cohort": "primary_eval",
+        "mean_S_A": 0.2072,
+        "mean_S_B": 0.1898,
+        "mean_S_C": 0.496,
+        "mean_S_D": 0.5041,
+        "mean_S_E": 0.3726,
+        "median_S_A": 0.1972,
+        "median_S_B": 0.1603,
+        "median_S_C": 0.4667,
+        "median_S_D": 0.4395,
+        "median_S_E": 0.3797
+      },
+      {
+        "cohort": "eval_block2",
+        "mean_S_A": 0.1978,
+        "mean_S_B": 0.1995,
+        "mean_S_C": 0.5239,
+        "mean_S_D": 0.4671,
+        "median_S_A": 0.1928,
+        "median_S_B": 0.1756,
+        "median_S_C": 0.5678,
+        "median_S_D": 0.4929
+      },
+      {
+        "cohort": "full_pool_dev",
+        "mean_S_A": 0.1756,
+        "mean_S_B": 0.1877,
+        "mean_S_C": 0.4408,
+        "mean_S_D": 0.3981,
+        "mean_S_E": 0.3765,
+        "median_S_A": 0.1688,
+        "median_S_B": 0.18,
+        "median_S_C": 0.4309,
+        "median_S_D": 0.4036,
+        "median_S_E": 0.3847
+      }
+    ],
+    "anchoring_vs_verification": [
+      {
+        "cohort": "primary_eval",
+        "difference": 0.1024,
+        "mean_S_discordant": 0.5805,
+        "mean_S_failed": 0.5148,
+        "mean_S_other": 0.4781,
+        "mean_S_verified": 0.138,
+        "n_discordant": 7,
+        "n_verified": 2
+      },
+      {
+        "cohort": "eval_block2",
+        "difference": 0.0302,
+        "mean_S_discordant": 0.548,
+        "mean_S_failed": 0.5347,
+        "mean_S_other": 0.5178,
+        "mean_S_verified": 0.1006,
+        "n_discordant": 8,
+        "n_verified": 1
+      }
+    ],
+    "discordant_overlap": {
+      "block1_a_only": [
+        "aime_1984_p1",
+        "aime_1997_p9",
+        "algebra_2varlineareq_fp3zeq11_3tfm1m5zeqn68_feqn10_zeq7",
+        "mathd_algebra_313",
+        "mathd_numbertheory_235",
+        "numbertheory_notequiv2i2jasqbsqdiv8",
+        "numbertheory_x5neqy2p4"
+      ],
+      "block2_a_only": [
+        "aime_1987_p5",
+        "algebra_2varlineareq_fp3zeq11_3tfm1m5zeqn68_feqn10_zeq7",
+        "amc12_2001_p21",
+        "amc12b_2020_p6",
+        "mathd_algebra_188",
+        "mathd_numbertheory_235",
+        "mathd_numbertheory_296",
+        "numbertheory_notequiv2i2jasqbsqdiv8"
+      ],
+      "n_events": 15,
+      "n_unique_roots": 12,
+      "shared": [
+        "algebra_2varlineareq_fp3zeq11_3tfm1m5zeqn68_feqn10_zeq7",
+        "mathd_numbertheory_235",
+        "numbertheory_notequiv2i2jasqbsqdiv8"
+      ]
+    },
+    "near_verbatim": {
+      "rows": [
+        {
+          "arm": "A",
+          "cohort": "primary_eval",
+          "max_S": 0.439,
+          "n": 40,
+          "near_verbatim": 0
+        },
+        {
+          "arm": "C",
+          "cohort": "primary_eval",
+          "max_S": 1.0,
+          "n": 40,
+          "near_verbatim": 4
+        },
+        {
+          "arm": "A",
+          "cohort": "eval_block2",
+          "max_S": 0.4786,
+          "n": 40,
+          "near_verbatim": 0
+        },
+        {
+          "arm": "C",
+          "cohort": "eval_block2",
+          "max_S": 0.9959,
+          "n": 40,
+          "near_verbatim": 4
+        },
+        {
+          "arm": "A",
+          "cohort": "full_pool_dev",
+          "max_S": 0.2975,
+          "n": 43,
+          "near_verbatim": 0
+        },
+        {
+          "arm": "C",
+          "cohort": "full_pool_dev",
+          "max_S": 0.9946,
+          "n": 43,
+          "near_verbatim": 5
+        }
+      ],
+      "threshold": 0.9
+    },
+    "truncation_attribution": [
+      {
+        "a_only": 7,
+        "c_truncated": 2,
+        "cohort": "primary_eval"
+      },
+      {
+        "a_only": 8,
+        "c_truncated": 1,
+        "cohort": "eval_block2"
+      }
+    ]
+  }
+}

@@ -1,0 +1,1 @@
+{"messages": [{"severity": "error", "pos": {"line": 2, "column": 33}, "endPos": {"line": 58, "column": 8}, "data": "unsolved goals\ncase succ\na : ℕ\nh₀ : 0 < a\nn✝ : ℕ\nh₁ : Irreducible (n✝ + 1)\nthis : Fact True\n⊢ ↑(a ^ n✝ * a - a) = 0"}], "env": 26, "ast": []}

@@ -1,0 +1,77 @@
+{
+  "arms": {
+    "A": {
+      "mean_S_body_donor": 0.0879,
+      "mean_S_body_own": 0.2187,
+      "mean_S_donor": 0.1089,
+      "mean_S_own": 0.2072,
+      "n": 40,
+      "reference_shown": "nothing"
+    },
+    "AR": {
+      "mean_S_body_donor": 0.0952,
+      "mean_S_body_own": 0.2173,
+      "mean_S_donor": 0.1029,
+      "mean_S_own": 0.1909,
+      "n": 40,
+      "reference_shown": "nothing"
+    },
+    "C": {
+      "mean_S_body_donor": 0.099,
+      "mean_S_body_own": 0.7004,
+      "mean_S_donor": 0.0991,
+      "mean_S_own": 0.496,
+      "n": 40,
+      "reference_shown": "own prior"
+    },
+    "CR": {
+      "mean_S_body_donor": 0.0905,
+      "mean_S_body_own": 0.713,
+      "mean_S_donor": 0.0919,
+      "mean_S_own": 0.4792,
+      "n": 40,
+      "reference_shown": "own prior"
+    },
+    "Cp": {
+      "mean_S_body_donor": 0.0878,
+      "mean_S_body_own": 0.1646,
+      "mean_S_donor": 0.1065,
+      "mean_S_own": 0.1759,
+      "n": 40,
+      "reference_shown": "donor prior"
+    },
+    "CpR": {
+      "mean_S_body_donor": 0.0817,
+      "mean_S_body_own": 0.1816,
+      "mean_S_donor": 0.0973,
+      "mean_S_own": 0.1734,
+      "n": 40,
+      "reference_shown": "donor prior"
+    }
+  },
+  "confirmatory": false,
+  "n": 40,
+  "null_band": {
+    "null_band_max": 0.18081,
+    "null_band_min": 0.005698,
+    "null_band_p50": 0.089985,
+    "null_band_p95": 0.15417,
+    "null_band_pairs": 400,
+    "null_band_seed": 20260828
+  },
+  "registration": "exploratory; spec/RESTART_SPEC.md section 0",
+  "restart_deltas": {
+    "AR-A": {
+      "delta_S_body_own": -0.0014,
+      "delta_S_own": -0.0163
+    },
+    "CR-C": {
+      "delta_S_body_own": 0.0126,
+      "delta_S_own": -0.0168
+    },
+    "CpR-Cp": {
+      "delta_S_body_own": 0.017,
+      "delta_S_own": -0.0025
+    }
+  }
+}

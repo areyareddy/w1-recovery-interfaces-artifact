@@ -1,0 +1,20 @@
+{
+  "finished_utc": "2026-08-28T03:35:18Z",
+  "inputs": {
+    "scripts\\s12_run.py": "a8fcd1b7e7f7afb0481d357dd069fc13b72b7fd197274a92443c8a46d564faeb",
+    "src\\runner.py": "75e0ad81219843a8cd87b3bc0a3e93cd8ec6e000e4f18394a39efb6b83eb7716"
+  },
+  "outputs": {
+    "audit\\kill_restart.json": "43ad6b7be098d1babec64fef78c6b5d501def02869d9a59c44817bf9b230f656"
+  },
+  "stats": {
+    "checks_passed": 6,
+    "done_after": 7,
+    "killed_after_commits": 2,
+    "orphaned_running_at_kill": 1,
+    "pilot_branches": 34,
+    "result": "PASS"
+  },
+  "step": "s09",
+  "title": "Kill/restart resume test"
+}

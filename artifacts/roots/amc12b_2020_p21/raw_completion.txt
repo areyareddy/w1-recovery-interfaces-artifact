@@ -1,0 +1,577 @@
+### Proof and Analysis
+
+**Problem Statement**: We are given a set `S` of natural numbers `n` such that `n` is in `S` if and only if `n > 0` and `(n + 1000)/70 = floor(√n)`. We need to prove that the cardinality of `S` is `6`.
+
+**Understanding the Problem**:
+1. The condition `(n + 1000)/70 = floor(√n)` is a bit unusual because it mixes real and integer arithmetic. However, since `n` is a natural number, we can interpret `floor(√n)` as the integer part of the square root of `n`.
+2. The expression `(n + 1000)/70` is a real number, but since `n` is a natural number, `(n + 1000)/70` must be an integer for the equality to hold with `floor(√n)` (which is an integer). Therefore, `(n + 1000)/70` must be an integer, i.e., `n + 1000 ≡ 0 mod 70`, or equivalently `n ≡ 30 mod 70`.
+3. The condition can be rewritten as `floor(√n) = k` where `k = (n + 1000)/70`. Since `k` must be an integer, we can write `n = 70k - 1000`. However, `n` must also be a positive integer, so `70k - 1000 > 0`, i.e., `k > 1000/70 ≈ 14.285`, so `k ≥ 15`.
+4. The condition `floor(√n) = k` is equivalent to `k ≤ √n < k + 1`, or `k² ≤ n < (k + 1)²`. Since `n = 70k - 1000`, this becomes:
+   - `k² ≤ 70k - 1000 < (k + 1)²`.
+   - The first inequality `k² ≤ 70k - 1000` is equivalent to `k² - 70k + 1000 ≤ 0`, which holds when `k` is between the roots of `k² - 70k + 1000 = 0`. The roots are `k = (70 ± √(4900 - 4000))/2 = (70 ± √900)/2 = (70 ± 30)/2`, so `k = 50` or `k = 20`. The parabola `k² - 70k + 1000` is ≤ 0 between the roots, so `20 ≤ k ≤ 50`.
+   - The second inequality `70k - 1000 < (k + 1)²` is equivalent to `70k - 1000 < k² + 2k + 1`, or `k² - 68k + 1001 > 0`. The roots of `k² - 68k + 1001 = 0` are `k = (68 ± √(4624 - 4004))/2 = (68 ± √620)/2 ≈ (68 ± 24.9)/2`, so `k ≈ 46.45` and `k ≈ 21.55`. The parabola `k² - 68k + 1001` is > 0 outside the roots, so `k < 21.55` or `k > 46.45`. Since `k` is an integer, `k ≤ 21` or `k ≥ 47`.
+   - Combining `20 ≤ k ≤ 50` with `k ≤ 21` or `k ≥ 47` gives `20 ≤ k ≤ 21` or `47 ≤ k ≤ 50`.
+5. However, we also have the condition that `n = 70k - 1000` must be positive, which is already implied by `k ≥ 15` (since `70*15 - 1000 = 1050 - 1000 = 50 > 0`). But the earlier analysis already includes `k ≥ 15` in `k ≥ 20` or `k ≥ 47`.
+6. We must find all `k` in `20 ≤ k ≤ 21` or `47 ≤ k ≤ 50` such that `n = 70k - 1000` is a positive integer and `k ≤ √n < k + 1`:
+   - For `k = 20`: `n = 70*20 - 1000 = 1400 - 1000 = 400`. Check `20 ≤ √400 < 21`? `√400 = 20`, so `20 ≤ 20 < 21` is true.
+   - For `k = 21`: `n = 70*21 - 1000 = 1470 - 1000 = 470`. Check `21 ≤ √470 < 22`? `√470 ≈ 21.68`, so `21 ≤ 21.68 < 22` is true.
+   - For `k = 47`: `n = 70*47 - 1000 = 3290 - 1000 = 2290`. Check `47 ≤ √2290 < 48`? `√2290 ≈ 47.85`, so `47 ≤ 47.85 < 48` is true.
+   - For `k = 48`: `n = 70*48 - 1000 = 3360 - 1000 = 2360`. Check `48 ≤ √2360 < 49`? `√2360 ≈ 48.58`, so `48 ≤ 48.58 < 49` is true.
+   - For `k = 49`: `n = 70*49 - 1000 = 3430 - 1000 = 2430`. Check `49 ≤ √2430 < 50`? `√2430 ≈ 49.29`, so `49 ≤ 49.29 < 50` is true.
+   - For `k = 50`: `n = 70*50 - 1000 = 3500 - 1000 = 2500`. Check `50 ≤ √2500 < 51`? `√2500 = 50`, so `50 ≤ 50 < 51` is true.
+   - For `k = 22`: `n = 70*22 - 1000 = 1540 - 1000 = 540`. Check `22 ≤ √540 < 23`? `√540 ≈ 23.24`, so `22 ≤ 23.24 < 23` is false (`23.24 < 23` is false). Hence, `k = 22` is invalid.
+   - For `k = 46`: `n = 70*46 - 1000 = 3220 - 1000 = 2220`. Check `46 ≤ √2220 < 47`? `√2220 ≈ 47.11`, so `46 ≤ 47.11 < 47` is false (`47.11 < 47` is false). Hence, `k = 46` is invalid.
+   - The cases `k = 20, 21, 47, 48, 49, 50` are valid, giving `n = 400, 470, 2290, 2360, 2430, 2500`, respectively. All other `k` in `20 ≤ k ≤ 50` are invalid because either they do not satisfy `k² - 70k + 1000 ≤ 0` or `k² - 68k + 1001 > 0`.
+7. We must also check that for each `n` in `S`, the condition `(n + 1000)/70 = floor(√n)` is satisfied. We have already checked this for `n = 400, 470, 2290, 2360, 2430, 2500`, but we must ensure that no other `n` satisfies the condition. The only possible `n` are `70k - 1000` for `k` in `20..21` or `47..50`, and we have already checked these.
+8. However, there is a mistake in the earlier analysis: the condition `(n + 1000)/70 = floor(√n)` does not necessarily require `(n + 1000)/70` to be an integer, because `floor(√n)` is an integer, but `(n + 1000)/70` is a real number that must equal `floor(√n)`. So `(n + 1000)/70` must be an integer, but we have not yet proven this. Let's prove it:
+   - Suppose `(n + 1000)/70 = floor(√n) = k`. Then `k ≤ √n < k + 1`, so `k² ≤ n < (k + 1)²`. Also, `n = 70k - 1000`. So `k² ≤ 70k - 1000 < (k + 1)²`.
+   - The first inequality `k² ≤ 70k - 1000` is equivalent to `k² - 70k + 1000 ≤ 0`, which holds for `20 ≤ k ≤ 50`.
+   - The second inequality `70k - 1000 < (k + 1)²` is equivalent to `k² - 68k + 1001 > 0`, which holds for `k < 21.55` or `k > 46.45`, i.e., `k ≤ 21` or `k ≥ 47`.
+   - Combining `20 ≤ k ≤ 50` with `k ≤ 21` or `k ≥ 47` gives `20 ≤ k ≤ 21` or `47 ≤ k ≤ 50`.
+   - For these values of `k`, we have `n = 70k - 1000` is positive, and `(n + 1000)/70 = k` is indeed `floor(√n)` because `k ≤ √n < k + 1`.
+   - Therefore, the only possible `n` are `400, 470, 2290, 2360, 2430, 2500`.
+
+But wait, we need to check if there are any other `n` that are not of the form `70k - 1000` but still satisfy `(n + 1000)/70 = floor(√n)`. Suppose `n` is not of the form `70k - 1000`, i.e., `(n + 1000)/70` is not an integer. But `floor(√n)` is an integer, and `(n + 1000)/70` must equal `floor(√n)`, so `(n + 1000)/70` must be an integer. This is a contradiction, so `n` must be of the form `70k - 1000`.
+
+But we must be careful: in Lean, `n` is a natural number, but the condition is `(n + 1000 : ℝ)/70 = floor(√n)`, where `(n + 1000 : ℝ)/70` is a real number, and `floor(√n)` is an integer. So `(n + 1000)/70` must indeed be an integer because it equals `floor(√n)` (an integer). Therefore, `n + 1000` must be divisible by `70`, i.e., `n ≡ 30 mod 70`.
+
+Thus, the only possible `n` are `n = 70k - 1000` for `k` in `20..21` or `47..50`, as above.
+
+But the Lean condition is `0 < n` and `(n + 1000 : ℝ)/70 = floor(√n)`. We have already shown that the only possible `n` are `400, 470, 2290, 2360, 2430, 2500`. 
+
+However, we must ensure that for each of these `n`, `(n + 1000 : ℝ)/70` is indeed equal to `floor(√n)`:
+1. For `n = 400`:
+   - `(n + 1000 : ℝ)/70 = 1400/70 = 20`.
+   - `floor(√400) = floor(20) = 20`.
+   - So `20 = 20` is true.
+2. For `n = 470`:
+   - `(n + 1000 : ℝ)/70 = 1470/70 = 21`.
+   - `floor(√470) ≈ floor(21.68) = 21`.
+   - So `21 = 21` is true.
+3. For `n = 2290`:
+   - `(n + 1000 : ℝ)/70 = 3290/70 = 47`.
+   - `floor(√2290) ≈ floor(47.85) = 47`.
+   - So `47 = 47` is true.
+4. For `n = 2360`:
+   - `(n + 1000 : ℝ)/70 = 3360/70 = 48`.
+   - `floor(√2360) ≈ floor(48.58) = 48`.
+   - So `48 = 48` is true.
+5. For `n = 2430`:
+   - `(n + 1000 : ℝ)/70 = 3430/70 = 49`.
+   - `floor(√2430) ≈ floor(49.29) = 49`.
+   - So `49 = 49` is true.
+6. For `n = 2500`:
+   - `(n + 1000 : ℝ)/70 = 3500/70 = 50`.
+   - `floor(√2500) = floor(50) = 50`.
+   - So `50 = 50` is true.
+
+Therefore, `S = {400, 470, 2290, 2360, 2430, 2500}` and `S.card = 6`.
+
+However, in Lean, `S` is a `Finset ℕ`, so we must ensure that all these numbers are natural numbers and that there are no duplicates. But this is straightforward since all these numbers are distinct and positive.
+
+### Step-by-Step Abstract Plan
+
+1. **Understand the Condition**: The condition `(n + 1000)/70 = floor(√n)` implies that `(n + 1000)/70` must be an integer because `floor(√n)` is an integer. Thus, `n ≡ 30 mod 70`.
+
+2. **Find Possible `n`**: Write `n = 70k - 1000` for some integer `k`. The condition `n > 0` implies `k ≥ 15`. The condition `floor(√n) = k` implies `k ≤ √n < k + 1`, which gives `k² ≤ n < (k + 1)²`, i.e., `k² ≤ 70k - 1000 < (k + 1)²`.
+
+3. **Solve Inequalities**:
+   - The first inequality `k² ≤ 70k - 1000` is `k² - 70k + 1000 ≤ 0`, which holds for `20 ≤ k ≤ 50`.
+   - The second inequality `70k - 1000 < (k + 1)²` is `k² - 68k + 1001 > 0`, which holds for `k < 21.55` or `k > 46.45`, i.e., `k ≤ 21` or `k ≥ 47`.
+   - Combining gives `20 ≤ k ≤ 21` or `47 ≤ k ≤ 50`.
+
+4. **Check Valid `k`**: For `k = 20, 21, 47, 48, 49, 50`, compute `n = 70k - 1000` and verify `floor(√n) = k`:
+   - `k = 20`: `n = 400`, `floor(√400) = 20`.
+   - `k = 21`: `n = 470`, `floor(√470) = 21`.
+   - `k = 47`: `n = 2290`, `floor(√2290) = 47`.
+   - `k = 48`: `n = 2360`, `floor(√2360) = 48`.
+   - `k = 49`: `n = 2430`, `floor(√2430) = 49`.
+   - `k = 50`: `n = 2500`, `floor(√2500) = 50`.
+
+5. **No Other Solutions**: Any `k` outside `20..21` or `47..50` either violates `k² - 70k + 1000 ≤ 0` or `k² - 68k + 1001 > 0`, or `n` is not positive. Hence, no other `n` satisfies the condition.
+
+6. **Conclusion**: The set `S` is exactly `{400, 470, 2290, 2360, 2430, 2500}` and has cardinality `6`.
+
+### Lean 4 Proof with `have` Statements
+
+```lean4
+theorem amc12b_2020_p21 (S : Finset ℕ)
+    (h₀ : ∀ n : ℕ, n ∈ S ↔ 0 < n ∧ (↑n + (1000 : ℝ)) / 70 = Int.floor (Real.sqrt n)) : S.card = 6 := by
+  have h₁ : S = {400, 470, 2290, 2360, 2430, 2500} := by sorry
+  have h₂ : S.card = 6 := by sorry
+  sorry
+```
+
+### Complete Lean 4 Proof
+
+```lean4
+theorem amc12b_2020_p21 (S : Finset ℕ)
+    (h₀ : ∀ n : ℕ, n ∈ S ↔ 0 < n ∧ (↑n + (1000 : ℝ)) / 70 = Int.floor (Real.sqrt n)) : S.card = 6 := by
+  have h₁ : S = {400, 470, 2290, 2360, 2430, 2500} := by
+    apply Finset.ext
+    intro n
+    simp only [Finset.mem_insert, Finset.mem_singleton, h₀]
+    constructor
+    · -- Prove the forward direction: if n ∈ S, then n is one of the specified values
+      intro h
+      have h₁ : 0 < n := h.1
+      have h₂ : ((n : ℝ) + 1000) / 70 = Int.floor (Real.sqrt n) := by exact_mod_cast h.2
+      have h₃ : n = 400 ∨ n = 470 ∨ n = 2290 ∨ n = 2360 ∨ n = 2430 ∨ n = 2500 := by
+        -- Prove that n must be one of the specified values
+        have h₄ : (n : ℝ) + 1000 = 70 * (Int.floor (Real.sqrt n) : ℝ) := by
+          have h₅ : ((n : ℝ) + 1000) / 70 = (Int.floor (Real.sqrt n) : ℝ) := by
+            exact_mod_cast h₂
+          linarith
+        have h₅ : (n : ℝ) + 1000 = 70 * (Int.floor (Real.sqrt n) : ℝ) := by
+          exact_mod_cast h₄
+        have h₆ : (n : ℝ) + 1000 = 70 * (Int.floor (Real.sqrt n) : ℝ) := by
+          exact_mod_cast h₄
+        have h₇ : Int.floor (Real.sqrt n) ≥ 0 := by
+          apply Int.floor_nonneg.mpr
+          exact Real.sqrt_nonneg _
+        have h₈ : (Int.floor (Real.sqrt n) : ℝ) ≥ 0 := by
+          exact_mod_cast h₇
+        have h₉ : (n : ℝ) + 1000 = 70 * (Int.floor (Real.sqrt n) : ℝ) := by
+          exact_mod_cast h₄
+        have h₁₀ : Int.floor (Real.sqrt n) ≤ Real.sqrt n := by
+          exact Int.floor_le (Real.sqrt n)
+        have h₁₁ : (Int.floor (Real.sqrt n) : ℝ) ≤ Real.sqrt n := by
+          exact_mod_cast h₁₀
+        have h₁₂ : Real.sqrt n < (Int.floor (Real.sqrt n) : ℝ) + 1 := by
+          have h₁₃ : Real.sqrt n < (Int.floor (Real.sqrt n) : ℝ) + 1 := by
+            linarith [Int.floor_le (Real.sqrt n), Int.lt_floor_add_one (Real.sqrt n)]
+          exact h₁₃
+        have h₁₃ : (Int.floor (Real.sqrt n) : ℝ) ≤ Real.sqrt n := by
+          exact_mod_cast h₁₀
+        have h₁₄ : Real.sqrt n < (Int.floor (Real.sqrt n) : ℝ) + 1 := by
+          exact h₁₂
+        have h₁₅ : (Int.floor (Real.sqrt n) : ℝ) ≤ Real.sqrt n := by
+          exact_mod_cast h₁₀
+        have h₁₆ : Real.sqrt n < (Int.floor (Real.sqrt n) : ℝ) + 1 := by
+          exact h₁₂
+        have h₁₇ : (Int.floor (Real.sqrt n) : ℤ) ≤ Real.sqrt n := by
+          exact_mod_cast h₁₀
+        have h₁₈ : Real.sqrt n < (Int.floor (Real.sqrt n) : ℤ) + 1 := by
+          exact_mod_cast h₁₂
+        have h₁₉ : (Int.floor (Real.sqrt n) : ℤ) ≤ Real.sqrt n := by
+          exact_mod_cast h₁₀
+        have h₂₀ : Real.sqrt n < (Int.floor (Real.sqrt n) : ℤ) + 1 := by
+          exact_mod_cast h₁₂
+        have h₂₁ : (n : ℝ) + 1000 = 70 * (Int.floor (Real.sqrt n) : ℝ) := by
+          exact_mod_cast h₄
+        have h₂₂ : (n : ℝ) + 1000 = 70 * (Int.floor (Real.sqrt n) : ℝ) := by
+          exact_mod_cast h₄
+        have h₂₃ : Int.floor (Real.sqrt n) ≤ 50 := by
+          by_contra h₂₄
+          have h₂₅ : Int.floor (Real.sqrt n) ≥ 51 := by
+            linarith
+          have h₂₆ : (Int.floor (Real.sqrt n) : ℝ) ≥ 51 := by
+            exact_mod_cast h₂₅
+          have h₂₇ : (n : ℝ) + 1000 ≥ 70 * 51 := by
+            linarith
+          have h₂₈ : (n : ℝ) ≥ 2600 := by linarith
+          have h₂₉ : (n : ℕ) ≥ 2600 := by
+            norm_cast at h₂₈ ⊢
+          have h₃₀ : Real.sqrt n ≥ 51 := by
+            have h₃₁ : (n : ℝ) ≥ 2601 := by
+              by_contra h₃₂
+              have h₃₃ : (n : ℝ) < 2601 := by linarith
+              have h₃₄ : (n : ℕ) < 2601 := by
+                norm_cast at h₃₃ ⊢
+              have h₃₅ : Int.floor (Real.sqrt n) ≤ 50 := by
+                have h₃₆ : Real.sqrt n < 51 := by
+                  nlinarith [Real.sqrt_nonneg n, Real.sq_sqrt (by positivity : 0 ≤ (n : ℝ))]
+                have h₃₇ : Int.floor (Real.sqrt n) ≤ 50 := by
+                  have h₃₈ : (Int.floor (Real.sqrt n) : ℝ) ≤ Real.sqrt n := by
+                    exact Int.floor_le (Real.sqrt n)
+                  have h₃₉ : Real.sqrt n < 51 := by
+                    nlinarith [Real.sqrt_nonneg n, Real.sq_sqrt (by positivity : 0 ≤ (n : ℝ))]
+                  have h₄₀ : (Int.floor (Real.sqrt n) : ℝ) < 51 := by
+                    linarith
+                  have h₄₁ : Int.floor (Real.sqrt n) < 51 := by
+                    exact_mod_cast h₄₀
+                  linarith
+                exact h₃₇
+              linarith
+            have h₃₂ : Real.sqrt n ≥ 51 := by
+              nlinarith [Real.sqrt_nonneg n, Real.sq_sqrt (by positivity : 0 ≤ (n : ℝ))]
+            exact h₃₂
+          have h₃₃ : Int.floor (Real.sqrt n) ≥ 51 := by
+            have h₃₄ : Real.sqrt n ≥ 51 := by
+              exact h₃₀
+            have h₃₅ : Int.floor (Real.sqrt n) ≥ 51 := by
+              have h₃₆ : (Int.floor (Real.sqrt n) : ℝ) ≤ Real.sqrt n := by
+                exact Int.floor_le (Real.sqrt n)
+              have h₃₇ : Real.sqrt n ≥ 51 := by
+                exact h₃₄
+              have h₃₈ : (Int.floor (Real.sqrt n) : ℝ) ≥ 51 := by
+                by_contra h₃₉
+                have h₄₀ : (Int.floor (Real.sqrt n) : ℝ) < 51 := by linarith
+                have h₄₁ : Int.floor (Real.sqrt n) < 51 := by
+                  exact_mod_cast h₄₀
+                have h₄₂ : Int.floor (Real.sqrt n) ≤ 50 := by
+                  linarith
+                have h₄₃ : (Int.floor (Real.sqrt n) : ℝ) ≤ 50 := by
+                  exact_mod_cast h₄₂
+                nlinarith [Real.sqrt_nonneg n, Real.sq_sqrt (by positivity : 0 ≤ (n : ℝ))]
+              exact_mod_cast h₃₈
+            exact h₃₅
+          linarith
+        have h₂₄ : Int.floor (Real.sqrt n) ≥ 20 := by
+          by_contra h₂₅
+          have h₂₆ : Int.floor (Real.sqrt n) ≤ 19 := by
+            linarith
+          have h₂₇ : (Int.floor (Real.sqrt n) : ℝ) ≤ 19 := by
+            exact_mod_cast h₂₆
+          have h₂₈ : (n : ℝ) + 1000 ≤ 70 * 19 := by
+            linarith
+          have h₂₉ : (n : ℝ) ≤ 120 := by linarith
+          have h₃₀ : (n : ℕ) ≤ 120 := by
+            norm_cast at h₂₉ ⊢
+          have h₃₁ : Real.sqrt n ≤ 19 := by
+            have h₃₂ : (n : ℝ) ≤ 361 := by
+              nlinarith [Real.sqrt_nonneg n, Real.sq_sqrt (by positivity : 0 ≤ (n : ℝ))]
+            have h₃₃ : Real.sqrt n ≤ 19 := by
+              nlinarith [Real.sqrt_nonneg n, Real.sq_sqrt (by positivity : 0 ≤ (n : ℝ))]
+            exact h₃₃
+          have h₃₂ : Int.floor (Real.sqrt n) ≤ 19 := by
+            have h₃₃ : (Int.floor (Real.sqrt n) : ℝ) ≤ Real.sqrt n := by
+              exact Int.floor_le (Real.sqrt n)
+            have h₃₄ : Real.sqrt n ≤ 19 := by
+              exact h₃₁
+            have h₃₅ : (Int.floor (Real.sqrt n) : ℝ) ≤ 19 := by
+              linarith
+            have h₃₆ : Int.floor (Real.sqrt n) ≤ 19 := by
+              exact_mod_cast h₃₅
+            exact h₃₆
+          have h₃₃ : (n : ℕ) ≤ 120 := by
+            exact h₃₀
+          have h₃₄ : Real.sqrt n < 20 := by
+            nlinarith [Real.sqrt_nonneg n, Real.sq_sqrt (by positivity : 0 ≤ (n : ℝ))]
+          have h₃₅ : Int.floor (Real.sqrt n) ≤ 19 := by
+            have h₃₆ : (Int.floor (Real.sqrt n) : ℝ) ≤ Real.sqrt n := by
+              exact Int.floor_le (Real.sqrt n)
+            have h₃₇ : Real.sqrt n < 20 := by
+              exact h₃₄
+            have h₃₈ : (Int.floor (Real.sqrt n) : ℝ) < 20 := by
+              linarith
+            have h₃₉ : Int.floor (Real.sqrt n) < 20 := by
+              exact_mod_cast h₃₈
+            linarith
+          have h₃₆ : (n : ℕ) ≤ 120 := by
+            exact h₃₀
+          interval_cases n <;> norm_num [Real.sqrt_lt, Real.lt_sqrt, Int.floor_eq_iff] at h₂₅ h₂₇ h₂₈ h₂₉ h₃₁ h₃₄ h₃₅ h₃₆ h₃₇ h₃₈ h₃₉ ⊢ <;>
+            (try contradiction) <;> (try norm_num) <;> (try linarith)
+          <;> (try
+            {
+              simp_all [Finset.mem_insert, Finset.mem_singleton]
+              <;> norm_num at *
+              <;> linarith
+            })
+        have h₂₅ : Int.floor (Real.sqrt n) = 20 ∨ Int.floor (Real.sqrt n) = 21 ∨ Int.floor (Real.sqrt n) = 47 ∨ Int.floor (Real.sqrt n) = 48 ∨ Int.floor (Real.sqrt n) = 49 ∨ Int.floor (Real.sqrt n) = 50 := by
+          have h₂₆ : Int.floor (Real.sqrt n) ≥ 20 := by
+            exact h₂₄
+          have h₂₇ : Int.floor (Real.sqrt n) ≤ 50 := by
+            exact h₂₃
+          have h₂₈ : Int.floor (Real.sqrt n) = 20 ∨ Int.floor (Real.sqrt n) = 21 ∨ Int.floor (Real.sqrt n) = 47 ∨ Int.floor (Real.sqrt n) = 48 ∨ Int.floor (Real.sqrt n) = 49 ∨ Int.floor (Real.sqrt n) = 50 := by
+            interval_cases Int.floor (Real.sqrt n) <;> norm_num at h₂₆ h₂₇ ⊢ <;>
+              (try omega) <;> (try
+                {
+                  have h₂₉ : (n : ℝ) + 1000 = 70 * (Int.floor (Real.sqrt n) : ℝ) := by
+                    exact_mod_cast h₄
+                  have h₃₀ : (n : ℝ) + 1000 = 70 * (20 : ℝ) := by
+                    simp_all [Int.cast_ofNat]
+                    <;> ring_nf at *
+                    <;> norm_num at *
+                    <;> linarith
+                  have h₃₁ : (n : ℝ) = 400 := by linarith
+                  have h₃₂ : (n : ℕ) = 400 := by
+                    norm_cast at h₃₁ ⊢
+                  simp_all [Finset.mem_insert, Finset.mem_singleton]
+                  <;> norm_num at *
+                  <;> linarith
+                }) <;> (try
+                {
+                  have h₂₉ : (n : ℝ) + 1000 = 70 * (Int.floor (Real.sqrt n) : ℝ) := by
+                    exact_mod_cast h₄
+                  have h₃₀ : (n : ℝ) + 1000 = 70 * (21 : ℝ) := by
+                    simp_all [Int.cast_ofNat]
+                    <;> ring_nf at *
+                    <;> norm_num at *
+                    <;> linarith
+                  have h₃₁ : (n : ℝ) = 470 := by linarith
+                  have h₃₂ : (n : ℕ) = 470 := by
+                    norm_cast at h₃₁ ⊢
+                  simp_all [Finset.mem_insert, Finset.mem_singleton]
+                  <;> norm_num at *
+                  <;> linarith
+                }) <;> (try
+                {
+                  have h₂₉ : (n : ℝ) + 1000 = 70 * (Int.floor (Real.sqrt n) : ℝ) := by
+                    exact_mod_cast h₄
+                  have h₃₀ : (n : ℝ) + 1000 = 70 * (47 : ℝ) := by
+                    simp_all [Int.cast_ofNat]
+                    <;> ring_nf at *
+                    <;> norm_num at *
+                    <;> linarith
+                  have h₃₁ : (n : ℝ) = 2290 := by linarith
+                  have h₃₂ : (n : ℕ) = 2290 := by
+                    norm_cast at h₃₁ ⊢
+                  simp_all [Finset.mem_insert, Finset.mem_singleton]
+                  <;> norm_num at *
+                  <;> linarith
+                }) <;> (try
+                {
+                  have h₂₉ : (n : ℝ) + 1000 = 70 * (Int.floor (Real.sqrt n) : ℝ) := by
+                    exact_mod_cast h₄
+                  have h₃₀ : (n : ℝ) + 1000 = 70 * (48 : ℝ) := by
+                    simp_all [Int.cast_ofNat]
+                    <;> ring_nf at *
+                    <;> norm_num at *
+                    <;> linarith
+                  have h₃₁ : (n : ℝ) = 2360 := by linarith
+                  have h₃₂ : (n : ℕ) = 2360 := by
+                    norm_cast at h₃₁ ⊢
+                  simp_all [Finset.mem_insert, Finset.mem_singleton]
+                  <;> norm_num at *
+                  <;> linarith
+                }) <;> (try
+                {
+                  have h₂₉ : (n : ℝ) + 1000 = 70 * (Int.floor (Real.sqrt n) : ℝ) := by
+                    exact_mod_cast h₄
+                  have h₃₀ : (n : ℝ) + 1000 = 70 * (49 : ℝ) := by
+                    simp_all [Int.cast_ofNat]
+                    <;> ring_nf at *
+                    <;> norm_num at *
+                    <;> linarith
+                  have h₃₁ : (n : ℝ) = 2430 := by linarith
+                  have h₃₂ : (n : ℕ) = 2430 := by
+                    norm_cast at h₃₁ ⊢
+                  simp_all [Finset.mem_insert, Finset.mem_singleton]
+                  <;> norm_num at *
+                  <;> linarith
+                }) <;> (try
+                {
+                  have h₂₉ : (n : ℝ) + 1000 = 70 * (Int.floor (Real.sqrt n) : ℝ) := by
+                    exact_mod_cast h₄
+                  have h₃₀ : (n : ℝ) + 1000 = 70 * (50 : ℝ) := by
+                    simp_all [Int.cast_ofNat]
+                    <;> ring_nf at *
+                    <;> norm_num at *
+                    <;> linarith
+                  have h₃₁ : (n : ℝ) = 2500 := by linarith
+                  have h₃₂ : (n : ℕ) = 2500 := by
+                    norm_cast at h₃₁ ⊢
+                  simp_all [Finset.mem_insert, Finset.mem_singleton]
+                  <;> norm_num at *
+                  <;> linarith
+                })
+          exact h₂₈
+        have h₂₆ : n = 400 ∨ n = 470 ∨ n = 2290 ∨ n = 2360 ∨ n = 2430 ∨ n = 2500 := by
+          rcases h₂₅ with (h₂₅ | h₂₅ | h₂₅ | h₂₅ | h₂₅ | h₂₅)
+          · -- Case: Int.floor (Real.sqrt n) = 20
+            have h₂₇ : (n : ℝ) + 1000 = 70 * (20 : ℝ) := by
+              have h₂₈ : (n : ℝ) + 1000 = 70 * (Int.floor (Real.sqrt n) : ℝ) := by
+                exact_mod_cast h₄
+              rw [h₂₅] at h₂₈
+              norm_num at h₂₈ ⊢
+              <;> linarith
+            have h₂₈ : (n : ℝ) = 400 := by linarith
+            have h₂₉ : (n : ℕ) = 400 := by
+              norm_cast at h₂₈ ⊢
+            exact Or.inl h₂₉
+          · -- Case: Int.floor (Real.sqrt n) = 21
+            have h₂₇ : (n : ℝ) + 1000 = 70 * (21 : ℝ) := by
+              have h₂₈ : (n : ℝ) + 1000 = 70 * (Int.floor (Real.sqrt n) : ℝ) := by
+                exact_mod_cast h₄
+              rw [h₂₅] at h₂₈
+              norm_num at h₂₈ ⊢
+              <;> linarith
+            have h₂₈ : (n : ℝ) = 470 := by linarith
+            have h₂₉ : (n : ℕ) = 470 := by
+              norm_cast at h₂₈ ⊢
+            exact Or.inr (Or.inl h₂₉)
+          · -- Case: Int.floor (Real.sqrt n) = 47
+            have h₂₇ : (n : ℝ) + 1000 = 70 * (47 : ℝ) := by
+              have h₂₈ : (n : ℝ) + 1000 = 70 * (Int.floor (Real.sqrt n) : ℝ) := by
+                exact_mod_cast h₄
+              rw [h₂₅] at h₂₈
+              norm_num at h₂₈ ⊢
+              <;> linarith
+            have h₂₈ : (n : ℝ) = 2290 := by linarith
+            have h₂₉ : (n : ℕ) = 2290 := by
+              norm_cast at h₂₈ ⊢
+            exact Or.inr (Or.inr (Or.inl h₂₉))
+          · -- Case: Int.floor (Real.sqrt n) = 48
+            have h₂₇ : (n : ℝ) + 1000 = 70 * (48 : ℝ) := by
+              have h₂₈ : (n : ℝ) + 1000 = 70 * (Int.floor (Real.sqrt n) : ℝ) := by
+                exact_mod_cast h₄
+              rw [h₂₅] at h₂₈
+              norm_num at h₂₈ ⊢
+              <;> linarith
+            have h₂₈ : (n : ℝ) = 2360 := by linarith
+            have h₂₉ : (n : ℕ) = 2360 := by
+              norm_cast at h₂₈ ⊢
+            exact Or.inr (Or.inr (Or.inr (Or.inl h₂₉)))
+          · -- Case: Int.floor (Real.sqrt n) = 49
+            have h₂₇ : (n : ℝ) + 1000 = 70 * (49 : ℝ) := by
+              have h₂₈ : (n : ℝ) + 1000 = 70 * (Int.floor (Real.sqrt n) : ℝ) := by
+                exact_mod_cast h₄
+              rw [h₂₅] at h₂₈
+              norm_num at h₂₈ ⊢
+              <;> linarith
+            have h₂₈ : (n : ℝ) = 2430 := by linarith
+            have h₂₉ : (n : ℕ) = 2430 := by
+              norm_cast at h₂₈ ⊢
+            exact Or.inr (Or.inr (Or.inr (Or.inr (Or.inl h₂₉))))
+          · -- Case: Int.floor (Real.sqrt n) = 50
+            have h₂₇ : (n : ℝ) + 1000 = 70 * (50 : ℝ) := by
+              have h₂₈ : (n : ℝ) + 1000 = 70 * (Int.floor (Real.sqrt n) : ℝ) := by
+                exact_mod_cast h₄
+              rw [h₂₅] at h₂₈
+              norm_num at h₂₈ ⊢
+              <;> linarith
+            have h₂₈ : (n : ℝ) = 2500 := by linarith
+            have h₂₉ : (n : ℕ) = 2500 := by
+              norm_cast at h₂₈ ⊢
+            exact Or.inr (Or.inr (Or.inr (Or.inr (Or.inr h₂₉))))
+        exact h₂₆
+      rcases h₃ with (rfl | rfl | rfl | rfl | rfl | rfl) <;> norm_num
+      <;>
+        (try
+          {
+            norm_num [Finset.mem_insert, Finset.mem_singleton] at *
+            <;>
+            (try
+              {
+                simp_all [Real.sqrt_le_iff, Real.lt_sqrt, Int.floor_eq_iff]
+                <;>
+                norm_num <;>
+                (try
+                  {
+                    nlinarith [Real.sqrt_nonneg 400, Real.sqrt_nonneg 470, Real.sqrt_nonneg 2290, Real.sqrt_nonneg 2360, Real.sqrt_nonneg 2430, Real.sqrt_nonneg 2500, Real.sq_sqrt (show (0 : ℝ) ≤ 400 by norm_num), Real.sq_sqrt (show (0 : ℝ) ≤ 470 by norm_num), Real.sq_sqrt (show (0 : ℝ) ≤ 2290 by norm_num), Real.sq_sqrt (show (0 : ℝ) ≤ 2360 by norm_num), Real.sq_sqrt (show (0 : ℝ) ≤ 2430 by norm_num), Real.sq_sqrt (show (0 : ℝ) ≤ 2500 by norm_num)]
+                  })
+              })
+          })
+    · -- Prove the reverse direction: if n is one of the specified values, then n ∈ S
+      intro h
+      rcases h with (rfl | rfl | rfl | rfl | rfl | rfl)
+      · -- Case n = 400
+        constructor
+        · -- Prove 0 < 400
+          norm_num
+        · -- Prove (400 + 1000 : ℝ) / 70 = Int.floor (Real.sqrt 400)
+          have h₁ : Real.sqrt 400 = 20 := by
+            rw [Real.sqrt_eq_iff_sq_eq] <;> norm_num
+          have h₂ : Int.floor (Real.sqrt 400) = 20 := by
+            rw [h₁]
+            <;> norm_num [Int.floor_eq_iff]
+          have h₃ : ((400 : ℝ) + 1000) / 70 = 20 := by norm_num
+          simp_all [h₂, h₃]
+          <;> norm_num
+      · -- Case n = 470
+        constructor
+        · -- Prove 0 < 470
+          norm_num
+        · -- Prove (470 + 1000 : ℝ) / 70 = Int.floor (Real.sqrt 470)
+          have h₁ : Real.sqrt 470 ≥ 21 := by
+            have h₂ : (21 : ℝ) ^ 2 ≤ 470 := by norm_num
+            apply Real.le_sqrt_of_sq_le
+            <;> linarith
+          have h₂ : Real.sqrt 470 < 22 := by
+            have h₃ : (470 : ℝ) < 22 ^ 2 := by norm_num
+            apply Real.sqrt_lt' (by positivity) |>.mpr
+            <;> linarith
+          have h₃ : Int.floor (Real.sqrt 470) = 21 := by
+            rw [Int.floor_eq_iff]
+            <;> norm_num at h₁ h₂ ⊢ <;>
+              (try constructor <;> linarith) <;>
+              (try norm_num) <;>
+              (try linarith)
+          have h₄ : ((470 : ℝ) + 1000) / 70 = 21 := by norm_num
+          simp_all [h₃, h₄]
+          <;> norm_num
+      · -- Case n = 2290
+        constructor
+        · -- Prove 0 < 2290
+          norm_num
+        · -- Prove (2290 + 1000 : ℝ) / 70 = Int.floor (Real.sqrt 2290)
+          have h₁ : Real.sqrt 2290 ≥ 47 := by
+            have h₂ : (47 : ℝ) ^ 2 ≤ 2290 := by norm_num
+            apply Real.le_sqrt_of_sq_le
+            <;> linarith
+          have h₂ : Real.sqrt 2290 < 48 := by
+            have h₃ : (2290 : ℝ) < 48 ^ 2 := by norm_num
+            apply Real.sqrt_lt' (by positivity) |>.mpr
+            <;> linarith
+          have h₃ : Int.floor (Real.sqrt 2290) = 47 := by
+            rw [Int.floor_eq_iff]
+            <;> norm_num at h₁ h₂ ⊢ <;>
+              (try constructor <;> linarith) <;>
+              (try norm_num) <;>
+              (try linarith)
+          have h₄ : ((2290 : ℝ) + 1000) / 70 = 47 := by norm_num
+          simp_all [h₃, h₄]
+          <;> norm_num
+      · -- Case n = 2360
+        constructor
+        · -- Prove 0 < 2360
+          norm_num
+        · -- Prove (2360 + 1000 : ℝ) / 70 = Int.floor (Real.sqrt 2360)
+          have h₁ : Real.sqrt 2360 ≥ 48 := by
+            have h₂ : (48 : ℝ) ^ 2 ≤ 2360 := by norm_num
+            apply Real.le_sqrt_of_sq_le
+            <;> linarith
+          have h₂ : Real.sqrt 2360 < 49 := by
+            have h₃ : (2360 : ℝ) < 49 ^ 2 := by norm_num
+            apply Real.sqrt_lt' (by positivity) |>.mpr
+            <;> linarith
+          have h₃ : Int.floor (Real.sqrt 2360) = 48 := by
+            rw [Int.floor_eq_iff]
+            <;> norm_num at h₁ h₂ ⊢ <;>
+              (try constructor <;> linarith) <;>
+              (try norm_num) <;>
+              (try linarith)
+          have h₄ : ((2360 : ℝ) + 1000) / 70 = 48 := by norm_num
+          simp_all [h₃, h₄]
+          <;> norm_num
+      · -- Case n = 2430
+        constructor
+        · -- Prove 0 < 2430
+          norm_num
+        · -- Prove (2430 + 1000 : ℝ) / 70 = Int.floor (Real.sqrt 2430)
+          have h₁ : Real.sqrt 2430 ≥ 49 := by
+            have h₂ : (49 : ℝ) ^ 2 ≤ 2430 := by norm_num
+            apply Real.le_sqrt_of_sq_le
+            <;> linarith
+          have h₂ : Real.sqrt 2430 < 50 := by
+            have h₃ : (2430 : ℝ) < 50 ^ 2 := by norm_num
+            apply Real.sqrt_lt' (by positivity) |>.mpr
+            <;> linarith
+          have h₃ : Int.floor (Real.sqrt 2430) = 49 := by
+            rw [Int.floor_eq_iff]
+            <;> norm_num at h₁ h₂ ⊢ <;>
+              (try constructor <;> linarith) <;>
+              (try norm_num) <;>
+              (try linarith)
+          have h₄ : ((2430 : ℝ) + 1000) / 70 = 49 := by norm_num
+          simp_all [h₃, h₄]
+          <;> norm_num
+      · -- Case n = 2500
+        constructor
+        · -- Prove 0 < 2500
+          norm_num
+        · -- Prove (2500 + 1000 : ℝ) / 70 = Int.floor (Real.sqrt 2500)
+          have h₁ : Real.sqrt 2500 = 50 := by
+            rw [Real.sqrt_eq_iff_sq_eq] <;> norm_num
+          have h₂ : Int.floor (Real.sqrt 2500) = 50 := by
+            rw [h₁]
+            <;> norm_num [Int.floor_eq_iff]
+          have h₃ : ((2500 : ℝ) + 1000) / 70 = 50 := by norm_num
+          simp_all [h₂, h₃]
+          <;> norm_num
+  
+  have h₂ : S.card = 6 := by
+    rw [h₁]
+    <;> norm_num
+    <;> rfl

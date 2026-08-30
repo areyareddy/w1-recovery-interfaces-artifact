@@ -1,0 +1,46 @@
+
+Error 1:
+
+Corresponding Code:
+```lean4
+        have h₅ : M ≤ 9 := h₀.2.1
+        have h₆ : C ≤ 9 := h₀.2.2
+        interval_cases A <;> interval_cases M <;> interval_cases C <;> norm_num at h₃ ⊢ <;> omega
+      }) <;>
+    <error>omega</error>
+  
+
+```
+
+Error Message: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  0 ≤ a ≤ 123422
+where
+ a := ↑(ofDigits 10 [2, 1, C, M, A])
+
+Error 2:
+
+Corresponding Code:
+```lean4
+theorem amc12a_2003_p5 (A M C : ℕ) (h₀ : A ≤ 9 ∧ M ≤ 9 ∧ C ≤ 9)
+    (h₁ : Nat.ofDigits 10 [0, 1, C, M, A] + Nat.ofDigits 10 [2, 1, C, M, A] = 123422) :
+    A + M + C = 14 := by
+  have h₂ : False := <error>by
+    have h₃ := h₁
+    simp [Nat.ofDigits, List.sum_cons, List.sum_nil, List.map, List.range_succ, Nat.mul_add, Nat.add_mul] at h₃
+    <;> ring_nf at h₃ ⊢
+    <;> norm_num at h₃ ⊢
+    <;>
+
+    ... --[Truncated]-- ...
+    omega</error>
+  
+
+```
+
+Error Message: unsolved goals
+A M C : ℕ
+h₀ : A ≤ 9 ∧ M ≤ 9 ∧ C ≤ 9
+h₁ : ofDigits 10 [0, 1, C, M, A] + ofDigits 10 [2, 1, C, M, A] = 123422
+h₃ : 22 + C * 200 + M * 2000 + A * 20000 = 123422
+⊢ False

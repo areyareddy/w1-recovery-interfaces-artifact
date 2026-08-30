@@ -1,0 +1,23 @@
+{
+  "finished_utc": "2026-08-28T02:42:04Z",
+  "inputs": {
+    "artifacts\\roots": "cc9a1d215891bc72f721f2430b14f1f97ea56fde4d4341c296c2497146d7bf17",
+    "data\\prompts.jsonl": "7258ae486182f43b6c4ec791d631f5766cbda656e505065f06fdabedd5bc76be",
+    "src\\prompts.py": "2d3690f6e2e63c47b11dd66963aec65908288df7a5a84be2d1c488b8d4e850a2"
+  },
+  "outputs": {
+    "audit\\prompt_diff_audit.csv": "a0d832767757c37eabc919a86fa6e7b27d078eccce803898981348def8057823"
+  },
+  "stats": {
+    "checks_per_root": 13,
+    "e_roots_checked": 44,
+    "max_delta_guidance_chars": 221,
+    "max_delta_prior_chars": 45110,
+    "result": "PASS",
+    "roots_audited": 83,
+    "total_assertions": 1040,
+    "wrapper_skeleton_sha256": "04978bed4a6332b3be2299d0fb77e4837d8c4f764e8f60d5ab770c7509976585"
+  },
+  "step": "s03",
+  "title": "Prompt-diff audit"
+}

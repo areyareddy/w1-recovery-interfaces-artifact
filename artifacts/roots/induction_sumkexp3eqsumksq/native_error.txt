@@ -1,0 +1,30 @@
+
+Error 1:
+
+Corresponding Code:
+```lean4
+      | succ n ih =>
+        cases n with
+        | zero =>
+          simp [Finset.sum_range_succ]
+        | succ n <error>=>
+          simp_all [Finset.sum_range_succ, pow_two, pow_three, Nat.mul_sub_left_distrib, Nat.mul_sub_right_distrib]
+          <;> ring_nf at *
+          <;>
+            (try omega)
+          <;>
+
+          ... --[Truncated]-- ...
+              })</error>
+    exact h₁ n
+
+```
+
+Error Message: unsolved goals
+case succ.succ
+n✝ n : ℕ
+ih :
+  ∑ x ∈ Finset.range n, x * (x * x) + n ^ 3 = (∑ k ∈ Finset.range n, k) * n * 2 + (∑ k ∈ Finset.range n, k) ^ 2 + n ^ 2
+⊢ 1 + (∑ k ∈ Finset.range n, k) * n * 2 + (∑ k ∈ Finset.range n, k) ^ 2 + n * 3 + n ^ 2 * 4 + n ^ 3 =
+    1 + (∑ k ∈ Finset.range n, k) * 2 + (∑ k ∈ Finset.range n, k) * n * 4 + (∑ k ∈ Finset.range n, k) ^ 2 + n * 4 +
+      n ^ 2 * 4

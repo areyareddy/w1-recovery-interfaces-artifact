@@ -1,0 +1,17 @@
+
+Error 1:
+
+Corresponding Code:
+```lean4
+    have h4 : (29 * 79 + 31 * 81) % 10 = ((29 * 79) % 10 + (31 * 81) % 10) % 10 := by
+      norm_num [Nat.add_mod, Nat.mul_mod, Nat.mod_mod, Nat.mod_eq_of_lt]
+      <;> rfl
+    rw [h4]
+    <error>rw [h1, h2]
+    <;> norm_num
+    <;> rfl</error>
+  
+
+```
+
+Error Message: no goals to be solved

@@ -1,0 +1,42 @@
+{
+  "checks": [
+    {
+      "check": "no_branch_lost",
+      "detail": "34 rows, expected 34",
+      "pass": true
+    },
+    {
+      "check": "nothing_stuck_running",
+      "detail": "0 row(s) left in 'running'",
+      "pass": true
+    },
+    {
+      "check": "progress_after_restart",
+      "detail": "2 -> 7 done",
+      "pass": true
+    },
+    {
+      "check": "interrupted_branch_retried",
+      "detail": "1 branch(es) claimed more than once: ['aime_1983_p3|E']",
+      "pass": true
+    },
+    {
+      "check": "done_rows_never_regenerated",
+      "detail": "0 completed row(s) re-claimed",
+      "pass": true
+    },
+    {
+      "check": "all_resource_columns_recorded",
+      "detail": "7 done rows, 0 with a NULL column",
+      "pass": true
+    }
+  ],
+  "done_after": 7,
+  "fixture": "pilot (13 excluded roots)",
+  "kill_signal": "Popen.kill (TerminateProcess; no cleanup handler runs)",
+  "killed_after_commits": 2,
+  "max_tokens": 4096,
+  "orphaned_running_at_kill": 1,
+  "pilot_branches": 34,
+  "result": "PASS"
+}

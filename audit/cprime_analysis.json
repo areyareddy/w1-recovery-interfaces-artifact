@@ -1,0 +1,175 @@
+{
+  "anchoring": {
+    "mean_S_A_own": 0.2072,
+    "mean_S_C_own": 0.496,
+    "mean_S_Cp_donor": 0.1065,
+    "mean_S_Cp_own": 0.1759,
+    "n": 40,
+    "null_band": {
+      "null_band_max": 0.18081,
+      "null_band_min": 0.005698,
+      "null_band_p50": 0.089985,
+      "null_band_p95": 0.15417,
+      "null_band_pairs": 400,
+      "null_band_seed": 20260828
+    }
+  },
+  "base_cohort": "primary_eval",
+  "cohort": "eval_cprime",
+  "donor_map_sha256": "ea0ea22a3196e841c7cac9df702cd0fc26cbefab73e6e15dcfb89546ce167a4b",
+  "holm_family": {
+    "members": [
+      "Cp-A",
+      "C-Cp"
+    ],
+    "reference_only": [
+      "C-A"
+    ]
+  },
+  "length": [
+    {
+      "arm": "A",
+      "mean_tokens": 6638.2,
+      "n": 40,
+      "truncated": 10
+    },
+    {
+      "arm": "C",
+      "mean_tokens": 4742.3,
+      "n": 40,
+      "truncated": 7
+    },
+    {
+      "arm": "C'",
+      "mean_tokens": 6739.7,
+      "n": 40,
+      "truncated": 11
+    }
+  ],
+  "n": 40,
+  "post_hoc": true,
+  "resolution": {
+    "alpha": 0.05,
+    "contrasts": [
+      {
+        "contrast": "C-Cp",
+        "mde_analytic_80": 0.1768,
+        "mde_simulated_80": 0.19,
+        "n": 40,
+        "observed_abs_effect": 0.125,
+        "resolved": false,
+        "se": 0.0631,
+        "x_only": 1,
+        "y_only": 6
+      },
+      {
+        "contrast": "Cp-A",
+        "mde_analytic_80": 0.1701,
+        "mde_simulated_80": 0.18,
+        "n": 40,
+        "observed_abs_effect": 0.05,
+        "resolved": false,
+        "se": 0.0607,
+        "x_only": 2,
+        "y_only": 4
+      }
+    ],
+    "method": "paired binary contrast w = x - y over roots; analytic SE from the exact variance of (b-c)/n; simulated MDE by the centred root resampling of scripts/s27_interaction_resolution.py",
+    "power": 0.8,
+    "reps": 4000,
+    "seed": 20260828
+  },
+  "same_group_sensitivity": {
+    "contrasts": [
+      {
+        "all_pairs": {
+          "contrast": "C-Cp",
+          "effect": -0.125,
+          "n": 40,
+          "p_exact_mcnemar": 0.125,
+          "x_only": 1,
+          "y_only": 6
+        },
+        "same_coarse_group": {
+          "contrast": "C-Cp",
+          "effect": -0.0714,
+          "n": 28,
+          "p_exact_mcnemar": 0.625,
+          "x_only": 1,
+          "y_only": 3
+        }
+      },
+      {
+        "all_pairs": {
+          "contrast": "Cp-A",
+          "effect": -0.05,
+          "n": 40,
+          "p_exact_mcnemar": 0.6875,
+          "x_only": 2,
+          "y_only": 4
+        },
+        "same_coarse_group": {
+          "contrast": "Cp-A",
+          "effect": -0.0714,
+          "n": 28,
+          "p_exact_mcnemar": 0.625,
+          "x_only": 1,
+          "y_only": 3
+        }
+      }
+    ],
+    "n_same_coarse_group": 28,
+    "note": "Donor group crossing is invisible in the C' stimulus -- the wrapper carries no error text -- so this is a descriptive check, not an estimand. It enters no test family."
+  },
+  "seed_block": 1,
+  "verification": [
+    {
+      "both": 5,
+      "ci95": [
+        -0.175,
+        0.075
+      ],
+      "contrast": "Cp-A",
+      "effect": -0.05,
+      "holm_family": "cprime_verification",
+      "n": 40,
+      "p_exact_mcnemar": 0.6875,
+      "p_holm": 0.6875,
+      "x_only": 2,
+      "y_only": 4
+    },
+    {
+      "both": 1,
+      "ci95": [
+        -0.25,
+        0.0
+      ],
+      "contrast": "C-Cp",
+      "effect": -0.125,
+      "holm_family": "cprime_verification",
+      "n": 40,
+      "p_exact_mcnemar": 0.125,
+      "p_holm": 0.25,
+      "x_only": 1,
+      "y_only": 6
+    },
+    {
+      "both": 2,
+      "ci95": [
+        -0.3,
+        -0.075
+      ],
+      "contrast": "C-A",
+      "effect": -0.175,
+      "n": 40,
+      "p_exact_mcnemar": 0.015625,
+      "x_only": 0,
+      "y_only": 7
+    }
+  ],
+  "verified_counts": {
+    "A": 9,
+    "C": 2,
+    "Cp": 7
+  }
+}

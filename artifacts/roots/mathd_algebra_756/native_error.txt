@@ -1,0 +1,85 @@
+
+Error 1:
+
+Corresponding Code:
+```lean4
+      have h₂₄ : a ^ b = 0 := by
+        -- Since a < 0, a^b is not defined in the reals, but Lean uses 0 as a default
+        have h₂₅ : a ^ b = 0 := by
+          by_cases h₂₆ : b = 0
+          <error>·</error> -- Subcase b = 0
+            simp [h₂₆, Real.zero_rpow]
+
+```
+
+Error Message: unsolved goals
+case pos
+a b : ℝ
+h₀ : 2 ^ a = 32
+h₁ : a ^ b = 125
+h : ¬a > 0
+h₂₁ : a ≤ 0
+h₂₂ : ¬a = 0
+h₂₃ : a < 0
+h₂₆ : b = 0
+⊢ False
+
+Error 2:
+
+Corresponding Code:
+```lean4
+                  by_contra h₃₁
+                  have h₃₂ : a ≤ 0 := by linarith
+                  have h₃₃ : a ^ b = 0 := by
+                    by_cases h₃₄ : b = 0
+                    <error>·</error> simp [h₃₄, Real.zero_rpow]
+                    · -- Use the fact that a < 0 and b ≠ 0 to show a^b = 0
+
+```
+
+Error Message: unsolved goals
+case pos
+a b : ℝ
+h₀ : 2 ^ a = 32
+h₁ : a ^ b = 125
+h : ¬a > 0
+h₂₁ : a ≤ 0
+h₂₂ : ¬a = 0
+h₂₃ : a < 0
+h₂₆ : ¬b = 0
+h₂₉ : ¬a ^ b = 0
+h₃₁ : ¬a > 0
+h₃₂ : a ≤ 0
+h₃₄ : b = 0
+⊢ False
+
+Error 3:
+
+Corresponding Code:
+```lean4
+                  have h₃₃ : a ^ b = 0 := by
+                    by_cases h₃₄ : b = 0
+                    · simp [h₃₄, Real.zero_rpow]
+                    · -- Use the fact that a < 0 and b ≠ 0 to show a^b = 0
+                      have h₃₅ : a ^ b = 0 := <error>by
+                        simp_all [Real.rpow_def_of_neg, Real.log_neg, Real.exp_log, Real.exp_log]
+                        <;>
+                        (try norm_num) <;>
+                        (try linarith) <;>
+                        (try ring_nf at *) <;>
+
+                        ... --[Truncated]-- ...
+                        (try linarith)</error>
+                      exact h₃₅
+
+```
+
+Error Message: unsolved goals
+a b : ℝ
+h₀ : 2 ^ a = 32
+h₁ : rexp (a.log * b) * (b * π).cos = 125
+h₂₂ : ¬a = 0
+h₂₃ : a < 0
+h₃₂ : a ≤ 0
+h₃₄ : ¬b = 0
+⊢ False

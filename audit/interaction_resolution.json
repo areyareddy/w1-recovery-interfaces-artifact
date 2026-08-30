@@ -1,0 +1,102 @@
+{
+  "cohorts": {
+    "eval_block2": {
+      "ci95": [
+        -0.075,
+        0.225
+      ],
+      "ci_width": 0.3,
+      "interaction": 0.075,
+      "mde_analytic_80": 0.2101,
+      "mde_simulated_80": 0.25,
+      "n": 40,
+      "naive_mde_80": 0.2616,
+      "naive_single_contrast_se": 0.0934,
+      "power_curve": {
+        "0.05": 0.105,
+        "0.10": 0.284,
+        "0.15": 0.561,
+        "0.20": 0.79,
+        "0.25": 0.932,
+        "0.30": 0.98,
+        "0.35": 0.997,
+        "0.40": 1.0
+      },
+      "sd_w": 0.4743,
+      "se_I": 0.075,
+      "w_distribution": {
+        "-1": 3,
+        "0": 31,
+        "1": 6
+      }
+    },
+    "full_pool_dev": {
+      "ci95": [
+        -0.093,
+        0.093
+      ],
+      "ci_width": 0.186,
+      "interaction": 0,
+      "mde_analytic_80": 0.1318,
+      "mde_simulated_80": 0.15,
+      "n": 43,
+      "naive_mde_80": 0.1937,
+      "naive_single_contrast_se": 0.0691,
+      "power_curve": {
+        "0.05": 0.234,
+        "0.10": 0.589,
+        "0.15": 0.893,
+        "0.20": 0.972,
+        "0.25": 0.999,
+        "0.30": 1.0,
+        "0.35": 1.0,
+        "0.40": 1.0
+      },
+      "sd_w": 0.3086,
+      "se_I": 0.0471,
+      "w_distribution": {
+        "-1": 2,
+        "0": 39,
+        "1": 2
+      }
+    },
+    "primary_eval": {
+      "ci95": [
+        0.0,
+        0.225
+      ],
+      "ci_width": 0.225,
+      "interaction": 0.1,
+      "mde_analytic_80": 0.1679,
+      "mde_simulated_80": 0.2,
+      "n": 40,
+      "naive_mde_80": 0.2616,
+      "naive_single_contrast_se": 0.0934,
+      "power_curve": {
+        "0.05": 0.12,
+        "0.10": 0.422,
+        "0.15": 0.772,
+        "0.20": 0.948,
+        "0.25": 0.994,
+        "0.30": 0.999,
+        "0.35": 1.0,
+        "0.40": 1.0
+      },
+      "sd_w": 0.3789,
+      "se_I": 0.0599,
+      "w_distribution": {
+        "-1": 1,
+        "0": 34,
+        "1": 5
+      }
+    }
+  },
+  "method": {
+    "alpha": 0.05,
+    "estimand": "I = (D-C) - (B-A), mean over roots",
+    "power": 0.8,
+    "reps": 4000,
+    "seed": 20260828,
+    "variance": "Var(mean w)/n; four-arm covariance is inside Var(w)"
+  }
+}

@@ -1,0 +1,100 @@
+
+Error 1:
+
+Corresponding Code:
+```lean4
+    have h₁₁ : (x : ℝ) / 4 + (y : ℝ) / 6 = (x + y : ℝ) / n := by
+      simpa [div_eq_mul_inv] using h₀
+    have h₁₂ : (n : ℝ) ≠ 0 := by
+      norm_cast
+      <;> <error>exact_mod_cast n.prop</error>
+    have h₁₃ : (3 : ℝ) * n * (x : ℝ) + 2 * n * (y : ℝ) = 12 * (x + y : ℝ) := by
+
+```
+
+Error Message: mod_cast has type
+  0 < ↑n : Prop
+but is expected to have type
+  ¬↑n = 0 : Prop
+
+Error 2:
+
+Corresponding Code:
+```lean4
+        have h₁₅₄ : (n : ℝ) > 0 := by
+          norm_cast
+          <;> exact_mod_cast n.prop
+        -- Use the fact that x and y are positive integers to solve for n
+        have h₁₅₅ : (n : ℝ) = 5 := <error>by
+          -- Use the fact that x and y are positive integers to solve for n
+          by_contra h
+          -- If n ≠ 5, then we derive a contradiction
+          have h₁₅₆ : (n : ℝ) ≠ 5 := by
+            intro h₁₅₆
+
+            ... --[Truncated]-- ...
+            })</error>
+        exact h₁₅₅
+
+```
+
+Error Message: unsolved goals
+case «1»
+x y n : ℕ+
+h₁₅₂ : ↑↑x > 0
+h₁₅₃ : ↑↑y > 0
+h₀ h₁₁ : ↑↑x / 4 + ↑↑y / 6 = (↑↑x + ↑↑y) / ↑1
+h₁₂ : ↑1 ≠ 0
+h₁₃ h₁₄ : 3 * ↑1 * ↑↑x + 2 * ↑1 * ↑↑y = 12 * (↑↑x + ↑↑y)
+h₁₅₄ : ↑1 > 0
+h : ¬↑1 = 5
+h₁₅₆ h₁₅₇ h₁₅₈ : True
+⊢ False
+
+case «2»
+x y n : ℕ+
+h₁₅₂ : ↑↑x > 0
+h₁₅₃ : ↑↑y > 0
+h₀ h₁₁ : ↑↑x / 4 + ↑↑y / 6 = (↑↑x + ↑↑y) / ↑2
+h₁₂ : ↑2 ≠ 0
+h₁₃ h₁₄ : 3 * ↑2 * ↑↑x + 2 * ↑2 * ↑↑y = 12 * (↑↑x + ↑↑y)
+h₁₅₄ : ↑2 > 0
+h : ¬↑2 = 5
+h₁₅₆ h₁₅₇ h₁₅₈ : True
+⊢ False
+
+case «3»
+x y n : ℕ+
+h₁₅₂ : ↑↑x > 0
+h₁₅₃ : ↑↑y > 0
+h₀ h₁₁ : ↑↑x / 4 + ↑↑y / 6 = (↑↑x + ↑↑y) / ↑3
+h₁₂ : ↑3 ≠ 0
+h₁₃ h₁₄ : 3 * ↑3 * ↑↑x + 2 * ↑3 * ↑↑y = 12 * (↑↑x + ↑↑y)
+h₁₅₄ : ↑3 > 0
+h : ¬↑3 = 5
+h₁₅₆ h₁₅₇ h₁₅₈ : True
+⊢ False
+
+case «4»
+x y n : ℕ+
+h₁₅₂ : ↑↑x > 0
+h₁₅₃ : ↑↑y > 0
+h₀ h₁₁ : ↑↑x / 4 + ↑↑y / 6 = (↑↑x + ↑↑y) / ↑4
+h₁₂ : ↑4 ≠ 0
+h₁₃ h₁₄ : 3 * ↑4 * ↑↑x + 2 * ↑4 * ↑↑y = 12 * (↑↑x + ↑↑y)
+h₁₅₄ : ↑4 > 0
+h : ¬↑4 = 5
+h₁₅₆ h₁₅₇ h₁₅₈ : True
+⊢ False
+
+case «6»
+x y n : ℕ+
+h₁₅₂ : ↑↑x > 0
+h₁₅₃ : ↑↑y > 0
+h₀ h₁₁ : ↑↑x / 4 + ↑↑y / 6 = (↑↑x + ↑↑y) / ↑6
+h₁₂ : ↑6 ≠ 0
+h₁₃ h₁₄ : 3 * ↑6 * ↑↑x + 2 * ↑6 * ↑↑y = 12 * (↑↑x + ↑↑y)
+h₁₅₄ : ↑6 > 0
+h : ¬↑6 = 5
+h₁₅₆ h₁₅₇ h₁₅₈ : True
+⊢ False

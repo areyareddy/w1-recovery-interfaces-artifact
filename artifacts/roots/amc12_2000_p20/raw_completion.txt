@@ -1,0 +1,449 @@
+### Proof
+
+**Problem Analysis:**
+We are given three positive real numbers \( x, y, z \) with the following equations:
+1. \( x + \frac{1}{y} = 4 \),
+2. \( y + \frac{1}{z} = 1 \),
+3. \( z + \frac{1}{x} = \frac{7}{3} \).
+
+We need to prove that \( x y z = 1 \).
+
+**Approach:**
+To solve this, we can express \( \frac{1}{y} \), \( \frac{1}{z} \), and \( \frac{1}{x} \) in terms of \( x, y, z \) using the given equations and then multiply them together to find a relationship that simplifies to \( x y z = 1 \).
+
+**Step 1: Express the reciprocals in terms of \( x, y, z \):**
+From the first equation:
+\[ \frac{1}{y} = 4 - x. \]
+From the second equation:
+\[ \frac{1}{z} = 1 - y. \]
+From the third equation:
+\[ \frac{1}{x} = \frac{7}{3} - z. \]
+
+**Step 2: Multiply the reciprocals:**
+Multiply the three expressions:
+\[ \left( \frac{1}{y} \right) \left( \frac{1}{z} \right) \left( \frac{1}{x} \right) = (4 - x)(1 - y)\left( \frac{7}{3} - z \right). \]
+Simplify the left-hand side:
+\[ \frac{1}{x y z} = (4 - x)(1 - y)\left( \frac{7}{3} - z \right). \]
+
+**Step 3: Expand the right-hand side:**
+First, multiply \( (4 - x)(1 - y) \):
+\[ (4 - x)(1 - y) = 4 - 4 y - x + x y. \]
+Then multiply by \( \left( \frac{7}{3} - z \right) \):
+\[ (4 - 4 y - x + x y)\left( \frac{7}{3} - z \right) = \frac{28}{3} - 4 z - \frac{28}{3} y + 4 y z - \frac{7}{3} x + x z + \frac{7}{3} x y - x y z. \]
+This expansion is quite complicated, but we can find a better approach by substituting back the original variables.
+
+**Alternative Approach:**
+Instead of expanding directly, we can substitute the expressions for \( x, y, z \) in terms of each other using the given equations.
+
+From \( \frac{1}{y} = 4 - x \), we get:
+\[ y = \frac{1}{4 - x}. \]
+
+From \( \frac{1}{z} = 1 - y \), we get:
+\[ z = \frac{1}{1 - y} = \frac{1}{1 - \frac{1}{4 - x}} = \frac{4 - x}{3 - x}. \]
+
+From \( \frac{1}{x} = \frac{7}{3} - z \), we get:
+\[ x = \frac{1}{\frac{7}{3} - z} = \frac{3}{7 - 3 z}. \]
+
+Now, substitute \( z = \frac{4 - x}{3 - x} \) into the expression for \( x \):
+\[ x = \frac{3}{7 - 3 \cdot \frac{4 - x}{3 - x}} = \frac{3}{7 - \frac{12 - 3 x}{3 - x}} = \frac{3}{\frac{21 - 7 x - 12 + 3 x}{3 - x}} = \frac{3}{\frac{9 - 4 x}{3 - x}} = \frac{3 (3 - x)}{9 - 4 x}. \]
+
+Thus, we have:
+\[ x = \frac{3 (3 - x)}{9 - 4 x}. \]
+
+Multiply both sides by \( 9 - 4 x \):
+\[ x (9 - 4 x) = 3 (3 - x). \]
+Expand:
+\[ 9 x - 4 x^2 = 9 - 3 x. \]
+Rearrange:
+\[ -4 x^2 + 12 x - 9 = 0 \]
+or equivalently:
+\[ 4 x^2 - 12 x + 9 = 0. \]
+
+This is a quadratic equation in \( x \):
+\[ 4 x^2 - 12 x + 9 = 0. \]
+The discriminant is:
+\[ \Delta = (-12)^2 - 4 \cdot 4 \cdot 9 = 144 - 144 = 0. \]
+Thus, there is a unique real solution:
+\[ x = \frac{12}{8} = \frac{3}{2}. \]
+
+Now, substitute \( x = \frac{3}{2} \) back to find \( y \) and \( z \):
+\[ y = \frac{1}{4 - x} = \frac{1}{4 - \frac{3}{2}} = \frac{1}{\frac{5}{2}} = \frac{2}{5}. \]
+\[ z = \frac{4 - x}{3 - x} = \frac{4 - \frac{3}{2}}{3 - \frac{3}{2}} = \frac{\frac{5}{2}}{\frac{3}{2}} = \frac{5}{3}. \]
+
+Finally, compute \( x y z \):
+\[ x y z = \left( \frac{3}{2} \right) \left( \frac{2}{5} \right) \left( \frac{5}{3} \right) = 1. \]
+
+However, we need to ensure that all steps are valid, especially that the denominators are not zero and that the substitutions are correct.
+
+**Verification of Assumptions:**
+1. \( 4 - x \neq 0 \): Since \( x = \frac{3}{2} < 4 \), this is true.
+2. \( 1 - y \neq 0 \): Since \( y = \frac{2}{5} \neq 1 \), this is true.
+3. \( \frac{7}{3} - z \neq 0 \): Since \( z = \frac{5}{3} \neq \frac{7}{3} \), this is true.
+4. \( 3 - x \neq 0 \): Since \( x = \frac{3}{2} \neq 3 \), this is true.
+
+Thus, all substitutions are valid and the solution is correct.
+
+**Conclusion:**
+The unique solution to the system is \( x = \frac{3}{2} \), \( y = \frac{2}{5} \), \( z = \frac{5}{3} \), and we have \( x y z = 1 \).
+
+However, the problem is more general: it asks to prove that \( x y z = 1 \) under the given conditions, without necessarily finding the exact values of \( x, y, z \). The above method finds the exact values, but we can also derive \( x y z = 1 \) directly from the original equations without solving for \( x, y, z \) explicitly. Here is a more direct approach:
+
+**Direct Proof:**
+Multiply all three given equations:
+\[ \left( x + \frac{1}{y} \right) \left( y + \frac{1}{z} \right) \left( z + \frac{1}{x} \right) = 4 \cdot 1 \cdot \frac{7}{3} = \frac{28}{3}. \]
+
+Expand the left-hand side:
+\[ \left( x y + \frac{x}{z} + \frac{y}{y} + \frac{1}{y z} \right) \left( z + \frac{1}{x} \right) = \left( x y + \frac{x}{z} + 1 + \frac{1}{y z} \right) \left( z + \frac{1}{x} \right). \]
+\[ = x y z + \frac{x y}{x} + \frac{x}{z} z + \frac{x}{z x} + z + \frac{1}{x} + \frac{1}{y z} z + \frac{1}{y z x} \]
+\[ = x y z + y + x + \frac{1}{z} + z + \frac{1}{x} + \frac{1}{y} + \frac{1}{x y z}. \]
+
+Thus:
+\[ x y z + y + x + \frac{1}{z} + z + \frac{1}{x} + \frac{1}{y} + \frac{1}{x y z} = \frac{28}{3}. \]
+
+But from the original equations:
+\[ x + \frac{1}{y} = 4, \quad y + \frac{1}{z} = 1, \quad z + \frac{1}{x} = \frac{7}{3}. \]
+Add these three equations:
+\[ x + y + z + \frac{1}{x} + \frac{1}{y} + \frac{1}{z} = 4 + 1 + \frac{7}{3} = \frac{28}{3}. \]
+
+Substitute this into the expanded product:
+\[ x y z + \left( x + y + z + \frac{1}{x} + \frac{1}{y} + \frac{1}{z} \right) + \frac{1}{x y z} = \frac{28}{3} + x y z. \]
+But \( x + y + z + \frac{1}{x} + \frac{1}{y} + \frac{1}{z} = \frac{28}{3} \), so:
+\[ x y z + \frac{28}{3} + \frac{1}{x y z} = \frac{28}{3} + x y z. \]
+Subtract \( \frac{28}{3} + x y z \) from both sides:
+\[ \frac{1}{x y z} = 0. \]
+But \( x, y, z > 0 \), so \( x y z > 0 \), and thus \( \frac{1}{x y z} > 0 \). This is a contradiction unless \( x y z = 1 \).
+
+Wait, this seems incorrect because \( \frac{1}{x y z} = 0 \) is impossible. I must have made a mistake in the expansion or substitution.
+
+**Identifying the Mistake:**
+The mistake is in the expansion of the product. The correct expansion of \( (x + \frac{1}{y})(y + \frac{1}{z})(z + \frac{1}{x}) \) is:
+\[ (x + \frac{1}{y})(y + \frac{1}{z})(z + \frac{1}{x}) = x y z + x \cdot \frac{1}{z} \cdot z + \frac{1}{y} \cdot y \cdot z + \frac{1}{y} \cdot \frac{1}{z} \cdot z + x y \cdot \frac{1}{x} + x y \cdot \frac{1}{x} \cdot \frac{1}{z} + \frac{1}{y} \cdot \frac{1}{z} \cdot \frac{1}{x} \cdot z + \frac{1}{y} \cdot \frac{1}{z} \cdot \frac{1}{x} \cdot \frac{1}{z}. \]
+
+This is too messy, so perhaps a better approach is to use the expressions for the reciprocals:
+\[ \frac{1}{y} = 4 - x, \quad \frac{1}{z} = 1 - y, \quad \frac{1}{x} = \frac{7}{3} - z. \]
+Multiply them:
+\[ \frac{1}{x y z} = (4 - x)(1 - y)\left( \frac{7}{3} - z \right). \]
+
+Now, expand \( (4 - x)(1 - y) \):
+\[ 4 - 4 y - x + x y. \]
+Then multiply by \( \frac{7}{3} - z \):
+\[ (4 - 4 y - x + x y)\left( \frac{7}{3} - z \right) = \frac{28}{3} - 4 z - \frac{28}{3} y + 4 y z - \frac{7}{3} x + x z + \frac{7}{3} x y - x y z. \]
+Thus:
+\[ \frac{1}{x y z} = \frac{28}{3} - 4 z - \frac{28}{3} y + 4 y z - \frac{7}{3} x + x z + \frac{7}{3} x y - x y z. \]
+
+Now, multiply both sides by \( x y z \):
+\[ 1 = \frac{28}{3} x y z - 4 x y z z - \frac{28}{3} x y y z + 4 x y z y z - \frac{7}{3} x x y z + x x y z z + \frac{7}{3} x x y z y - x x y z x y z. \]
+This seems even more complicated. 
+
+Perhaps we need another approach. Notice that the expressions for \( x, y, z \) are not independent. 
+
+But we already found that \( x = \frac{3}{2} \), \( y = \frac{2}{5} \), \( z = \frac{5}{3} \) is a solution, and in this case \( x y z = 1 \). 
+
+To avoid solving for \( x, y, z \) explicitly, we can instead compute \( x y z \) directly using the given equations. 
+
+Here is a better approach:
+From \( \frac{1}{y} = 4 - x \), we get \( y = \frac{1}{4 - x} \).
+From \( \frac{1}{z} = 1 - y \), we get \( z = \frac{1}{1 - y} = \frac{4 - x}{3 - x} \).
+From \( \frac{1}{x} = \frac{7}{3} - z \), we get \( x = \frac{3}{7 - 3 z} = \frac{3}{7 - 3 \cdot \frac{4 - x}{3 - x}} = \frac{3 (3 - x)}{9 - 4 x} \), leading to \( x = \frac{3}{2} \) as before.
+
+But we can also use the expressions to find \( x y z \):
+\[ x y z = x \cdot \frac{1}{4 - x} \cdot \frac{4 - x}{3 - x} = \frac{x}{3 - x}. \]
+But from the earlier equation \( x = \frac{3 (3 - x)}{9 - 4 x} \), we can solve for \( x \):
+Multiply both sides by \( 9 - 4 x \):
+\[ x (9 - 4 x) = 3 (3 - x), \]
+\[ 9 x - 4 x^2 = 9 - 3 x, \]
+\[ -4 x^2 + 12 x - 9 = 0, \]
+\[ 4 x^2 - 12 x + 9 = 0. \]
+The discriminant is \( 0 \), so \( x = \frac{12}{8} = \frac{3}{2} \).
+
+Then:
+\[ x y z = \frac{x}{3 - x} = \frac{\frac{3}{2}}{3 - \frac{3}{2}} = \frac{\frac{3}{2}}{\frac{3}{2}} = 1. \]
+
+This is much simpler and avoids dealing with the messy expansion.
+
+**Final Direct Proof:**
+We have \( y = \frac{1}{4 - x} \), \( z = \frac{4 - x}{3 - x} \), and \( x y z = \frac{x}{3 - x} \).
+
+But from the third equation \( \frac{1}{x} = \frac{7}{3} - z \), we get:
+\[ z = \frac{7}{3} - \frac{1}{x}. \]
+But we also have \( z = \frac{4 - x}{3 - x} \), so:
+\[ \frac{4 - x}{3 - x} = \frac{7}{3} - \frac{1}{x}. \]
+Multiply through by \( 3 x (3 - x) \):
+\[ 3 x (4 - x) = 7 x (3 - x) - 3 (3 - x). \]
+Expand:
+\[ 12 x - 3 x^2 = 21 x - 7 x^2 - 9 + 3 x. \]
+Simplify:
+\[ 12 x - 3 x^2 = 24 x - 7 x^2 - 9. \]
+Rearrange:
+\[ 4 x^2 - 12 x + 9 = 0. \]
+This is the same as before, and we get \( x = \frac{3}{2} \).
+
+Then:
+\[ x y z = \frac{x}{3 - x} = 1. \]
+
+Thus, \( x y z = 1 \).
+
+But we can also note that \( x y z = \frac{x}{3 - x} \), and from \( 4 x^2 - 12 x + 9 = 0 \), we have \( x = \frac{3}{2} \), so \( 3 - x = \frac{3}{2} \), and \( x y z = 1 \).
+
+But we can also note that:
+\[ 4 x^2 - 12 x + 9 = 0 \implies (2 x - 3)^2 = 0 \implies x = \frac{3}{2}. \]
+Then \( y = \frac{1}{4 - x} = \frac{2}{5} \), \( z = \frac{4 - x}{3 - x} = \frac{5}{3} \), and \( x y z = 1 \).
+
+But to avoid solving for \( x, y, z \) explicitly, we can proceed as follows:
+
+From \( y = \frac{1}{4 - x} \) and \( z = \frac{4 - x}{3 - x} \), we have:
+\[ x y z = x \cdot \frac{1}{4 - x} \cdot \frac{4 - x}{3 - x} = \frac{x}{3 - x}. \]
+
+From the third equation, \( \frac{1}{x} = \frac{7}{3} - z \), we have \( z = \frac{7}{3} - \frac{1}{x} \). But we also have \( z = \frac{4 - x}{3 - x} \), so:
+\[ \frac{4 - x}{3 - x} = \frac{7}{3} - \frac{1}{x}. \]
+Multiply through by \( 3 x (3 - x) \):
+\[ 3 x (4 - x) = 7 x (3 - x) - 3 (3 - x). \]
+Simplify:
+\[ 12 x - 3 x^2 = 21 x - 7 x^2 - 9 + 3 x. \]
+\[ 12 x - 3 x^2 = 24 x - 7 x^2 - 9. \]
+\[ 4 x^2 - 12 x + 9 = 0. \]
+\[ (2 x - 3)^2 = 0. \]
+\[ x = \frac{3}{2}. \]
+
+Then:
+\[ x y z = \frac{x}{3 - x} = \frac{\frac{3}{2}}{\frac{3}{2}} = 1. \]
+
+Thus, \( x y z = 1 \).
+
+### Step-by-Step Abstract Plan
+
+1. **Express \( y \) in terms of \( x \):**
+   - From \( x + \frac{1}{y} = 4 \), we get \( y = \frac{1}{4 - x} \).
+
+2. **Express \( z \) in terms of \( x \):**
+   - From \( y + \frac{1}{z} = 1 \), we get \( z = \frac{1}{1 - y} = \frac{4 - x}{3 - x} \).
+
+3. **Use \( x y z = \frac{x}{3 - x} \):**
+   - Compute \( x y z = x \cdot y \cdot z = x \cdot \frac{1}{4 - x} \cdot \frac{4 - x}{3 - x} = \frac{x}{3 - x} \).
+
+4. **Relate \( x \) and \( z \) using the third equation:**
+   - From \( z + \frac{1}{x} = \frac{7}{3} \), we get \( z = \frac{7}{3} - \frac{1}{x} \).
+   - Set this equal to \( \frac{4 - x}{3 - x} \) and solve for \( x \).
+
+5. **Solve for \( x \):**
+   - Multiply through by \( 3 x (3 - x) \) to get \( 3 x (4 - x) = 7 x (3 - x) - 3 (3 - x) \).
+   - Simplify to get \( 4 x^2 - 12 x + 9 = 0 \), which gives \( x = \frac{3}{2} \).
+
+6. **Compute \( x y z \):**
+   - Substitute \( x = \frac{3}{2} \) to get \( x y z = \frac{x}{3 - x} = 1 \).
+
+### Lean 4 Proof with `have` Statements
+
+```lean4
+theorem amc12_2000_p20 (x y z : ℝ) (h₀ : 0 < x ∧ 0 < y ∧ 0 < z) (h₁ : x + 1 / y = 4)
+    (h₂ : y + 1 / z = 1) (h₃ : z + 1 / x = 7 / 3) : x * y * z = 1 := by
+  have h₄ : y = 1 / (4 - x) := by sorry
+  have h₅ : z = (4 - x) / (3 - x) := by sorry
+  have h₆ : x * y * z = x / (3 - x) := by sorry
+  have h₇ : z = 7 / 3 - 1 / x := by sorry
+  have h₈ : (4 : ℝ) * x ^ 2 - 12 * x + 9 = 0 := by sorry
+  have h₉ : x = 3 / 2 := by sorry
+  have h₁₀ : x * y * z = 1 := by sorry
+  sorry
+``` 
+
+### Complete Lean 4 Proof
+
+```lean4
+theorem amc12_2000_p20 (x y z : ℝ) (h₀ : 0 < x ∧ 0 < y ∧ 0 < z) (h₁ : x + 1 / y = 4)
+    (h₂ : y + 1 / z = 1) (h₃ : z + 1 / x = 7 / 3) : x * y * z = 1 := by
+  have h₄ : y = 1 / (4 - x) := by
+    have h₄₁ : 0 < y := h₀.2.1
+    have h₄₂ : 0 < x := h₀.1
+    have h₄₃ : x + 1 / y = 4 := h₁
+    have h₄₄ : 1 / y = 4 - x := by linarith
+    have h₄₅ : y = 1 / (4 - x) := by
+      have h₄₅₁ : 4 - x ≠ 0 := by
+        by_contra h
+        have h₄₅₂ : 4 - x = 0 := by linarith
+        have h₄₅₃ : x = 4 := by linarith
+        have h₄₅₄ : 1 / y = 0 := by
+          rw [h₄₅₃] at h₄₄
+          norm_num at h₄₄ ⊢
+          <;> linarith
+        have h₄₅₅ : y > 0 := h₄₁
+        have h₄₅₆ : 1 / y > 0 := by positivity
+        linarith
+      have h₄₅₇ : y = 1 / (4 - x) := by
+        field_simp at h₄₄ ⊢
+        <;> nlinarith
+      exact h₄₅₇
+    exact h₄₅
+  
+  have h₅ : z = (4 - x) / (3 - x) := by
+    have h₅₁ : 0 < y := h₀.2.1
+    have h₅₂ : 0 < x := h₀.1
+    have h₅₃ : 0 < z := h₀.2.2
+    have h₅₄ : y + 1 / z = 1 := h₂
+    have h₅₅ : y = 1 / (4 - x) := h₄
+    have h₅₆ : 1 / z = 1 - y := by linarith
+    have h₅₇ : 1 / z = 1 - 1 / (4 - x) := by rw [h₅₅] at h₅₆; exact h₅₆
+    have h₅₈ : 1 / z = (3 - x) / (4 - x) := by
+      have h₅₈₁ : 1 - 1 / (4 - x) = (3 - x) / (4 - x) := by
+        have h₅₈₂ : 4 - x ≠ 0 := by
+          by_contra h
+          have h₅₈₃ : 4 - x = 0 := by linarith
+          have h₅₈₄ : x = 4 := by linarith
+          have h₅₈₅ : 1 / y = 0 := by
+            rw [h₅₈₄] at h₅₅
+            norm_num at h₅₅ ⊢
+            <;> linarith
+          have h₅₈₆ : y > 0 := h₅₁
+          have h₅₈₇ : 1 / y > 0 := by positivity
+          linarith
+        field_simp at h₅₇ ⊢
+        <;> ring_nf at h₅₇ ⊢ <;> nlinarith
+      rw [h₅₈₁] at h₅₇
+      exact h₅₇
+    have h₅₉ : z = (4 - x) / (3 - x) := by
+      have h₅₉₁ : 1 / z = (3 - x) / (4 - x) := h₅₈
+      have h₅₉₂ : 3 - x ≠ 0 := by
+        by_contra h
+        have h₅₉₃ : 3 - x = 0 := by linarith
+        have h₅₉₄ : x = 3 := by linarith
+        have h₅₉₅ : 1 / z = 0 := by
+          rw [h₅₉₄] at h₅₉₁
+          norm_num at h₅₉₁ ⊢
+          <;> linarith
+        have h₅₉₆ : z > 0 := h₅₃
+        have h₅₉₇ : 1 / z > 0 := by positivity
+        linarith
+      have h₅₉₈ : 4 - x ≠ 0 := by
+        by_contra h
+        have h₅₉₉ : 4 - x = 0 := by linarith
+        have h₅₉₁₀ : x = 4 := by linarith
+        have h₅₉₁₁ : 1 / y = 0 := by
+          rw [h₅₉₁₀] at h₅₅
+          norm_num at h₅₅ ⊢
+          <;> linarith
+        have h₅₉₁₂ : y > 0 := h₅₁
+        have h₅₉₁₃ : 1 / y > 0 := by positivity
+        linarith
+      have h₅₉₁₄ : z = (4 - x) / (3 - x) := by
+        have h₅₉₁₅ : 1 / z = (3 - x) / (4 - x) := h₅₉₁
+        have h₅₉₁₆ : z = (4 - x) / (3 - x) := by
+          have h₅₉₁₇ : z ≠ 0 := by linarith
+          field_simp at h₅₉₁₅ ⊢
+          <;> ring_nf at h₅₉₁₅ ⊢ <;> nlinarith
+        exact h₅₉₁₆
+      exact h₅₉₁₄
+    exact h₅₉
+  
+  have h₆ : x * y * z = x / (3 - x) := by
+    have h₆₁ : y = 1 / (4 - x) := h₄
+    have h₆₂ : z = (4 - x) / (3 - x) := h₅
+    rw [h₆₁, h₆₂]
+    have h₆₃ : 3 - x ≠ 0 := by
+      by_contra h
+      have h₆₄ : 3 - x = 0 := by linarith
+      have h₆₅ : x = 3 := by linarith
+      have h₆₆ : 0 < x := h₀.1
+      have h₆₇ : 0 < y := h₀.2.1
+      have h₆₈ : 0 < z := h₀.2.2
+      have h₆₉ : x + 1 / y = 4 := h₁
+      have h₇₀ : y + 1 / z = 1 := h₂
+      have h₇₁ : z + 1 / x = 7 / 3 := h₃
+      rw [h₆₅] at h₆₉
+      have h₇₂ : (3 : ℝ) + 1 / y = 4 := by simpa using h₆₉
+      have h₇₃ : 1 / y = 1 := by linarith
+      have h₇₄ : y = 1 := by
+        have h₇₄₁ : y > 0 := h₆₇
+        have h₇₄₂ : 1 / y = 1 := h₇₃
+        field_simp at h₇₄₂ ⊢
+        <;> nlinarith
+      have h₇₅ : y = 1 := h₇₄
+      rw [h₇₅] at h₇₀
+      have h₇₆ : (1 : ℝ) + 1 / z = 1 := by simpa using h₇₀
+      have h₇₇ : 1 / z = 0 := by linarith
+      have h₇₈ : z > 0 := h₆₈
+      have h₇₉ : 1 / z > 0 := by positivity
+      linarith
+    have h₆₄ : 4 - x ≠ 0 := by
+      by_contra h
+      have h₆₅ : 4 - x = 0 := by linarith
+      have h₆₆ : x = 4 := by linarith
+      have h₆₇ : 0 < x := h₀.1
+      have h₆₈ : 0 < y := h₀.2.1
+      have h₆₉ : 0 < z := h₀.2.2
+      have h₇₀ : x + 1 / y = 4 := h₁
+      have h₇₁ : y + 1 / z = 1 := h₂
+      have h₇₂ : z + 1 / x = 7 / 3 := h₃
+      rw [h₆₆] at h₇₀
+      have h₇₃ : (4 : ℝ) + 1 / y = 4 := by simpa using h₇₀
+      have h₇₄ : 1 / y = 0 := by linarith
+      have h₇₅ : y > 0 := h₆₈
+      have h₇₆ : 1 / y > 0 := by positivity
+      linarith
+    field_simp [h₆₃, h₆₄, sub_ne_zero]
+    <;> ring_nf
+    <;> field_simp [h₆₃, h₆₄, sub_ne_zero] at *
+    <;> nlinarith
+  
+  have h₇ : z = 7 / 3 - 1 / x := by
+    have h₇₁ : z + 1 / x = 7 / 3 := h₃
+    have h₇₂ : z = 7 / 3 - 1 / x := by linarith
+    exact h₇₂
+  
+  have h₈ : (4 : ℝ) * x ^ 2 - 12 * x + 9 = 0 := by
+    have h₈₁ : z = 7 / 3 - 1 / x := h₇
+    have h₈₂ : z = (4 - x) / (3 - x) := h₅
+    have h₈₃ : (4 - x) / (3 - x) = 7 / 3 - 1 / x := by linarith
+    have h₈₄ : 3 - x ≠ 0 := by
+      by_contra h
+      have h₈₅ : 3 - x = 0 := by linarith
+      have h₈₆ : x = 3 := by linarith
+      have h₈₇ : 0 < x := h₀.1
+      have h₈₈ : 0 < y := h₀.2.1
+      have h₈₉ : 0 < z := h₀.2.2
+      have h₉₀ : x + 1 / y = 4 := h₁
+      have h₉₁ : y + 1 / z = 1 := h₂
+      have h₉₂ : z + 1 / x = 7 / 3 := h₃
+      rw [h₈₆] at h₉₀
+      have h₉₃ : (3 : ℝ) + 1 / y = 4 := by simpa using h₉₀
+      have h₉₄ : 1 / y = 1 := by linarith
+      have h₉₅ : y = 1 := by
+        have h₉₅₁ : y > 0 := h₈₈
+        have h₉₅₂ : 1 / y = 1 := h₉₄
+        field_simp at h₉₅₂ ⊢
+        <;> nlinarith
+      have h₉₆ : y = 1 := h₉₅
+      rw [h₉₆] at h₉₁
+      have h₉₇ : (1 : ℝ) + 1 / z = 1 := by simpa using h₉₁
+      have h₉₈ : 1 / z = 0 := by linarith
+      have h₉₉ : z > 0 := h₈₉
+      have h₁₀₀ : 1 / z > 0 := by positivity
+      linarith
+    have h₈₅ : x ≠ 0 := by linarith
+    have h₈₆ : 3 - x ≠ 0 := h₈₄
+    have h₈₇ : x ≠ 0 := h₈₅
+    field_simp at h₈₃
+    ring_nf at h₈₃ ⊢
+    nlinarith [sq_nonneg (x - 3 / 2)]
+  
+  have h₉ : x = 3 / 2 := by
+    have h₉₁ : (4 : ℝ) * x ^ 2 - 12 * x + 9 = 0 := h₈
+    have h₉₂ : x = 3 / 2 := by
+      have h₉₃ : (2 * x - 3) ^ 2 = 0 := by
+        nlinarith
+      have h₉₄ : 2 * x - 3 = 0 := by
+        nlinarith
+      nlinarith
+    exact h₉₂
+  
+  have h₁₀ : x * y * z = 1 := by
+    have h₁₀₁ : x * y * z = x / (3 - x) := h₆
+    have h₁₀₂ : x = 3 / 2 := h₉
+    rw [h₁₀₂] at h₁₀₁
+    have h₁₀₃ : (3 : ℝ) - (3 / 2 : ℝ) ≠ 0 := by norm_num
+    have h₁₀₄ : (3 / 2 : ℝ) / (3 - (3 / 2 : ℝ)) = 1 := by norm_num
+    rw [h₁₀₁]
+    <;> norm_num [h₁₀₄]
+    <;> linarith
+  
+  exact h₁₀
+```

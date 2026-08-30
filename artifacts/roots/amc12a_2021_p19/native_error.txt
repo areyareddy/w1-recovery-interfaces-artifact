@@ -1,0 +1,208 @@
+
+Error 1:
+
+Corresponding Code:
+```lean4
+            have h₅₆₁ : Real.sin x ≥ 0 := by
+              -- Prove that sin x ≥ 0 for x ∈ [0, π]
+              apply Real.sin_nonneg_of_mem_Icc
+              constructor <;> linarith
+            <error>nlinarith [Real.pi_pos, Real.pi_gt_three]</error>
+          have h₅₇ : Real.pi / 2 * Real.cos x ≥ -Real.pi / 2 := by
+
+```
+
+Error Message: linarith failed to find a contradiction
+case a
+S : Finset ℝ
+h₀ : ∀ (x : ℝ), x ∈ S ↔ 0 ≤ x ∧ x ≤ π ∧ (π / 2 * x.cos).sin = (π / 2 * x.sin).cos
+x : ℝ
+h : 0 ≤ x ∧ x ≤ π ∧ (π / 2 * x.cos).sin = (π / 2 * x.sin).cos
+h₂ : 0 ≤ x
+h₃ : x ≤ π
+h₄ : (π / 2 * x.cos).sin = (π / 2 * x.sin).cos
+h₅₁ h₅₄ : (π / 2 * x.cos).sin = (π / 2 - π / 2 * x.sin).sin
+h₅₅ : π / 2 * x.cos ≤ π / 2
+h₅₆₁ : x.sin ≥ 0
+a✝ : 0 > π / 2 - π / 2 * x.sin
+⊢ False
+failed
+
+Error 2:
+
+Corresponding Code:
+```lean4
+            exact h₅₉
+          exact h₅₁₀
+        have h₅₁₁ : Real.cos x + Real.sin x = 1 := by
+          -- Prove that cos x + sin x = 1
+          <error>linarith</error>
+        exact h₅₁₁
+
+```
+
+Error Message: linarith failed to find a contradiction
+case h1.h
+S : Finset ℝ
+h₀ : ∀ (x : ℝ), x ∈ S ↔ 0 ≤ x ∧ x ≤ π ∧ (π / 2 * x.cos).sin = (π / 2 * x.sin).cos
+x : ℝ
+h : 0 ≤ x ∧ x ≤ π ∧ (π / 2 * x.cos).sin = (π / 2 * x.sin).cos
+h₂ : 0 ≤ x
+h₃ : x ≤ π
+h₄ : (π / 2 * x.cos).sin = (π / 2 * x.sin).cos
+h₅₁ : (π / 2 * x.cos).sin = (π / 2 - π / 2 * x.sin).sin
+h₅₃ : π / 2 * x.cos = π / 2 - π / 2 * x.sin
+a✝ : x.cos + x.sin < 1
+⊢ False
+failed
+
+Error 3:
+
+Corresponding Code:
+```lean4
+                    have h₆₅₁₀ : k ≥ 3 := by
+                      by_contra h₆₅₁₁
+                      omega
+                    have h₆₅₁₂ : 2 * x ≥ 3 * Real.pi := by
+                      <error>nlinarith [Real.pi_gt_three]</error>
+                    have h₆₅₁₃ : x ≥ 3 * Real.pi / 2 := by linarith
+
+```
+
+Error Message: linarith failed to find a contradiction
+case a
+S : Finset ℝ
+h₀ : ∀ (x : ℝ), x ∈ S ↔ 0 ≤ x ∧ x ≤ π ∧ (π / 2 * x.cos).sin = (π / 2 * x.sin).cos
+x : ℝ
+h : 0 ≤ x ∧ x ≤ π ∧ (π / 2 * x.cos).sin = (π / 2 * x.sin).cos
+h₂ : 0 ≤ x
+h₃ : x ≤ π
+h₄ : (π / 2 * x.cos).sin = (π / 2 * x.sin).cos
+h₅ h₆₁ : x.cos + x.sin = 1
+h₆₂ : x.cos ^ 2 + x.sin ^ 2 = 1
+h₆₃ h₆₄ h₆₅₁ : (2 * x).sin = 0
+k : ℤ
+hk : ↑k * π = 2 * x
+h₆₅₅ : 2 * x = π * ↑k
+h₆₅₉ : ¬k ≤ 2
+h₆₅₁₀ : k ≥ 3
+a✝ : 3 * π > 2 * x
+⊢ False
+failed
+
+Error 4:
+
+Corresponding Code:
+```lean4
+                    have h₆₅₂₂ : k ≤ -1 := by
+                      by_contra h₆₅₂₃
+                      omega
+                    have h₆₅₂₄ : 2 * x ≤ -Real.pi := by
+                      <error>nlinarith [Real.pi_gt_three]</error>
+                    have h₆₅₂₅ : x ≤ -Real.pi / 2 := by linarith
+
+```
+
+Error Message: linarith failed to find a contradiction
+case a
+S : Finset ℝ
+h₀ : ∀ (x : ℝ), x ∈ S ↔ 0 ≤ x ∧ x ≤ π ∧ (π / 2 * x.cos).sin = (π / 2 * x.sin).cos
+x : ℝ
+h : 0 ≤ x ∧ x ≤ π ∧ (π / 2 * x.cos).sin = (π / 2 * x.sin).cos
+h₂ : 0 ≤ x
+h₃ : x ≤ π
+h₄ : (π / 2 * x.cos).sin = (π / 2 * x.sin).cos
+h₅ h₆₁ : x.cos + x.sin = 1
+h₆₂ : x.cos ^ 2 + x.sin ^ 2 = 1
+h₆₃ h₆₄ h₆₅₁ : (2 * x).sin = 0
+k : ℤ
+hk : ↑k * π = 2 * x
+h₆₅₅ : 2 * x = π * ↑k
+h₆₅₈ : k ≤ 2
+h₆₅₂₁ : ¬k ≥ 0
+h₆₅₂₂ : k ≤ -1
+a✝ : 2 * x > -π
+⊢ False
+failed
+
+Error 5:
+
+Corresponding Code:
+```lean4
+                      nlinarith [Real.sin_le_one x, Real.cos_le_one x]
+                    linarith
+                  have h₆₅₂₁ : k = 2 ∨ k = 0 := by
+                    -- Prove that k = 2 or k = 0
+                    <error>omega</error>
+                  exact h₆₅₂₁
+
+```
+
+Error Message: omega could not prove the goal:
+No usable constraints found. You may need to unfold definitions so `omega` can see linear arithmetic facts about `Nat` and `Int`, which may also involve multiplication, division, and modular remainder by constants.
+
+Error 6:
+
+Corresponding Code:
+```lean4
+              | inl h₆₅₇ =>
+                have h₆₅₈ : k = 2 := h₆₅₇
+                have h₆₅₉ : 2 * x = Real.pi * 2 := by
+                  rw [h₆₅₈] at h₆₅₅
+                  <error>linarith</error>
+                have h₆₅₁₀ : 2 * x = Real.pi * 2 := h₆₅₉
+
+```
+
+Error Message: linarith failed to find a contradiction
+case h1.h
+S : Finset ℝ
+h₀ : ∀ (x : ℝ), x ∈ S ↔ 0 ≤ x ∧ x ≤ π ∧ (π / 2 * x.cos).sin = (π / 2 * x.sin).cos
+x : ℝ
+h : 0 ≤ x ∧ x ≤ π ∧ (π / 2 * x.cos).sin = (π / 2 * x.sin).cos
+h₂ : 0 ≤ x
+h₃ : x ≤ π
+h₄ : (π / 2 * x.cos).sin = (π / 2 * x.sin).cos
+h₅ h₆₁ : x.cos + x.sin = 1
+h₆₂ : x.cos ^ 2 + x.sin ^ 2 = 1
+h₆₃ h₆₄ h₆₅₁ : (2 * x).sin = 0
+k : ℤ
+hk : ↑k * π = 2 * x
+h₆₅₅ : 2 * x = π * ↑2
+h₆₅₇ h₆₅₈ : k = 2
+a✝ : 2 * x < π * 2
+⊢ False
+failed
+
+Error 7:
+
+Corresponding Code:
+```lean4
+              | inr h₆₅₇ =>
+                have h₆₅₈ : k = 0 := h₆₅₇
+                have h₆₅₉ : 2 * x = Real.pi * 0 := by
+                  rw [h₆₅₈] at h₆₅₅
+                  <error>linarith</error>
+                have h₆₅₁₀ : 2 * x = Real.pi * 0 := h₆₅₉
+
+```
+
+Error Message: linarith failed to find a contradiction
+case h2.h
+S : Finset ℝ
+h₀ : ∀ (x : ℝ), x ∈ S ↔ 0 ≤ x ∧ x ≤ π ∧ (π / 2 * x.cos).sin = (π / 2 * x.sin).cos
+x : ℝ
+h : 0 ≤ x ∧ x ≤ π ∧ (π / 2 * x.cos).sin = (π / 2 * x.sin).cos
+h₂ : 0 ≤ x
+h₃ : x ≤ π
+h₄ : (π / 2 * x.cos).sin = (π / 2 * x.sin).cos
+h₅ h₆₁ : x.cos + x.sin = 1
+h₆₂ : x.cos ^ 2 + x.sin ^ 2 = 1
+h₆₃ h₆₄ h₆₅₁ : (2 * x).sin = 0
+k : ℤ
+hk : ↑k * π = 2 * x
+h₆₅₅ : 2 * x = π * ↑0
+h₆₅₇ h₆₅₈ : k = 0
+a✝ : π * 0 < 2 * x
+⊢ False
+failed

@@ -1,0 +1,142 @@
+{
+  "cohort": "eval_armf",
+  "completion_tokens": {
+    "mean": 6063.9,
+    "median": 4553
+  },
+  "contrast_choice_saw_eprime": true,
+  "contrasts": [
+    {
+      "both": 1,
+      "ci95": [
+        -0.1905,
+        0.0952
+      ],
+      "contrast": "Ep-F",
+      "effect": -0.0476,
+      "holm_family": null,
+      "n": 21,
+      "p_exact_mcnemar": 1.0,
+      "tier": "exploratory",
+      "x_only": 1,
+      "x_verified": 2,
+      "y_only": 2,
+      "y_verified": 3
+    },
+    {
+      "both": 2,
+      "ci95": [
+        -0.2857,
+        0.0952
+      ],
+      "contrast": "F-A",
+      "effect": -0.0952,
+      "holm_family": null,
+      "n": 21,
+      "p_exact_mcnemar": 0.625,
+      "tier": "exploratory",
+      "x_only": 1,
+      "x_verified": 3,
+      "y_only": 3,
+      "y_verified": 5
+    },
+    {
+      "both": 1,
+      "ci95": [
+        0.0,
+        0.2381
+      ],
+      "contrast": "F-B",
+      "effect": 0.0952,
+      "holm_family": null,
+      "n": 21,
+      "p_exact_mcnemar": 0.5,
+      "tier": "exploratory",
+      "x_only": 2,
+      "x_verified": 3,
+      "y_only": 0,
+      "y_verified": 1
+    },
+    {
+      "both": 0,
+      "ci95": [
+        0.0,
+        0.2857
+      ],
+      "contrast": "F-C",
+      "effect": 0.1429,
+      "holm_family": null,
+      "n": 21,
+      "p_exact_mcnemar": 0.25,
+      "tier": "exploratory",
+      "x_only": 3,
+      "x_verified": 3,
+      "y_only": 0,
+      "y_verified": 0
+    }
+  ],
+  "interaction": {
+    "ci95": [
+      -0.0476,
+      0.4762
+    ],
+    "n": 21,
+    "note": "(E'-F) - (C-A). Reported as an interval only. A difference of differences on binary outcomes at n=21 has no useful resolution and no p-value is computed for it.",
+    "point": 0.1905
+  },
+  "leak_check": {
+    "baseline": "arm A on the same roots (same theorem, no attempt shown)",
+    "excess_over_arm_A": -0.026,
+    "max_S_F_own": 0.4303,
+    "mean_S_A_own": 0.2569,
+    "mean_S_F_own": 0.2309,
+    "n_above_null_p95": 15,
+    "note": "F never shows the attempt. The comparison that matters is against arm A, not the unrelated-root band: the band controls for neither theorem nor model, so any arm clears it just by proving the same theorem. S(F,own) at or below S(A,own) means the <error> block does not let the model reconstruct the rejected proof, so F-A is not confounded by leakage.",
+    "null_band": {
+      "null_band_max": 0.18081,
+      "null_band_p50": 0.089985,
+      "null_band_p95": 0.15417
+    }
+  },
+  "n": 21,
+  "outcome_states": {
+    "lean_failed": 14,
+    "truncated": 4,
+    "verified": 3
+  },
+  "registered": false,
+  "roots": [
+    "aime_1984_p1",
+    "aime_1987_p5",
+    "algebra_2varlineareq_fp3zeq11_3tfm1m5zeqn68_feqn10_zeq7",
+    "algebra_cubrtrp1oncubrtreq3_rcubp1onrcubeq5778",
+    "algebra_others_exirrpowirrrat",
+    "amc12_2001_p21",
+    "amc12a_2003_p5",
+    "amc12a_2019_p12",
+    "amc12b_2002_p4",
+    "amc12b_2020_p6",
+    "induction_pprime_pdvdapowpma",
+    "mathd_algebra_188",
+    "mathd_algebra_313",
+    "mathd_numbertheory_135",
+    "mathd_numbertheory_235",
+    "mathd_numbertheory_296",
+    "mathd_numbertheory_343",
+    "mathd_numbertheory_495",
+    "numbertheory_3pow2pownm1mod2pownp3eq2pownp2",
+    "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown",
+    "numbertheory_notequiv2i2jasqbsqdiv8"
+  ],
+  "spec": "spec/ARM_F_SPEC.md",
+  "tier": "exploratory",
+  "verified_counts": {
+    "A": 5,
+    "B": 1,
+    "C": 0,
+    "D": 0,
+    "E": 2,
+    "Ep": 2,
+    "F": 3
+  }
+}

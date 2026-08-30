@@ -1,0 +1,36 @@
+
+Error 1:
+
+Corresponding Code:
+```lean4
+        have h₁₆ : Real.sqrt (1 + 2 * x) ≥ 7 / 2 := by
+          apply Real.le_sqrt_of_sq_le
+          nlinarith
+        have h₁₇ : (1 - Real.sqrt (1 + 2 * x)) ^ 2 ≤ 0 := by
+          <error>nlinarith [Real.sq_sqrt (by nlinarith : 0 ≤ 1 + 2 * x)]</error>
+        nlinarith
+
+```
+
+Error Message: linarith failed to find a contradiction
+case a
+x : ℝ
+h₀ : 0 ≤ 1 + 2 * x
+h₁ : (1 - √(1 + 2 * x)) ^ 2 ≠ 0
+h₂ : 4 * x ^ 2 / (1 - √(1 + 2 * x)) ^ 2 < 2 * x + 9
+h_main₁ : -(1 / 2) ≤ x
+h₃ : 0 ≤ 1 + 2 * x
+h₄ : (1 - √(1 + 2 * x)) ^ 2 ≠ 0
+h₅ : 4 * x ^ 2 / (1 - √(1 + 2 * x)) ^ 2 < 2 * x + 9
+h₆ : 0 ≤ √(1 + 2 * x)
+h₇ : √(1 + 2 * x) ≥ 0
+h₈ : 1 + 2 * x ≥ 0
+h₉ : √(1 + 2 * x) ≠ 1
+h₁₀ : (1 - √(1 + 2 * x)) ^ 2 > 0
+h₁₁ h₁₂ : 4 * x ^ 2 / (1 - √(1 + 2 * x)) ^ 2 < 2 * x + 9
+h : ¬x < 45 / 8
+h₁₄ : x ≥ 45 / 8
+h₁₆ : √(1 + 2 * x) ≥ 7 / 2
+a✝ : (1 - √(1 + 2 * x)) ^ 2 > 0
+⊢ False
+failed

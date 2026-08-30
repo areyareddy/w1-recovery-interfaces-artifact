@@ -1,0 +1,13 @@
+{
+  "cohorts": {
+    "restart_A": 40,
+    "restart_C": 40,
+    "restart_Cp": 40
+  },
+  "payload_audit": {
+    "checked": 120,
+    "reversible": 120
+  },
+  "problems": [],
+  "reads_outcomes": false
+}

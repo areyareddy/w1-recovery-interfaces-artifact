@@ -1,0 +1,46 @@
+
+Error 1:
+
+Corresponding Code:
+```lean4
+      have h₂₂ : f + 3 * z = 11 := h₀
+      have h₂₃ : f = 11 - 3 * z := by
+        rw [← sub_eq_zero]
+        ring_nf at h₂₂ ⊢
+        rw [<error>h₂₂</error>]
+        <;> ring_nf <;> simp [Complex.ext_iff, pow_two, pow_three]
+
+```
+
+Error Message: tactic 'rewrite' failed, did not find instance of the pattern in the target expression
+  f + z * 3
+f z : ℂ
+h₀ : f + 3 * z = 11
+h₁ : 3 * (f - 1) - 5 * z = -68
+h₂₂ : f + z * 3 = 11
+⊢ -11 + f + z * 3 = 0
+
+Error 2:
+
+Corresponding Code:
+```lean4
+        have h₄₄₃ : (14 : ℂ) * z = 98 := by
+          ring_nf at h₄₄₂ ⊢
+          rw [← sub_eq_zero]
+          ring_nf at h₄₄₂ ⊢
+          rw [<error>h₄₄₂</error>]
+          <;> ring_nf <;> simp [Complex.ext_iff, pow_two, pow_three]
+
+```
+
+Error Message: tactic 'rewrite' failed, did not find instance of the pattern in the target expression
+  33 - z * 14
+f z : ℂ
+h₀ : f + 3 * z = 11
+h₁ : 3 * (f - 1) - 5 * z = -68
+h₂ : f = 11 - 3 * z
+h₃ h₄₁ : 3 * (11 - 3 * z) - 5 * z = -65
+h₄₂ : 3 * (11 - 3 * z) - 5 * z = 33 - 14 * z
+h₄₃ : 33 - 14 * z = -65
+h₄₄₂ : 33 - z * 14 = -65
+⊢ -98 + z * 14 = 0

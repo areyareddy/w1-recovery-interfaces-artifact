@@ -1,0 +1,298 @@
+### Proof and Analysis
+
+**Problem Analysis:**
+We are given two complex numbers `a` and `b` such that:
+1. `a³ - 8 = 0` (`a³ = 8`), and
+2. `b³ - 8b² - 8b + 64 = 0` (a cubic equation in `b`).
+
+We need to prove that `|a - b| ≤ 2 * sqrt(21)`.
+
+**Key Observations:**
+1. The equation `a³ = 8` has three roots in the complex numbers:
+   - `a = 2` (real root),
+   - `a = -1 ± i * sqrt(3)` (complex roots).
+   However, we do not know which root `a` corresponds to, so we cannot assume `a` is real. But we can use the fact that `|a| = 2` because `|a³| = |8|` implies `|a|³ = 8`, so `|a| = 2`.
+
+2. The equation for `b` can be rewritten as `b³ - 8b² - 8b + 64 = 0`. We can factor this polynomial to find its roots:
+   - Trying `b = 4` gives `64 - 128 - 32 + 64 = -32 ≠ 0` (not a root).
+   - Trying `b = -4` gives `-64 - 128 + 32 + 64 = -96 ≠ 0` (not a root).
+   - Trying `b = 2` gives `8 - 32 - 16 + 64 = 24 ≠ 0` (not a root).
+   - Trying `b = 4` again (already tried).
+   - Trying `b = 2` again (already tried).
+   - It seems none of the obvious roots work. Let's attempt to factor it:
+     - `b³ - 8b² - 8b + 64 = b²(b - 8) - 8(b - 8) = (b² - 8)(b - 8)`? No, because `(b² - 8)(b - 8) = b³ - 8b² - 8b + 64`, which is exactly the polynomial. So the factorization is `(b² - 8)(b - 8) = 0`.
+     - Therefore, the roots are `b = 8` and `b = ± 2i * sqrt(2)` (from `b² - 8 = 0`).
+
+   But wait, `b² - 8 = 0` gives `b = ± 2 * sqrt(2)` (real roots). So the roots are `b = 8`, `b = 2 * sqrt(2)`, and `b = -2 * sqrt(2)`.
+   - However, the polynomial was `b³ - 8b² - 8b + 64`, and `(b² - 8)(b - 8) = b³ - 8b² - 8b + 64`, so the factorization is correct. The roots are `b = 8` and the roots of `b² - 8 = 0`, i.e., `b = ± 2 * sqrt(2)`.
+
+3. The roots of `a³ = 8` are `a = 2`, `a = -1 ± i * sqrt(3)`. We can write these as:
+   - `a = 2`,
+   - `a = -1 + i * sqrt(3)`,
+   - `a = -1 - i * sqrt(3)`.
+
+   We can compute the distance `|a - b|` for each `a` and `b`:
+   - For `a = 2`:
+     - `|2 - 8| = 6 ≤ 2 * sqrt(21)` because `6 ≤ 2 * sqrt(21)` is `3 ≤ sqrt(21)` or `9 ≤ 21`, which is true.
+     - `|2 - 2 * sqrt(2)| = 2 * |1 - sqrt(2)| = 2 * (sqrt(2) - 1) ≈ 2 * 0.414 ≈ 0.828 ≤ 2 * sqrt(21)`.
+     - `|2 - (-2 * sqrt(2))| = 2 + 2 * sqrt(2) ≈ 2 + 2.828 ≈ 4.828 ≤ 2 * sqrt(21)` (since `2 * sqrt(21) ≈ 9.165`).
+   - For `a = -1 + i * sqrt(3)`:
+     - The distance `|a - b|` is maximized when `b = 8` because `b = 8` is the largest in magnitude.
+     - `|(-1 + i * sqrt(3)) - 8| = | -9 + i * sqrt(3)| = sqrt(81 + 3) = sqrt(84) = 2 * sqrt(21)`.
+     - Other cases will have smaller distances.
+   - For `a = -1 - i * sqrt(3)`:
+     - Similarly, the maximum distance is `2 * sqrt(21)` when `b = 8`.
+
+   Therefore, the maximum distance is `2 * sqrt(21)`.
+
+**Formal Proof Sketch:**
+1. From `a³ = 8`, deduce `|a| = 2`.
+2. From `b³ - 8b² - 8b + 64 = 0`, factor to get `(b² - 8)(b - 8) = 0`, so the roots are `b = 8`, `b = 2 * sqrt(2)`, `b = -2 * sqrt(2)`.
+3. For each root `a` and `b`, compute `|a - b|`:
+   - The maximum distance is `2 * sqrt(21)` when `a = -1 ± i * sqrt(3)` and `b = 8`.
+   - For other cases, the distance is smaller.
+4. Therefore, `|a - b| ≤ 2 * sqrt(21)`.
+
+**Verification of the Maximum Distance:**
+For `a = -1 + i * sqrt(3)` and `b = 8`:
+`|a - b| = |(-1 + i * sqrt(3)) - 8| = |-9 + i * sqrt(3)| = sqrt(81 + 3) = sqrt(84) = 2 * sqrt(21)`.
+
+Similarly for `a = -1 - i * sqrt(3)` and `b = 8`.
+
+For other `a` and `b`, the distance is smaller. For example:
+- `a = 2`, `b = 8`: `|2 - 8| = 6 ≤ 2 * sqrt(21)`.
+- `a = 2`, `b = 2 * sqrt(2)`: `|2 - 2 * sqrt(2)| = 2 * |1 - sqrt(2)| ≈ 0.828 ≤ 2 * sqrt(21)`.
+- `a = 2`, `b = -2 * sqrt(2)`: `|2 - (-2 * sqrt(2))| = 2 + 2 * sqrt(2) ≈ 4.828 ≤ 2 * sqrt(21)`.
+
+Thus, the maximum distance is `2 * sqrt(21)`.
+
+### Step-by-Step Abstract Plan
+
+1. **Find all roots of `a³ = 8`**:
+   - The roots are `a = 2`, `a = -1 + i * sqrt(3)`, and `a = -1 - i * sqrt(3)`.
+   - Compute `|a| = 2` for each root.
+
+2. **Find all roots of `b³ - 8b² - 8b + 64 = 0`**:
+   - Factor the polynomial as `(b² - 8)(b - 8) = 0`, so the roots are `b = 8`, `b = 2 * sqrt(2)`, and `b = -2 * sqrt(2)`.
+
+3. **Calculate `|a - b|` for each pair `(a, b)`**:
+   - The maximum `|a - b|` is `2 * sqrt(21)`, achieved when `a = -1 ± i * sqrt(3)` and `b = 8`.
+   - All other pairs give smaller distances.
+
+4. **Conclude that `|a - b| ≤ 2 * sqrt(21)`**.
+
+### Lean 4 Proof Sketch with `have` Statements
+
+```lean4
+theorem amc12a_2020_p15 (a b : ℂ) (h₀ : a ^ 3 - 8 = 0) (h₁ : b ^ 3 - 8 * b ^ 2 - 8 * b + 64 = 0) :
+    Complex.abs (a - b) ≤ 2 * Real.sqrt 21 := by
+  have h_main : Complex.abs (a - b) ≤ 2 * Real.sqrt 21 := by
+    sorry
+  sorry
+```
+
+### Complete Lean 4 Proof
+
+```lean4
+theorem amc12a_2020_p15 (a b : ℂ) (h₀ : a ^ 3 - 8 = 0) (h₁ : b ^ 3 - 8 * b ^ 2 - 8 * b + 64 = 0) :
+    Complex.abs (a - b) ≤ 2 * Real.sqrt 21 := by
+  have h_main : Complex.abs (a - b) ≤ 2 * Real.sqrt 21 := by
+    have h₂ : a ^ 3 = 8 := by
+      rw [← sub_eq_zero]
+      linear_combination h₀
+    have h₃ : b ^ 3 - 8 * b ^ 2 - 8 * b + 64 = 0 := by
+      exact h₁
+    have h₄ : a = 2 ∨ a = -1 + Complex.I * Real.sqrt 3 ∨ a = -1 - Complex.I * Real.sqrt 3 := by
+      have h₅ : a ^ 3 = 8 := h₂
+      have h₆ : a = 2 ∨ a = -1 + Complex.I * Real.sqrt 3 ∨ a = -1 - Complex.I * Real.sqrt 3 := by
+        apply or_iff_not_imp_left.mpr
+        intro h
+        apply or_iff_not_imp_left.mpr
+        intro h'
+        apply eq_of_sub_eq_zero
+        apply mul_left_cancel₀ (sub_ne_zero.mpr h)
+        apply mul_left_cancel₀ (sub_ne_zero.mpr h')
+        ring_nf at h₅ ⊢
+        simp_all [Complex.ext_iff, pow_two, pow_three, Complex.I_mul_I, Complex.I_mul_I]
+        <;> norm_num <;>
+        (try ring_nf at * <;> norm_num at * <;> nlinarith [Real.sqrt_nonneg 3, Real.sq_sqrt (show 0 ≤ 3 by norm_num)]) <;>
+        (try
+          {
+            nlinarith [Real.sqrt_nonneg 3, Real.sq_sqrt (show 0 ≤ 3 by norm_num),
+              Real.sqrt_nonneg 3, Real.sq_sqrt (show 0 ≤ 3 by norm_num)]
+          }) <;>
+        (try
+          {
+            constructor <;> nlinarith [Real.sqrt_nonneg 3, Real.sq_sqrt (show 0 ≤ 3 by norm_num)]
+          }) <;>
+        (try
+          {
+            simp_all [Complex.ext_iff, pow_two, pow_three, Complex.I_mul_I, Complex.I_mul_I]
+            <;> ring_nf at * <;> norm_num at * <;>
+            (try constructor <;> nlinarith [Real.sqrt_nonneg 3, Real.sq_sqrt (show 0 ≤ 3 by norm_num)]) <;>
+            (try nlinarith [Real.sqrt_nonneg 3, Real.sq_sqrt (show 0 ≤ 3 by norm_num)]) <;>
+            (try
+              {
+                nlinarith [Real.sqrt_nonneg 3, Real.sq_sqrt (show 0 ≤ 3 by norm_num)]
+              })
+          })
+      exact h₆
+    have h₅ : b = 8 ∨ b = 2 * Real.sqrt 2 ∨ b = -2 * Real.sqrt 2 := by
+      have h₅ : b ^ 3 - 8 * b ^ 2 - 8 * b + 64 = 0 := h₁
+      have h₆ : (b ^ 2 - 8) * (b - 8) = 0 := by
+        ring_nf at h₅ ⊢
+        simp_all [Complex.ext_iff, pow_two, pow_three, Complex.I_mul_I, Complex.I_mul_I]
+        <;>
+        (try ring_nf at * <;> simp_all [Complex.ext_iff, pow_two, pow_three, Complex.I_mul_I, Complex.I_mul_I]) <;>
+        (try norm_num) <;>
+        (try constructor <;> nlinarith [Real.sqrt_nonneg 3, Real.sq_sqrt (show 0 ≤ 3 by norm_num)]) <;>
+        (try nlinarith [Real.sqrt_nonneg 3, Real.sq_sqrt (show 0 ≤ 3 by norm_num)])
+        <;>
+        (try
+          {
+            nlinarith [Real.sqrt_nonneg 3, Real.sq_sqrt (show 0 ≤ 3 by norm_num)]
+          })
+        <;>
+        (try
+          {
+            simp_all [Complex.ext_iff, pow_two, pow_three, Complex.I_mul_I, Complex.I_mul_I]
+            <;> ring_nf at * <;> norm_num at * <;>
+            (try constructor <;> nlinarith [Real.sqrt_nonneg 3, Real.sq_sqrt (show 0 ≤ 3 by norm_num)]) <;>
+            (try nlinarith [Real.sqrt_nonneg 3, Real.sq_sqrt (show 0 ≤ 3 by norm_num)])
+          })
+      have h₇ : b ^ 2 - 8 = 0 ∨ b - 8 = 0 := by
+        apply eq_zero_or_eq_zero_of_mul_eq_zero h₆
+      cases h₇ with
+      | inl h₇ =>
+        have h₈ : b ^ 2 - 8 = 0 := h₇
+        have h₉ : b ^ 2 = 8 := by linear_combination h₈
+        have h₁₀ : b = 2 * Real.sqrt 2 ∨ b = -2 * Real.sqrt 2 := by
+          have h₁₁ : b = 2 * Real.sqrt 2 ∨ b = -2 * Real.sqrt 2 := by
+            apply or_iff_not_imp_left.mpr
+            intro h₁₂
+            apply eq_of_sub_eq_zero
+            apply mul_left_cancel₀ (sub_ne_zero.mpr h₁₂)
+            ring_nf at h₉ ⊢
+            simp_all [Complex.ext_iff, pow_two, pow_three, Complex.I_mul_I, Complex.I_mul_I]
+            <;>
+            (try ring_nf at * <;> norm_num at * <;>
+              (try constructor <;> nlinarith [Real.sqrt_nonneg 2, Real.sq_sqrt (show 0 ≤ 2 by norm_num)])) <;>
+            (try nlinarith [Real.sqrt_nonneg 2, Real.sq_sqrt (show 0 ≤ 2 by norm_num)]) <;>
+            (try
+              {
+                nlinarith [Real.sqrt_nonneg 2, Real.sq_sqrt (show 0 ≤ 2 by norm_num)]
+              })
+            <;>
+            (try
+              {
+                simp_all [Complex.ext_iff, pow_two, pow_three, Complex.I_mul_I, Complex.I_mul_I]
+                <;> ring_nf at * <;> norm_num at * <;>
+                  (try constructor <;> nlinarith [Real.sqrt_nonneg 2, Real.sq_sqrt (show 0 ≤ 2 by norm_num)]) <;>
+                  (try nlinarith [Real.sqrt_nonneg 2, Real.sq_sqrt (show 0 ≤ 2 by norm_num)])
+              })
+          exact h₁₁
+        cases h₁₀ with
+        | inl h₁₀ =>
+          simp_all [Complex.ext_iff, pow_two, pow_three, Complex.I_mul_I, Complex.I_mul_I]
+          <;>
+          (try ring_nf at * <;> norm_num at * <;>
+            (try constructor <;> nlinarith [Real.sqrt_nonneg 2, Real.sq_sqrt (show 0 ≤ 2 by norm_num)])) <;>
+          (try nlinarith [Real.sqrt_nonneg 2, Real.sq_sqrt (show 0 ≤ 2 by norm_num)]) <;>
+          (try
+            {
+              nlinarith [Real.sqrt_nonneg 2, Real.sq_sqrt (show 0 ≤ 2 by norm_num)]
+            })
+          <;>
+          (try
+            {
+              simp_all [Complex.ext_iff, pow_two, pow_three, Complex.I_mul_I, Complex.I_mul_I]
+              <;> ring_nf at * <;> norm_num at * <;>
+                (try constructor <;> nlinarith [Real.sqrt_nonneg 2, Real.sq_sqrt (show 0 ≤ 2 by norm_num)]) <;>
+                (try nlinarith [Real.sqrt_nonneg 2, Real.sq_sqrt (show 0 ≤ 2 by norm_num)])
+            })
+        | inr h₁₀ =>
+          simp_all [Complex.ext_iff, pow_two, pow_three, Complex.I_mul_I, Complex.I_mul_I]
+          <;>
+          (try ring_nf at * <;> norm_num at * <;>
+            (try constructor <;> nlinarith [Real.sqrt_nonneg 2, Real.sq_sqrt (show 0 ≤ 2 by norm_num)])) <;>
+          (try nlinarith [Real.sqrt_nonneg 2, Real.sq_sqrt (show 0 ≤ 2 by norm_num)]) <;>
+          (try
+            {
+              nlinarith [Real.sqrt_nonneg 2, Real.sq_sqrt (show 0 ≤ 2 by norm_num)]
+            })
+          <;>
+          (try
+            {
+              simp_all [Complex.ext_iff, pow_two, pow_three, Complex.I_mul_I, Complex.I_mul_I]
+              <;> ring_nf at * <;> norm_num at * <;>
+                (try constructor <;> nlinarith [Real.sqrt_nonneg 2, Real.sq_sqrt (show 0 ≤ 2 by norm_num)]) <;>
+                (try nlinarith [Real.sqrt_nonneg 2, Real.sq_sqrt (show 0 ≤ 2 by norm_num)])
+            })
+      | inr h₇ =>
+        have h₈ : b - 8 = 0 := h₇
+        have h₉ : b = 8 := by
+          apply eq_of_sub_eq_zero
+          linear_combination h₈
+        simp_all [Complex.ext_iff, pow_two, pow_three, Complex.I_mul_I, Complex.I_mul_I]
+        <;>
+        (try ring_nf at * <;> norm_num at * <;>
+          (try constructor <;> nlinarith [Real.sqrt_nonneg 2, Real.sq_sqrt (show 0 ≤ 2 by norm_num)])) <;>
+        (try nlinarith [Real.sqrt_nonneg 2, Real.sq_sqrt (show 0 ≤ 2 by norm_num)]) <;>
+        (try
+          {
+            nlinarith [Real.sqrt_nonneg 2, Real.sq_sqrt (show 0 ≤ 2 by norm_num)]
+          })
+        <;>
+        (try
+          {
+            simp_all [Complex.ext_iff, pow_two, pow_three, Complex.I_mul_I, Complex.I_mul_I]
+            <;> ring_nf at * <;> norm_num at * <;>
+              (try constructor <;> nlinarith [Real.sqrt_nonneg 2, Real.sq_sqrt (show 0 ≤ 2 by norm_num)]) <;>
+              (try nlinarith [Real.sqrt_nonneg 2, Real.sq_sqrt (show 0 ≤ 2 by norm_num)])
+          })
+    -- We now consider all possible cases for `a` and `b` and compute the distances.
+    rcases h₄ with (rfl | rfl | rfl) <;> rcases h₅ with (rfl | rfl | rfl) <;>
+      simp [Complex.abs, Complex.normSq, pow_two, pow_three, Real.sqrt_le_iff, mul_self_nonneg,
+        add_nonneg, mul_assoc] <;>
+      norm_num <;>
+      ring_nf <;>
+      norm_num <;>
+      (try
+        {
+          apply le_of_pow_le_pow_left two_ne_zero (by positivity)
+          <;>
+          ring_nf <;>
+          norm_num <;>
+          nlinarith [Real.sqrt_nonneg 21, Real.sq_sqrt (show (0 : ℝ) ≤ 21 by norm_num)]
+        }) <;>
+      (try
+        {
+          apply le_of_pow_le_pow_left two_ne_zero (by positivity)
+          <;>
+          ring_nf <;>
+          norm_num <;>
+          nlinarith [Real.sqrt_nonneg 21, Real.sq_sqrt (show (0 : ℝ) ≤ 21 by norm_num)]
+        }) <;>
+      (try
+        {
+          nlinarith [Real.sqrt_nonneg 21, Real.sq_sqrt (show (0 : ℝ) ≤ 21 by norm_num),
+            Real.sqrt_nonneg 3, Real.sq_sqrt (show (0 : ℝ) ≤ 3 by norm_num),
+            Real.sqrt_nonneg 2, Real.sq_sqrt (show (0 : ℝ) ≤ 2 by norm_num)]
+        }) <;>
+      (try
+        {
+          simp_all [Complex.abs, Complex.normSq, pow_two, pow_three, Real.sqrt_le_iff, mul_self_nonneg,
+            add_nonneg, mul_assoc]
+          <;>
+          ring_nf <;>
+          norm_num <;>
+          nlinarith [Real.sqrt_nonneg 21, Real.sq_sqrt (show (0 : ℝ) ≤ 21 by norm_num)]
+        }) <;>
+      (try
+        {
+          nlinarith [Real.sqrt_nonneg 21, Real.sq_sqrt (show (0 : ℝ) ≤ 21 by norm_num),
+            Real.sqrt_nonneg 3, Real.sq_sqrt (show (0 : ℝ) ≤ 3 by norm_num),
+            Real.sqrt_nonneg 2, Real.sq_sqrt (show (0 : ℝ) ≤ 2 by norm_num)]
+        })
+  exact h_main
+```

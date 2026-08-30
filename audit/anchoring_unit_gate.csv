@@ -1,0 +1,19 @@
+part,case,got,expected,pass,why
+unit,identical_10,1.0,1.0,True,a completion vs itself is perfect retention
+unit,both_empty,1.0,1.0,True,"degenerate, must not divide by zero"
+unit,empty_vs_5,0.0,0.0,True,nothing retained
+unit,one_substitution,0.9,0.9,True,1 edit over max len 10
+unit,one_deletion,0.9,0.9,True,1 edit over max len 10
+unit,prefix_3_of_10,0.3,0.3,True,7 deletions over max len 10
+unit,disjoint_equal_len,0.0,0.0,True,10 edits over 10
+unit,symmetry,0.4,0.4,True,S must be symmetric
+unit,longer_dilutes,0.2,0.2,True,40 insertions over max len 50
+unit,norm_crlf,1.0,1.0,True,CRLF collapses and trailing space goes
+unit,norm_lone_cr,1.0,1.0,True,bare CR is a newline
+unit,norm_idempotent,1.0,1.0,True,normalizing twice must change nothing
+unit,norm_keeps_indent,1.0,1.0,True,Lean indentation is load-bearing and must survive
+unit,norm_keeps_unicode,1.0,1.0,True,Lean identifiers are unicode
+unit,norm_keeps_blank_lines,1.0,1.0,True,blank-line structure is not collapsed
+unit,random_bounds_and_symmetry,1.0,1.0,True,"300 random pairs stay in [0,1] and are symmetric"
+self,all_83_self_similarity,1.0,1.0,True,"S(prior, prior) == 1.0 on every root"
+null_band,400_cross_root_pairs,0.089985,,True,median S between prior attempts of unrelated roots

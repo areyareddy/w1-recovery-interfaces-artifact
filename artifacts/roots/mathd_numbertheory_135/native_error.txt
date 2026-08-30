@@ -1,0 +1,110 @@
+
+Error 1:
+
+Corresponding Code:
+```lean4
+  have h_contradiction : False := by
+    have h₇ : n = 129157512 := by
+      rw [h₀]
+      <;> norm_num
+      <;> <error>rfl</error>
+    have h₈ : Nat.digits 10 n = [1, 2, 9, 1, 5, 7, 5, 1, 2] := by
+
+```
+
+Error Message: The rfl tactic failed. Possible reasons:
+- The goal is not a reflexive relation (neither `=` nor a relation with a @[refl] lemma).
+- The arguments of the relation are not equal.
+Try using the reflexivitiy lemma for your relation explicitly, e.g. `exact Eq.rfl`.
+n A B C : ℕ
+h₀ : n = 3 ^ 17 + 3 ^ 10
+h₁ : 11 ∣ n + 1
+h₂ : List.Pairwise (fun x x_1 => x ≠ x_1) [A, B, C]
+h₃ : {A, B, C} ⊂ Finset.Icc 0 9
+h₄ : Odd A ∧ Odd C
+h₅ : ¬3 ∣ B
+h₆ : digits 10 n = [B, A, B, C, C, A, C, B, A]
+⊢ False
+
+Error 2:
+
+Corresponding Code:
+```lean4
+    (h₂ : [A, B, C].Pairwise (· ≠ ·)) (h₃ : {A, B, C} ⊂ Finset.Icc 0 9) (h₄ : Odd A ∧ Odd C)
+    (h₅ : ¬3 ∣ B) (h₆ : Nat.digits 10 n = [B, A, B, C, C, A, C, B, A]) :
+    100 * A + 10 * B + C = 129 := by
+  have h_contradiction : False := by
+    have h₇ : n = 129157512 := <error>by
+      rw [h₀]
+      <;> norm_num
+      <;> rfl</error>
+    have h₈ : Nat.digits 10 n = [1, 2, 9, 1, 5, 7, 5, 1, 2] := by
+
+```
+
+Error Message: unsolved goals
+n A B C : ℕ
+h₀ : n = 3 ^ 17 + 3 ^ 10
+h₁ : 11 ∣ n + 1
+h₂ : List.Pairwise (fun x x_1 => x ≠ x_1) [A, B, C]
+h₃ : {A, B, C} ⊂ Finset.Icc 0 9
+h₄ : Odd A ∧ Odd C
+h₅ : ¬3 ∣ B
+h₆ : digits 10 n = [B, A, B, C, C, A, C, B, A]
+⊢ False
+
+Error 3:
+
+Corresponding Code:
+```lean4
+      <;> rfl
+    have h₈ : Nat.digits 10 n = [1, 2, 9, 1, 5, 7, 5, 1, 2] := by
+      rw [h₇]
+      <;> norm_num [Nat.digits_zero, Nat.div_eq_of_lt]
+      <;> <error>rfl</error>
+    rw [h₈] at h₆
+
+```
+
+Error Message: The rfl tactic failed. Possible reasons:
+- The goal is not a reflexive relation (neither `=` nor a relation with a @[refl] lemma).
+- The arguments of the relation are not equal.
+Try using the reflexivitiy lemma for your relation explicitly, e.g. `exact Eq.rfl`.
+n A B C : ℕ
+h₀ : n = 3 ^ 17 + 3 ^ 10
+h₁ : 11 ∣ n + 1
+h₂ : List.Pairwise (fun x x_1 => x ≠ x_1) [A, B, C]
+h₃ : {A, B, C} ⊂ Finset.Icc 0 9
+h₄ : Odd A ∧ Odd C
+h₅ : ¬3 ∣ B
+h₆ : digits 10 n = [B, A, B, C, C, A, C, B, A]
+h₇ : n = 129157512
+⊢ False
+
+Error 4:
+
+Corresponding Code:
+```lean4
+    have h₇ : n = 129157512 := by
+      rw [h₀]
+      <;> norm_num
+      <;> rfl
+    have h₈ : Nat.digits 10 n = [1, 2, 9, 1, 5, 7, 5, 1, 2] := <error>by
+      rw [h₇]
+      <;> norm_num [Nat.digits_zero, Nat.div_eq_of_lt]
+      <;> rfl</error>
+    rw [h₈] at h₆
+
+```
+
+Error Message: unsolved goals
+n A B C : ℕ
+h₀ : n = 3 ^ 17 + 3 ^ 10
+h₁ : 11 ∣ n + 1
+h₂ : List.Pairwise (fun x x_1 => x ≠ x_1) [A, B, C]
+h₃ : {A, B, C} ⊂ Finset.Icc 0 9
+h₄ : Odd A ∧ Odd C
+h₅ : ¬3 ∣ B
+h₆ : digits 10 n = [B, A, B, C, C, A, C, B, A]
+h₇ : n = 129157512
+⊢ False

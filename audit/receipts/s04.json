@@ -1,0 +1,28 @@
+{
+  "finished_utc": "2026-08-28T03:09:54Z",
+  "inputs": {
+    "artifacts\\roots": "cc9a1d215891bc72f721f2430b14f1f97ea56fde4d4341c296c2497146d7bf17",
+    "data\\roots.jsonl": "6132d7463347621a9bdd0c4fcd8d62dcde7836b377cfef0214f5b12abfdb418b",
+    "src\\anchoring.py": "9ee5d4620bc135e8d1e43401864f659fc38589e0dcf6984808634d8ffe19d712"
+  },
+  "outputs": {
+    "audit\\anchoring_unit_gate.csv": "a29e2ad3a9ff92bc6f5fcb839d824c22b956b3dee8157772aab3f385e350fd3e"
+  },
+  "stats": {
+    "max_prior_tokens": 12288,
+    "median_prior_tokens": 8726,
+    "metric_id": "prior_attempt_textual_anchoring_v1",
+    "normalization_id": "lf_endings_and_trailing_ws_v1",
+    "null_band_max": 0.18081,
+    "null_band_min": 0.005698,
+    "null_band_p50": 0.089985,
+    "null_band_p95": 0.15417,
+    "null_band_pairs": 400,
+    "null_band_seed": 20260828,
+    "result": "PASS",
+    "roots_tokenized": 83,
+    "unit_cases": 16
+  },
+  "step": "s04",
+  "title": "Freeze anchoring metric"
+}

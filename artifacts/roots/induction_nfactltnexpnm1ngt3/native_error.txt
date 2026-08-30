@@ -1,0 +1,32 @@
+
+Error 1:
+
+Corresponding Code:
+```lean4
+          | zero => contradiction -- n cannot be one since hn : 3 ≤ n
+          | succ n =>
+            cases n with
+            | zero => contradiction -- n cannot be two since hn : 3 ≤ n
+            | succ n <error>=>
+              simp_all [Nat.factorial_succ, Nat.pow_succ, Nat.mul_assoc]
+              <;>
+                (try omega) <;>
+                (try
+                  {
+
+                  ... --[Truncated]-- ...
+                  })</error>
+    exact h₂ k hk
+
+```
+
+Error Message: unsolved goals
+case step.succ.succ.succ
+n✝¹ : ℕ
+h₀ : 3 ≤ n✝¹
+k : ℕ
+hk : 3 ≤ k
+n✝ n : ℕ
+IH : (n + 2 + 1) * ((n + 1 + 1) * ((n + 1) * n !)) < (n + 1 + 1 + 1) ^ n * ((n + 1 + 1 + 1) * (n + 1 + 1 + 1))
+⊢ (n + 3 + 1) * ((n + 2 + 1) * ((n + 1 + 1) * ((n + 1) * n !))) <
+    (n + 3 + 1) ^ n * ((n + 3 + 1) * ((n + 3 + 1) * (n + 3 + 1)))

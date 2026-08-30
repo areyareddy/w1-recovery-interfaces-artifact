@@ -1,0 +1,13 @@
+
+Error 1:
+
+Corresponding Code:
+```lean4
+theorem mathd_algebra_188 (σ : Equiv ℝ ℝ) (h : σ.1 2 = σ.2 2) : σ.1 (σ.1 2) = 2 := by
+  have h₁ : σ.1 (σ.2 2) = 2 := by
+    apply <error>Equiv.apply_inv</error>
+    <;> simp_all [Equiv.inv_apply_apply]
+
+```
+
+Error Message: unknown constant 'Equiv.apply_inv'

@@ -1,0 +1,136 @@
+{
+  "confirmatory": false,
+  "contrasts": [
+    {
+      "both": 1,
+      "ci95": [
+        -0.375,
+        -0.075
+      ],
+      "contrast": "CR-CpR",
+      "effect": -0.225,
+      "holm_family": "restart_verification",
+      "n": 40,
+      "p_exact_mcnemar": 0.011719,
+      "p_holm": 0.023438,
+      "x_only": 1,
+      "y_only": 10
+    },
+    {
+      "both": 7,
+      "ci95": [
+        -0.1,
+        0.15
+      ],
+      "contrast": "CpR-AR",
+      "effect": 0.025,
+      "holm_family": "restart_verification",
+      "n": 40,
+      "p_exact_mcnemar": 1.0,
+      "p_holm": 1.0,
+      "x_only": 4,
+      "y_only": 3
+    },
+    {
+      "both": 1,
+      "ci95": [
+        -0.25,
+        0.0
+      ],
+      "contrast": "C-Cp",
+      "effect": -0.125,
+      "n": 40,
+      "p_exact_mcnemar": 0.125,
+      "x_only": 1,
+      "y_only": 6
+    },
+    {
+      "both": 6,
+      "ci95": [
+        -0.1,
+        0.15
+      ],
+      "contrast": "AR-A",
+      "effect": 0.025,
+      "n": 40,
+      "p_exact_mcnemar": 1.0,
+      "x_only": 4,
+      "y_only": 3
+    }
+  ],
+  "holm_family": {
+    "descriptive_only": [
+      "interaction",
+      "AR-A"
+    ],
+    "members": [
+      "CpR-AR",
+      "CR-CpR"
+    ]
+  },
+  "interaction": {
+    "ci95": [
+      -0.275,
+      0.075
+    ],
+    "definition": "w_i = (CR_i - CpR_i) - (C_i - Cp_i)",
+    "in_test_family": false,
+    "mde_analytic_80": 0.2416,
+    "mde_simulated_80": 0.25,
+    "n": 40,
+    "note": "Descriptive. At n=40 an under-resolved interaction is the expected outcome and must not be read as evidence of no amplification.",
+    "point": -0.1,
+    "resolved": false,
+    "se": 0.0862
+  },
+  "interpretation": {
+    "confirmatory": false,
+    "reading": "trajectory-specific harm survives restart permission, so limitation (7)'s confound does not account for the effect. The interaction is under-resolved, so how much the commit instruction contributed is not estimable and must not be reported as zero",
+    "row": "C-R - C'-R negative and resolved, interaction under-resolved",
+    "source": "spec/RESTART_SPEC.md section 5"
+  },
+  "n": 40,
+  "outcome_states": {
+    "A": {
+      "lean_failed": 21,
+      "truncated": 10,
+      "verified": 9
+    },
+    "AR": {
+      "lean_failed": 21,
+      "truncated": 9,
+      "verified": 10
+    },
+    "C": {
+      "lean_failed": 31,
+      "truncated": 7,
+      "verified": 2
+    },
+    "CR": {
+      "lean_failed": 29,
+      "truncated": 9,
+      "verified": 2
+    },
+    "Cp": {
+      "format_error": 1,
+      "lean_failed": 21,
+      "truncated": 11,
+      "verified": 7
+    },
+    "CpR": {
+      "lean_failed": 16,
+      "truncated": 13,
+      "verified": 11
+    }
+  },
+  "registration": "exploratory robustness; see spec/RESTART_SPEC.md s0",
+  "roots": 40,
+  "verified_counts": {
+    "A": 9,
+    "AR": 10,
+    "C": 2,
+    "CR": 2,
+    "Cp": 7,
+    "CpR": 11
+  }
+}

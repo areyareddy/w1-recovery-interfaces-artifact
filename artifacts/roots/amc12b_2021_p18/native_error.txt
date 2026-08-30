@@ -1,0 +1,26 @@
+
+Error 1:
+
+Corresponding Code:
+```lean4
+theorem amc12b_2021_p18 (z : ℂ)
+    (h₀ : 12 * Complex.normSq z = 2 * Complex.normSq (z + 2) + Complex.normSq (z ^ 2 + 1) + 31) :
+    z + 6 / z = -2 := by
+  have h_main : z + 6 / z = -2 := <error>by
+    have h₁ := h₀
+    simp [Complex.normSq, Complex.ext_iff, pow_two, pow_three, Complex.ext_iff, mul_add, add_mul,
+      mul_comm, mul_left_comm] at h₁ ⊢
+    ring_nf at h₁ ⊢
+    <;>
+
+    ... --[Truncated]-- ...
+      })</error>
+  exact h_main
+
+```
+
+Error Message: unsolved goals
+z : ℂ
+h₀ : 12 * Complex.normSq z = 2 * Complex.normSq (z + 2) + Complex.normSq (z ^ 2 + 1) + 31
+h₁ : z.re ^ 2 * 12 + z.im ^ 2 * 12 = 40 + z.re * 8 + z.re ^ 2 * 4 + z.re ^ 2 * z.im ^ 2 * 2 + z.re ^ 4 + z.im ^ 4
+⊢ z.re + z.re / Complex.normSq z * 6 = -2 ∧ z.im + -z.im / Complex.normSq z * 6 = 0

@@ -1,0 +1,31 @@
+
+Error 1:
+
+Corresponding Code:
+```lean4
+    have h₈₁ : a ≥ 12 := h₆
+    have h₈₂ : b ≥ 24 := h₇
+    have h₈₃ : a * b ≥ 12 * 24 := by
+      nlinarith
+    <error>nlinarith</error>
+  
+
+```
+
+Error Message: linarith failed to find a contradiction
+case a
+a b : ℕ
+h₀ : 0 < a ∧ 0 < b
+h₁ : a % 10 = 2
+h₂ : b % 10 = 4
+h₃ : a.gcd b = 6
+h₄ : 6 ∣ a
+h₅ : 6 ∣ b
+h₆ : a ≥ 12
+h₇ : b ≥ 24
+h₈₁ : a ≥ 12
+h₈₂ : b ≥ 24
+h₈₃ : a * b ≥ 12 * 24
+a✝ : 648 > a * b
+⊢ False
+failed

@@ -1,0 +1,55 @@
+{
+  "finished_utc": "2026-08-28T03:10:15Z",
+  "inputs": {
+    "data\\guidance_render.jsonl": "4a49a9f1ce13753ff56192c4254a3a9ea38a0c5398699eca64387cb371fb249e",
+    "data\\prompts.jsonl": "7258ae486182f43b6c4ec791d631f5766cbda656e505065f06fdabedd5bc76be"
+  },
+  "outputs": {
+    "audit\\context_capacity.csv": "790ec899f248f4f2b8bf4629113d5e732233ad0091b83eb3c01ce74e765eceb2"
+  },
+  "stats": {
+    "branches_measured": 376,
+    "colm_r2_delta_histogram": {
+      "0": 83
+    },
+    "colm_r2_prompt_token_exact_match": "83/83",
+    "elision_rule_needed": false,
+    "max_tokens": 12288,
+    "n_ctx": 32768,
+    "per_arm": {
+      "A": {
+        "max": 371,
+        "median": 190,
+        "n": 83
+      },
+      "B": {
+        "max": 414,
+        "median": 234,
+        "n": 83
+      },
+      "C": {
+        "max": 12571,
+        "median": 8981,
+        "n": 83
+      },
+      "D": {
+        "max": 12612,
+        "median": 9027,
+        "n": 83
+      },
+      "E": {
+        "max": 13984,
+        "median": 6242,
+        "n": 44
+      }
+    },
+    "result": "PASS",
+    "safety_margin": 64,
+    "worst_branch": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown|E",
+    "worst_headroom": 6496,
+    "worst_prompt_tokens": 13984,
+    "worst_total_required": 26272
+  },
+  "step": "s05",
+  "title": "Context capacity check"
+}

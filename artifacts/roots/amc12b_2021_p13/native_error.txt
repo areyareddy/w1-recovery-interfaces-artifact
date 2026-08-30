@@ -1,0 +1,137 @@
+
+Error 1:
+
+Corresponding Code:
+```lean4
+                  apply mul_left_cancel₀ (sub_ne_zero.mpr h₁₆)
+                  apply mul_left_cancel₀ (sub_ne_zero.mpr h₁₇)
+                  apply mul_left_cancel₀ (sub_ne_zero.mpr h₁₈)
+                  -- Use the fact that the equation has six solutions in (0, 2π]
+                  <error>nlinarith [Real.pi_pos, Real.pi_le_four, Real.sin_le_one x, Real.cos_le_one x, Real.sin_le_one (3 * x), Real.cos_le_one (3 * x),
+                    Real.sin_sq_add_cos_sq x, Real.sin_sq_add_cos_sq (3 * x), Real.sin_le_one (Real.pi / 6), Real.sin_le_one (5 * Real.pi / 6),
+                    Real.sin_le_one (Real.pi / 2), Real.sin_le_one (7 * Real.pi / 6), Real.sin_le_one (3 * Real.pi / 2), Real.sin_le_one (11 * Real.pi / 6),
+                    Real.cos_le_one (Real.pi / 6), Real.cos_le_one (5 * Real.pi / 6), Real.cos_le_one (Real.pi / 2), Real.cos_le_one (7 * Real.pi / 6),
+                    Real.cos_le_one (3 * Real.pi / 2), Real.cos_le_one (11 * Real.pi / 6)]</error>
+                exact h₁₃
+
+```
+
+Error Message: linarith failed to find a contradiction
+case h.h1.h
+S : Finset ℝ
+h₀ : ∀ (x : ℝ), x ∈ S ↔ 0 < x ∧ x ≤ 2 * π ∧ 1 - 3 * x.sin + 5 * (3 * x).cos = 0
+x : ℝ
+h : 0 < x ∧ x ≤ 2 * π ∧ 1 - 3 * x.sin + 5 * (3 * x).cos = 0
+h₃ : 0 < x
+h₄ : x ≤ 2 * π
+h₅ : 1 - 3 * x.sin + 5 * (3 * x).cos = 0
+h₉ : 0 < x
+h₁₀ : x ≤ 2 * π
+h₁₁ : 1 - 3 * x.sin + 5 * (3 * x).cos = 0
+h₁₄ : ¬x = π / 6
+h₁₅ : ¬x = 5 * π / 6
+h₁₆ : ¬x = π / 2
+h₁₇ : ¬x = 7 * π / 6
+h₁₈ : ¬x = 3 * π / 2
+a✝ :
+  (x - 3 * π / 2) * ((x - 7 * π / 6) * ((x - π / 2) * ((x - 5 * π / 6) * ((x - π / 6) * (x - 11 * π / 6))))) <
+    (x - 3 * π / 2) * ((x - 7 * π / 6) * ((x - π / 2) * ((x - 5 * π / 6) * ((x - π / 6) * 0))))
+⊢ False
+failed
+
+Error 2:
+
+Corresponding Code:
+```lean4
+            (try linarith [Real.pi_pos, Real.pi_gt_three]) <;>
+            (try ring_nf) <;>
+            (try norm_num) <;>
+            (try linarith [Real.pi_pos, Real.pi_gt_three])
+          have h₈ : 1 - 3 * Real.sin x + 5 * Real.cos (3 * x) = 0 := <error>by
+            -- Prove that 1 - 3 * Real.sin x + 5 * Real.cos (3 * x) = 0
+            rcases h₅ with (rfl | rfl | rfl | rfl | rfl | rfl) <;>
+            (try norm_num) <;>
+            (try ring_nf) <;>
+            (try field_simp [Real.sin_add, Real.cos_add, Real.sin_sub, Real.cos_sub, Real.sin_two_mul, Real.cos_two_mul, Real.sin_three_mul, Real.cos_three_mul]) <;>
+
+            ... --[Truncated]-- ...
+            (try nlinarith [Real.sin_le_one (Real.pi / 6), Real.sin_le_one (5 * Real.pi / 6), Real.sin_le_one (Real.pi / 2), Real.sin_le_one (7 * Real.pi / 6), Real.sin_le_one (3 * Real.pi / 2), Real.sin_le_one (11 * Real.pi / 6), Real.cos_le_one (Real.pi / 6), Real.cos_le_one (5 * Real.pi / 6), Real.cos_le_one (Real.pi / 2), Real.cos_le_one (7 * Real.pi / 6), Real.cos_le_one (3 * Real.pi / 2), Real.cos_le_one (11 * Real.pi / 6), Real.sin_le_one (3 * (Real.pi / 6)), Real.sin_le_one (3 * (5 * Real.pi / 6)), Real.sin_le_one (3 * (Real.pi / 2)), Real.sin_le_one (3 * (7 * Real.pi / 6)), Real.sin_le_one (3 * (3 * Real.pi / 2)), Real.sin_le_one (3 * (11 * Real.pi / 6)), Real.cos_le_one (3 * (Real.pi / 6)), Real.cos_le_one (3 * (5 * Real.pi / 6)), Real.cos_le_one (3 * (Real.pi / 2)), Real.cos_le_one (3 * (7 * Real.pi / 6)), Real.cos_le_one (3 * (3 * Real.pi / 2)), Real.cos_le_one (3 * (11 * Real.pi / 6))])</error>
+          exact ⟨h₆, h₇, h₈⟩
+
+```
+
+Error Message: unsolved goals
+case inl
+S : Finset ℝ
+h₀ : ∀ (x : ℝ), x ∈ S ↔ 0 < x ∧ x ≤ π * 2 ∧ 1 - x.sin * 3 + (x * 3).cos * 5 = 0
+h₇ : π * (1 / 6) ≤ π * 2
+h₆ : 0 < π
+h₃ h : True
+⊢ False
+
+case inr.inl
+S : Finset ℝ
+h₀ : ∀ (x : ℝ), x ∈ S ↔ 0 < x ∧ x ≤ π * 2 ∧ 1 - x.sin * 3 + (x * 3).cos * 5 = 0
+h₇ : π * (5 / 6) ≤ π * 2
+h₆ : 0 < π
+h₃ h : True
+⊢ 1 - (π * (5 / 6)).sin * 3 + (π * (5 / 2)).cos * 5 = 0
+
+case inr.inr.inl
+S : Finset ℝ
+h₀ : ∀ (x : ℝ), x ∈ S ↔ 0 < x ∧ x ≤ π * 2 ∧ 1 - x.sin * 3 + (x * 3).cos * 5 = 0
+h₇ : π * (1 / 2) ≤ π * 2
+h₆ : 0 < π
+h₃ h : True
+⊢ -2 + (π * (3 / 2)).cos * 5 = 0
+
+case inr.inr.inr.inl
+S : Finset ℝ
+h₀ : ∀ (x : ℝ), x ∈ S ↔ 0 < x ∧ x ≤ π * 2 ∧ 1 - x.sin * 3 + (x * 3).cos * 5 = 0
+h₇ : π * (7 / 6) ≤ π * 2
+h₆ : 0 < π
+h₃ h : True
+⊢ 1 - (π * (7 / 6)).sin * 3 + (π * (7 / 2)).cos * 5 = 0
+
+case inr.inr.inr.inr.inl
+S : Finset ℝ
+h₀ : ∀ (x : ℝ), x ∈ S ↔ 0 < x ∧ x ≤ π * 2 ∧ 1 - x.sin * 3 + (x * 3).cos * 5 = 0
+h₇ : π * (3 / 2) ≤ π * 2
+h₆ : 0 < π
+h₃ h : True
+⊢ 1 - (π * (3 / 2)).sin * 3 + (π * (9 / 2)).cos * 5 = 0
+
+case inr.inr.inr.inr.inr
+S : Finset ℝ
+h₀ : ∀ (x : ℝ), x ∈ S ↔ 0 < x ∧ x ≤ π * 2 ∧ 1 - x.sin * 3 + (x * 3).cos * 5 = 0
+h₇ : π * (11 / 6) ≤ π * 2
+h₆ : 0 < π
+h₃ h : True
+⊢ 1 - (π * (11 / 6)).sin * 3 + (π * (11 / 2)).cos * 5 = 0
+
+Error 3:
+
+Corresponding Code:
+```lean4
+theorem amc12b_2021_p13 (S : Finset ℝ)
+    (h₀ :
+      ∀ x : ℝ, x ∈ S ↔ 0 < x ∧ x ≤ 2 * Real.pi ∧ 1 - 3 * Real.sin x + 5 * Real.cos (3 * x) = 0) :
+    S.card = 6 := by
+  have h₁ : S.card = 6 := <error>by
+    have h₂ : S = {Real.pi / 6, 5 * Real.pi / 6, Real.pi / 2, 7 * Real.pi / 6, 3 * Real.pi / 2, 11 * Real.pi / 6} := by
+      apply Finset.ext
+      intro x
+      simp only [Finset.mem_insert, Finset.mem_singleton, h₀]
+      constructor
+
+      ... --[Truncated]-- ...
+    (try nlinarith [Real.sin_le_one (Real.pi / 6), Real.sin_le_one (5 * Real.pi / 6), Real.sin_le_one (Real.pi / 2), Real.sin_le_one (7 * Real.pi / 6), Real.sin_le_one (3 * Real.pi / 2), Real.sin_le_one (11 * Real.pi / 6), Real.cos_le_one (Real.pi / 6), Real.cos_le_one (5 * Real.pi / 6), Real.cos_le_one (Real.pi / 2), Real.cos_le_one (7 * Real.pi / 6), Real.cos_le_one (3 * Real.pi / 2), Real.cos_le_one (11 * Real.pi / 6), Real.sin_le_one (3 * (Real.pi / 6)), Real.sin_le_one (3 * (5 * Real.pi / 6)), Real.sin_le_one (3 * (Real.pi / 2)), Real.sin_le_one (3 * (7 * Real.pi / 6)), Real.sin_le_one (3 * (3 * Real.pi / 2)), Real.sin_le_one (3 * (11 * Real.pi / 6)), Real.cos_le_one (3 * (Real.pi / 6)), Real.cos_le_one (3 * (5 * Real.pi / 6)), Real.cos_le_one (3 * (Real.pi / 2)), Real.cos_le_one (3 * (7 * Real.pi / 6)), Real.cos_le_one (3 * (3 * Real.pi / 2)), Real.cos_le_one (3 * (11 * Real.pi / 6))])</error>
+  exact h₁
+
+```
+
+Error Message: unsolved goals
+S : Finset ℝ
+h₀ : ∀ (x : ℝ), x ∈ S ↔ 0 < x ∧ x ≤ 2 * π ∧ 1 - 3 * x.sin + 5 * (3 * x).cos = 0
+h₂ : S = {π / 6, 5 * π / 6, π / 2, 7 * π / 6, 3 * π / 2, 11 * π / 6}
+⊢ {π * (1 / 6), π * (5 / 6), π * (1 / 2), π * (7 / 6), π * (3 / 2), π * (11 / 6)}.card = 6

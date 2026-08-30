@@ -1,0 +1,9 @@
+Similar Lean-verified proofs commonly used:
+- exact
+- rw
+- subst_vars
+- linarith
+- ring_nf
+
+These are optional suggestions; use only when applicable, and select exact tactics and arguments from the current theorem.
+

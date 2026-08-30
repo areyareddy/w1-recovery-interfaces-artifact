@@ -1,0 +1,39 @@
+{
+  "finished_utc": "2026-08-28T05:00:31Z",
+  "inputs": {
+    "audit\\prompt_diff_audit.csv": "a0d832767757c37eabc919a86fa6e7b27d078eccce803898981348def8057823",
+    "data\\prompts.jsonl": "7258ae486182f43b6c4ec791d631f5766cbda656e505065f06fdabedd5bc76be"
+  },
+  "outputs": {
+    "spec\\frozen_spec.sha256": "382f9e94a09304872eb61a3b2df27b19ee9a60bd45a64a6e61b79bba9cc3f30b",
+    "spec\\frozen_spec.yaml": "cd8317bef3e3523a0842674219b2b0e5760b685f43686cc9d21381322885281d"
+  },
+  "stats": {
+    "gates_certified": [
+      "s00",
+      "s01",
+      "s02",
+      "s03",
+      "s04",
+      "s05",
+      "s06",
+      "s07",
+      "s08",
+      "s09",
+      "s10"
+    ],
+    "open_decisions_resolved": [
+      "seed_block_2_derivation",
+      "plain_draw_descriptive_variance_band"
+    ],
+    "seed_block_1_range": [
+      2000000,
+      2000082
+    ],
+    "seed_rule": "block_base_plus_sorted_root_index_v1",
+    "spec_bytes": 8743,
+    "spec_sha256": "cd8317bef3e3523a0842674219b2b0e5760b685f43686cc9d21381322885281d"
+  },
+  "step": "s11",
+  "title": "Freeze the spec"
+}

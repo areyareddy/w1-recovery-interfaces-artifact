@@ -1,0 +1,27 @@
+
+Error 1:
+
+Corresponding Code:
+```lean4
+theorem induction_pprime_pdvdapowpma (p a : ℕ) (h₀ : 0 < a) (h₁ : Nat.Prime p) : p ∣ a ^ p - a := by
+  have h_main : p ∣ a ^ p - a := <error>by
+    haveI := Fact.mk h₁
+    simp [← ZMod.natCast_zmod_eq_zero_iff_dvd, ← ZMod.eq_iff_modEq_nat]
+    <;>
+    (try cases p <;> simp_all [Nat.Prime, Nat.succ_le_iff])
+    <;>
+
+    ... --[Truncated]-- ...
+      })</error>
+  exact h_main
+
+```
+
+Error Message: unsolved goals
+case succ
+a : ℕ
+h₀ : 0 < a
+n✝ : ℕ
+h₁ : Irreducible (n✝ + 1)
+this : Fact True
+⊢ ↑(a ^ n✝ * a - a) = 0

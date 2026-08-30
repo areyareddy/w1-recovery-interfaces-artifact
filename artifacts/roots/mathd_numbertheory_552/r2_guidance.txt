@@ -1,0 +1,9 @@
+Similar Lean-verified proofs commonly used:
+- rw
+- linarith
+- norm_num
+- exact
+- simp
+
+These are optional suggestions; use only when applicable, and select exact tactics and arguments from the current theorem.
+

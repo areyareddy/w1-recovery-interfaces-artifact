@@ -1,0 +1,333 @@
+{
+  "derived": {
+    "dev_timeout_wilson_upper": 0.24249400665524085,
+    "all_timeout_wilson_upper": 0.13797620467498017,
+    "dev_timeout_roots": 3,
+    "dev_retry_spread": 22.68095238095238,
+    "all_retry_spread": 19.390785907859083,
+    "rank_disagreement_class": "other",
+    "n_classes_reranked": 3,
+    "rank_in_dev_fit": 4,
+    "rank_in_all_fit": 2,
+    "frozen_class_order": [
+      "unknown_identifier",
+      "unsolved_goals",
+      "linarith_failed",
+      "other",
+      "simp_failed",
+      "truncated",
+      "timeout"
+    ],
+    "frozen_matches_dev_fit": true,
+    "frozen_matches_all_fit": false
+  },
+  "purpose": "settle whether v8 Table 3 is a labelling error or a held-out leak",
+  "split": {
+    "source": "predecessor data/scheduler_split.json",
+    "seed": 30,
+    "stratified_by": "stage1_error_class",
+    "n_dev": 43,
+    "n_held_out": 40
+  },
+  "reproduces_published_83_root_table": true,
+  "reproduction_detail": {
+    "other": {
+      "published": [
+        6,
+        24,
+        9
+      ],
+      "recomputed": [
+        6,
+        24,
+        9
+      ],
+      "match": true
+    },
+    "truncated": {
+      "published": [
+        32,
+        128,
+        15
+      ],
+      "recomputed": [
+        32,
+        128,
+        15
+      ],
+      "match": true
+    },
+    "timeout": {
+      "published": [
+        6,
+        24,
+        0
+      ],
+      "recomputed": [
+        6,
+        24,
+        0
+      ],
+      "match": true
+    }
+  },
+  "ledger_all83": [
+    {
+      "class": "unknown_identifier",
+      "theorems": 2,
+      "attempts": 8,
+      "rescues": 4,
+      "rescue_probability": 0.5,
+      "mean_completion_tokens": 1968,
+      "rescues_per_token_e5": 25.41
+    },
+    {
+      "class": "other",
+      "theorems": 6,
+      "attempts": 24,
+      "rescues": 9,
+      "rescue_probability": 0.375,
+      "mean_completion_tokens": 6194,
+      "rescues_per_token_e5": 6.05
+    },
+    {
+      "class": "unsolved_goals",
+      "theorems": 18,
+      "attempts": 72,
+      "rescues": 14,
+      "rescue_probability": 0.194,
+      "mean_completion_tokens": 5769,
+      "rescues_per_token_e5": 3.37
+    },
+    {
+      "class": "linarith_failed",
+      "theorems": 17,
+      "attempts": 68,
+      "rescues": 12,
+      "rescue_probability": 0.176,
+      "mean_completion_tokens": 7294,
+      "rescues_per_token_e5": 2.42
+    },
+    {
+      "class": "simp_failed",
+      "theorems": 2,
+      "attempts": 8,
+      "rescues": 1,
+      "rescue_probability": 0.125,
+      "mean_completion_tokens": 7104,
+      "rescues_per_token_e5": 1.76
+    },
+    {
+      "class": "truncated",
+      "theorems": 32,
+      "attempts": 128,
+      "rescues": 15,
+      "rescue_probability": 0.117,
+      "mean_completion_tokens": 8944,
+      "rescues_per_token_e5": 1.31
+    },
+    {
+      "class": "timeout",
+      "theorems": 6,
+      "attempts": 24,
+      "rescues": 0,
+      "rescue_probability": 0.0,
+      "mean_completion_tokens": 9040,
+      "rescues_per_token_e5": 0.0
+    },
+    {
+      "class": "all",
+      "theorems": 83,
+      "attempts": 332,
+      "rescues": 55,
+      "rescue_probability": 0.166,
+      "mean_completion_tokens": 7513,
+      "rescues_per_token_e5": 2.2
+    }
+  ],
+  "ledger_dev43": [
+    {
+      "class": "unknown_identifier",
+      "theorems": 1,
+      "attempts": 4,
+      "rescues": 1,
+      "rescue_probability": 0.25,
+      "mean_completion_tokens": 2380,
+      "rescues_per_token_e5": 10.51
+    },
+    {
+      "class": "unsolved_goals",
+      "theorems": 9,
+      "attempts": 36,
+      "rescues": 10,
+      "rescue_probability": 0.278,
+      "mean_completion_tokens": 6350,
+      "rescues_per_token_e5": 4.37
+    },
+    {
+      "class": "linarith_failed",
+      "theorems": 9,
+      "attempts": 36,
+      "rescues": 8,
+      "rescue_probability": 0.222,
+      "mean_completion_tokens": 7339,
+      "rescues_per_token_e5": 3.03
+    },
+    {
+      "class": "other",
+      "theorems": 3,
+      "attempts": 12,
+      "rescues": 2,
+      "rescue_probability": 0.167,
+      "mean_completion_tokens": 8322,
+      "rescues_per_token_e5": 2.0
+    },
+    {
+      "class": "truncated",
+      "theorems": 17,
+      "attempts": 68,
+      "rescues": 3,
+      "rescue_probability": 0.044,
+      "mean_completion_tokens": 9526,
+      "rescues_per_token_e5": 0.46
+    },
+    {
+      "class": "simp_failed",
+      "theorems": 1,
+      "attempts": 4,
+      "rescues": 0,
+      "rescue_probability": 0.0,
+      "mean_completion_tokens": 8218,
+      "rescues_per_token_e5": 0.0
+    },
+    {
+      "class": "timeout",
+      "theorems": 3,
+      "attempts": 12,
+      "rescues": 0,
+      "rescue_probability": 0.0,
+      "mean_completion_tokens": 10008,
+      "rescues_per_token_e5": 0.0
+    },
+    {
+      "class": "all",
+      "theorems": 43,
+      "attempts": 172,
+      "rescues": 24,
+      "rescue_probability": 0.14,
+      "mean_completion_tokens": 8156,
+      "rescues_per_token_e5": 1.71
+    }
+  ],
+  "ledger_heldout40": [
+    {
+      "class": "unknown_identifier",
+      "theorems": 1,
+      "attempts": 4,
+      "rescues": 3,
+      "rescue_probability": 0.75,
+      "mean_completion_tokens": 1556,
+      "rescues_per_token_e5": 48.19
+    },
+    {
+      "class": "other",
+      "theorems": 3,
+      "attempts": 12,
+      "rescues": 7,
+      "rescue_probability": 0.583,
+      "mean_completion_tokens": 4067,
+      "rescues_per_token_e5": 14.34
+    },
+    {
+      "class": "simp_failed",
+      "theorems": 1,
+      "attempts": 4,
+      "rescues": 1,
+      "rescue_probability": 0.25,
+      "mean_completion_tokens": 5991,
+      "rescues_per_token_e5": 4.17
+    },
+    {
+      "class": "truncated",
+      "theorems": 15,
+      "attempts": 60,
+      "rescues": 12,
+      "rescue_probability": 0.2,
+      "mean_completion_tokens": 8286,
+      "rescues_per_token_e5": 2.41
+    },
+    {
+      "class": "unsolved_goals",
+      "theorems": 9,
+      "attempts": 36,
+      "rescues": 4,
+      "rescue_probability": 0.111,
+      "mean_completion_tokens": 5189,
+      "rescues_per_token_e5": 2.14
+    },
+    {
+      "class": "linarith_failed",
+      "theorems": 8,
+      "attempts": 32,
+      "rescues": 4,
+      "rescue_probability": 0.125,
+      "mean_completion_tokens": 7243,
+      "rescues_per_token_e5": 1.73
+    },
+    {
+      "class": "timeout",
+      "theorems": 3,
+      "attempts": 12,
+      "rescues": 0,
+      "rescue_probability": 0.0,
+      "mean_completion_tokens": 8072,
+      "rescues_per_token_e5": 0.0
+    },
+    {
+      "class": "all",
+      "theorems": 40,
+      "attempts": 160,
+      "rescues": 31,
+      "rescue_probability": 0.194,
+      "mean_completion_tokens": 6822,
+      "rescues_per_token_e5": 2.84
+    }
+  ],
+  "class_order_fit_on_dev43": [
+    "unknown_identifier",
+    "unsolved_goals",
+    "linarith_failed",
+    "other",
+    "simp_failed",
+    "truncated",
+    "timeout"
+  ],
+  "class_order_fit_on_all83": [
+    "unknown_identifier",
+    "other",
+    "unsolved_goals",
+    "linarith_failed",
+    "simp_failed",
+    "truncated",
+    "timeout"
+  ],
+  "class_order_identical": false,
+  "rho_dev43": {
+    "truncated": 1e-05,
+    "other": 2e-05,
+    "linarith_failed": 3e-05,
+    "unsolved_goals": 4e-05,
+    "simp_failed": 1e-05,
+    "timeout": 1e-05,
+    "unknown_identifier": 7e-05
+  },
+  "rho_all83": {
+    "truncated": 1e-05,
+    "other": 5e-05,
+    "linarith_failed": 2e-05,
+    "unsolved_goals": 3e-05,
+    "simp_failed": 2e-05,
+    "timeout": 0.0,
+    "unknown_identifier": 0.00017
+  }
+}

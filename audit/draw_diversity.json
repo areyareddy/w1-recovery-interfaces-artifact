@@ -1,0 +1,225 @@
+{
+  "allocation": {
+    "all_three": 6,
+    "budget_tokens": 12288,
+    "confirmatory": true,
+    "contrasts": [
+      {
+        "both": 7,
+        "ci95": [
+          -0.075,
+          0.175
+        ],
+        "contrast": "split2-long",
+        "effect": 0.05,
+        "holm_family": "allocation_primary",
+        "n": 40,
+        "p_exact_mcnemar": 0.6875,
+        "p_holm": 1.0,
+        "x_only": 4,
+        "y_only": 2
+      },
+      {
+        "both": 6,
+        "ci95": [
+          -0.125,
+          0.075
+        ],
+        "contrast": "split3-long",
+        "effect": -0.025,
+        "holm_family": "allocation_primary",
+        "n": 40,
+        "p_exact_mcnemar": 1.0,
+        "p_holm": 1.0,
+        "x_only": 2,
+        "y_only": 3
+      },
+      {
+        "both": 8,
+        "ci95": [
+          -0.175,
+          0.0
+        ],
+        "contrast": "split3-split2",
+        "effect": -0.075,
+        "n": 40,
+        "p_exact_mcnemar": 0.25,
+        "x_only": 0,
+        "y_only": 3
+      }
+    ],
+    "source": "audit/allocation_analysis.json",
+    "spec": "spec/ALLOCATION_SPEC.md",
+    "union_any_policy": 13,
+    "unique": {
+      "long": 2,
+      "split2": 2,
+      "split3": 0
+    },
+    "verified_roots": {
+      "long": 9,
+      "split2": 11,
+      "split3": 8
+    }
+  },
+  "contrasts": [
+    {
+      "basis": "pass@2 (union of the two seed blocks)",
+      "both": 2,
+      "ci95": [
+        0.175,
+        0.45
+      ],
+      "contrast": "A-C",
+      "effect": 0.3,
+      "holm_family": null,
+      "n": 40,
+      "p_exact_mcnemar": 0.000488,
+      "tier": "exploratory",
+      "x_only": 12,
+      "x_verified": 14,
+      "y_only": 0,
+      "y_verified": 2
+    },
+    {
+      "basis": "pass@2 (union of the two seed blocks)",
+      "both": 6,
+      "ci95": [
+        0.05,
+        0.325
+      ],
+      "contrast": "A-B",
+      "effect": 0.175,
+      "holm_family": null,
+      "n": 40,
+      "p_exact_mcnemar": 0.039062,
+      "tier": "exploratory",
+      "x_only": 8,
+      "x_verified": 14,
+      "y_only": 1,
+      "y_verified": 7
+    },
+    {
+      "basis": "pass@2 (union of the two seed blocks)",
+      "both": 1,
+      "ci95": [
+        0.0,
+        0.25
+      ],
+      "contrast": "B-D",
+      "effect": 0.125,
+      "holm_family": null,
+      "n": 40,
+      "p_exact_mcnemar": 0.125,
+      "tier": "exploratory",
+      "x_only": 6,
+      "x_verified": 7,
+      "y_only": 1,
+      "y_verified": 2
+    },
+    {
+      "basis": "pass@2 (union of the two seed blocks)",
+      "both": 2,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "contrast": "C-D",
+      "effect": 0.0,
+      "holm_family": null,
+      "n": 40,
+      "p_exact_mcnemar": 1.0,
+      "tier": "exploratory",
+      "x_only": 0,
+      "x_verified": 2,
+      "y_only": 0,
+      "y_verified": 2
+    }
+  ],
+  "n_roots": 40,
+  "new_generation": false,
+  "note": "pass@2 is the union of the two seed blocks: two draws at the same full budget on the same 40 theorems. Sampling diversity only; the theorem set is unchanged, so this does not widen external validity.",
+  "per_arm": {
+    "A": {
+      "block1": 9,
+      "block2": 9,
+      "both_blocks": 4,
+      "gain_over_best_block": 5,
+      "gain_over_block1": 5,
+      "new_from_block1": 5,
+      "new_from_block2": 5,
+      "pass_at_2": 14,
+      "union_roots": [
+        "aime_1984_p1",
+        "aime_1987_p5",
+        "aime_1997_p9",
+        "algebra_2varlineareq_fp3zeq11_3tfm1m5zeqn68_feqn10_zeq7",
+        "amc12_2001_p21",
+        "amc12b_2020_p6",
+        "mathd_algebra_188",
+        "mathd_algebra_313",
+        "mathd_numbertheory_234",
+        "mathd_numbertheory_235",
+        "mathd_numbertheory_277",
+        "mathd_numbertheory_296",
+        "numbertheory_notequiv2i2jasqbsqdiv8",
+        "numbertheory_x5neqy2p4"
+      ]
+    },
+    "B": {
+      "block1": 4,
+      "block2": 6,
+      "both_blocks": 3,
+      "gain_over_best_block": 1,
+      "gain_over_block1": 3,
+      "new_from_block1": 1,
+      "new_from_block2": 3,
+      "pass_at_2": 7,
+      "union_roots": [
+        "aime_1997_p9",
+        "algebra_2varlineareq_fp3zeq11_3tfm1m5zeqn68_feqn10_zeq7",
+        "mathd_algebra_188",
+        "mathd_numbertheory_235",
+        "mathd_numbertheory_277",
+        "mathd_numbertheory_427",
+        "numbertheory_x5neqy2p4"
+      ]
+    },
+    "C": {
+      "block1": 2,
+      "block2": 1,
+      "both_blocks": 1,
+      "gain_over_best_block": 0,
+      "gain_over_block1": 0,
+      "new_from_block1": 1,
+      "new_from_block2": 0,
+      "pass_at_2": 2,
+      "union_roots": [
+        "mathd_numbertheory_234",
+        "mathd_numbertheory_277"
+      ]
+    },
+    "D": {
+      "block1": 1,
+      "block2": 1,
+      "both_blocks": 0,
+      "gain_over_best_block": 1,
+      "gain_over_block1": 1,
+      "new_from_block1": 1,
+      "new_from_block2": 1,
+      "pass_at_2": 2,
+      "union_roots": [
+        "mathd_numbertheory_234",
+        "mathd_numbertheory_277"
+      ]
+    }
+  },
+  "registered": false,
+  "second_draw_gain": {
+    "A": 5,
+    "B": 3,
+    "C": 0,
+    "D": 1
+  },
+  "tier": "exploratory"
+}

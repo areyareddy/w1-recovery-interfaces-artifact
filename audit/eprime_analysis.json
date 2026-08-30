@@ -1,0 +1,112 @@
+{
+  "anchoring": {
+    "mean_S_A_own": 0.2569,
+    "mean_S_C_own": 0.5961,
+    "mean_S_Ep_own": 0.4501,
+    "n": 21,
+    "null_band": {
+      "null_band_max": 0.18081,
+      "null_band_p50": 0.089985,
+      "null_band_p95": 0.15417
+    }
+  },
+  "cohort": "eval_eprime",
+  "completion_tokens": {
+    "mean": 3908.1,
+    "median": 3333
+  },
+  "contrasts": [
+    {
+      "both": 0,
+      "ci95": [
+        0.0,
+        0.2381
+      ],
+      "contrast": "Ep-C",
+      "effect": 0.0952,
+      "holm_family": null,
+      "n": 21,
+      "p_exact_mcnemar": 0.5,
+      "tier": "exploratory",
+      "x_only": 2,
+      "x_verified": 2,
+      "y_only": 0,
+      "y_verified": 0
+    },
+    {
+      "both": 2,
+      "ci95": [
+        -0.2857,
+        0.0
+      ],
+      "contrast": "Ep-A",
+      "effect": -0.1429,
+      "holm_family": null,
+      "n": 21,
+      "p_exact_mcnemar": 0.25,
+      "tier": "exploratory",
+      "x_only": 0,
+      "x_verified": 2,
+      "y_only": 3,
+      "y_verified": 5
+    },
+    {
+      "both": 0,
+      "ci95": [
+        -0.1905,
+        0.1905
+      ],
+      "contrast": "Ep-E",
+      "effect": 0.0,
+      "holm_family": null,
+      "n": 21,
+      "p_exact_mcnemar": 1.0,
+      "tier": "exploratory",
+      "x_only": 2,
+      "x_verified": 2,
+      "y_only": 2,
+      "y_verified": 2
+    }
+  ],
+  "n": 21,
+  "outcome_states": {
+    "lean_failed": 17,
+    "truncated": 2,
+    "verified": 2
+  },
+  "registered": false,
+  "roots": [
+    "aime_1984_p1",
+    "aime_1987_p5",
+    "algebra_2varlineareq_fp3zeq11_3tfm1m5zeqn68_feqn10_zeq7",
+    "algebra_cubrtrp1oncubrtreq3_rcubp1onrcubeq5778",
+    "algebra_others_exirrpowirrrat",
+    "amc12_2001_p21",
+    "amc12a_2003_p5",
+    "amc12a_2019_p12",
+    "amc12b_2002_p4",
+    "amc12b_2020_p6",
+    "induction_pprime_pdvdapowpma",
+    "mathd_algebra_188",
+    "mathd_algebra_313",
+    "mathd_numbertheory_135",
+    "mathd_numbertheory_235",
+    "mathd_numbertheory_296",
+    "mathd_numbertheory_343",
+    "mathd_numbertheory_495",
+    "numbertheory_3pow2pownm1mod2pownp3eq2pownp2",
+    "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown",
+    "numbertheory_notequiv2i2jasqbsqdiv8"
+  ],
+  "spec": "spec/EPRIME_SPEC.md",
+  "subset": "matched native-feedback roots (same 21 as arm E)",
+  "tier": "exploratory",
+  "verified_counts": {
+    "A": 5,
+    "B": 1,
+    "C": 0,
+    "D": 0,
+    "E": 2,
+    "Ep": 2
+  }
+}

@@ -1,0 +1,147 @@
+### Proof and Analysis
+
+**Problem Analysis:**
+We need to find the cardinality of the set `S` defined as:
+- `S = {n ∈ ℕ | 1000 ≤ n ≤ 9999, all digits of n are even, and 5 divides n}`.
+
+However, the Lean definition is slightly different:
+- `S = {n ∈ ℕ | 1000 ≤ n ≤ 9999, all digits of n in base 10 are even, and 5 divides n}`.
+
+But note that `Nat.digits 10 n` gives the list of digits of `n` in base 10, starting with the least significant digit. For example, `Nat.digits 10 1234 = [4, 3, 2, 1]`. 
+
+The condition that all digits are even means that every digit in the list `Nat.digits 10 n` must be even. However, the list `Nat.digits 10 n` may not have the same length as the number of digits in `n`. For example:
+- `Nat.digits 10 100 = [0, 0, 1]`, which has an odd digit (`1`), so `100` is not in `S`.
+- `Nat.digits 10 0 = [0]`, but `0` is not in the range `1000 ≤ n ≤ 9999`, so this is irrelevant.
+
+But notice that the condition is `∀ d : ℕ, d ∈ Nat.digits 10 n → Even d`. If `n` has trailing zeros, they will appear as zeros in `Nat.digits 10 n`. For example:
+- `Nat.digits 10 1230 = [0, 3, 2, 1]`, and `1230` has an odd digit (`1`), so it is not in `S`.
+- `Nat.digits 10 1200 = [0, 0, 2, 1]`, and `1200` has an odd digit (`1`), so it is not in `S`.
+- `Nat.digits 10 1000 = [0, 0, 0, 1]`, and `1000` has an odd digit (`1`), so it is not in `S`.
+- `Nat.digits 10 2000 = [0, 0, 0, 2]`, and all digits are even, and `5 ∣ 2000`, so `2000` is in `S`.
+
+But `Nat.digits 10 n` will include all digits, even leading zeros. For example:
+- `Nat.digits 10 1000 = [0, 0, 0, 1]`, which has an odd digit (`1`).
+- `Nat.digits 10 100 = [0, 0, 1]`, which has an odd digit (`1`).
+- `Nat.digits 10 0 = [0]`, which is fine if `n = 0` is in the range, but it is not (`1000 ≤ 0` is false).
+
+But the condition is not `n` has all even digits, but rather that every digit in `Nat.digits 10 n` is even. So for `n = 2000`, `Nat.digits 10 n = [0, 0, 0, 2]`, and all digits are even. For `n = 5000`, `Nat.digits 10 n = [0, 0, 0, 5]`, and `5` is not even, so `5000` is not in `S`.
+
+But notice that the condition is `∀ d : ℕ, d ∈ Nat.digits 10 n → Even d`. So if `n` has a digit that is not even, it is not in `S`. But `Nat.digits 10 n` will include all digits of `n` in base 10, including trailing zeros. For example:
+- `n = 1000`: `Nat.digits 10 n = [0, 0, 0, 1]`, and `1` is not even.
+- `n = 2000`: `Nat.digits 10 n = [0, 0, 0, 2]`, and all digits are even.
+- `n = 100`: `Nat.digits 10 n = [0, 0, 1]`, and `1` is not even.
+- `n = 5000`: `Nat.digits 10 n = [0, 0, 0, 5]`, and `5` is not even.
+
+But notice that if `n` has a trailing zero, then `Nat.digits 10 n` will have a `0` at the beginning. For example:
+- `n = 1000`: `Nat.digits 10 n = [0, 0, 0, 1]`, and `1` is not even.
+- `n = 100`: `Nat.digits 10 n = [0, 0, 1]`, and `1` is not even.
+- `n = 10000`: `Nat.digits 10 n = [0, 0, 0, 0, 1]`, but `n = 10000` is not in the range `1000 ≤ n ≤ 9999`, so this is irrelevant.
+
+But `n` is a 4-digit number, so `n` is in `[1000, 9999]`. The number of digits in `n` is 4, and `Nat.digits 10 n` will have 4 digits (since `n` is a 4-digit number). For example:
+- `n = 1000`: `Nat.digits 10 n = [0, 0, 0, 1]`, and `1` is not even.
+- `n = 2000`: `Nat.digits 10 n = [0, 0, 0, 2]`, and all digits are even.
+- `n = 100`: `Nat.digits 10 n = [0, 0, 1]`, but `n` is not a 4-digit number, so this is irrelevant.
+
+But the condition is that all digits of `n` in base 10 are even. The Lean definition is `∀ d : ℕ, d ∈ Nat.digits 10 n → Even d`, which means that all digits in the list `Nat.digits 10 n` are even. For `n` in `[1000, 9999]`, `Nat.digits 10 n` will have exactly 4 digits (since `n` is a 4-digit number). 
+
+But note that the digits in `Nat.digits 10 n` are reversed. For example:
+- `n = 1234`: `Nat.digits 10 n = [4, 3, 2, 1]`, so the digits are `1, 2, 3, 4`.
+But the condition is that all digits in `Nat.digits 10 n` are even, so `1` is not even, so `1234` is not in `S`.
+- `n = 2000`: `Nat.digits 10 n = [0, 0, 0, 2]`, and all digits are even.
+
+But notice that `n` must have all digits even. Since `n` is a 4-digit number, the digits are `a, b, c, d` where `n = 1000a + 100b + 10c + d`, and `a ∈ {1, ..., 9}`, `b, c, d ∈ {0, ..., 9}`. The condition that all digits are even means `a, b, c, d` are even, and `a` is at least 1 (since `n ≥ 1000`). But `a` must be even and `a ≥ 1`, so `a ∈ {2, 4, 6, 8}`. The digits `b, c, d` must also be even, so `b, c, d ∈ {0, 2, 4, 6, 8}`.
+
+The condition `5 ∣ n` means that the last digit `d` must be `0` or `5`. But `d` must also be even, so `d = 0` is the only possibility (`d = 5` is not even). Therefore, `d = 0`.
+
+Now, `n = 1000a + 100b + 10c + d = 1000a + 100b + 10c`. We need to count the number of triples `(a, b, c)` where `a ∈ {2, 4, 6, 8}`, `b, c ∈ {0, 2, 4, 6, 8}`, and `n = 1000a + 100b + 10c` is in `[1000, 9999]` (but this is automatically true since `a ≥ 2` and `b, c ≥ 0`). The number of choices for `a` is 4, for `b` is 5, and for `c` is 5, so the total number of numbers is `4 * 5 * 5 = 100`.
+
+But we must also ensure that `n ≤ 9999`, but this is automatically satisfied since `a ≤ 8`, `b ≤ 8`, `c ≤ 8` implies `n ≤ 8000 + 800 + 80 = 8880 ≤ 9999`.
+
+**Conclusion:**
+The set `S` consists of all numbers of the form `n = 1000a + 100b + 10c` where `a ∈ {2, 4, 6, 8}`, `b, c ∈ {0, 2, 4, 6, 8}`, and `d = 0` (but `d` is not a variable here, it is fixed to `0` because `5 ∣ n` and `d` is even implies `d = 0`). The number of such numbers is `4 * 5 * 5 = 100`.
+
+However, the Lean definition is `∀ d : ℕ, d ∈ Nat.digits 10 n → Even d`, which means that all digits of `n` in base 10 are even, not just the last digit. But for `n` in `[1000, 9999]`, `Nat.digits 10 n` will have exactly 4 digits, and the condition is that all 4 digits are even. 
+
+But notice that if `n` is a 4-digit number, say `n = 1000a + 100b + 10c + d`, where `a ∈ {1, ..., 9}`, `b, c, d ∈ {0, ..., 9}`, then `Nat.digits 10 n = [d, c, b, a]`. The condition that all digits are even is that `d, c, b, a` are even. But `a` must be even and `a ≥ 1`, so `a ∈ {2, 4, 6, 8}`. The digits `b, c, d` must also be even, so `b, c, d ∈ {0, 2, 4, 6, 8}`. 
+
+But `n` must also be divisible by 5, so the last digit `d` must be `0` or `5`. But `d` is even, so `d = 0`. Therefore, `n` must be of the form `n = 1000a + 100b + 10c` where `a ∈ {2, 4, 6, 8}`, `b, c ∈ {0, 2, 4, 6, 8}`, and `d = 0`.
+
+But `n` must also satisfy `1000 ≤ n ≤ 9999`, which is automatically satisfied since `a ≥ 2` and `b, c, d ≥ 0` implies `n ≥ 2000 ≥ 1000`, and `a ≤ 8`, `b, c ≤ 8` implies `n ≤ 8000 + 800 + 80 = 8880 ≤ 9999`.
+
+Thus, the number of such numbers is `4 * 5 * 5 = 100`.
+
+**Formal Proof Sketch:**
+1. Define the set `S` as all numbers `n` such that `1000 ≤ n ≤ 9999`, all digits of `n` are even, and `5 ∣ n`.
+2. Show that `n` must be of the form `n = 1000a + 100b + 10c` where `a ∈ {2, 4, 6, 8}`, `b, c ∈ {0, 2, 4, 6, 8}`, and `d = 0` (but `d` is not a variable here).
+3. Count the number of such numbers as `4 * 5 * 5 = 100`.
+
+But in Lean, `Nat.digits 10 n` gives the digits in reverse order, so `Nat.digits 10 n = [d, c, b, a]` for `n = 1000a + 100b + 10c + d`. The condition `∀ d : ℕ, d ∈ Nat.digits 10 n → Even d` is that `d, c, b, a` are even. 
+
+But we can also note that the condition `∀ d : ℕ, d ∈ Nat.digits 10 n → Even d` is equivalent to the condition that all digits of `n` in base 10 are even. 
+
+But in Lean, `n` is a 4-digit number, so `Nat.digits 10 n` has exactly 4 digits, and the condition is that all 4 digits are even. 
+
+But the condition `5 ∣ n` is that the last digit is `0` or `5`, but since the last digit must be even, it must be `0`. 
+
+Thus, the number of such numbers is `4 * 5 * 5 = 100`.
+
+**Intermediate Steps:**
+1. Define `S` as the set of numbers `n` such that `1000 ≤ n ≤ 9999`, all digits of `n` are even, and `5 ∣ n`.
+2. Show that `n` must be of the form `n = 1000a + 100b + 10c` where `a ∈ {2, 4, 6, 8}`, `b, c ∈ {0, 2, 4, 6, 8}`, and `d = 0`.
+3. Count the number of such numbers as `4 * 5 * 5 = 100`.
+
+### Abstract Plan
+
+1. **Understand the set `S`:**
+   - `S` consists of numbers `n` such that `1000 ≤ n ≤ 9999`, all digits of `n` are even, and `5 ∣ n`.
+
+2. **Form of `n`:**
+   - Since `n` is a 4-digit number, write `n = 1000a + 100b + 10c + d` where `a ∈ {1, ..., 9}` and `b, c, d ∈ {0, ..., 9}`.
+   - The condition that all digits are even implies `a, b, c, d` are even, and `a ≥ 1`.
+   - The condition `5 ∣ n` implies `d = 0` or `d = 5`, but `d` is even, so `d = 0`.
+   - Thus, `n = 1000a + 100b + 10c` with `a ∈ {2, 4, 6, 8}`, `b, c ∈ {0, 2, 4, 6, 8}`.
+
+3. **Count the numbers:**
+   - Number of choices for `a`: 4 (`2, 4, 6, 8`).
+   - Number of choices for `b`: 5 (`0, 2, 4, 6, 8`).
+   - Number of choices for `c`: 5 (`0, 2, 4, 6, 8`).
+   - Total numbers: `4 * 5 * 5 = 100`.
+
+4. **Verify the range:**
+   - The smallest number is `2000` (`a = 2`, `b = c = 0`), and the largest is `8880` (`a = 8`, `b = c = 8`), which is within `[1000, 9999]`.
+
+### Lean 4 Proof with `have` Statements
+
+```lean4
+theorem amc12a_2020_p4 (S : Finset ℕ)
+    (h₀ : ∀ n : ℕ, n ∈ S ↔ 1000 ≤ n ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n) :
+    S.card = 100 := by
+  have h₁ : S = Finset.filter (fun n => 1000 ≤ n ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n) (Finset.Icc 1000 9999) := by sorry
+  have h₂ : S.card = 100 := by sorry
+  sorry
+```
+
+### Complete Lean 4 Proof
+
+```lean4
+theorem amc12a_2020_p4 (S : Finset ℕ)
+    (h₀ : ∀ n : ℕ, n ∈ S ↔ 1000 ≤ n ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n) :
+    S.card = 100 := by
+  have h₁ : S = Finset.filter (fun n => 1000 ≤ n ∧ n ≤ 9999 ∧ (∀ d : ℕ, d ∈ Nat.digits 10 n → Even d) ∧ 5 ∣ n) (Finset.Icc 1000 9999) := by
+    apply Finset.ext
+    intro n
+    simp only [Finset.mem_filter, Finset.mem_Icc, h₀]
+    <;>
+    aesop
+  
+  have h₂ : S.card = 100 := by
+    rw [h₁]
+    -- We need to count the number of 4-digit numbers with all even digits and divisible by 5.
+    -- The numbers are of the form n = 1000a + 100b + 10c where a ∈ {2, 4, 6, 8}, b, c ∈ {0, 2, 4, 6, 8}, and d = 0.
+    -- There are 4 choices for a, 5 choices for b, and 5 choices for c, giving 4 * 5 * 5 = 100 numbers.
+    rfl
+    <;>
+    decide
+  
+  apply h₂
+```

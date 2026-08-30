@@ -1,0 +1,32 @@
+
+Error 1:
+
+Corresponding Code:
+```lean4
+theorem mathd_algebra_313 (v i z : ℂ) (h₀ : v = i * z) (h₁ : v = 1 + Complex.I)
+    (h₂ : z = 2 - Complex.I) : i = 1 / 5 + 3 / 5 * Complex.I := by
+  have h_contradiction : False := <error>by
+    have h₃ : v = i * z := h₀
+    have h₄ : v = 1 + Complex.I := h₁
+    have h₅ : z = 2 - Complex.I := h₂
+    have h₆ : i * z = 1 + Complex.I := by
+      rw [h₃] at h₄
+
+      ... --[Truncated]-- ...
+      })</error>
+  
+
+```
+
+Error Message: unsolved goals
+v i z : ℂ
+h₀ : v = i * z
+h₁ : v = 1 + Complex.I
+h₂ : z = 2 - Complex.I
+h₃ : v = i * z
+h₄ : v = 1 + Complex.I
+h₅ : z = 2 - Complex.I
+h₆ : i * (2 - Complex.I) = 1 + Complex.I
+h₈ : i * (2 - Complex.I) = 2 * i - i * Complex.I
+h₇ h₉ : i.re * 2 + i.im = 1 ∧ -i.re + i.im * 2 = 1
+⊢ False

@@ -1,0 +1,8 @@
+Similar Lean-verified proofs commonly used:
+- induction
+- norm_num
+- field_simp
+- nlinarith
+
+These are optional suggestions; use only when applicable, and select exact tactics and arguments from the current theorem.
+

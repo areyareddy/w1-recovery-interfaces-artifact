@@ -1,0 +1,454 @@
+{
+  "contrasts": [
+    {
+      "cohort": "primary_eval",
+      "contrast": "C-A",
+      "n_both_reached": 26,
+      "n_pairs": 40,
+      "trunc_ci95": [
+        -0.225,
+        0.075
+      ],
+      "trunc_effect": -0.075,
+      "trunc_p": 0.548828,
+      "trunc_x_only": 4,
+      "trunc_y_only": 7,
+      "ver_p_given_both_reached": 0.0625,
+      "ver_x_only": 0,
+      "ver_y_only": 5
+    },
+    {
+      "cohort": "primary_eval",
+      "contrast": "D-B",
+      "n_both_reached": 22,
+      "n_pairs": 40,
+      "trunc_ci95": [
+        -0.3,
+        0.05
+      ],
+      "trunc_effect": -0.125,
+      "trunc_p": 0.266846,
+      "trunc_x_only": 4,
+      "trunc_y_only": 9,
+      "ver_p_given_both_reached": 0.5,
+      "ver_x_only": 0,
+      "ver_y_only": 2
+    },
+    {
+      "cohort": "eval_block2",
+      "contrast": "C-A",
+      "n_both_reached": 26,
+      "n_pairs": 40,
+      "trunc_ci95": [
+        -0.025,
+        0.25
+      ],
+      "trunc_effect": 0.1,
+      "trunc_p": 0.289062,
+      "trunc_x_only": 6,
+      "trunc_y_only": 2,
+      "ver_p_given_both_reached": 0.015625,
+      "ver_x_only": 0,
+      "ver_y_only": 7
+    },
+    {
+      "cohort": "eval_block2",
+      "contrast": "D-B",
+      "n_both_reached": 26,
+      "n_pairs": 40,
+      "trunc_ci95": [
+        -0.175,
+        0.175
+      ],
+      "trunc_effect": 0.0,
+      "trunc_p": 1.0,
+      "trunc_x_only": 6,
+      "trunc_y_only": 6,
+      "ver_p_given_both_reached": 0.21875,
+      "ver_x_only": 1,
+      "ver_y_only": 5
+    },
+    {
+      "cohort": "full_pool_dev",
+      "contrast": "C-A",
+      "n_both_reached": 21,
+      "n_pairs": 43,
+      "trunc_ci95": [
+        -0.4651,
+        -0.1395
+      ],
+      "trunc_effect": -0.3023,
+      "trunc_p": 0.00235,
+      "trunc_x_only": 2,
+      "trunc_y_only": 15,
+      "ver_p_given_both_reached": 0.0625,
+      "ver_x_only": 0,
+      "ver_y_only": 5
+    },
+    {
+      "cohort": "full_pool_dev",
+      "contrast": "D-B",
+      "n_both_reached": 24,
+      "n_pairs": 43,
+      "trunc_ci95": [
+        -0.2558,
+        0.0698
+      ],
+      "trunc_effect": -0.093,
+      "trunc_p": 0.387695,
+      "trunc_x_only": 4,
+      "trunc_y_only": 8,
+      "ver_p_given_both_reached": 0.03125,
+      "ver_x_only": 0,
+      "ver_y_only": 6
+    }
+  ],
+  "deductive": [
+    {
+      "arm": "D",
+      "branch_error_class": "linarith_failed",
+      "branch_outcome": "lean_failed",
+      "cohort": "eval_block2",
+      "nondeterministic_class": false,
+      "root_id": "amc12_2001_p21",
+      "verified": 0
+    },
+    {
+      "arm": "C",
+      "branch_error_class": "other",
+      "branch_outcome": "lean_failed",
+      "cohort": "primary_eval",
+      "nondeterministic_class": false,
+      "root_id": "algebra_2varlineareq_fp3zeq11_3tfm1m5zeqn68_feqn10_zeq7",
+      "verified": 0
+    },
+    {
+      "arm": "C",
+      "branch_error_class": "linarith_failed",
+      "branch_outcome": "lean_failed",
+      "cohort": "primary_eval",
+      "nondeterministic_class": false,
+      "root_id": "amc12_2001_p21",
+      "verified": 0
+    },
+    {
+      "arm": "D",
+      "branch_error_class": "linarith_failed",
+      "branch_outcome": "lean_failed",
+      "cohort": "primary_eval",
+      "nondeterministic_class": false,
+      "root_id": "amc12_2001_p21",
+      "verified": 0
+    },
+    {
+      "arm": "C",
+      "branch_error_class": "other",
+      "branch_outcome": "lean_failed",
+      "cohort": "primary_eval",
+      "nondeterministic_class": false,
+      "root_id": "mathd_numbertheory_235",
+      "verified": 0
+    },
+    {
+      "arm": "D",
+      "branch_error_class": "other",
+      "branch_outcome": "lean_failed",
+      "cohort": "primary_eval",
+      "nondeterministic_class": false,
+      "root_id": "mathd_numbertheory_235",
+      "verified": 0
+    }
+  ],
+  "deficit_share": {
+    "eval_block2": {
+      "a_only_discordant": 8,
+      "byte_identical_C": 0,
+      "byte_identical_among_a_only": 0,
+      "roots": [],
+      "share_of_lost_rescues": 0.0
+    },
+    "full_pool_dev": {
+      "a_only_discordant": 5,
+      "byte_identical_C": 0,
+      "byte_identical_among_a_only": 0,
+      "roots": [],
+      "share_of_lost_rescues": 0.0
+    },
+    "primary_eval": {
+      "a_only_discordant": 7,
+      "byte_identical_C": 3,
+      "byte_identical_among_a_only": 2,
+      "roots": [
+        "algebra_2varlineareq_fp3zeq11_3tfm1m5zeqn68_feqn10_zeq7",
+        "mathd_numbertheory_235"
+      ],
+      "share_of_lost_rescues": 0.2857
+    }
+  },
+  "error_classes": {
+    "eval_block2.A": {
+      "linarith_failed": 5,
+      "other": 2,
+      "simp_failed": 1,
+      "timeout": 5,
+      "type_mismatch": 2,
+      "unknown_identifier": 1,
+      "unsolved_goals": 7
+    },
+    "eval_block2.B": {
+      "linarith_failed": 7,
+      "other": 1,
+      "timeout": 3,
+      "type_mismatch": 3,
+      "unsolved_goals": 12
+    },
+    "eval_block2.C": {
+      "linarith_failed": 9,
+      "other": 3,
+      "simp_failed": 1,
+      "timeout": 3,
+      "unknown_identifier": 1,
+      "unsolved_goals": 10
+    },
+    "eval_block2.D": {
+      "linarith_failed": 11,
+      "other": 5,
+      "simp_failed": 1,
+      "timeout": 3,
+      "unknown_identifier": 1,
+      "unsolved_goals": 10
+    },
+    "full_pool_dev.A": {
+      "linarith_failed": 10,
+      "other": 2,
+      "unsolved_goals": 6
+    },
+    "full_pool_dev.B": {
+      "linarith_failed": 9,
+      "other": 1,
+      "timeout": 2,
+      "type_mismatch": 2,
+      "unknown_identifier": 1,
+      "unsolved_goals": 6
+    },
+    "full_pool_dev.C": {
+      "linarith_failed": 13,
+      "other": 3,
+      "simp_failed": 1,
+      "timeout": 4,
+      "type_mismatch": 1,
+      "unknown_identifier": 1,
+      "unsolved_goals": 13
+    },
+    "full_pool_dev.D": {
+      "linarith_failed": 11,
+      "other": 5,
+      "simp_failed": 1,
+      "timeout": 2,
+      "unknown_identifier": 1,
+      "unsolved_goals": 10
+    },
+    "full_pool_dev.E": {
+      "linarith_failed": 7,
+      "other": 2,
+      "simp_failed": 1,
+      "unknown_identifier": 1,
+      "unsolved_goals": 9
+    },
+    "primary_eval.A": {
+      "linarith_failed": 7,
+      "other": 2,
+      "simp_failed": 1,
+      "timeout": 2,
+      "type_mismatch": 1,
+      "unsolved_goals": 8
+    },
+    "primary_eval.B": {
+      "linarith_failed": 4,
+      "other": 4,
+      "simp_failed": 1,
+      "timeout": 3,
+      "type_mismatch": 1,
+      "unsolved_goals": 9
+    },
+    "primary_eval.C": {
+      "linarith_failed": 10,
+      "other": 4,
+      "simp_failed": 1,
+      "timeout": 3,
+      "type_mismatch": 1,
+      "unknown_identifier": 1,
+      "unsolved_goals": 11
+    },
+    "primary_eval.D": {
+      "linarith_failed": 11,
+      "other": 5,
+      "simp_failed": 1,
+      "timeout": 3,
+      "unknown_identifier": 1,
+      "unsolved_goals": 9
+    },
+    "primary_eval.E": {
+      "linarith_failed": 7,
+      "simp_failed": 1,
+      "unknown_identifier": 1,
+      "unsolved_goals": 8
+    }
+  },
+  "states": [
+    {
+      "arm": "A",
+      "cohort": "primary_eval",
+      "lean_failed": 21,
+      "n": 40,
+      "reached": 30,
+      "trunc_rate": 0.25,
+      "truncated": 10,
+      "ver_given_reached": 0.3,
+      "verified": 9
+    },
+    {
+      "arm": "B",
+      "cohort": "primary_eval",
+      "lean_failed": 22,
+      "n": 40,
+      "reached": 26,
+      "trunc_rate": 0.35,
+      "truncated": 14,
+      "ver_given_reached": 0.1538,
+      "verified": 4
+    },
+    {
+      "arm": "C",
+      "cohort": "primary_eval",
+      "lean_failed": 31,
+      "n": 40,
+      "reached": 33,
+      "trunc_rate": 0.175,
+      "truncated": 7,
+      "ver_given_reached": 0.0606,
+      "verified": 2
+    },
+    {
+      "arm": "D",
+      "cohort": "primary_eval",
+      "lean_failed": 30,
+      "n": 40,
+      "reached": 31,
+      "trunc_rate": 0.225,
+      "truncated": 9,
+      "ver_given_reached": 0.0323,
+      "verified": 1
+    },
+    {
+      "arm": "E",
+      "cohort": "primary_eval",
+      "lean_failed": 17,
+      "n": 21,
+      "reached": 19,
+      "trunc_rate": 0.0952,
+      "truncated": 2,
+      "ver_given_reached": 0.1053,
+      "verified": 2
+    },
+    {
+      "arm": "A",
+      "cohort": "eval_block2",
+      "lean_failed": 23,
+      "n": 40,
+      "reached": 32,
+      "trunc_rate": 0.2,
+      "truncated": 8,
+      "ver_given_reached": 0.2812,
+      "verified": 9
+    },
+    {
+      "arm": "B",
+      "cohort": "eval_block2",
+      "lean_failed": 26,
+      "n": 40,
+      "reached": 32,
+      "trunc_rate": 0.2,
+      "truncated": 8,
+      "ver_given_reached": 0.1875,
+      "verified": 6
+    },
+    {
+      "arm": "C",
+      "cohort": "eval_block2",
+      "lean_failed": 27,
+      "n": 40,
+      "reached": 28,
+      "trunc_rate": 0.3,
+      "truncated": 12,
+      "ver_given_reached": 0.0357,
+      "verified": 1
+    },
+    {
+      "arm": "D",
+      "cohort": "eval_block2",
+      "lean_failed": 31,
+      "n": 40,
+      "reached": 32,
+      "trunc_rate": 0.2,
+      "truncated": 8,
+      "ver_given_reached": 0.0312,
+      "verified": 1
+    },
+    {
+      "arm": "A",
+      "cohort": "full_pool_dev",
+      "lean_failed": 18,
+      "n": 43,
+      "reached": 23,
+      "trunc_rate": 0.4651,
+      "truncated": 20,
+      "ver_given_reached": 0.2174,
+      "verified": 5
+    },
+    {
+      "arm": "B",
+      "cohort": "full_pool_dev",
+      "lean_failed": 21,
+      "n": 43,
+      "reached": 28,
+      "trunc_rate": 0.3488,
+      "truncated": 15,
+      "ver_given_reached": 0.25,
+      "verified": 7
+    },
+    {
+      "arm": "C",
+      "cohort": "full_pool_dev",
+      "lean_failed": 36,
+      "n": 43,
+      "reached": 36,
+      "trunc_rate": 0.1628,
+      "truncated": 7,
+      "ver_given_reached": 0.0,
+      "verified": 0
+    },
+    {
+      "arm": "D",
+      "cohort": "full_pool_dev",
+      "lean_failed": 30,
+      "n": 43,
+      "reached": 32,
+      "trunc_rate": 0.2558,
+      "truncated": 11,
+      "ver_given_reached": 0.0625,
+      "verified": 2
+    },
+    {
+      "arm": "E",
+      "cohort": "full_pool_dev",
+      "lean_failed": 20,
+      "n": 23,
+      "reached": 20,
+      "trunc_rate": 0.1304,
+      "truncated": 3,
+      "ver_given_reached": 0.0,
+      "verified": 0
+    }
+  ]
+}

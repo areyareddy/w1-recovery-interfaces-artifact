@@ -1,0 +1,29 @@
+{
+  "finished_utc": "2026-08-28T02:46:16Z",
+  "inputs": {
+    "data\\prompts.jsonl": "7258ae486182f43b6c4ec791d631f5766cbda656e505065f06fdabedd5bc76be"
+  },
+  "outputs": {
+    "data\\runs.sqlite": "20c666b45481ac22f7ce6f7720a4922ac3ea3477e5c8af5424299be1b410b5aa"
+  },
+  "stats": {
+    "branches_total": 376,
+    "full_pool_dev_cohort": 195,
+    "inserted_this_run": 376,
+    "pending": 376,
+    "primary_eval_cohort": 181,
+    "resource_columns": [
+      "model_calls",
+      "completion_tokens",
+      "total_tokens",
+      "prefill_tokens",
+      "decode_tokens",
+      "request_wall_seconds",
+      "verifier_wall_seconds"
+    ],
+    "schema_version": 1,
+    "seeds": "NULL until s11 freezes the seed rule"
+  },
+  "step": "s08",
+  "title": "SQLite job store + runner"
+}

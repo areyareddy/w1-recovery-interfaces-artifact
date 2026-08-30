@@ -1,0 +1,323 @@
+### Proof and Analysis
+
+**Problem Analysis:**
+We are given two equations:
+1. `1 / cos x + tan x = 22 / 7`
+2. `1 / sin x + 1 / tan x = m` (where `m` is a rational number represented as a fraction in lowest terms).
+
+We need to prove that the numerator and denominator of `m` (in its reduced form) satisfy `denominator + numerator = 44`.
+
+**Key Observations:**
+1. The expressions involve trigonometric functions and their reciprocals. It is natural to consider identities involving `sin x`, `cos x`, and `tan x`.
+2. The second equation can be rewritten using `tan x = sin x / cos x` as:
+   \[
+   \frac{1}{\sin x} + \frac{\cos x}{\sin x} = \frac{1 + \cos x}{\sin x}
+   \]
+   However, this form does not immediately seem helpful. Instead, we might want to find a relationship between the two given equations.
+3. The first equation can be rewritten as:
+   \[
+   \frac{1}{\cos x} + \frac{\sin x}{\cos x} = \frac{1 + \sin x}{\cos x} = \frac{22}{7}
+   \]
+   This suggests that `1 + sin x` and `cos x` are related by a factor of `22 / 7`.
+
+**Deriving the Relationship:**
+From the first equation:
+\[
+1 + \sin x = \frac{22}{7} \cos x.
+\]
+This is a linear relationship between `sin x` and `cos x`. We can use the Pythagorean identity `sin² x + cos² x = 1` to find the values of `sin x` and `cos x`.
+
+**Solving for `sin x` and `cos x`:**
+Substitute `sin x = (22 / 7) cos x - 1` into the identity:
+\[
+\left( \frac{22}{7} \cos x - 1 \right)^2 + \cos^2 x = 1.
+\]
+Expanding:
+\[
+\frac{484}{49} \cos^2 x - \frac{44}{7} \cos x + 1 + \cos^2 x = 1.
+\]
+Multiply through by `49`:
+\[
+484 \cos^2 x - 308 \cos x + 49 + 49 \cos^2 x = 49.
+\]
+Simplify:
+\[
+533 \cos^2 x - 308 \cos x = 0 \implies \cos x (533 \cos x - 308) = 0.
+\]
+Thus, either `cos x = 0` or `cos x = 308 / 533`.
+
+However, if `cos x = 0`, then `1 / cos x` is undefined, which contradicts the given equation `1 / cos x + tan x = 22 / 7` (as division by zero is not allowed in real numbers). Therefore, we must have `cos x = 308 / 533`.
+
+Now, substitute `cos x = 308 / 533` back into the expression for `sin x`:
+\[
+\sin x = \frac{22}{7} \cdot \frac{308}{533} - 1 = \frac{22 \cdot 308}{7 \cdot 533} - 1 = \frac{22 \cdot 44}{533} - 1 = \frac{968}{533} - 1 = \frac{435}{533}.
+\]
+We can verify that `sin² x + cos² x = (435 / 533)² + (308 / 533)² = (435² + 308²) / 533² = (189225 + 94864) / 284089 = 284089 / 284089 = 1`, which is correct.
+
+**Evaluating the Second Equation:**
+The second equation is:
+\[
+\frac{1}{\sin x} + \frac{1}{\tan x} = m.
+\]
+Using `tan x = sin x / cos x`, we can rewrite the second term:
+\[
+\frac{1}{\tan x} = \frac{\cos x}{\sin x}.
+\]
+Thus:
+\[
+m = \frac{1}{\sin x} + \frac{\cos x}{\sin x} = \frac{1 + \cos x}{\sin x}.
+\]
+Substituting the values of `sin x` and `cos x`:
+\[
+m = \frac{1 + \frac{308}{533}}{\frac{435}{533}} = \frac{\frac{841}{533}}{\frac{435}{533}} = \frac{841}{435}.
+\]
+However, `841 / 435` is not in lowest terms (`841 = 29²` and `435 = 5 × 87`). Simplifying `841 / 435` gives `841 / 435 = (29 × 29) / (5 × 87) = (29 × 29) / (5 × 3 × 29) = 29 / (5 × 3) = 29 / 15`. Thus, `m = 29 / 15`, and `denominator + numerator = 15 + 29 = 44`.
+
+However, we must be careful because `m` is a rational number, and we are not given that `m = 29 / 15` explicitly. Instead, we need to derive `m` from the given equations. 
+
+But, notice that `m` is given as a rational number, and we have derived that `m = 841 / 435`, but `841 / 435` simplifies to `29 / 15`. The denominator of `m` is `15` and the numerator is `29`, so `denominator + numerator = 44`.
+
+But, in Lean, `m` is a rational number in its reduced form, so the denominator of `m` is `15` and the numerator is `29`. Thus, `m.den = 15` and `m.num = 29`, and `m.den + m.num = 44`.
+
+However, we need to be careful about the representation of `m` in Lean. The rational number `m` is stored as a pair of integers `(m.num, m.den)` where `m.num` and `m.den` are coprime and `m.den > 0`. 
+
+From our calculations, `m = 29 / 15`, so `m.num = 29` and `m.den = 15` (assuming Lean uses the reduced form). Then, `m.den + m.num = 15 + 29 = 44`.
+
+But, we have to be careful because Lean might not automatically simplify `m` to `29 / 15` unless we tell it to do so. However, the problem is asking for the sum of the numerator and denominator of `m` in its reduced form, which is `29 + 15 = 44`.
+
+**Verification of the Calculation:**
+Given `sin x = 435 / 533` and `cos x = 308 / 533`, we can verify:
+\[
+1 + \sin x = \frac{435}{533} + 1 = \frac{968}{533} = \frac{22}{7} \cdot \frac{308}{533} = \frac{22}{7} \cos x.
+\]
+This confirms our earlier derivation is correct.
+
+Now, compute `m`:
+\[
+m = \frac{1 + \cos x}{\sin x} = \frac{1 + \frac{308}{533}}{\frac{435}{533}} = \frac{\frac{841}{533}}{\frac{435}{533}} = \frac{841}{435}.
+\]
+But `841 / 435` simplifies to `29 / 15`. 
+
+Thus, `m = 29 / 15`, so `m.den = 15` and `m.num = 29`, and `m.den + m.num = 44`.
+
+But, we must be careful because Lean might not automatically simplify `m` to `29 / 15` unless we tell it to do so. However, the problem is asking for the sum of the numerator and denominator of `m` in its reduced form, which is `29 + 15 = 44`.
+
+But, looking at the Lean statement, it is:
+```lean4
+theorem aime_1991_p9 (x : ℝ) (m : ℚ) (h₀ : 1 / Real.cos x + Real.tan x = 22 / 7)
+    (h₁ : 1 / Real.sin x + 1 / Real.tan x = m) : ↑m.den + m.num = 44 := by
+```
+Here, `m` is a rational number (`ℚ`), and `m.den` and `m.num` are its denominator and numerator in reduced form (`m.den : ℕ` and `m.num : ℤ`). The statement `↑m.den + m.num = 44` is interpreted as `(m.den : ℤ) + m.num = 44`, because `m.num` is an integer and `m.den` is a natural number, but Lean will automatically cast `m.den` to an integer when adding them.
+
+Since `m = 29 / 15` in reduced form, we have `m.num = 29` and `m.den = 15`, so `(m.den : ℤ) + m.num = 15 + 29 = 44`.
+
+**Formal Derivation:**
+1. From `1 / cos x + tan x = 22 / 7`, we derive `1 + sin x = (22 / 7) cos x`.
+2. Using `sin² x + cos² x = 1`, we solve for `cos x` and get `cos x = 308 / 533` (since `cos x ≠ 0`).
+3. Substitute back to get `sin x = 435 / 533`.
+4. Compute `m = (1 + cos x) / sin x = 841 / 435 = 29 / 15`.
+5. Since `m` is in reduced form, `m.num = 29` and `m.den = 15`, so `m.den + m.num = 44`.
+
+**Conclusion:**
+The key is to derive `sin x` and `cos x` from the given equations and then compute `m` explicitly. Once `m` is computed, we can verify that it is `29 / 15` in reduced form, so the sum of its numerator and denominator is `44`.
+
+### Step-by-Step Abstract Plan
+
+1. **Derive `1 + sin x = (22 / 7) cos x` from `1 / cos x + tan x = 22 / 7`:**
+   - Rewrite `tan x` as `sin x / cos x`.
+   - Combine terms to get `(1 + sin x) / cos x = 22 / 7`.
+   - Multiply both sides by `cos x` to get `1 + sin x = (22 / 7) cos x`.
+
+2. **Use the Pythagorean identity to find `cos x`:**
+   - Substitute `sin x = (22 / 7) cos x - 1` into `sin² x + cos² x = 1`.
+   - Expand and simplify to get `533 cos² x - 308 cos x = 0`.
+   - Solve for `cos x` to get `cos x = 0` or `cos x = 308 / 533`.
+   - Exclude `cos x = 0` because `1 / cos x` is undefined in the first equation.
+   - Conclude `cos x = 308 / 533`.
+
+3. **Find `sin x`:**
+   - Substitute `cos x = 308 / 533` back into `sin x = (22 / 7) cos x - 1` to get `sin x = 435 / 533`.
+
+4. **Compute `m`:**
+   - Rewrite `m` as `(1 + cos x) / sin x`.
+   - Substitute `sin x = 435 / 533` and `cos x = 308 / 533` to get `m = 841 / 435`.
+   - Simplify `841 / 435` to `29 / 15` in lowest terms.
+
+5. **Calculate `m.den + m.num`:**
+   - Since `m = 29 / 15` is in reduced form, `m.num = 29` and `m.den = 15`.
+   - Thus, `m.den + m.num = 44`.
+
+### Lean 4 Proof with `have` Statements
+
+```lean4
+theorem aime_1991_p9 (x : ℝ) (m : ℚ) (h₀ : 1 / Real.cos x + Real.tan x = 22 / 7)
+    (h₁ : 1 / Real.sin x + 1 / Real.tan x = m) : ↑m.den + m.num = 44 := by
+  have h₂ : Real.cos x ≠ 0 := by sorry
+  have h₃ : 1 + Real.sin x = (22 / 7 : ℝ) * Real.cos x := by sorry
+  have h₄ : Real.sin x ^ 2 + Real.cos x ^ 2 = 1 := by sorry
+  have h₅ : Real.cos x = 308 / 533 := by sorry
+  have h₆ : Real.sin x = 435 / 533 := by sorry
+  have h₇ : (m : ℚ) = 29 / 15 := by sorry
+  have h₈ : m.den = 15 := by sorry
+  have h₉ : m.num = 29 := by sorry
+  have h₁₀ : ↑m.den + m.num = 44 := by sorry
+  sorry
+```
+
+### Complete Lean 4 Proof
+
+```lean4
+theorem aime_1991_p9 (x : ℝ) (m : ℚ) (h₀ : 1 / Real.cos x + Real.tan x = 22 / 7)
+    (h₁ : 1 / Real.sin x + 1 / Real.tan x = m) : ↑m.den + m.num = 44 := by
+  have h₂ : Real.cos x ≠ 0 := by
+    by_contra h
+    have h₂₁ : Real.cos x = 0 := by simpa using h
+    have h₂₂ : 1 / Real.cos x + Real.tan x = 22 / 7 := h₀
+    rw [h₂₁] at h₂₂
+    norm_num [Real.tan_eq_sin_div_cos, div_eq_mul_inv] at h₂₂
+    <;>
+    (try
+      norm_num at h₂₂ ⊢ <;>
+      linarith [Real.sin_le_one x, Real.sin_le_one x, Real.cos_le_one x, Real.cos_le_one x]) <;>
+    (try
+      simp_all [Real.tan_eq_sin_div_cos, div_eq_mul_inv]) <;>
+    (try
+      ring_nf at * <;>
+      norm_num at * <;>
+      linarith [Real.sin_le_one x, Real.sin_le_one x, Real.cos_le_one x, Real.cos_le_one x])
+    <;>
+    (try
+      field_simp [h₂₁] at h₂₂ ⊢ <;>
+      ring_nf at h₂₂ ⊢ <;>
+      norm_num at h₂₂ ⊢ <;>
+      linarith [Real.sin_le_one x, Real.sin_le_one x, Real.cos_le_one x, Real.cos_le_one x])
+  
+  have h₃ : 1 + Real.sin x = (22 / 7 : ℝ) * Real.cos x := by
+    have h₃₁ : 1 / Real.cos x + Real.tan x = 22 / 7 := h₀
+    have h₃₂ : Real.tan x = Real.sin x / Real.cos x := by
+      rw [Real.tan_eq_sin_div_cos]
+    rw [h₃₂] at h₃₁
+    have h₃₃ : 1 / Real.cos x + Real.sin x / Real.cos x = 22 / 7 := by
+      linarith
+    have h₃₄ : (1 + Real.sin x) / Real.cos x = 22 / 7 := by
+      have h₃₄₁ : 1 / Real.cos x + Real.sin x / Real.cos x = (1 + Real.sin x) / Real.cos x := by
+        field_simp [h₂]
+        <;> ring
+      rw [h₃₄₁] at h₃₃
+      exact h₃₃
+    have h₃₅ : 1 + Real.sin x = (22 / 7 : ℝ) * Real.cos x := by
+      have h₃₅₁ : (1 + Real.sin x) / Real.cos x = 22 / 7 := h₃₄
+      have h₃₅₂ : Real.cos x ≠ 0 := h₂
+      field_simp [h₃₅₂] at h₃₅₁
+      <;> ring_nf at h₃₅₁ ⊢
+      <;> nlinarith [Real.sin_le_one x, Real.cos_le_one x, Real.sin_sq_add_cos_sq x]
+    exact h₃₅
+  
+  have h₄ : Real.sin x ^ 2 + Real.cos x ^ 2 = 1 := by
+    exact Real.sin_sq_add_cos_sq x
+  
+  have h₅ : Real.cos x = 308 / 533 := by
+    have h₅₁ : Real.sin x = (22 / 7 : ℝ) * Real.cos x - 1 := by
+      linarith
+    have h₅₂ : Real.sin x ^ 2 + Real.cos x ^ 2 = 1 := h₄
+    rw [h₅₁] at h₅₂
+    ring_nf at h₅₂ ⊢
+    have h₅₃ : Real.cos x > 0 := by
+      by_contra h₅₃
+      have h₅₄ : Real.cos x ≤ 0 := by linarith
+      have h₅₅ : (22 / 7 : ℝ) * Real.cos x - 1 ≤ -1 := by
+        nlinarith [Real.sin_le_one x, Real.cos_le_one x, Real.sin_sq_add_cos_sq x]
+      have h₅₆ : Real.sin x ≤ -1 := by linarith
+      have h₅₇ : Real.sin x ≥ -1 := by
+        nlinarith [Real.sin_le_one x, Real.cos_le_one x, Real.sin_sq_add_cos_sq x]
+      have h₅₈ : Real.sin x = -1 := by linarith
+      have h₅₉ : Real.cos x = 0 := by
+        nlinarith [Real.sin_le_one x, Real.cos_le_one x, Real.sin_sq_add_cos_sq x]
+      contradiction
+    nlinarith [Real.sin_le_one x, Real.cos_le_one x, Real.sin_sq_add_cos_sq x,
+      mul_self_nonneg (Real.cos x - 308 / 533)]
+  
+  have h₆ : Real.sin x = 435 / 533 := by
+    have h₆₁ : Real.sin x = (22 / 7 : ℝ) * Real.cos x - 1 := by linarith
+    rw [h₆₁, h₅]
+    <;> norm_num
+    <;> linarith
+  
+  have h₇ : (m : ℚ) = 29 / 15 := by
+    have h₇₁ : 1 / Real.sin x + 1 / Real.tan x = m := h₁
+    have h₇₂ : Real.sin x = 435 / 533 := h₆
+    have h₇₃ : Real.cos x = 308 / 533 := h₅
+    have h₇₄ : Real.tan x = Real.sin x / Real.cos x := by
+      rw [Real.tan_eq_sin_div_cos]
+    rw [h₇₄] at h₇₁
+    have h₇₅ : 1 / Real.sin x + 1 / (Real.sin x / Real.cos x) = m := by
+      simpa using h₇₁
+    have h₇₆ : 1 / Real.sin x + Real.cos x / Real.sin x = m := by
+      have h₇₆₁ : 1 / (Real.sin x / Real.cos x) = Real.cos x / Real.sin x := by
+        field_simp [h₂, h₇₂, h₇₃, Real.sin_pos_of_pos_of_lt_pi]
+        <;> ring_nf
+        <;> field_simp [h₂, h₇₂, h₇₃, Real.sin_pos_of_pos_of_lt_pi]
+        <;> ring_nf
+        <;> norm_num
+        <;> linarith
+      rw [h₇₆₁] at h₇₅
+      exact h₇₅
+    have h₇₇ : (1 + Real.cos x) / Real.sin x = m := by
+      have h₇₇₁ : 1 / Real.sin x + Real.cos x / Real.sin x = (1 + Real.cos x) / Real.sin x := by
+        field_simp [h₂, h₇₂, h₇₃, Real.sin_pos_of_pos_of_lt_pi]
+        <;> ring_nf
+        <;> field_simp [h₂, h₇₂, h₇₃, Real.sin_pos_of_pos_of_lt_pi]
+        <;> ring_nf
+        <;> norm_num
+        <;> linarith
+      rw [h₇₇₁] at h₇₆
+      exact h₇₆
+    have h₇₈ : (1 + Real.cos x) / Real.sin x = (29 / 15 : ℚ) := by
+      rw [h₇₃, h₇₂]
+      <;> norm_num
+      <;> field_simp [h₂, h₇₂, h₇₃, Real.sin_pos_of_pos_of_lt_pi]
+      <;> ring_nf
+      <;> norm_num
+      <;> linarith
+    have h₇₉ : (m : ℚ) = 29 / 15 := by
+      rw [← sub_eq_zero]
+      have h₇₉₁ : (m : ℝ) = (1 + Real.cos x) / Real.sin x := by
+        linarith
+      rw [h₇₉₁]
+      rw [h₇₈]
+      <;> norm_num
+      <;> field_simp [h₂, h₇₂, h₇₃, Real.sin_pos_of_pos_of_lt_pi]
+      <;> ring_nf
+      <;> norm_num
+      <;> linarith
+    exact h₇₉
+  
+  have h₈ : m.den = 15 := by
+    have h₈₁ : (m : ℚ) = 29 / 15 := h₇
+    have h₈₂ : m = 29 / 15 := by
+      norm_cast at h₈₁ ⊢
+      <;> simp_all [Rat.den_nz]
+      <;> norm_num
+      <;> linarith
+    rw [h₈₂]
+    <;> norm_num
+    <;> rfl
+  
+  have h₉ : m.num = 29 := by
+    have h₉₁ : (m : ℚ) = 29 / 15 := h₇
+    have h₉₂ : m = 29 / 15 := by
+      norm_cast at h₉₁ ⊢
+      <;> simp_all [Rat.den_nz]
+      <;> norm_num
+      <;> linarith
+    rw [h₉₂]
+    <;> norm_num
+    <;> rfl
+  
+  have h₁₀ : ↑m.den + m.num = 44 := by
+    rw [h₈, h₉]
+    <;> norm_num
+    <;> rfl
+  
+  exact h₁₀
+```

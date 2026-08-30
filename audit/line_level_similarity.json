@@ -1,0 +1,288 @@
+{
+  "near_verbatim_C": [
+    {
+      "arm": "C",
+      "branch_tactic_lines": 63,
+      "cohort": "eval_block2",
+      "jaccard_tactic": 1.0,
+      "lcs_line": 0.994048,
+      "lcs_tactic": 1.0,
+      "prior_tactic_lines": 63,
+      "root_id": "amc12_2001_p21",
+      "token_S": 0.993658,
+      "verified": 0
+    },
+    {
+      "arm": "C",
+      "branch_tactic_lines": 131,
+      "cohort": "eval_block2",
+      "jaccard_tactic": 1.0,
+      "lcs_line": 0.980392,
+      "lcs_tactic": 0.996169,
+      "prior_tactic_lines": 130,
+      "root_id": "amc12a_2019_p12",
+      "token_S": 0.9921,
+      "verified": 0
+    },
+    {
+      "arm": "C",
+      "branch_tactic_lines": 34,
+      "cohort": "eval_block2",
+      "jaccard_tactic": 1.0,
+      "lcs_line": 0.915663,
+      "lcs_tactic": 1.0,
+      "prior_tactic_lines": 34,
+      "root_id": "amc12b_2020_p6",
+      "token_S": 0.91427,
+      "verified": 0
+    },
+    {
+      "arm": "C",
+      "branch_tactic_lines": 55,
+      "cohort": "eval_block2",
+      "jaccard_tactic": 1.0,
+      "lcs_line": 0.99375,
+      "lcs_tactic": 1.0,
+      "prior_tactic_lines": 55,
+      "root_id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2",
+      "token_S": 0.99594,
+      "verified": 0
+    },
+    {
+      "arm": "C",
+      "branch_tactic_lines": 0,
+      "cohort": "full_pool_dev",
+      "jaccard_tactic": 1.0,
+      "lcs_line": 0.903686,
+      "lcs_tactic": 1.0,
+      "prior_tactic_lines": 0,
+      "root_id": "algebra_ineq_nto1onlt2m1on",
+      "token_S": 0.906287,
+      "verified": 0
+    },
+    {
+      "arm": "C",
+      "branch_tactic_lines": 295,
+      "cohort": "full_pool_dev",
+      "jaccard_tactic": 1.0,
+      "lcs_line": 0.972136,
+      "lcs_tactic": 1.0,
+      "prior_tactic_lines": 295,
+      "root_id": "amc12a_2021_p19",
+      "token_S": 0.97497,
+      "verified": 0
+    },
+    {
+      "arm": "C",
+      "branch_tactic_lines": 56,
+      "cohort": "full_pool_dev",
+      "jaccard_tactic": 1.0,
+      "lcs_line": 0.937255,
+      "lcs_tactic": 1.0,
+      "prior_tactic_lines": 56,
+      "root_id": "amc12b_2021_p13",
+      "token_S": 0.94836,
+      "verified": 0
+    },
+    {
+      "arm": "C",
+      "branch_tactic_lines": 46,
+      "cohort": "full_pool_dev",
+      "jaccard_tactic": 1.0,
+      "lcs_line": 0.717742,
+      "lcs_tactic": 1.0,
+      "prior_tactic_lines": 46,
+      "root_id": "amc12b_2021_p3",
+      "token_S": 0.94382,
+      "verified": 0
+    },
+    {
+      "arm": "C",
+      "branch_tactic_lines": 17,
+      "cohort": "full_pool_dev",
+      "jaccard_tactic": 1.0,
+      "lcs_line": 0.989691,
+      "lcs_tactic": 1.0,
+      "prior_tactic_lines": 17,
+      "root_id": "induction_sumkexp3eqsumksq",
+      "token_S": 0.994598,
+      "verified": 0
+    },
+    {
+      "arm": "C",
+      "branch_tactic_lines": 65,
+      "cohort": "primary_eval",
+      "jaccard_tactic": 1.0,
+      "lcs_line": 1.0,
+      "lcs_tactic": 1.0,
+      "prior_tactic_lines": 65,
+      "root_id": "algebra_2varlineareq_fp3zeq11_3tfm1m5zeqn68_feqn10_zeq7",
+      "token_S": 1.0,
+      "verified": 0
+    },
+    {
+      "arm": "C",
+      "branch_tactic_lines": 63,
+      "cohort": "primary_eval",
+      "jaccard_tactic": 1.0,
+      "lcs_line": 1.0,
+      "lcs_tactic": 1.0,
+      "prior_tactic_lines": 63,
+      "root_id": "amc12_2001_p21",
+      "token_S": 1.0,
+      "verified": 0
+    },
+    {
+      "arm": "C",
+      "branch_tactic_lines": 131,
+      "cohort": "primary_eval",
+      "jaccard_tactic": 1.0,
+      "lcs_line": 0.993464,
+      "lcs_tactic": 0.996169,
+      "prior_tactic_lines": 130,
+      "root_id": "amc12a_2019_p12",
+      "token_S": 0.995392,
+      "verified": 0
+    },
+    {
+      "arm": "C",
+      "branch_tactic_lines": 18,
+      "cohort": "primary_eval",
+      "jaccard_tactic": 1.0,
+      "lcs_line": 1.0,
+      "lcs_tactic": 1.0,
+      "prior_tactic_lines": 18,
+      "root_id": "mathd_numbertheory_235",
+      "token_S": 1.0,
+      "verified": 0
+    }
+  ],
+  "summary": [
+    {
+      "arm": "A",
+      "cohort": "primary_eval",
+      "mean_jaccard_tactic": 0.1664,
+      "mean_lcs_line": 0.0955,
+      "mean_lcs_tactic": 0.1993,
+      "mean_token_S": 0.2072,
+      "n": 40
+    },
+    {
+      "arm": "B",
+      "cohort": "primary_eval",
+      "mean_jaccard_tactic": 0.155,
+      "mean_lcs_line": 0.087,
+      "mean_lcs_tactic": 0.1963,
+      "mean_token_S": 0.1898,
+      "n": 40
+    },
+    {
+      "arm": "C",
+      "cohort": "primary_eval",
+      "mean_jaccard_tactic": 0.7234,
+      "mean_lcs_line": 0.5369,
+      "mean_lcs_tactic": 0.7345,
+      "mean_token_S": 0.496,
+      "n": 40
+    },
+    {
+      "arm": "D",
+      "cohort": "primary_eval",
+      "mean_jaccard_tactic": 0.7974,
+      "mean_lcs_line": 0.5439,
+      "mean_lcs_tactic": 0.8119,
+      "mean_token_S": 0.5041,
+      "n": 40
+    },
+    {
+      "arm": "E",
+      "cohort": "primary_eval",
+      "mean_jaccard_tactic": 0.6911,
+      "mean_lcs_line": 0.4268,
+      "mean_lcs_tactic": 0.685,
+      "mean_token_S": 0.3726,
+      "n": 21
+    },
+    {
+      "arm": "A",
+      "cohort": "eval_block2",
+      "mean_jaccard_tactic": 0.1775,
+      "mean_lcs_line": 0.0925,
+      "mean_lcs_tactic": 0.2159,
+      "mean_token_S": 0.1978,
+      "n": 40
+    },
+    {
+      "arm": "B",
+      "cohort": "eval_block2",
+      "mean_jaccard_tactic": 0.1373,
+      "mean_lcs_line": 0.079,
+      "mean_lcs_tactic": 0.1745,
+      "mean_token_S": 0.1995,
+      "n": 40
+    },
+    {
+      "arm": "C",
+      "cohort": "eval_block2",
+      "mean_jaccard_tactic": 0.8269,
+      "mean_lcs_line": 0.5626,
+      "mean_lcs_tactic": 0.831,
+      "mean_token_S": 0.5239,
+      "n": 40
+    },
+    {
+      "arm": "D",
+      "cohort": "eval_block2",
+      "mean_jaccard_tactic": 0.8378,
+      "mean_lcs_line": 0.5525,
+      "mean_lcs_tactic": 0.8495,
+      "mean_token_S": 0.4671,
+      "n": 40
+    },
+    {
+      "arm": "A",
+      "cohort": "full_pool_dev",
+      "mean_jaccard_tactic": 0.1437,
+      "mean_lcs_line": 0.0581,
+      "mean_lcs_tactic": 0.1742,
+      "mean_token_S": 0.1756,
+      "n": 43
+    },
+    {
+      "arm": "B",
+      "cohort": "full_pool_dev",
+      "mean_jaccard_tactic": 0.1809,
+      "mean_lcs_line": 0.0756,
+      "mean_lcs_tactic": 0.2122,
+      "mean_token_S": 0.1877,
+      "n": 43
+    },
+    {
+      "arm": "C",
+      "cohort": "full_pool_dev",
+      "mean_jaccard_tactic": 0.6663,
+      "mean_lcs_line": 0.517,
+      "mean_lcs_tactic": 0.7097,
+      "mean_token_S": 0.4408,
+      "n": 43
+    },
+    {
+      "arm": "D",
+      "cohort": "full_pool_dev",
+      "mean_jaccard_tactic": 0.6812,
+      "mean_lcs_line": 0.4922,
+      "mean_lcs_tactic": 0.715,
+      "mean_token_S": 0.3981,
+      "n": 43
+    },
+    {
+      "arm": "E",
+      "cohort": "full_pool_dev",
+      "mean_jaccard_tactic": 0.5946,
+      "mean_lcs_line": 0.4281,
+      "mean_lcs_tactic": 0.6561,
+      "mean_token_S": 0.3765,
+      "n": 23
+    }
+  ]
+}

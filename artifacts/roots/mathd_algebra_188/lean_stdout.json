@@ -1,0 +1,1 @@
+{"messages": [{"severity": "error", "pos": {"line": 3, "column": 10}, "endPos": {"line": 3, "column": 25}, "data": "unknown constant 'Equiv.apply_inv'"}], "env": 17, "ast": []}

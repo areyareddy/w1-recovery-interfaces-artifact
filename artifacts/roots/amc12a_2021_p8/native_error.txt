@@ -1,0 +1,54 @@
+
+Error 1:
+
+Corresponding Code:
+```lean4
+      -- Use the recurrence relation to compute d(n) modulo 2.
+      -- We will use the fact that the sequence d(n) modulo 2 is periodic with period 7.
+      -- Specifically, we will show that d(n) ≡ 0 mod 2 when n ≡ 5 mod 7.
+      -- Since 2021 ≡ 5 mod 7, we have d(2021) ≡ 0 mod 2.
+      <error>norm_num [h₀, h₁, h₂, h₃, Nat.add_mod, Nat.mul_mod, Nat.mod_mod]</error>
+      <;> rfl
+
+```
+
+Error Message: tactic 'simp' failed, nested error:
+maximum recursion depth has been reached
+use `set_option maxRecDepth <num>` to increase limit
+use `set_option diagnostics true` to get diagnostic information
+
+Error 2:
+
+Corresponding Code:
+```lean4
+      -- Use the recurrence relation to compute d(n) modulo 2.
+      -- We will use the fact that the sequence d(n) modulo 2 is periodic with period 7.
+      -- Specifically, we will show that d(n) ≡ 1 mod 2 when n ≡ 6 mod 7.
+      -- Since 2022 ≡ 6 mod 7, we have d(2022) ≡ 1 mod 2.
+      <error>norm_num [h₀, h₁, h₂, h₃, Nat.add_mod, Nat.mul_mod, Nat.mod_mod]</error>
+      <;> rfl
+
+```
+
+Error Message: tactic 'simp' failed, nested error:
+maximum recursion depth has been reached
+use `set_option maxRecDepth <num>` to increase limit
+use `set_option diagnostics true` to get diagnostic information
+
+Error 3:
+
+Corresponding Code:
+```lean4
+      -- Use the recurrence relation to compute d(n) modulo 2.
+      -- We will use the fact that the sequence d(n) modulo 2 is periodic with period 7.
+      -- Specifically, we will show that d(n) ≡ 0 mod 2 when n ≡ 0 mod 7.
+      -- Since 2023 ≡ 0 mod 7, we have d(2023) ≡ 0 mod 2.
+      <error>norm_num [h₀, h₁, h₂, h₃, Nat.add_mod, Nat.mul_mod, Nat.mod_mod]</error>
+      <;> rfl
+
+```
+
+Error Message: tactic 'simp' failed, nested error:
+maximum recursion depth has been reached
+use `set_option maxRecDepth <num>` to increase limit
+use `set_option diagnostics true` to get diagnostic information

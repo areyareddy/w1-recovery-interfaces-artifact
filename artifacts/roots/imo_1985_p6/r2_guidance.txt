@@ -1,0 +1,7 @@
+Similar Lean-verified proofs commonly used:
+- ring
+- rw
+- exact
+
+These are optional suggestions; use only when applicable, and select exact tactics and arguments from the current theorem.
+

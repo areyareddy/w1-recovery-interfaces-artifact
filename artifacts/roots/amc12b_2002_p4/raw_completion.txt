@@ -1,0 +1,303 @@
+### Proof and Analysis
+
+**Problem Analysis:**
+We are given:
+1. `n` is a positive integer (`0 < n`).
+2. The denominator of the sum `1/2 + 1/3 + 1/7 + 1/n` (as a rational number) is `1`.
+
+We need to prove that `n = 42`.
+
+**Understanding the Problem:**
+First, note that in Lean, `1 /. 2` is the rational number `1/2`, and similarly for the other fractions. The sum `1/2 + 1/3 + 1/7 + 1/n` is a rational number, and its denominator is `1` if and only if the sum is an integer. 
+
+However, in Lean, the denominator of a rational number is always a positive integer, and the denominator is `1` if and only if the rational number is an integer. 
+
+But there is a subtlety here: Lean's `Nat.div` (and `/` for `ℕ`) is integer division, so `1 / 2 = 0` in `ℕ`. The Lean notation `1 /. 2` is actually the rational number `1 / 2`, so `1 /. 2 + 1 /. 3 + 1 /. 7 + 1 /. n` is a sum of rational numbers, and its denominator is `1` only if the sum is an integer. 
+
+But the hypothesis is that `(1 /. 2 + 1 /. 3 + 1 /. 7 + 1 /. n).den = 1`, where `.den` is the denominator of the rational number in its reduced form. 
+
+But in Lean, `1 /. 2 + 1 /. 3 + 1 /. 7 + 1 /. n` is `1 / 2 + 1 / 3 + 1 / 7 + 1 / n` as a rational number, and its denominator is the least common multiple of the denominators of the terms (or `1` if the sum is an integer). 
+
+But actually, Lean's `.den` is the denominator of the rational number in its reduced form. So, for example, `(1 / 2 : ℚ).den = 2`. 
+
+So, the sum `1 / 2 + 1 / 3 + 1 / 7 + 1 / n` must be an integer, because its denominator in reduced form is `1`. 
+
+But we can simplify the sum:
+`1 / 2 + 1 / 3 + 1 / 7 = (21 + 14 + 6) / 42 = 41 / 42`. 
+
+Thus, `1 / 2 + 1 / 3 + 1 / 7 + 1 / n = 41 / 42 + 1 / n`. 
+
+For this to be an integer, `41 / 42 + 1 / n` must be an integer. 
+
+Since `41 / 42` is `> 0` and `< 1`, `1 / n` must be `≥ 1 - 41 / 42 = 1 / 42` to make the sum `≥ 1`. But `1 / n` is `≤ 1` (since `n ≥ 1`). 
+
+But `1 / n` is `≥ 1 / 42` implies `n ≤ 42`. 
+
+But we need `41 / 42 + 1 / n` to be an integer. The only possibility is that `1 / n` is `1 - 41 / 42 = 1 / 42`, i.e., `n = 42`. 
+
+However, this is not quite right because `1 / n` is `≥ 1 / 42` only if `n ≤ 42`. 
+
+But let's compute `41 / 42 + 1 / n`:
+`41 / 42 + 1 / n = (41 n + 42) / (42 n)`. 
+
+For this to be an integer, `42 n` must divide `41 n + 42`. 
+
+But `42 n` divides `41 n + 42` implies `42 n ≤ 41 n + 42`, i.e., `n ≤ 42`. 
+
+Also, since `42 n` divides `41 n + 42`, and `gcd(41 n + 42, 42 n) = gcd(41 n + 42, 42 n - (41 n + 42)) = gcd(41 n + 42, n - 42) = gcd(42, n - 42) = gcd(42, n)`. 
+
+Thus, `42 n` must divide `41 n + 42`, so `n` must divide `41 n + 42`, so `n` divides `42`. 
+
+But `n` is a positive integer with `n ≤ 42` and `n` divides `42`. 
+
+The divisors of `42` are `1, 2, 3, 6, 7, 14, 21, 42`. 
+
+But we must also ensure that `42 n` divides `41 n + 42`. 
+
+For `n = 1`: `41 + 42 = 83`, `42` does not divide `83`. 
+
+For `n = 2`: `82 + 42 = 124`, `84` does not divide `124`. 
+
+For `n = 3`: `123 + 42 = 165`, `126` does not divide `165`. 
+
+For `n = 6`: `246 + 42 = 288`, `252` does not divide `288`. 
+
+For `n = 7`: `287 + 42 = 329`, `294` does not divide `329`. 
+
+For `n = 14`: `574 + 42 = 616`, `588` does not divide `616`. 
+
+For `n = 21`: `861 + 42 = 903`, `882` does not divide `903`. 
+
+For `n = 42`: `1722 + 42 = 1764`, `1764` divides `1764`. 
+
+Thus, the only solution is `n = 42`. 
+
+But we can also see that `41 n + 42 ≡ 0 mod 42 n` implies `41 n + 42 ≡ 0 mod n`, i.e., `42 ≡ 0 mod n`, so `n` divides `42`. 
+
+Then, `42 n` must divide `41 n + 42`, so `n` must divide `42`. 
+
+Now, we can check the divisors of `42` as above and see that only `n = 42` works. 
+
+But we can also think differently: since `n` divides `42`, let `n = 42 / d` where `d` is a divisor of `42`. 
+
+But this is not directly helpful. 
+
+Alternatively, note that `41 n + 42 ≡ 0 mod 42 n` implies `41 n + 42 ≡ 0 mod n`, i.e., `42 ≡ 0 mod n`, so `n` divides `42`. 
+
+But we already saw that `n` must be `42`. 
+
+**Simpler Approach:**
+Given that `n` divides `42`, we can check the divisors of `42` to see which ones make `41 n + 42` divisible by `42 n`. 
+
+But `n` must be `42` as above. 
+
+But actually, `41 n + 42` is divisible by `42 n` only if `42` is divisible by `n` and `41 n + 42` is divisible by `n`. 
+
+But `41 n + 42` is divisible by `n` is always true. 
+
+And `42` is divisible by `n` is equivalent to `n` divides `42`. 
+
+But we need `42 n` to divide `41 n + 42`, not just `n`. 
+
+But if `n` divides `42`, then `42 n` divides `41 n + 42` only if `42` divides `41 n + 42`, i.e., `42` divides `41 n`. 
+
+But `42` divides `41 n` is equivalent to `6` divides `41 n` and `7` divides `41 n`. 
+
+But `gcd(41, 6) = 1` and `gcd(41, 7) = 1`, so `6` divides `41 n` is equivalent to `6` divides `n`, and `7` divides `41 n` is equivalent to `7` divides `n`. 
+
+Thus, `42` divides `41 n` is equivalent to `42` divides `n`. 
+
+But `n` divides `42` and `42` divides `n` implies `n = 42`. 
+
+Thus, the only solution is `n = 42`. 
+
+But we can also check that for `n = 42`, `41 n + 42 = 1764` and `42 n = 1764`, so `42 n` divides `41 n + 42`. 
+
+**Conclusion:**
+The only positive integer `n` for which `1 / 2 + 1 / 3 + 1 / 7 + 1 / n` is an integer is `n = 42`.
+
+But in Lean, the hypothesis is `(1 /. 2 + 1 /. 3 + 1 /. 7 + 1 /. n).den = 1`, which means that the sum `1 / 2 + 1 / 3 + 1 / 7 + 1 / n` is an integer. 
+
+But we have shown that this implies `n = 42`. 
+
+**Formal Proof Sketch:**
+1. Compute `1 / 2 + 1 / 3 + 1 / 7 = 41 / 42`.
+2. The sum is `41 / 42 + 1 / n`.
+3. For `41 / 42 + 1 / n` to be an integer, `n` must divide `42`.
+4. Check all divisors of `42` to find that only `n = 42` works.
+5. Conclude that `n = 42`.
+
+But in Lean, we can directly compute `(1 /. 2 + 1 /. 3 + 1 /. 7 + 1 /. n).den = 1` to mean that `n = 42`. 
+
+But to make the proof work in Lean, we can:
+1. Assume `n` is a positive integer.
+2. Assume `(1 /. 2 + 1 /. 3 + 1 /. 7 + 1 /. n).den = 1`.
+3. Show that `n` must be `42`.
+
+But the key is to note that `(1 /. 2 + 1 /. 3 + 1 /. 7 + 1 /. n).den = 1` implies that `n` must divide `42`, and then check the divisors of `42` to find that only `n = 42` works.
+
+But in Lean, we can also directly compute the sum:
+`(1 /. 2 + 1 /. 3 + 1 /. 7 + 1 /. n : ℚ) = 41 / 42 + 1 / n`. 
+
+For this to be an integer, `42 n` must divide `41 n + 42`, which implies that `n` must be `42`.
+
+But in Lean, the hypothesis is that the denominator is `1`, so we can directly use this to deduce that `n = 42`. 
+
+But we can also proceed by noting that `n` must divide `42` and then checking the divisors. 
+
+But since `n` divides `42`, we can write `n` as a divisor of `42` and check which one works. 
+
+But in Lean, we can also directly use the fact that the denominator is `1` to deduce that `n` must be `42`. 
+
+But the most straightforward way is to note that `(1 /. 2 + 1 /. 3 + 1 /. 7 + 1 /. n : ℚ).den = 1` implies that `n` must be `42`. 
+
+But we can also proceed by noting that `n` must divide `42` and then checking the divisors. 
+
+But in Lean, the hypothesis is that the denominator is `1`, so we can directly use this to deduce that `n = 42`. 
+
+**Final Proof Sketch:**
+1. The sum `1 / 2 + 1 / 3 + 1 / 7 + 1 / n` is `41 / 42 + 1 / n`.
+2. For this to be an integer, `n` must divide `42`.
+3. Check the divisors of `42` to find that only `n = 42` works.
+4. Conclude that `n = 42`.
+
+But in Lean, the hypothesis is that the denominator is `1`, so we can directly use this to deduce that `n = 42`. 
+
+But we can also proceed by noting that `n` must divide `42` and then checking the divisors. 
+
+But in Lean, the hypothesis is that the denominator is `1`, so we can directly use this to deduce that `n = 42`. 
+
+**Abstract Plan:**
+1. Show that `n` must be a divisor of `42`.
+2. Check all divisors of `42` to find that only `n = 42` works.
+3. Conclude that `n = 42`.
+
+But in Lean, the hypothesis is that the denominator is `1`, so we can directly use this to deduce that `n = 42`. 
+
+But we can also proceed by noting that `n` must divide `42` and then checking the divisors. 
+
+But in Lean, the hypothesis is that the denominator is `1`, so we can directly use this to deduce that `n = 42`. 
+
+### Lean 4 Proof with `have` Statements
+
+```lean4
+theorem amc12b_2002_p4 (n : ℕ) (h₀ : 0 < n) (h₁ : (1 /. 2 + 1 /. 3 + 1 /. 7 + 1 /. ↑n).den = 1) : n = 42 := by
+  have h₂ : n = 42 := by sorry
+  sorry
+```
+
+### Complete Lean 4 Proof
+
+```lean4
+theorem amc12b_2002_p4 (n : ℕ) (h₀ : 0 < n) (h₁ : (1 /. 2 + 1 /. 3 + 1 /. 7 + 1 /. ↑n).den = 1) : n = 42 := by
+  have h₂ : n = 42 := by
+    have h₃ : n ∣ 42 := by
+      -- Prove that n divides 42 using the given condition
+      have h₄ : (1 /. 2 + 1 /. 3 + 1 /. 7 + 1 /. (n : ℚ)).den = 1 := by simpa using h₁
+      have h₅ : (1 /. 2 + 1 /. 3 + 1 /. 7 + 1 /. (n : ℚ)) = (41 * n + 42 : ℚ) / (42 * n : ℚ) := by
+        field_simp [Nat.cast_ne_zero, h₀.ne']
+        <;> ring_nf
+        <;> norm_num
+        <;> field_simp [Nat.cast_ne_zero, h₀.ne']
+        <;> ring_nf
+        <;> norm_num
+        <;> linarith
+      rw [h₅] at h₄
+      have h₆ : ((41 * n + 42 : ℚ) / (42 * n : ℚ)).den = 1 := by simpa using h₄
+      have h₇ : (41 * n + 42 : ℚ) / (42 * n : ℚ) = (41 * n + 42 : ℚ) / (42 * n : ℚ) := rfl
+      rw [h₇] at h₆
+      have h₈ : ((41 * n + 42 : ℚ) / (42 * n : ℚ)).den = 1 := by simpa using h₆
+      have h₉ : (42 : ℕ) * n ∣ 41 * n + 42 := by
+        -- Prove that 42 * n divides 41 * n + 42
+        have h₁₀ : ((41 * n + 42 : ℚ) / (42 * n : ℚ)).den = 1 := by simpa using h₈
+        have h₁₁ : (42 : ℕ) * n ∣ 41 * n + 42 := by
+          -- Use the fact that the denominator is 1 to deduce that 42 * n divides 41 * n + 42
+          have h₁₂ : ((41 * n + 42 : ℚ) / (42 * n : ℚ)).den = 1 := by simpa using h₈
+          have h₁₃ : (42 : ℕ) * n ∣ 41 * n + 42 := by
+            -- Use the fact that the denominator is 1 to deduce that 42 * n divides 41 * n + 42
+            norm_cast at h₁₂ ⊢
+            <;>
+            (try norm_num at h₁₂ ⊢) <;>
+            (try ring_nf at h₁₂ ⊢) <;>
+            (try field_simp [Nat.cast_ne_zero, h₀.ne'] at h₁₂ ⊢) <;>
+            (try norm_cast at h₁₂ ⊢) <;>
+            (try ring_nf at h₁₂ ⊢) <;>
+            (try norm_num at h₁₂ ⊢) <;>
+            (try omega) <;>
+            (try
+              {
+                rcases n with (_ | _ | _ | _ | _ | _ | _ | _ | _ | _ | _ | _ | _ | _ | _ | _ | _ | n) <;>
+                norm_num at h₁₂ ⊢ <;>
+                (try omega) <;>
+                (try ring_nf at h₁₂ ⊢) <;>
+                (try norm_num at h₁₂ ⊢) <;>
+                (try omega)
+              })
+          exact h₁₃
+        exact h₁₁
+      have h₁₀ : n ∣ 42 := by
+        -- Prove that n divides 42
+        have h₁₁ : (42 : ℕ) * n ∣ 41 * n + 42 := by exact h₉
+        have h₁₂ : n ∣ 42 := by
+          -- Use the fact that 42 * n divides 41 * n + 42 to deduce that n divides 42
+          have h₁₃ : (42 : ℕ) * n ∣ 41 * n + 42 := by exact h₉
+          have h₁₄ : n ∣ 42 := by
+            -- Use the fact that 42 * n divides 41 * n + 42 to deduce that n divides 42
+            have h₁₅ : n ∣ 42 := by
+              -- Use the fact that 42 * n divides 41 * n + 42 to deduce that n divides 42
+              have h₁₆ : (42 : ℕ) * n ∣ 41 * n + 42 := by exact h₉
+              have h₁₇ : n ∣ 42 := by
+                -- Use the fact that 42 * n divides 41 * n + 42 to deduce that n divides 42
+                have h₁₈ : n ∣ 42 := by
+                  -- Use the fact that 42 * n divides 41 * n + 42 to deduce that n divides 42
+                  have h₁₉ : (42 : ℕ) * n ∣ 41 * n + 42 := by exact h₉
+                  have h₂₀ : n ∣ 42 := by
+                    -- Use the fact that 42 * n divides 41 * n + 42 to deduce that n divides 42
+                    have h₂₁ : n ∣ 42 := by
+                      -- Use the fact that 42 * n divides 41 * n + 42 to deduce that n divides 42
+                      have h₂₂ : (42 : ℕ) * n ∣ 41 * n + 42 := by exact h₉
+                      have h₂₃ : n ∣ 42 := by
+                        -- Use the fact that 42 * n divides 41 * n + 42 to deduce that n divides 42
+                        have h₂₄ : n ∣ 42 := by
+                          -- Use the fact that 42 * n divides 41 * n + 42 to deduce that n divides 42
+                          have h₂₅ : (42 : ℕ) * n ∣ 41 * n + 42 := by exact h₉
+                          have h₂₆ : n ∣ 42 := by
+                            -- Use the fact that 42 * n divides 41 * n + 42 to deduce that n divides 42
+                            have h₂₇ : (42 : ℕ) * n ∣ 41 * n + 42 := by exact h₉
+                            have h₂₈ : n ∣ 42 := by
+                              -- Use the fact that 42 * n divides 41 * n + 42 to deduce that n divides 42
+                              omega
+                            exact h₂₈
+                          exact h₂₆
+                        exact h₂₄
+                      exact h₂₃
+                    exact h₂₁
+                  exact h₂₀
+                exact h₁₈
+              exact h₁₇
+            exact h₁₅
+          exact h₁₄
+        exact h₁₂
+      exact h₁₀
+    -- Now we know that n divides 42, we can check the divisors of 42
+    have h₄ : n = 42 := by
+      -- Check that n is a divisor of 42 and that n = 42 is the only solution
+      have h₅ : n ∣ 42 := h₃
+      have h₆ : n ≤ 42 := Nat.le_of_dvd (by norm_num) h₅
+      interval_cases n <;> norm_num at h₅ ⊢ <;>
+        (try omega) <;>
+        (try
+          {
+            norm_num [Rat.den_eq_one_iff] at h₁ ⊢
+            <;>
+            (try omega)
+          }) <;>
+        (try
+          {
+            norm_num [Rat.den_eq_one_iff] at h₁ ⊢
+            <;>
+            (try omega)
+          })
+    exact h₄
+  exact h₂
+```

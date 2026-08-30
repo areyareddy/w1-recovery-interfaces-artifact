@@ -1,0 +1,29 @@
+{
+  "finished_utc": "2026-08-28T16:50:00Z",
+  "inputs": {
+    "data\\prompts.jsonl": "7258ae486182f43b6c4ec791d631f5766cbda656e505065f06fdabedd5bc76be",
+    "src\\generate.py": "78c6c6cf75e8226b00482aaf886f38fd2342363b5a20786a8fbd72abff812dba"
+  },
+  "outputs": {
+    "audit\\determinism.json": "a3431342c154b2bf9dcccd0d92619956613f3f2bd9d370c2a8b12e223afc5cbf"
+  },
+  "stats": {
+    "all_cache_n_zero": true,
+    "arms_checked": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "branches_checked": 5,
+    "elapsed_seconds": 363.3,
+    "median_decode_tok_per_s": 129.7,
+    "median_prefill_tok_per_s": 10169.3,
+    "model_calls": 11,
+    "result": "PASS",
+    "seed": 424242
+  },
+  "step": "s06",
+  "title": "Determinism check"
+}

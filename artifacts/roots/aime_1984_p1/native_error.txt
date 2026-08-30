@@ -1,0 +1,18 @@
+
+Error 1:
+
+Corresponding Code:
+```lean4
+        simp [ih] at h₃ ⊢
+        <;> linarith
+    have h₃ : (∑ k in Finset.range 98, u k.succ) = 137 := h₁
+    have h₄ : (∑ k in Finset.range 49, u (2 * k.succ)) = 93 := by
+      <error>simp [h₂, Finset.sum_range_succ, Finset.sum_range_succ, Finset.sum_range_succ] at h₃ ⊢</error>
+      <;> ring_nf at h₃ ⊢ <;> norm_num at h₃ ⊢ <;> linarith
+
+```
+
+Error Message: tactic 'simp' failed, nested error:
+maximum recursion depth has been reached
+use `set_option maxRecDepth <num>` to increase limit
+use `set_option diagnostics true` to get diagnostic information

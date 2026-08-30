@@ -1,0 +1,184 @@
+### Proof and Analysis
+
+First, let's understand the problem correctly. We have three digits \(A, M, C\) (each between 0 and 9 inclusive), and the number formed by the digits \(0, 1, C, M, A\) (as a 5-digit number) is added to the number formed by the digits \(2, 1, C, M, A\) (as a 5-digit number), and the sum is 123422. We need to prove that \(A + M + C = 14\).
+
+#### Step 1: Understand the Number Formation
+The number `Nat.ofDigits 10 [0, 1, C, M, A]` is interpreted as the 5-digit number `01CMA` in base 10, i.e., \(10000 \cdot 0 + 1000 \cdot 1 + 100 \cdot C + 10 \cdot M + A = 1000 + 100C + 10M + A\). Similarly, `Nat.ofDigits 10 [2, 1, C, M, A]` is the 5-digit number `21CMA`, i.e., \(20000 + 1000 + 100C + 10M + A = 21000 + 100C + 10M + A\).
+
+Thus, the sum is:
+\[
+(1000 + 100C + 10M + A) + (21000 + 100C + 10M + A) = 22000 + 200C + 20M + 2A
+\]
+But this is incorrect! Let's carefully recompute the sum:
+\[
+(1000 + 100C + 10M + A) + (21000 + 100C + 10M + A) = (1000 + 21000) + (100C + 100C) + (10M + 10M) + (A + A) = 22000 + 200C + 20M + 2A
+\]
+This is correct. The given sum is `123422`, so:
+\[
+22000 + 200C + 20M + 2A = 123422
+\]
+Subtract 22000 from both sides:
+\[
+200C + 20M + 2A = 101422
+\]
+Divide both sides by 2:
+\[
+100C + 10M + A = 50711
+\]
+This seems to be incorrect because \(A, M, C\) are digits (i.e., \(0 \leq A, M, C \leq 9\)) and \(100C + 10M + A\) is at most \(999\) (when \(C = M = A = 9\)), which is much smaller than \(50711\). 
+
+But wait! The original number `Nat.ofDigits 10 [0, 1, C, M, A]` is actually interpreted as `01CMA` in base 10, which is \(1000 + 100C + 10M + A\), and similarly for the second number. So the sum is:
+\[
+(1000 + 100C + 10M + A) + (21000 + 100C + 10M + A) = 22000 + 200C + 20M + 2A = 123422
+\]
+This gives:
+\[
+200C + 20M + 2A = 101422
+\]
+But \(200C + 20M + 2A \leq 200 \cdot 9 + 20 \cdot 9 + 2 \cdot 9 = 1800 + 180 + 18 = 1998\), which is less than \(101422\). 
+
+This is a contradiction because \(200C + 20M + 2A = 101422\) is impossible for \(A, M, C\) digits. 
+
+But wait! The original Lean code is:
+```lean4
+Nat.ofDigits 10 [0, 1, C, M, A]
+```
+This is `01CMA` in base 10, i.e., \(1000 + 100C + 10M + A\), and similarly for the second number. 
+
+But in the problem statement, the sum is `123422`, and we derived `22000 + 200C + 20M + 2A = 123422`, i.e., `200C + 20M + 2A = 101422`. 
+
+But \(200C + 20M + 2A \leq 200 \cdot 9 + 20 \cdot 9 + 2 \cdot 9 = 1800 + 180 + 18 = 1998\), and \(1998 < 101422\). 
+
+This is a contradiction, meaning there are no digits \(A, M, C\) satisfying the given conditions. 
+
+But Lean's `Nat.ofDigits` is not the same as the usual number interpretation. 
+
+Wait, no! `Nat.ofDigits 10 [0, 1, C, M, A]` is `01CMA` in base 10, i.e., \(1000 + 100C + 10M + A\). Similarly, `Nat.ofDigits 10 [2, 1, C, M, A]` is \(21000 + 100C + 10M + A\). 
+
+Thus, the sum is:
+\[
+(1000 + 100C + 10M + A) + (21000 + 100C + 10M + A) = 22000 + 200C + 20M + 2A = 123422
+\]
+Subtract 22000:
+\[
+200C + 20M + 2A = 101422
+\]
+Divide by 2:
+\[
+100C + 10M + A = 50711
+\]
+But \(100C + 10M + A \leq 999\) (since \(C, M, A \leq 9\)), and \(50711 > 999\), which is a contradiction. 
+
+But the Lean hypothesis is `h₁ : Nat.ofDigits 10 [0, 1, C, M, A] + Nat.ofDigits 10 [2, 1, C, M, A] = 123422`, and we derived `22000 + 200C + 20M + 2A = 123422` from it, i.e., `200C + 20M + 2A = 101422`, which is `100C + 10M + A = 50711`. 
+
+But this is impossible because `100C + 10M + A ≤ 999` (since \(C, M, A \leq 9\)) and \(50711 > 999\). 
+
+But Lean's `Nat.ofDigits` is not the same as the usual number interpretation. 
+
+Wait, no. Lean's `Nat.ofDigits` is correct for this problem. 
+
+But the contradiction is that there are no digits `A, M, C` satisfying the given conditions, and thus the hypothesis `h₁` is false, and the goal `A + M + C = 14` can be anything (vacuously true). 
+
+But Lean's `Nat.ofDigits` is not the same as the usual number interpretation. 
+
+But in the Lean code, `Nat.ofDigits 10 [0, 1, C, M, A]` is `01CMA` in base 10, i.e., \(1000 + 100C + 10M + A\). 
+
+Similarly, `Nat.ofDigits 10 [2, 1, C, M, A]` is `21CMA` in base 10, i.e., \(21000 + 100C + 10M + A\). 
+
+Thus, the sum is:
+\[
+(1000 + 100C + 10M + A) + (21000 + 100C + 10M + A) = 22000 + 200C + 20M + 2A = 123422
+\]
+Subtract 22000:
+\[
+200C + 20M + 2A = 101422
+\]
+Divide by 2:
+\[
+100C + 10M + A = 50711
+\]
+But since \(A, M, C\) are digits, \(100C + 10M + A \leq 999\), but \(50711 > 999\), which is a contradiction. 
+
+Thus, the premises lead to a contradiction, and the goal `A + M + C = 14` is vacuously true. 
+
+But the Lean code has `h₀ : A ≤ 9 ∧ M ≤ 9 ∧ C ≤ 9`, which is correct, and `h₁` is the sum condition. 
+
+#### Step 2: Prove the Conclusion
+Since the premises lead to a contradiction, the conclusion `A + M + C = 14` is vacuously true. 
+
+But we need to confirm that the premises are indeed contradictory. 
+
+Let's recompute:
+\[
+22000 + 200C + 20M + 2A = 123422
+\]
+Subtract 22000:
+\[
+200C + 20M + 2A = 101422
+\]
+Divide by 2:
+\[
+100C + 10M + A = 50711
+\]
+But \(100C + 10M + A \leq 999\) (since \(C, M, A \leq 9\)), but \(50711 > 999\), which is a contradiction. 
+
+Thus, no such digits \(A, M, C\) exist, and the premises are impossible. 
+
+### Step 3: Abstract Plan
+
+1. **Calculate the Sum of the Two Numbers**:
+   - The first number is `01CMA` in base 10, i.e., \(1000 + 100C + 10M + A\).
+   - The second number is `21CMA` in base 10, i.e., \(21000 + 100C + 10M + A\).
+   - The sum is \(22000 + 200C + 20M + 2A = 123422\).
+
+2. **Derive Contradiction**:
+   - Simplify the sum to \(200C + 20M + 2A = 101422\).
+   - Further simplify to \(100C + 10M + A = 50711\).
+   - But since \(C, M, A\) are digits, \(100C + 10M + A \leq 999 < 50711\), which is a contradiction.
+
+3. **Conclusion**:
+   - The premises lead to a contradiction, so the conclusion `A + M + C = 14` is vacuously true.
+
+### Step 4: Lean `have` Statements
+
+```lean4
+theorem amc12a_2003_p5 (A M C : ℕ) (h₀ : A ≤ 9 ∧ M ≤ 9 ∧ C ≤ 9)
+    (h₁ : Nat.ofDigits 10 [0, 1, C, M, A] + Nat.ofDigits 10 [2, 1, C, M, A] = 123422) :
+    A + M + C = 14 := by
+  have h₂ : False := by sorry
+  have h₃ : A + M + C = 14 := by sorry
+  sorry
+```
+
+### Explanation:
+1. `h₂ : False`: The premises lead to a contradiction because the sum of the two numbers cannot be `123422` under the given constraints.
+2. `h₃ : A + M + C = 14`: Once we have `False` under the given hypotheses, any conclusion is true (by the principle of explosion). 
+
+### Complete Lean 4 Proof
+
+```lean4
+theorem amc12a_2003_p5 (A M C : ℕ) (h₀ : A ≤ 9 ∧ M ≤ 9 ∧ C ≤ 9)
+    (h₁ : Nat.ofDigits 10 [0, 1, C, M, A] + Nat.ofDigits 10 [2, 1, C, M, A] = 123422) :
+    A + M + C = 14 := by
+  have h₂ : False := by
+    have h₃ := h₁
+    simp [Nat.ofDigits, List.sum_cons, List.sum_nil, List.map, List.range_succ, Nat.mul_add, Nat.add_mul] at h₃
+    <;> ring_nf at h₃ ⊢
+    <;> norm_num at h₃ ⊢
+    <;>
+    (try omega) <;>
+    (try
+      {
+        have h₄ : A ≤ 9 := h₀.1
+        have h₅ : M ≤ 9 := h₀.2.1
+        have h₆ : C ≤ 9 := h₀.2.2
+        interval_cases A <;> interval_cases M <;> interval_cases C <;> norm_num at h₃ ⊢ <;> omega
+      }) <;>
+    omega
+  
+  have h₃ : A + M + C = 14 := by
+    exfalso
+    exact h₂
+  
+  exact h₃
+```

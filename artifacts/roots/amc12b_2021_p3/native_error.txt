@@ -1,0 +1,191 @@
+
+Error 1:
+
+Corresponding Code:
+```lean4
+        simp_all
+        <;> norm_num at *
+        <;> linarith
+      field_simp at h₆
+      <;> <error>nlinarith</error>
+    have h₅ : 1 + 1 / (2 + 2 / (3 + x)) ≠ 0 := by
+
+```
+
+Error Message: linarith failed to find a contradiction
+x : ℝ
+h₀ h₂ : 2 + 1 / (1 + 1 / (2 + 2 / (3 + x))) = 144 / 53
+h₃ : 3 + x ≠ 0
+h h₅ : 2 + 2 / (3 + x) = 0
+h₇ : 3 + x ≠ 0
+h₆ : 2 = -(2 * (3 + x))
+⊢ False
+failed
+
+Error 2:
+
+Corresponding Code:
+```lean4
+      <;> simp_all [div_eq_mul_inv]
+      <;> ring_nf at *
+      <;> field_simp at *
+      <;> nlinarith
+    have h₄ : 2 + 2 / (3 + x) ≠ 0 := <error>by
+      by_contra h
+      have h₅ : 2 + 2 / (3 + x) = 0 := by simpa using h
+      have h₆ : 2 / (3 + x) = -2 := by linarith
+      have h₇ : 3 + x ≠ 0 := by
+        intro h₈
+
+        ... --[Truncated]-- ...
+      <;> nlinarith</error>
+    have h₅ : 1 + 1 / (2 + 2 / (3 + x)) ≠ 0 := by
+
+```
+
+Error Message: unsolved goals
+x : ℝ
+h₀ h₂ : 2 + 1 / (1 + 1 / (2 + 2 / (3 + x))) = 144 / 53
+h₃ : 3 + x ≠ 0
+h h₅ : 2 + 2 / (3 + x) = 0
+h₇ : 3 + x ≠ 0
+h₆ : 2 = -(2 * (3 + x))
+⊢ False
+
+Error 3:
+
+Corresponding Code:
+```lean4
+        simp_all
+        <;> norm_num at *
+        <;> linarith
+      field_simp at h₇
+      <;> <error>nlinarith</error>
+    have h₆ : 1 + 1 / (2 + 2 / (3 + x)) ≠ 0 := by
+
+```
+
+Error Message: linarith failed to find a contradiction
+x : ℝ
+h₀ h₂ : 2 + 1 / (1 + 1 / (2 + 2 / (3 + x))) = 144 / 53
+h₃ : 3 + x ≠ 0
+h₄ : 2 + 2 / (3 + x) ≠ 0
+h h₆ : 1 + 1 / (2 + 2 / (3 + x)) = 0
+h₈ : 2 + 2 / (3 + x) ≠ 0
+h₇ : (3 + x) / (2 * (3 + x) + 2) = -1
+⊢ False
+failed
+
+Error 4:
+
+Corresponding Code:
+```lean4
+        <;> norm_num at *
+        <;> linarith
+      field_simp at h₆
+      <;> nlinarith
+    have h₅ : 1 + 1 / (2 + 2 / (3 + x)) ≠ 0 := <error>by
+      by_contra h
+      have h₆ : 1 + 1 / (2 + 2 / (3 + x)) = 0 := by simpa using h
+      have h₇ : 1 / (2 + 2 / (3 + x)) = -1 := by linarith
+      have h₈ : 2 + 2 / (3 + x) ≠ 0 := by
+        intro h₉
+
+        ... --[Truncated]-- ...
+      <;> nlinarith</error>
+    have h₆ : 1 + 1 / (2 + 2 / (3 + x)) ≠ 0 := by
+
+```
+
+Error Message: unsolved goals
+x : ℝ
+h₀ h₂ : 2 + 1 / (1 + 1 / (2 + 2 / (3 + x))) = 144 / 53
+h₃ : 3 + x ≠ 0
+h₄ : 2 + 2 / (3 + x) ≠ 0
+h h₆ : 1 + 1 / (2 + 2 / (3 + x)) = 0
+h₈ : 2 + 2 / (3 + x) ≠ 0
+h₇ : (3 + x) / (2 * (3 + x) + 2) = -1
+⊢ False
+
+Error 5:
+
+Corresponding Code:
+```lean4
+        simp_all
+        <;> norm_num at *
+        <;> linarith
+      field_simp at h₈
+      <;> <error>nlinarith</error>
+    field_simp at h₂
+
+```
+
+Error Message: linarith failed to find a contradiction
+x : ℝ
+h₀ h₂ : 2 + 1 / (1 + 1 / (2 + 2 / (3 + x))) = 144 / 53
+h₃ : 3 + x ≠ 0
+h₄ : 2 + 2 / (3 + x) ≠ 0
+h₅ : 1 + 1 / (2 + 2 / (3 + x)) ≠ 0
+h h₇ : 1 + 1 / (2 + 2 / (3 + x)) = 0
+h₉ : 2 + 2 / (3 + x) ≠ 0
+h₈ : (3 + x) / (2 * (3 + x) + 2) = -1
+⊢ False
+failed
+
+Error 6:
+
+Corresponding Code:
+```lean4
+        <;> norm_num at *
+        <;> linarith
+      field_simp at h₇
+      <;> nlinarith
+    have h₆ : 1 + 1 / (2 + 2 / (3 + x)) ≠ 0 := <error>by
+      by_contra h
+      have h₇ : 1 + 1 / (2 + 2 / (3 + x)) = 0 := by simpa using h
+      have h₈ : 1 / (2 + 2 / (3 + x)) = -1 := by linarith
+      have h₉ : 2 + 2 / (3 + x) ≠ 0 := by
+        intro h₁₀
+
+        ... --[Truncated]-- ...
+      <;> nlinarith</error>
+    field_simp at h₂
+
+```
+
+Error Message: unsolved goals
+x : ℝ
+h₀ h₂ : 2 + 1 / (1 + 1 / (2 + 2 / (3 + x))) = 144 / 53
+h₃ : 3 + x ≠ 0
+h₄ : 2 + 2 / (3 + x) ≠ 0
+h₅ : 1 + 1 / (2 + 2 / (3 + x)) ≠ 0
+h h₇ : 1 + 1 / (2 + 2 / (3 + x)) = 0
+h₉ : 2 + 2 / (3 + x) ≠ 0
+h₈ : (3 + x) / (2 * (3 + x) + 2) = -1
+⊢ False
+
+Error 7:
+
+Corresponding Code:
+```lean4
+    field_simp at h₂
+    ring_nf at h₂
+    apply Eq.symm
+    ring_nf at h₂ ⊢
+    <error>nlinarith [sq_pos_of_ne_zero (sub_ne_zero.mpr h₃), sq_pos_of_ne_zero (sub_ne_zero.mpr h₄),
+      sq_pos_of_ne_zero (sub_ne_zero.mpr h₅), sq_pos_of_ne_zero (sub_ne_zero.mpr h₆)]</error>
+  exact h₁
+
+```
+
+Error Message: linarith failed to find a contradiction
+case h.h1.h
+x : ℝ
+h₀ : 2 + 1 / (1 + 1 / (2 + 2 / (3 + x))) = 144 / 53
+h₃ : 3 + x ≠ 0
+h₄ : 2 + 2 / (3 + x) ≠ 0
+h₅ h₆ : 1 + 1 / (2 + 2 / (3 + x)) ≠ 0
+h₂ : 106 + (1 + x * (8 + x * 2)⁻¹ + (8 + x * 2)⁻¹ * 3)⁻¹ * 53 = 144
+a✝ : 3 / 4 < x
+⊢ False
+failed

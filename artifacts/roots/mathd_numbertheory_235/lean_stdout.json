@@ -1,0 +1,1 @@
+{"messages": [{"severity": "error", "pos": {"line": 15, "column": 4}, "endPos": {"line": 17, "column": 11}, "data": "no goals to be solved"}], "env": 11, "ast": []}

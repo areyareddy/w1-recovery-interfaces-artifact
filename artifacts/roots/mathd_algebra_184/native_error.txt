@@ -1,0 +1,15 @@
+
+Error 1:
+
+Corresponding Code:
+```lean4
+        have h₉ : a = 3 * NNReal.sqrt 2 := by
+          apply Eq.symm
+          apply Eq.symm
+          rw [← NNReal.coe_inj] at *
+          simp_all [NNReal.coe_mul, <error>NNReal.coe_sqrt</error>, NNReal.coe_ofNat]
+          <;>
+
+```
+
+Error Message: unknown constant 'NNReal.coe_sqrt'

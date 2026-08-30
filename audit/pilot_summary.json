@@ -1,0 +1,40 @@
+{
+  "branches": 34,
+  "by_arm": [
+    {
+      "arm": "A",
+      "n": 7,
+      "outcome_state": "lean_failed"
+    },
+    {
+      "arm": "A",
+      "n": 6,
+      "outcome_state": "truncated"
+    },
+    {
+      "arm": "C",
+      "n": 9,
+      "outcome_state": "lean_failed"
+    },
+    {
+      "arm": "C",
+      "n": 4,
+      "outcome_state": "truncated"
+    },
+    {
+      "arm": "E",
+      "n": 8,
+      "outcome_state": "lean_failed"
+    }
+  ],
+  "generation_wall_seconds": 1494.4,
+  "lean_timeouts": 0,
+  "outcomes": {
+    "lean_failed": 24,
+    "truncated": 10
+  },
+  "status": {
+    "done": 34
+  },
+  "verifier_wall_seconds": 165.3
+}

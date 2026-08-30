@@ -1,0 +1,42 @@
+{
+  "authoritative_correction": "MASTER_CORRECTION.md",
+  "canonical_generation_totals": {
+    "all83_abcd_plus_eval_e": 353,
+    "eval_block1_abcd_plus_e": 181
+  },
+  "e_eligible": {
+    "all83": 44,
+    "dev43": 23,
+    "eval40": 21
+  },
+  "eval_feedback_kind_counts": {
+    "budget_exhausted": 15,
+    "native_error": 21,
+    "stdout_unparseable": 1,
+    "verifier_timeout": 3
+  },
+  "guidance_policy_id": "R2_error_conditioned",
+  "guidance_renderer_git_commit": "ba676343d7a407bf71d6f2fb7e148bccbb38f473",
+  "guidance_renderer_source": "src/mospe_navi.py::concrete_guidance_prompt",
+  "guidance_template_sha256": "bb645a25c4405220c5cb487b4c615f730e3d273cc31621488b4d5729b6baccdd",
+  "open_decisions_not_frozen": [
+    "seed_block_2_derivation",
+    "plain_draw_descriptive_variance_band"
+  ],
+  "r2_all83_matched_seed_identical": true,
+  "r2_all83_renderer_byte_identical": true,
+  "r2_branch_counts": {
+    "error_class_pool": 45,
+    "other_retrieval_fallback": 6,
+    "truncation_top3_retrieval": 32
+  },
+  "r2_nontruncation_dispatch_count": 51,
+  "r2_truncation_top3_count": 32,
+  "root_count": 83,
+  "roots_jsonl_sha256": "6132d7463347621a9bdd0c4fcd8d62dcde7836b377cfef0214f5b12abfdb418b",
+  "split_counts": {
+    "dev": 43,
+    "eval": 40
+  },
+  "status": "PASS"
+}

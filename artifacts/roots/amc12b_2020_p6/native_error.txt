@@ -1,0 +1,101 @@
+
+Error 1:
+
+Corresponding Code:
+```lean4
+      | zero => contradiction -- n ≥ 9, so n cannot be zero
+      | succ n =>
+        simp [Nat.mul_sub_left_distrib, Nat.mul_sub_right_distrib, Nat.pow_succ, Nat.mul_add, Nat.add_mul]
+        <;> ring_nf at *
+        <;> <error>omega</error>
+    have h₂ : (((n + 2)! - (n + 1)! : ℕ) : ℝ) = ((n + 1)^2 * n ! : ℝ) := by
+
+```
+
+Error Message: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  4*a + 4*b + c ≤ -1
+  b ≥ 0
+  d ≥ 8
+  a + 2*b ≥ 0
+  4*a + 4*b + c ≤ -1
+  5*a + 6*b + c ≥ 0
+where
+ a := ↑n * ↑(1 + n)!
+ b := ↑(1 + n)!
+ c := ↑(n ^ 2) * ↑(1 + n)!
+ d := ↑n
+
+Error 2:
+
+Corresponding Code:
+```lean4
+        <;> ring_nf
+      rw [h₂, h₃]
+      <;> cases n with
+      | zero => contradiction -- n ≥ 9, so n cannot be zero
+      | succ n <error>=>
+        simp [Nat.mul_sub_left_distrib, Nat.mul_sub_right_distrib, Nat.pow_succ, Nat.mul_add, Nat.add_mul]
+        <;> ring_nf at *
+        <;> omega</error>
+    have h₂ : (((n + 2)! - (n + 1)! : ℕ) : ℝ) = ((n + 1)^2 * n ! : ℝ) := by
+
+```
+
+Error Message: unsolved goals
+case succ
+n : ℕ
+h₃ : (2 + n)! = n * (1 + n)! + (1 + n)! * 2
+h₂ : (3 + n)! = n * (1 + n)! * 5 + n ^ 2 * (1 + n)! + (1 + n)! * 6
+h₀ : 9 ≤ 1 + n
+⊢ n * (1 + n)! * 5 + n ^ 2 * (1 + n)! + (1 + n)! * 6 - (n * (1 + n)! + (1 + n)! * 2) =
+    n * (1 + n)! * 4 + n ^ 2 * (1 + n)! + (1 + n)! * 4
+
+Error 3:
+
+Corresponding Code:
+```lean4
+      norm_cast
+    simp_all [h₄]
+    <;> ring_nf at *
+    <;> field_simp at *
+    <;> <error>nlinarith</error>
+  
+
+```
+
+Error Message: linarith failed to find a contradiction
+case h.h1.h
+n : ℕ
+h₀ : 9 ≤ n
+h₁ : (2 + n)! - (1 + n)! = n * n ! * 2 + n ^ 2 * n ! + n !
+h₃ : ↑n * 2 + ↑n ^ 2 + 1 = 1 + ↑n * 2 + ↑n ^ 2
+a✝ : (1 + ↑n * 2 + ↑n ^ 2) * ↑n ! < ↑(2 + n)! - ↑(1 + n)!
+⊢ False
+failed
+
+Error 4:
+
+Corresponding Code:
+```lean4
+theorem amc12b_2020_p6 (n : ℕ) (h₀ : 9 ≤ n) : ∃ x : ℕ, (x : ℝ) ^ 2 = ((n + 2)! - (n + 1)!) / n ! := by
+  have h_main : ∃ (x : ℕ), (x : ℝ) ^ 2 = ((n + 2)! - (n + 1)!) / n ! := <error>by
+    use n + 1
+    have h₁ : ((n + 2)! - (n + 1)! : ℕ) = (n + 1)^2 * n ! := by
+      have h₂ : (n + 2)! = (n + 2) * (n + 1) * n ! := by
+        simp [Nat.factorial_succ, Nat.mul_assoc]
+        <;> ring_nf
+
+        ... --[Truncated]-- ...
+    <;> nlinarith</error>
+  
+
+```
+
+Error Message: unsolved goals
+case h
+n : ℕ
+h₀ : 9 ≤ n
+h₁ : (2 + n)! - (1 + n)! = n * n ! * 2 + n ^ 2 * n ! + n !
+h₃ : ↑n * 2 + ↑n ^ 2 + 1 = 1 + ↑n * 2 + ↑n ^ 2
+⊢ (1 + ↑n * 2 + ↑n ^ 2) * ↑n ! = ↑(2 + n)! - ↑(1 + n)!

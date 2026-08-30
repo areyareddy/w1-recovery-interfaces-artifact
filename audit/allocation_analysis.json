@@ -1,0 +1,689 @@
+{
+  "budget_tokens": 12288,
+  "design_sha256_expected": "ca5f1cbd074a58108becfed86ec3743f40c23553d8050d520916790b8026fc97",
+  "dev": {
+    "accounting": {
+      "full_budget": {
+        "long": {
+          "draws": 43,
+          "median_time_to_first_success": 53.4,
+          "n": 43,
+          "seconds_per_verified": 634.1,
+          "tokens": 369855,
+          "tokens_per_verified": 73971.0,
+          "verified_per_1000s": 1.577,
+          "verified_roots": 5,
+          "wall_seconds": 3170.3
+        },
+        "split2": {
+          "draws": 86,
+          "median_time_to_first_success": 72.4,
+          "n": 43,
+          "seconds_per_verified": 408.3,
+          "tokens": 474883,
+          "tokens_per_verified": 52764.8,
+          "verified_per_1000s": 2.449,
+          "verified_roots": 9,
+          "wall_seconds": 3674.4
+        },
+        "split3": {
+          "draws": 129,
+          "median_time_to_first_success": 79.6,
+          "n": 43,
+          "seconds_per_verified": 719.1,
+          "tokens": 499554,
+          "tokens_per_verified": 99910.8,
+          "verified_per_1000s": 1.391,
+          "verified_roots": 5,
+          "wall_seconds": 3595.3
+        }
+      },
+      "stop_after_first_success": {
+        "long": {
+          "draws": 43,
+          "median_time_to_first_success": 53.4,
+          "n": 43,
+          "seconds_per_verified": 634.1,
+          "tokens": 369855,
+          "tokens_per_verified": 73971.0,
+          "verified_per_1000s": 1.577,
+          "verified_roots": 5,
+          "wall_seconds": 3170.3
+        },
+        "split2": {
+          "draws": 83,
+          "median_time_to_first_success": 72.1,
+          "n": 43,
+          "seconds_per_verified": 393.3,
+          "tokens": 461882,
+          "tokens_per_verified": 51320.2,
+          "verified_per_1000s": 2.542,
+          "verified_roots": 9,
+          "wall_seconds": 3539.9
+        },
+        "split3": {
+          "draws": 124,
+          "median_time_to_first_success": 79.6,
+          "n": 43,
+          "seconds_per_verified": 697.5,
+          "tokens": 484121,
+          "tokens_per_verified": 96824.2,
+          "verified_per_1000s": 1.434,
+          "verified_roots": 5,
+          "wall_seconds": 3487.3
+        }
+      }
+    },
+    "confirmatory": false,
+    "contrasts": [
+      {
+        "both": 4,
+        "ci95": [
+          0.0,
+          0.2093
+        ],
+        "contrast": "split2-long",
+        "effect": 0.093,
+        "holm_family": "allocation_primary",
+        "n": 43,
+        "p_exact_mcnemar": 0.21875,
+        "p_holm": 0.4375,
+        "x_only": 5,
+        "y_only": 1
+      },
+      {
+        "both": 3,
+        "ci95": [
+          -0.093,
+          0.093
+        ],
+        "contrast": "split3-long",
+        "effect": 0.0,
+        "holm_family": "allocation_primary",
+        "n": 43,
+        "p_exact_mcnemar": 1.0,
+        "p_holm": 1.0,
+        "x_only": 2,
+        "y_only": 2
+      },
+      {
+        "both": 5,
+        "ci95": [
+          -0.186,
+          -0.0233
+        ],
+        "contrast": "split3-split2",
+        "effect": -0.093,
+        "n": 43,
+        "p_exact_mcnemar": 0.125,
+        "x_only": 0,
+        "y_only": 4
+      }
+    ],
+    "cross_policy": {
+      "cells": {
+        "+++": 3,
+        "++-": 1,
+        "+-+": 0,
+        "+--": 1,
+        "-++": 2,
+        "-+-": 3,
+        "--+": 0,
+        "---": 33
+      },
+      "legend": "pattern is (Long, Split-2, Split-3); + = verified within budget",
+      "note": "Marginal per-policy counts cannot distinguish overlapping from disjoint successes. This joint table is the structure the paired primary endpoint operates on.",
+      "roots_verified_by_all_three": 3,
+      "roots_verified_by_any": 10,
+      "roots_verified_by_exactly_one": {
+        "long": 1,
+        "split2": 3,
+        "split3": 0
+      },
+      "unique_roots": {
+        "long": [
+          "amc12a_2009_p7"
+        ],
+        "split2": [
+          "amc12b_2021_p3",
+          "mathd_algebra_17",
+          "mathd_numbertheory_227"
+        ],
+        "split3": []
+      }
+    },
+    "gate": {
+      "long": {
+        "cohort": "full_pool_dev",
+        "complete": true,
+        "done": 43,
+        "expected": 43
+      },
+      "split2": {
+        "cohort": "alloc_split2_dev",
+        "complete": true,
+        "done": 86,
+        "expected": 86
+      },
+      "split3": {
+        "cohort": "alloc_split3_dev",
+        "complete": true,
+        "done": 129,
+        "expected": 129
+      }
+    },
+    "holm_family": {
+      "descriptive_only": [
+        "split3-split2"
+      ],
+      "members": [
+        "split2-long",
+        "split3-long"
+      ]
+    },
+    "n_roots": 43,
+    "resource_contrasts": {
+      "full_budget": {
+        "split2": {
+          "delta_tokens_ci95": [
+            1654.837,
+            3235.535
+          ],
+          "delta_tokens_mean": 2442.5,
+          "delta_verified_per_1000s": [
+            -0.4317,
+            2.2914
+          ],
+          "delta_wall_seconds_ci95": [
+            4.56,
+            18.963
+          ],
+          "delta_wall_seconds_mean": 11.72,
+          "long_realized_tokens_total": 369855,
+          "nominal_cap_budget_total": 528384,
+          "realized_tokens_total": 474883,
+          "tokens_resolved": true,
+          "wall_resolved": true
+        },
+        "split3": {
+          "delta_tokens_ci95": [
+            2082.419,
+            3950.14
+          ],
+          "delta_tokens_mean": 3016.3,
+          "delta_verified_per_1000s": [
+            -1.42,
+            0.9743
+          ],
+          "delta_wall_seconds_ci95": [
+            2.594,
+            17.269
+          ],
+          "delta_wall_seconds_mean": 9.88,
+          "long_realized_tokens_total": 369855,
+          "nominal_cap_budget_total": 528384,
+          "realized_tokens_total": 499554,
+          "tokens_resolved": true,
+          "wall_resolved": true
+        }
+      },
+      "stop_after_first_success": {
+        "split2": {
+          "delta_tokens_ci95": [
+            1372.419,
+            2928.023
+          ],
+          "delta_tokens_mean": 2140.2,
+          "delta_verified_per_1000s": [
+            -0.3532,
+            2.4138
+          ],
+          "delta_wall_seconds_ci95": [
+            2.223,
+            14.936
+          ],
+          "delta_wall_seconds_mean": 8.6,
+          "long_realized_tokens_total": 369855,
+          "nominal_cap_budget_total": 528384,
+          "realized_tokens_total": 461882,
+          "tokens_resolved": true,
+          "wall_resolved": true
+        },
+        "split3": {
+          "delta_tokens_ci95": [
+            1761.047,
+            3578.209
+          ],
+          "delta_tokens_mean": 2657.3,
+          "delta_verified_per_1000s": [
+            -1.386,
+            1.0654
+          ],
+          "delta_wall_seconds_ci95": [
+            0.692,
+            14.29
+          ],
+          "delta_wall_seconds_mean": 7.37,
+          "long_realized_tokens_total": 369855,
+          "nominal_cap_budget_total": 528384,
+          "realized_tokens_total": 484121,
+          "tokens_resolved": true,
+          "wall_resolved": true
+        }
+      }
+    },
+    "shared_draw_audit": null,
+    "status": "analysed",
+    "terminal_states": {
+      "long": {
+        "draw1": {
+          "lean_failed": 18,
+          "truncated": 20,
+          "verified": 5
+        }
+      },
+      "split2": {
+        "draw1": {
+          "lean_failed": 12,
+          "truncated": 28,
+          "verified": 3
+        },
+        "draw2": {
+          "lean_failed": 4,
+          "truncated": 31,
+          "verified": 8
+        }
+      },
+      "split3": {
+        "draw1": {
+          "lean_failed": 4,
+          "truncated": 37,
+          "verified": 2
+        },
+        "draw2": {
+          "lean_failed": 1,
+          "truncated": 40,
+          "verified": 2
+        },
+        "draw3": {
+          "lean_failed": 6,
+          "truncated": 34,
+          "verified": 3
+        }
+      }
+    },
+    "terminal_states_note": "Short caps truncate far more often per draw. This EXPLAINS why the extra draws did not compensate; it does not bear on section 2's retained-success prediction, which is about completions that verify.",
+    "verified_roots": {
+      "long": 5,
+      "split2": 9,
+      "split3": 5
+    }
+  },
+  "eval": {
+    "accounting": {
+      "full_budget": {
+        "long": {
+          "draws": 40,
+          "median_time_to_first_success": 23.1,
+          "n": 40,
+          "seconds_per_verified": 284.1,
+          "tokens": 265527,
+          "tokens_per_verified": 29503.0,
+          "verified_per_1000s": 3.519,
+          "verified_roots": 9,
+          "wall_seconds": 2557.3
+        },
+        "split2": {
+          "draws": 80,
+          "median_time_to_first_success": 38.4,
+          "n": 40,
+          "seconds_per_verified": 318.3,
+          "tokens": 374589,
+          "tokens_per_verified": 34053.5,
+          "verified_per_1000s": 3.141,
+          "verified_roots": 11,
+          "wall_seconds": 3501.5
+        },
+        "split3": {
+          "draws": 120,
+          "median_time_to_first_success": 47.4,
+          "n": 40,
+          "seconds_per_verified": 418.1,
+          "tokens": 426766,
+          "tokens_per_verified": 53345.8,
+          "verified_per_1000s": 2.392,
+          "verified_roots": 8,
+          "wall_seconds": 3344.5
+        }
+      },
+      "stop_after_first_success": {
+        "long": {
+          "draws": 40,
+          "median_time_to_first_success": 23.1,
+          "n": 40,
+          "seconds_per_verified": 284.1,
+          "tokens": 265527,
+          "tokens_per_verified": 29503.0,
+          "verified_per_1000s": 3.519,
+          "verified_roots": 9,
+          "wall_seconds": 2557.3
+        },
+        "split2": {
+          "draws": 73,
+          "median_time_to_first_success": 22.8,
+          "n": 40,
+          "seconds_per_verified": 305.3,
+          "tokens": 356592,
+          "tokens_per_verified": 32417.5,
+          "verified_per_1000s": 3.276,
+          "verified_roots": 11,
+          "wall_seconds": 3358.1
+        },
+        "split3": {
+          "draws": 107,
+          "median_time_to_first_success": 18.9,
+          "n": 40,
+          "seconds_per_verified": 392.2,
+          "tokens": 397549,
+          "tokens_per_verified": 49693.6,
+          "verified_per_1000s": 2.55,
+          "verified_roots": 8,
+          "wall_seconds": 3137.2
+        }
+      }
+    },
+    "confirmatory": true,
+    "contrasts": [
+      {
+        "both": 7,
+        "ci95": [
+          -0.075,
+          0.175
+        ],
+        "contrast": "split2-long",
+        "effect": 0.05,
+        "holm_family": "allocation_primary",
+        "n": 40,
+        "p_exact_mcnemar": 0.6875,
+        "p_holm": 1.0,
+        "x_only": 4,
+        "y_only": 2
+      },
+      {
+        "both": 6,
+        "ci95": [
+          -0.125,
+          0.075
+        ],
+        "contrast": "split3-long",
+        "effect": -0.025,
+        "holm_family": "allocation_primary",
+        "n": 40,
+        "p_exact_mcnemar": 1.0,
+        "p_holm": 1.0,
+        "x_only": 2,
+        "y_only": 3
+      },
+      {
+        "both": 8,
+        "ci95": [
+          -0.175,
+          0.0
+        ],
+        "contrast": "split3-split2",
+        "effect": -0.075,
+        "n": 40,
+        "p_exact_mcnemar": 0.25,
+        "x_only": 0,
+        "y_only": 3
+      }
+    ],
+    "cross_policy": {
+      "cells": {
+        "+++": 6,
+        "++-": 1,
+        "+-+": 0,
+        "+--": 2,
+        "-++": 2,
+        "-+-": 2,
+        "--+": 0,
+        "---": 27
+      },
+      "legend": "pattern is (Long, Split-2, Split-3); + = verified within budget",
+      "note": "Marginal per-policy counts cannot distinguish overlapping from disjoint successes. This joint table is the structure the paired primary endpoint operates on.",
+      "roots_verified_by_all_three": 6,
+      "roots_verified_by_any": 13,
+      "roots_verified_by_exactly_one": {
+        "long": 2,
+        "split2": 2,
+        "split3": 0
+      },
+      "unique_roots": {
+        "long": [
+          "aime_1984_p1",
+          "aime_1997_p9"
+        ],
+        "split2": [
+          "amc12_2001_p21",
+          "mathd_numbertheory_296"
+        ],
+        "split3": []
+      }
+    },
+    "gate": {
+      "long": {
+        "cohort": "primary_eval",
+        "complete": true,
+        "done": 40,
+        "expected": 40
+      },
+      "split2": {
+        "cohort": "alloc_split2_eval",
+        "complete": true,
+        "done": 80,
+        "expected": 80
+      },
+      "split3": {
+        "cohort": "alloc_split3_eval",
+        "complete": true,
+        "done": 120,
+        "expected": 120
+      }
+    },
+    "holm_family": {
+      "descriptive_only": [
+        "split3-split2"
+      ],
+      "members": [
+        "split2-long",
+        "split3-long"
+      ]
+    },
+    "n_roots": 40,
+    "resource_contrasts": {
+      "full_budget": {
+        "split2": {
+          "delta_tokens_ci95": [
+            2014.85,
+            3442.525
+          ],
+          "delta_tokens_mean": 2726.6,
+          "delta_verified_per_1000s": [
+            -2.4311,
+            1.4968
+          ],
+          "delta_wall_seconds_ci95": [
+            5.367,
+            44.105
+          ],
+          "delta_wall_seconds_mean": 23.61,
+          "long_realized_tokens_total": 265527,
+          "nominal_cap_budget_total": 491520,
+          "realized_tokens_total": 374589,
+          "tokens_resolved": true,
+          "wall_resolved": true
+        },
+        "split3": {
+          "delta_tokens_ci95": [
+            3159.8,
+            4898.125
+          ],
+          "delta_tokens_mean": 4031.0,
+          "delta_verified_per_1000s": [
+            -3.1985,
+            0.5115
+          ],
+          "delta_wall_seconds_ci95": [
+            4.4,
+            35.462
+          ],
+          "delta_wall_seconds_mean": 19.68,
+          "long_realized_tokens_total": 265527,
+          "nominal_cap_budget_total": 491520,
+          "realized_tokens_total": 426766,
+          "tokens_resolved": true,
+          "wall_resolved": true
+        }
+      },
+      "stop_after_first_success": {
+        "split2": {
+          "delta_tokens_ci95": [
+            1509.1,
+            3067.95
+          ],
+          "delta_tokens_mean": 2276.6,
+          "delta_verified_per_1000s": [
+            -2.2396,
+            1.692
+          ],
+          "delta_wall_seconds_ci95": [
+            1.68,
+            40.707
+          ],
+          "delta_wall_seconds_mean": 20.02,
+          "long_realized_tokens_total": 265527,
+          "nominal_cap_budget_total": 491520,
+          "realized_tokens_total": 356592,
+          "tokens_resolved": true,
+          "wall_resolved": true
+        },
+        "split3": {
+          "delta_tokens_ci95": [
+            2366.425,
+            4259.85
+          ],
+          "delta_tokens_mean": 3300.6,
+          "delta_verified_per_1000s": [
+            -2.9638,
+            0.748
+          ],
+          "delta_wall_seconds_ci95": [
+            -0.475,
+            30.291
+          ],
+          "delta_wall_seconds_mean": 14.5,
+          "long_realized_tokens_total": 265527,
+          "nominal_cap_budget_total": 491520,
+          "realized_tokens_total": 397549,
+          "tokens_resolved": true,
+          "wall_resolved": false
+        }
+      }
+    },
+    "shared_draw_audit": {
+      "long_success_decode_tokens": [
+        958,
+        1834,
+        1960,
+        2818,
+        3263,
+        4480,
+        5737,
+        6500,
+        7411
+      ],
+      "note": "Section 2's prediction concerns completions that VERIFY. The all-draw truncation rate is a different quantity and does not bear on it.",
+      "prefix_audit": {
+        "split2": {
+          "all_prefix": true,
+          "exact_prefix": 40,
+          "n": 40,
+          "seed_matched": 40
+        },
+        "split3": {
+          "all_prefix": true,
+          "exact_prefix": 40,
+          "n": 40,
+          "seed_matched": 40
+        }
+      },
+      "retained_success": {
+        "4096": {
+          "observed_pct": 55.6,
+          "of": 9,
+          "predicted_pct": 61,
+          "retained": 5
+        },
+        "6144": {
+          "observed_pct": 77.8,
+          "of": 9,
+          "predicted_pct": 82,
+          "retained": 7
+        }
+      }
+    },
+    "status": "analysed",
+    "terminal_states": {
+      "long": {
+        "draw1": {
+          "lean_failed": 21,
+          "truncated": 10,
+          "verified": 9
+        }
+      },
+      "split2": {
+        "draw1": {
+          "lean_failed": 14,
+          "truncated": 19,
+          "verified": 7
+        },
+        "draw2": {
+          "lean_failed": 15,
+          "truncated": 17,
+          "verified": 8
+        }
+      },
+      "split3": {
+        "draw1": {
+          "lean_failed": 6,
+          "truncated": 29,
+          "verified": 5
+        },
+        "draw2": {
+          "lean_failed": 6,
+          "truncated": 28,
+          "verified": 6
+        },
+        "draw3": {
+          "lean_failed": 6,
+          "truncated": 30,
+          "verified": 4
+        }
+      }
+    },
+    "terminal_states_note": "Short caps truncate far more often per draw. This EXPLAINS why the extra draws did not compensate; it does not bear on section 2's retained-success prediction, which is about completions that verify.",
+    "verified_roots": {
+      "long": 9,
+      "split2": 11,
+      "split3": 8
+    }
+  },
+  "interpretation": {
+    "correction": "Section 10's frozen wording says cap choice 'does not matter'. That is an equivalence claim the design cannot support: the primary endpoint tested for a difference and found none, which is not the same thing. The frozen text is preserved above as provenance and the corrected reading is what the paper states.",
+    "frozen_reading_verbatim": "cap choice does not matter at this budget; W2's censoring finding stands as accounting only, and the paper says the reallocation was tried and did not pay",
+    "frozen_row": "all three within noise",
+    "reported_reading": "No detectable difference in held-out verification success. This is NOT an equivalence result: no equivalence test was performed, and the intervals still admit meaningful effects (split2-long [-0.075, 0.175], split3-long [-0.125, 0.075] in success proportion). What the data do show positively is that equal NOMINAL cap budgets were not equal REALIZED compute: realized completion tokens are higher for split2 and split3 (resolved, interval excludes zero); realized wall time is higher for split2 only, and the throughput differences are UNRESOLVED for both. The token result is the load-bearing one and it is the one that supports the paper's thesis.",
+    "source": "spec/ALLOCATION_SPEC.md section 10"
+  },
+  "router": "withdrawn (spec section 6)"
+}

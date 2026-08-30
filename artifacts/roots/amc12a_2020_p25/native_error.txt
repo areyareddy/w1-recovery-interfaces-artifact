@@ -1,0 +1,36 @@
+
+Error 1:
+
+Corresponding Code:
+```lean4
+            <;> simp_all [Int.cast_mul, Int.cast_sub, Int.cast_floor]
+            <;> ring_nf at *
+            <;> nlinarith
+          -- Use the fact that S is finite to derive a contradiction
+          have h₂₃ : False := <error>by
+            -- Use the properties of the floor function and the given equation to derive a contradiction
+            have h₂₄ := h₂₂
+            have h₂₅ : (⌊x⌋ : ℝ) * (x - ⌊x⌋) = (a : ℝ) * x ^ 2 := by
+              norm_cast at h₂₄ ⊢
+              <;> simp_all [Int.cast_mul, Int.cast_sub, Int.cast_floor]
+
+              ... --[Truncated]-- ...
+            (try nlinarith)</error>
+          exact h₂₃
+
+```
+
+Error Message: unsolved goals
+a : ℚ
+S : Finset ℝ
+h₁ : ∑ k ∈ S, k = 420
+x✝ : ℝ
+hx✝ h₄ : x✝ ∈ S
+x : ℝ
+hx : x ∈ S
+h₂₇ : ↑⌊x⌋ * Int.fract x = ↑a * x ^ 2
+h₂₆ h₂₅ h₂₄ h₂₂ h₂₁ h₂₀ h₁₉ h₁₇ h₁₆ h₁₅ h₁₄ h₁₂ h₁₁ : ↑⌊x⌋ * x - ↑⌊x⌋ ^ 2 = ↑a * x ^ 2
+h₉ h₈ h₇ h₆ h₅ : ↑⌊x✝⌋ * x✝ - ↑⌊x✝⌋ ^ 2 = ↑a * x✝ ^ 2
+h₀ : ∀ (x : ℝ), x ∈ S ↔ ↑⌊x⌋ * x - ↑⌊x⌋ ^ 2 = ↑a * x ^ 2
+h : True
+⊢ False

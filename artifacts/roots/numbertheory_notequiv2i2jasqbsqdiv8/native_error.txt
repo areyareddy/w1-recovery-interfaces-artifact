@@ -1,0 +1,61 @@
+
+Error 1:
+
+Corresponding Code:
+```lean4
+    have h₄ : (∃ i j, (2 : ℤ) = 2 * i ∧ (0 : ℤ) = 2 * j) ↔ ∃ k, (2 : ℤ) ^ 2 + (0 : ℤ) ^ 2 = 8 * k := by
+      exact h₃
+    have h₅ : (∃ i j, (2 : ℤ) = 2 * i ∧ (0 : ℤ) = 2 * j) := h₁
+    have h₆ : (∃ k, (2 : ℤ) ^ 2 + (0 : ℤ) ^ 2 = 8 * k) := by
+      <error>tauto</error>
+    tauto
+
+```
+
+Error Message: tauto failed to solve some goals.
+
+Error 2:
+
+Corresponding Code:
+```lean4
+    have h₄ : (∃ i j, (2 : ℤ) = 2 * i ∧ (0 : ℤ) = 2 * j) ↔ ∃ k, (2 : ℤ) ^ 2 + (0 : ℤ) ^ 2 = 8 * k := by
+      exact h₃
+    have h₅ : (∃ i j, (2 : ℤ) = 2 * i ∧ (0 : ℤ) = 2 * j) := h₁
+    have h₆ : (∃ k, (2 : ℤ) ^ 2 + (0 : ℤ) ^ 2 = 8 * k) := by
+      <error>tauto</error>
+    tauto
+
+```
+
+Error Message: unsolved goals
+case intro.inr.inr.inr.intro.intro.intro.intro.intro.intro.intro.intro.h
+h : ∀ (a b : ℤ), (∃ i j, a = 2 * i ∧ b = 2 * j) ↔ ∃ k, a ^ 2 + b ^ 2 = 8 * k
+w✝³ w✝² w✝¹ : ℤ
+left✝⁴ : ¬∃ k, 2 ^ 2 + 0 ^ 2 = 8 * k
+right✝⁴ : ¬False
+left✝³ : ¬∃ i j, 2 = 2 * i ∧ 0 = 2 * j
+right✝³ : ¬∃ k, 2 ^ 2 + 0 ^ 2 = 8 * k
+left✝² : ¬∃ i j, 2 = 2 * i ∧ 0 = 2 * j
+right✝² : ¬∃ k, 2 ^ 2 + 0 ^ 2 = 8 * k
+w✝ : ℤ
+left✝¹ : 2 = 2 * w✝³
+right✝¹ : 0 = 2 * w✝¹
+left✝ : 2 = 2 * w✝²
+right✝ : 0 = 2 * w✝
+⊢ 2 ^ 2 + 0 ^ 2 = 8 * ?intro.inr.inr.inr.intro.intro.intro.intro.intro.intro.intro.intro.w
+
+case intro.inr.inr.inr.intro.intro.intro.intro.intro.intro.intro.intro.w
+h : ∀ (a b : ℤ), (∃ i j, a = 2 * i ∧ b = 2 * j) ↔ ∃ k, a ^ 2 + b ^ 2 = 8 * k
+w✝³ w✝² w✝¹ : ℤ
+left✝⁴ : ¬∃ k, 2 ^ 2 + 0 ^ 2 = 8 * k
+right✝⁴ : ¬False
+left✝³ : ¬∃ i j, 2 = 2 * i ∧ 0 = 2 * j
+right✝³ : ¬∃ k, 2 ^ 2 + 0 ^ 2 = 8 * k
+left✝² : ¬∃ i j, 2 = 2 * i ∧ 0 = 2 * j
+right✝² : ¬∃ k, 2 ^ 2 + 0 ^ 2 = 8 * k
+w✝ : ℤ
+left✝¹ : 2 = 2 * w✝³
+right✝¹ : 0 = 2 * w✝¹
+left✝ : 2 = 2 * w✝²
+right✝ : 0 = 2 * w✝
+⊢ ℤ

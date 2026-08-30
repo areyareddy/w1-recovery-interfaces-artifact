@@ -1,0 +1,281 @@
+anchoring_metric:
+  computed_over: the entire completion -- comments, prose and malformed Lean are NOT stripped
+  contrasts:
+    T0: mean[S(C,root) - S(A,root)]
+    T1: mean[S(D,root) - S(B,root)]
+  formula: S = 1 - lev(model_tokens(a), model_tokens(b)) / max(len_a, len_b)
+  interpretation: proxy for textual anchoring. High S evidences anchoring; low S does NOT prove the prior
+    attempt was ignored.
+  metric_id: prior_attempt_textual_anchoring_v1
+  normalization_id: lf_endings_and_trailing_ws_v1
+  null_band:
+    null_band_max: 0.18081
+    null_band_min: 0.005698
+    null_band_p50: 0.089985
+    null_band_p95: 0.15417
+    null_band_pairs: 400
+    null_band_seed: 20260828
+  tokenizer: the serving model's own /tokenize endpoint; no fallback
+authoritative_correction: MASTER_CORRECTION.md
+cohorts:
+  all_branches_built: 376
+  e_eligible_eval_roots:
+  - aime_1984_p1
+  - aime_1987_p5
+  - algebra_2varlineareq_fp3zeq11_3tfm1m5zeqn68_feqn10_zeq7
+  - algebra_cubrtrp1oncubrtreq3_rcubp1onrcubeq5778
+  - algebra_others_exirrpowirrrat
+  - amc12_2001_p21
+  - amc12a_2003_p5
+  - amc12a_2019_p12
+  - amc12b_2002_p4
+  - amc12b_2020_p6
+  - induction_pprime_pdvdapowpma
+  - mathd_algebra_188
+  - mathd_algebra_313
+  - mathd_numbertheory_135
+  - mathd_numbertheory_235
+  - mathd_numbertheory_296
+  - mathd_numbertheory_343
+  - mathd_numbertheory_495
+  - numbertheory_3pow2pownm1mod2pownp3eq2pownp2
+  - numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown
+  - numbertheory_notequiv2i2jasqbsqdiv8
+  full_pool_dev:
+    definition: dev-43 x arms A/B/C/D (172) + arm E on 23 eligible dev roots
+    n: 195
+  primary_eval:
+    definition: eval-40 x arms A/B/C/D (160) + arm E on the 21 native-feedback-eligible eval roots
+    n: 181
+frozen_utc: '2026-08-28T05:00:31Z'
+gates:
+  s03_prompt_diff:
+    checks_per_root: 13
+    e_roots_checked: 44
+    max_delta_guidance_chars: 221
+    max_delta_prior_chars: 45110
+    result: PASS
+    roots_audited: 83
+    total_assertions: 1040
+    wrapper_skeleton_sha256: 04978bed4a6332b3be2299d0fb77e4837d8c4f764e8f60d5ab770c7509976585
+  s04_anchoring:
+    max_prior_tokens: 12288
+    median_prior_tokens: 8726
+    metric_id: prior_attempt_textual_anchoring_v1
+    normalization_id: lf_endings_and_trailing_ws_v1
+    result: PASS
+    roots_tokenized: 83
+    unit_cases: 16
+  s05_context_capacity:
+    branches_measured: 376
+    colm_r2_delta_histogram:
+      '0': 83
+    colm_r2_prompt_token_exact_match: 83/83
+    elision_rule_needed: false
+    max_tokens: 12288
+    n_ctx: 32768
+    per_arm:
+      A:
+        max: 371
+        median: 190
+        n: 83
+      B:
+        max: 414
+        median: 234
+        n: 83
+      C:
+        max: 12571
+        median: 8981
+        n: 83
+      D:
+        max: 12612
+        median: 9027
+        n: 83
+      E:
+        max: 13984
+        median: 6242
+        n: 44
+    result: PASS
+    safety_margin: 64
+    worst_branch: numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown|E
+    worst_headroom: 6496
+    worst_prompt_tokens: 13984
+    worst_total_required: 26272
+  s06_determinism:
+    all_cache_n_zero: true
+    arms_checked:
+    - A
+    - B
+    - C
+    - D
+    - E
+    branches_checked: 5
+    elapsed_seconds: 354.3
+    median_decode_tok_per_s: 131.1
+    median_prefill_tok_per_s: 10100.7
+    model_calls: 11
+    result: PASS
+    seed: 424242
+  s09_kill_restart:
+    checks_passed: 6
+    done_after: 7
+    killed_after_commits: 2
+    orphaned_running_at_kill: 1
+    pilot_branches: 34
+    result: PASS
+  s10_pilot:
+    by_arm:
+      A|lean_failed: 7
+      A|truncated: 6
+      C|lean_failed: 9
+      C|truncated: 4
+      E|lean_failed: 8
+    generation_wall_seconds: 1494.4
+    lean_timeouts: 0
+    max_tokens: 12288
+    outcomes:
+      lean_failed: 24
+      truncated: 10
+    pilot_branches: 34
+    result: PASS
+    verifier_wall_seconds: 165.3
+generation:
+  max_tokens: 12288
+guidance:
+  caveat: on truncated roots cascade_guidance returns nav2_selection[:3], which is prompt shrinking rather
+    than error-class keying
+  error_class_keyed_roots: 51
+  policy_id: R2_error_conditioned
+  r1_is_not_failure_conditioned: mospe_navi.py:2823
+  source: cascade_guidance(failure_class, ...) -- mospe_navi.py:2826
+  truncation_top3_roots: 32
+neutral_prior_attempt_wrapper:
+  constraints:
+  - states the attempt was not accepted, and nothing about why
+  - uniform across all roots -- no per-failure-class wording
+  - does not instruct repair
+  origin: W1 design decision; v7 names the function but not its wording
+  sha256: 04978bed4a6332b3be2299d0fb77e4837d8c4f764e8f60d5ab770c7509976585
+  text: 'A previous attempt at this problem was not accepted by the Lean 4 compiler. It is reproduced
+    below exactly as it was produced, with no information about why it was not accepted.
+
+
+    <previous_attempt>
+
+    {prior_attempt}
+
+    </previous_attempt>
+
+
+    '
+note: This file wins over Updated_Proposal_V_7 wherever they disagree.
+outcome_states:
+  derivation: policy.generation_prefilter, verbatim from CoLM
+  format_error: no usable Lean, or a sorry/admit placeholder
+  lean_failed: Lean rejected
+  truncated: finish_reason == length; Lean never runs
+  verified: Lean accepted
+  verifier_wall_zero_not_null: skipped states record 0.0, so 'not spent' never looks like 'not measured'
+plain_draw_variance_band:
+  comparability_caveat: different batching configuration (--parallel 4 / ctx 65536 vs --parallel 1 / ctx
+    32768). Prompt, sampler and max_tokens are identical. Report as a descriptive expectation, not as
+    a test distribution.
+  primary_8_matched_runs:
+    band: 7-9 of 40
+    pooled: 66/320 = 20.6%
+    rescues_of_40:
+    - 8
+    - 9
+    - 7
+    - 7
+    - 9
+    - 9
+    - 8
+    - 9
+    runs:
+    - epp_replication40_d0
+    - epp_replication40_d1
+    - epp_replication40_d2
+    - epp_replication40_d3
+    - epp_prospective40_seed56
+    - epp_prospective40_seed57
+    - epp_prospective40_seed58
+    - epp_prospective40_seed59
+  source: CoLM R0 (baseline retry, no guidance) on this exact eval-40 root set
+  status: pre_registered_descriptive_reference
+  use: if arm A lands outside 6-11 of 40, treat it as a signal that something in serving changed, and
+    investigate before interpreting any contrast.
+  wider_envelope_12_runs:
+    adds:
+    - epp_confirmatory_202
+    - epp_confirmatory_202_matched_seeds
+    - epp_confirmatory_202_router_seed540
+    - epp_confirmatory_202_seed550_confirm
+    band: 6-11 of 40
+    pooled: 97/480 = 20.2%
+policy_surface:
+  guidance_template_sha256: bb645a25c4405220c5cb487b4c615f730e3d273cc31621488b4d5729b6baccdd
+  official_prompt_sha256: 96f37d5339fb63b73062949b4c8988b649e30d389dbfa4cbe61047043a4259ac
+  prompt_addendum: ''
+  source: CoLM_Jul2026_MoSpe_Navi/src/mospe_navi.py
+  verified_byte_identical: true
+  verify_with: python scripts/sync_policy.py
+prompt_composition:
+  A: OFFICIAL(theorem)
+  B: GUIDANCE_BLOCK + OFFICIAL(theorem)
+  C: WRAPPER_BLOCK + OFFICIAL(theorem)
+  D: GUIDANCE_BLOCK + WRAPPER_BLOCK + OFFICIAL(theorem)
+  E: '3-turn native format: OFFICIAL(theorem) / prior completion / native <error> correction turn'
+  abcd_are_one_user_turn: true
+  order: guidance outermost
+  v7_ordering_is_unbuildable: 04 Sec.6 writes theorem + R2 + prior + wrapper + base; the theorem is embedded
+    inside the base template, so that ordering cannot be built
+  why: conversation structure is held constant across the 2x2; only E changes it, which is why E-A is
+    a positive control and not an isolated artifact effect
+resource_accounting:
+  columns:
+  - model_calls
+  - completion_tokens
+  - total_tokens
+  - prefill_tokens
+  - decode_tokens
+  - request_wall_seconds
+  - verifier_wall_seconds
+  measured_decode_tokens_per_second: 131.1
+  measured_prefill_tokens_per_second: 10100.7
+  measured_ratio: 77.0
+  prefill_and_decode_kept_separate: true
+sampler:
+  min_p: 0.05
+  temperature: 0.7
+  top_k: 40
+  top_p: 0.95
+seeds:
+  block_1_range:
+  - 2000000
+  - 2000082
+  block_base:
+    1: 2000000
+    2: 3000000
+  collision_note: CoLM's entire seed history lies in 100030..1079030
+  formula: seed = block_base[block] + index of root_id in sorted(root_ids)
+  rule_id: block_base_plus_sorted_root_index_v1
+  shared_across_arms: true
+  why_shared: C-A and D-B are paired within-root contrasts; different seeds per arm would make them independent
+    draws
+serving:
+  backend: llama.cpp server
+  cache_prompt: false
+  colm_determinism_does_not_carry_over: CoLM served --parallel 4 at ctx 65536; slot geometry changes the
+    arithmetic, so Gate 9 was re-run under this configuration
+  cont_batching: false
+  determinism_reverified_here: true
+  gpu_layers: 999
+  model: Goedel-Prover-V2-8B.Q4_K_M.gguf
+  n_ctx: 32768
+  parallel: 1
+spec_version: 1
+verification:
+  backend: Lean 4 REPL in WSL2 with pinned Mathlib
+  timeout_seconds: 180
+  workers: 1

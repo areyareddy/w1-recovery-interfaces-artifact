@@ -1,0 +1,113 @@
+
+Error 1:
+
+Corresponding Code:
+```lean4
+            · norm_num
+            · cases n with
+              | zero =>
+                norm_num at hn ⊢
+              | succ n <error>=>
+                simp [pow_succ, pow_mul, Nat.mul_mod, Nat.pow_mod, Nat.add_mod, Nat.mod_mod] at IH ⊢
+                <;>
+                  (try omega) <;>
+                  (try
+                    {
+
+                    ... --[Truncated]-- ...
+                    })</error>
+          exact h₄ k hk
+
+```
+
+Error Message: unsolved goals
+case step.succ
+n✝¹ : ℕ
+h₀ : 0 < n✝¹
+k : ℕ
+hk : 0 < k
+n✝ n : ℕ
+hn : (succ 0).le (n + 1)
+IH :
+  (3 % (2 ^ n * 2 * 2 * 2 * 2) % (2 ^ n * 2 * 2 * 2 * 2)) ^ 2 ^ n % (2 ^ n * 2 * 2 * 2 * 2) % (2 ^ n * 2 * 2 * 2 * 2) *
+        ((3 % (2 ^ n * 2 * 2 * 2 * 2) % (2 ^ n * 2 * 2 * 2 * 2)) ^ 2 ^ n % (2 ^ n * 2 * 2 * 2 * 2) %
+          (2 ^ n * 2 * 2 * 2 * 2)) %
+      (2 ^ n * 2 * 2 * 2 * 2) =
+    1 + 2 ^ n * 2 * 2 * 2
+⊢ (3 % (2 ^ n * 2 * 2 * 2 * 2 * 2) % (2 ^ n * 2 * 2 * 2 * 2 * 2)) ^ 2 ^ n % (2 ^ n * 2 * 2 * 2 * 2 * 2) %
+                (2 ^ n * 2 * 2 * 2 * 2 * 2) *
+              ((3 % (2 ^ n * 2 * 2 * 2 * 2 * 2) % (2 ^ n * 2 * 2 * 2 * 2 * 2)) ^ 2 ^ n % (2 ^ n * 2 * 2 * 2 * 2 * 2) %
+                (2 ^ n * 2 * 2 * 2 * 2 * 2)) %
+            (2 ^ n * 2 * 2 * 2 * 2 * 2) %
+          (2 ^ n * 2 * 2 * 2 * 2 * 2) *
+        ((3 % (2 ^ n * 2 * 2 * 2 * 2 * 2) % (2 ^ n * 2 * 2 * 2 * 2 * 2)) ^ 2 ^ n % (2 ^ n * 2 * 2 * 2 * 2 * 2) %
+                (2 ^ n * 2 * 2 * 2 * 2 * 2) *
+              ((3 % (2 ^ n * 2 * 2 * 2 * 2 * 2) % (2 ^ n * 2 * 2 * 2 * 2 * 2)) ^ 2 ^ n % (2 ^ n * 2 * 2 * 2 * 2 * 2) %
+                (2 ^ n * 2 * 2 * 2 * 2 * 2)) %
+            (2 ^ n * 2 * 2 * 2 * 2 * 2) %
+          (2 ^ n * 2 * 2 * 2 * 2 * 2)) %
+      (2 ^ n * 2 * 2 * 2 * 2 * 2) =
+    1 + 2 ^ n * 2 * 2 * 2 * 2
+
+Error 2:
+
+Corresponding Code:
+```lean4
+      have h₅ : (3 ^ 2 ^ n - 1) % 2 ^ (n + 3) = (3 ^ 2 ^ n % 2 ^ (n + 3) - 1) % 2 ^ (n + 3) := by
+        have h₅₁ : 3 ^ 2 ^ n % 2 ^ (n + 3) = 1 + 2 ^ (n + 2) := h₁
+        have h₅₂ : 3 ^ 2 ^ n ≥ 1 := h₄
+        have h₅₃ : 3 ^ 2 ^ n - 1 = 3 ^ 2 ^ n - 1 := rfl
+        have h₅₄ : (3 ^ 2 ^ n - 1) % 2 ^ (n + 3) = (3 ^ 2 ^ n % 2 ^ (n + 3) - 1) % 2 ^ (n + 3) := <error>by
+          rw [← Nat.mod_add_div (3 ^ 2 ^ n) (2 ^ (n + 3))]
+          simp [h₅₁, Nat.add_sub_assoc, Nat.add_sub_cancel, Nat.mul_mod, Nat.pow_mod, Nat.mod_mod]
+          <;>
+          (try omega) <;>
+          (try
+
+          ... --[Truncated]-- ...
+            })</error>
+        exact h₅₄
+
+```
+
+Error Message: unsolved goals
+n : ℕ
+h₀ : 0 < n
+h₁ h₃ : 3 ^ 2 ^ n % 2 ^ (n + 3) = 1 + 2 ^ (n + 2)
+h₄ : 3 ^ 2 ^ n ≥ 1
+h₅₁ : 3 ^ 2 ^ n % 2 ^ (n + 3) = 1 + 2 ^ (n + 2)
+h₅₂ : 3 ^ 2 ^ n ≥ 1
+h₅₃ : 3 ^ 2 ^ n - 1 = 3 ^ 2 ^ n - 1
+⊢ (1 + 2 ^ (n + 2) + 2 ^ (n + 3) * (3 ^ 2 ^ n / 2 ^ (n + 3)) - 1) % 2 ^ (n + 3) =
+    ((1 + 2 ^ (n + 2)) % 2 ^ (n + 3) - 1) % 2 ^ (n + 3)
+
+Error 3:
+
+Corresponding Code:
+```lean4
+            <;>
+            omega
+          })
+      rw [h₆]
+      have h₇ : (1 + 2 ^ (n + 2) - 1) % 2 ^ (n + 3) = 2 ^ (n + 2) := <error>by
+        have h₇₁ : 1 + 2 ^ (n + 2) - 1 = 2 ^ (n + 2) := by
+          have h₇₂ : 2 ^ (n + 2) ≥ 1 := by
+            apply Nat.one_le_pow
+            <;> omega
+          omega
+
+          ... --[Truncated]-- ...
+          })</error>
+      rw [h₇]
+
+```
+
+Error Message: unsolved goals
+n : ℕ
+h₀ : 0 < n
+h₁ h₃ : 3 ^ 2 ^ n % 2 ^ (n + 3) = 1 + 2 ^ (n + 2)
+h₄ : 3 ^ 2 ^ n ≥ 1
+h₅ : (3 ^ 2 ^ n - 1) % 2 ^ (n + 3) = (3 ^ 2 ^ n % 2 ^ (n + 3) - 1) % 2 ^ (n + 3)
+h₆ : (3 ^ 2 ^ n % 2 ^ (n + 3) - 1) % 2 ^ (n + 3) = (1 + 2 ^ (n + 2) - 1) % 2 ^ (n + 3)
+h₇₁ : 1 + 2 ^ (n + 2) - 1 = 2 ^ (n + 2)
+⊢ 2 ^ (n + 2) % 2 ^ (n + 3) = 2 ^ (n + 2)

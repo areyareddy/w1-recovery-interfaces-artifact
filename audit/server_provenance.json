@@ -1,0 +1,12 @@
+{
+  "bos_token": "<|endoftext|>",
+  "build_info": "b1-2969d6d",
+  "captured_utc": "2026-08-28T17:29:03Z",
+  "chat_template_sha256": "a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8",
+  "eos_token": "<|im_end|>",
+  "model_alias": "D:\\IdeaProjects\\lean-edge-oracle-project-folders\\CoLM_Jul2026_MoSpe_Navi\\Goedel-Prover-V2-8B.Q4_K_M.gguf",
+  "model_ftype": "Q4_K - Medium",
+  "model_path": "D:\\IdeaProjects\\lean-edge-oracle-project-folders\\CoLM_Jul2026_MoSpe_Navi\\Goedel-Prover-V2-8B.Q4_K_M.gguf",
+  "n_ctx": 32768,
+  "total_slots": 1
+}

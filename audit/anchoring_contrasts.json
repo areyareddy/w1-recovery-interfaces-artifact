@@ -1,0 +1,117 @@
+{
+  "contrasts": [
+    {
+      "cohort": "primary_eval",
+      "contrast": "C-A",
+      "label": "T0",
+      "mean_S_x": 0.496,
+      "mean_S_y": 0.2072,
+      "mean_diff": 0.2888,
+      "n": 40,
+      "n_pairs": 40,
+      "positive": 33,
+      "sd": 0.2732,
+      "se": 0.0432
+    },
+    {
+      "cohort": "primary_eval",
+      "contrast": "D-B",
+      "label": "T1",
+      "mean_S_x": 0.5041,
+      "mean_S_y": 0.1898,
+      "mean_diff": 0.3144,
+      "n": 40,
+      "n_pairs": 40,
+      "positive": 33,
+      "sd": 0.296,
+      "se": 0.0468
+    },
+    {
+      "cohort": "primary_eval",
+      "contrast": "E-A",
+      "label": "E-A",
+      "mean_S_x": 0.3726,
+      "mean_S_y": 0.2569,
+      "mean_diff": 0.1157,
+      "n": 21,
+      "n_pairs": 21,
+      "positive": 14,
+      "sd": 0.1775,
+      "se": 0.0387
+    },
+    {
+      "cohort": "eval_block2",
+      "contrast": "C-A",
+      "label": "T0",
+      "mean_S_x": 0.5239,
+      "mean_S_y": 0.1978,
+      "mean_diff": 0.326,
+      "n": 40,
+      "n_pairs": 40,
+      "positive": 33,
+      "sd": 0.2688,
+      "se": 0.0425
+    },
+    {
+      "cohort": "eval_block2",
+      "contrast": "D-B",
+      "label": "T1",
+      "mean_S_x": 0.4671,
+      "mean_S_y": 0.1995,
+      "mean_diff": 0.2676,
+      "n": 40,
+      "n_pairs": 40,
+      "positive": 32,
+      "sd": 0.2697,
+      "se": 0.0426
+    },
+    {
+      "cohort": "full_pool_dev",
+      "contrast": "C-A",
+      "label": "T0",
+      "mean_S_x": 0.4408,
+      "mean_S_y": 0.1756,
+      "mean_diff": 0.2652,
+      "n": 43,
+      "n_pairs": 43,
+      "positive": 39,
+      "sd": 0.2492,
+      "se": 0.038
+    },
+    {
+      "cohort": "full_pool_dev",
+      "contrast": "D-B",
+      "label": "T1",
+      "mean_S_x": 0.3981,
+      "mean_S_y": 0.1877,
+      "mean_diff": 0.2104,
+      "n": 43,
+      "n_pairs": 43,
+      "positive": 38,
+      "sd": 0.2175,
+      "se": 0.0332
+    },
+    {
+      "cohort": "full_pool_dev",
+      "contrast": "E-A",
+      "label": "E-A",
+      "mean_S_x": 0.3765,
+      "mean_S_y": 0.2036,
+      "mean_diff": 0.1729,
+      "n": 23,
+      "n_pairs": 23,
+      "positive": 20,
+      "sd": 0.1598,
+      "se": 0.0333
+    }
+  ],
+  "null_band": {
+    "null_band_max": 0.18081,
+    "null_band_min": 0.005698,
+    "null_band_p50": 0.089985,
+    "null_band_p95": 0.15417,
+    "null_band_pairs": 400,
+    "null_band_seed": 20260828
+  },
+  "spec_sha256": "cd8317bef3e3523a0842674219b2b0e5760b685f43686cc9d21381322885281d"
+}

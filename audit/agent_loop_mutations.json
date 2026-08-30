@@ -1,0 +1,61 @@
+{
+  "base_policy": "split2",
+  "base_root": "aime_1984_p1",
+  "mutations": [
+    {
+      "detected": true,
+      "detection_ms": 6.518,
+      "expected_invariant": "conformance",
+      "fault": "corrupt_branch_key",
+      "observed": "conformance"
+    },
+    {
+      "detected": true,
+      "detection_ms": 5.254,
+      "expected_invariant": "conformance",
+      "fault": "corrupt_cap",
+      "observed": "conformance"
+    },
+    {
+      "detected": true,
+      "detection_ms": 0.011,
+      "expected_invariant": "budget",
+      "fault": "inject_budget_overrun",
+      "observed": "budget: committed 12288 > 12287"
+    },
+    {
+      "detected": true,
+      "detection_ms": 0.003,
+      "expected_invariant": "stop_rule",
+      "fault": "flip_stop_decision",
+      "observed": "stop_rule: stop=VERIFIED with no verified draw"
+    },
+    {
+      "detected": true,
+      "detection_ms": 0.008,
+      "expected_invariant": "accounting",
+      "fault": "corrupt_accounting_token",
+      "observed": "accounting: {'draws': 2, 'verified': False, 'completion_tokens': 12289, 'seconds': 86.662} != {'draws': 2, 'verified': False, 'completion_tokens': 12288, 'seconds': 86.662}"
+    },
+    {
+      "detected": true,
+      "detection_ms": 0.007,
+      "expected_invariant": "non_adaptivity",
+      "fault": "perturb_action_sequence",
+      "observed": "non_adaptivity: sequence is not a fixed-plan prefix: (('REPAIR', 6144), ('REGENERATE', 6144))"
+    },
+    {
+      "detected": true,
+      "detection_ms": 0.002,
+      "expected_invariant": "determinism",
+      "fault": "perturb_replay_signature",
+      "observed": "determinism: repeated replay signatures differ"
+    }
+  ],
+  "summary": {
+    "database_modified": false,
+    "faults_detected": 7,
+    "faults_injected": 7,
+    "max_detection_ms": 6.518
+  }
+}

@@ -1,0 +1,240 @@
+
+Error 1:
+
+Corresponding Code:
+```lean4
+              have h₂₇ : 6 ^ 8 = 1679616 := by norm_num
+              have h₂₈ : 9 ^ 8 = 43046721 := by norm_num
+              have h₂₉ : 4 ^ (2 ^ n) + 6 ^ (2 ^ n) + 9 ^ (2 ^ n) ≥ 65536 + 1679616 + 43046721 := by
+                omega
+              <error>omega</error>
+            omega
+
+```
+
+Error Message: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  d ≥ 1679616
+  c ≥ 65536
+  b ≥ 8
+  e ≥ 43046721
+  44791873 ≤ c + d + e ≤ 44822363
+  a ≥ 2
+where
+ a := ↑n
+ b := ↑2 ^ n
+ c := ↑4 ^ 2 ^ n
+ d := ↑6 ^ 2 ^ n
+ e := ↑9 ^ 2 ^ n
+
+Error 2:
+
+Corresponding Code:
+```lean4
+              have h₂₈ : 9 ^ 8 = 43046721 := by norm_num
+              have h₂₉ : 4 ^ (2 ^ n) + 6 ^ (2 ^ n) + 9 ^ (2 ^ n) ≥ 65536 + 1679616 + 43046721 := by
+                omega
+              omega
+            <error>omega</error>
+          rw [h₁₅]
+
+```
+
+Error Message: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  b ≥ 8
+  c + d + e ≥ 44822364
+  a ≥ 2
+where
+ a := ↑n
+ b := ↑2 ^ n
+ c := ↑4 ^ 2 ^ n
+ d := ↑6 ^ 2 ^ n
+ e := ↑9 ^ 2 ^ n
+
+Error 3:
+
+Corresponding Code:
+```lean4
+          have h₁₀ : n ≥ 2 := by omega
+          have h₁₁ : 2 ^ n ≥ 2 ^ 2 := by
+            exact Nat.pow_le_pow_of_le_right (by norm_num) h₁₀
+          omega
+        have h₁₀ : 4 ^ (2 ^ n) + 6 ^ (2 ^ n) + 9 ^ (2 ^ n) = 44822363 := <error>by
+          have h₁₁ : n ≥ 2 := by omega
+          have h₁₂ : 2 ^ n ≥ 4 := by
+            have h₁₃ : n ≥ 2 := by omega
+            have h₁₄ : 2 ^ n ≥ 2 ^ 2 := by
+              exact Nat.pow_le_pow_of_le_right (by norm_num) h₁₃
+
+              ... --[Truncated]-- ...
+          <;> norm_num</error>
+        rw [h₁₀]
+
+```
+
+Error Message: unsolved goals
+m n : ℕ
+f : ℕ → ℕ
+h₀ : ∀ (x : ℕ), f x = 4 ^ x + 6 ^ x + 9 ^ x
+h₁ : 0 < m ∧ 0 < n
+h₂ : m ≤ n
+hm : m = 2
+h₅ : n ≥ 2
+h₆ : f (2 ^ m) = 8113
+h₈ : n ≥ 2
+h₉ : 2 ^ n ≥ 4
+h₁₁ : n ≥ 2
+h₁₂ : 2 ^ n ≥ 4
+h₁₅ : 2 ^ n = 4
+⊢ False
+
+Error 4:
+
+Corresponding Code:
+```lean4
+        rw [h₁₀]
+        <;> norm_num
+      have h₈ : ¬(8113 ∣ 44822363) := by
+        norm_num
+      have h₉ : f (2 ^ m) ∣ f (2 ^ n) := <error>by
+        rw [h₆, h₇]
+        <;> norm_num</error>
+      have h₁₀ : 8113 ∣ 44822363 := by
+
+```
+
+Error Message: unsolved goals
+m n : ℕ
+f : ℕ → ℕ
+h₀ : ∀ (x : ℕ), f x = 4 ^ x + 6 ^ x + 9 ^ x
+h₁ : 0 < m ∧ 0 < n
+h₂ : m ≤ n
+hm : m = 2
+h₅ : n ≥ 2
+h₆ : f (2 ^ m) = 8113
+h₇ : f (2 ^ n) = 44822363
+h₈ : ¬8113 ∣ 44822363
+⊢ False
+
+Error 5:
+
+Corresponding Code:
+```lean4
+              have h₂₈ : 6 ^ 4 = 1296 := by norm_num
+              have h₂₉ : 9 ^ 4 = 6561 := by norm_num
+              have h₃₀ : 4 ^ (2 ^ n) + 6 ^ (2 ^ n) + 9 ^ (2 ^ n) ≥ 256 + 1296 + 6561 := by
+                omega
+              <error>omega</error>
+            omega
+
+```
+
+Error Message: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  d ≥ 1296
+  c ≥ 256
+  b ≥ 4
+  e ≥ 6561
+  8113 ≤ c + d + e ≤ 44822363
+  a ≥ 1
+where
+ a := ↑n
+ b := ↑2 ^ n
+ c := ↑4 ^ 2 ^ n
+ d := ↑6 ^ 2 ^ n
+ e := ↑9 ^ 2 ^ n
+
+Error 6:
+
+Corresponding Code:
+```lean4
+              have h₂₉ : 9 ^ 4 = 6561 := by norm_num
+              have h₃₀ : 4 ^ (2 ^ n) + 6 ^ (2 ^ n) + 9 ^ (2 ^ n) ≥ 256 + 1296 + 6561 := by
+                omega
+              omega
+            <error>omega</error>
+          rw [h₁₆]
+
+```
+
+Error Message: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  b ≥ 4
+  c + d + e ≥ 44822364
+  a ≥ 1
+where
+ a := ↑n
+ b := ↑2 ^ n
+ c := ↑4 ^ 2 ^ n
+ d := ↑6 ^ 2 ^ n
+ e := ↑9 ^ 2 ^ n
+
+Error 7:
+
+Corresponding Code:
+```lean4
+          have h₁₁ : n ≥ 1 := by omega
+          have h₁₂ : 2 ^ n ≥ 2 ^ 1 := by
+            exact Nat.pow_le_pow_of_le_right (by norm_num) h₁₁
+          omega
+        have h₁₁ : 4 ^ (2 ^ n) + 6 ^ (2 ^ n) + 9 ^ (2 ^ n) = 44822363 := <error>by
+          have h₁₂ : n ≥ 1 := by omega
+          have h₁₃ : 2 ^ n ≥ 2 := by
+            have h₁₄ : n ≥ 1 := by omega
+            have h₁₅ : 2 ^ n ≥ 2 ^ 1 := by
+              exact Nat.pow_le_pow_of_le_right (by norm_num) h₁₄
+
+              ... --[Truncated]-- ...
+          <;> norm_num</error>
+        rw [h₁₁]
+
+```
+
+Error Message: unsolved goals
+m n : ℕ
+f : ℕ → ℕ
+h₀ : ∀ (x : ℕ), f x = 4 ^ x + 6 ^ x + 9 ^ x
+h₁ : 0 < m ∧ 0 < n
+h₂ : m ≤ n
+h₄ : m = 2 → False
+hm : m = 1
+h₆ : n ≥ 1
+h₇ : f (2 ^ m) = 133
+h₉ : n ≥ 1
+h₁₀ : 2 ^ n ≥ 2
+h₁₂ : n ≥ 1
+h₁₃ : 2 ^ n ≥ 2
+h₁₆ : 2 ^ n = 2
+⊢ False
+
+Error 8:
+
+Corresponding Code:
+```lean4
+        rw [h₁₁]
+        <;> norm_num
+      have h₉ : ¬(133 ∣ 44822363) := by
+        norm_num
+      have h₁₀ : f (2 ^ m) ∣ f (2 ^ n) := <error>by
+        rw [h₇, h₈]
+        <;> norm_num</error>
+      have h₁₁ : 133 ∣ 44822363 := by
+
+```
+
+Error Message: unsolved goals
+m n : ℕ
+f : ℕ → ℕ
+h₀ : ∀ (x : ℕ), f x = 4 ^ x + 6 ^ x + 9 ^ x
+h₁ : 0 < m ∧ 0 < n
+h₂ : m ≤ n
+h₄ : m = 2 → False
+hm : m = 1
+h₆ : n ≥ 1
+h₇ : f (2 ^ m) = 133
+h₈ : f (2 ^ n) = 44822363
+h₉ : ¬133 ∣ 44822363
+⊢ False
+
+... [Omitted 4 more errors] ...

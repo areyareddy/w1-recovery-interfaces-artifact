@@ -1,0 +1,82 @@
+
+Error 1:
+
+Corresponding Code:
+```lean4
+                          | zero =>
+                            simp_all
+                          | succ n =>
+                            simp_all [Nat.cast_add, Nat.cast_one, mul_comm]
+                            <;> <error>nlinarith</error>
+                    exact h₁₁
+
+```
+
+Error Message: linarith failed to find a contradiction
+case succ.a
+a : ℕ → NNReal
+i n : ℕ
+a✝¹ : i < n + 1
+h₂ : ∑ x ∈ Finset.range (n + 1), a x = ↑n + 1
+h₃ : a i ≤ ↑n + 1
+h₅ : ↑(a i) ≤ ↑n + 1
+h₈ : ∑ x ∈ Finset.range (n + 1), ↑(a x) = ↑n + 1
+a✝ : (↑n + 1) * (↑n + 1) > ↑n + 1
+⊢ False
+failed
+
+Error 2:
+
+Corresponding Code:
+```lean4
+                        _ ≤ (n : ℝ) := by
+                          cases n with
+                          | zero =>
+                            simp_all
+                          | succ n <error>=>
+                            simp_all [Nat.cast_add, Nat.cast_one, mul_comm]
+                            <;> nlinarith</error>
+                    exact h₁₁
+
+```
+
+Error Message: unsolved goals
+case succ
+a : ℕ → NNReal
+i n : ℕ
+a✝ : i < n + 1
+h₂ : ∑ x ∈ Finset.range (n + 1), a x = ↑n + 1
+h₃ : a i ≤ ↑n + 1
+h₅ : ↑(a i) ≤ ↑n + 1
+h₈ : ∑ x ∈ Finset.range (n + 1), ↑(a x) = ↑n + 1
+⊢ (↑n + 1) * (↑n + 1) ≤ ↑n + 1
+
+Error 3:
+
+Corresponding Code:
+```lean4
+                            simp_all [Nat.cast_add, Nat.cast_one, mul_comm]
+                            <;> nlinarith
+                    exact h₁₁
+                  exact h₁₀
+                <error>linarith</error>
+              have h₈ : (a i : ℝ) ≤ 1 := by
+
+```
+
+Error Message: linarith failed to find a contradiction
+case h1.h
+a : ℕ → NNReal
+n : ℕ
+h₀ : ∑ x ∈ Finset.range n, a x = ↑n
+i : ℕ
+a✝¹ : i ∈ Finset.range n
+h₂ : ∑ x ∈ Finset.range n, a x = ↑n
+h₃ : a i ≤ ∑ x ∈ Finset.range n, a x
+h₄ : a i ≤ ↑n
+h₅ : ↑(a i) ≤ ↑n
+h₈ : ∑ x ∈ Finset.range n, ↑(a x) = ↑n
+h₉ : ∑ x ∈ Finset.range n, ↑(a x) ≤ ↑n
+a✝ : ↑n < 1
+⊢ False
+failed

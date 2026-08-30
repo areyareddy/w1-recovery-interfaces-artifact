@@ -1,0 +1,41 @@
+[
+  {
+    "arm": "A_regenerate",
+    "seed": 900030,
+    "finish": "stop",
+    "prompt_tokens": 187,
+    "completion_tokens": 3109,
+    "server_prefill_ms": 383.9,
+    "server_decode_ms": 21799.7,
+    "request_wall_ms": 22212.8,
+    "emitted_lean": true,
+    "verified": false,
+    "verify_wall_ms": 1154.7
+  },
+  {
+    "arm": "B_full_repair",
+    "seed": 900031,
+    "finish": "stop",
+    "prompt_tokens": 2946,
+    "completion_tokens": 2028,
+    "server_prefill_ms": 271.2,
+    "server_decode_ms": 15013.2,
+    "request_wall_ms": 15572.7,
+    "emitted_lean": true,
+    "verified": false,
+    "verify_wall_ms": 1661.2
+  },
+  {
+    "arm": "C_history_ablated",
+    "seed": 900032,
+    "finish": "stop",
+    "prompt_tokens": 1198,
+    "completion_tokens": 2558,
+    "server_prefill_ms": 282.6,
+    "server_decode_ms": 18422.3,
+    "request_wall_ms": 19184.9,
+    "emitted_lean": true,
+    "verified": false,
+    "verify_wall_ms": 303.7
+  }
+]

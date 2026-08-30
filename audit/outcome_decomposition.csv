@@ -1,0 +1,15 @@
+cohort,arm,n,verified,lean_failed,truncated,reached,trunc_rate,ver_given_reached
+primary_eval,A,40,9,21,10,30,0.25,0.3
+primary_eval,B,40,4,22,14,26,0.35,0.1538
+primary_eval,C,40,2,31,7,33,0.175,0.0606
+primary_eval,D,40,1,30,9,31,0.225,0.0323
+primary_eval,E,21,2,17,2,19,0.0952,0.1053
+eval_block2,A,40,9,23,8,32,0.2,0.2812
+eval_block2,B,40,6,26,8,32,0.2,0.1875
+eval_block2,C,40,1,27,12,28,0.3,0.0357
+eval_block2,D,40,1,31,8,32,0.2,0.0312
+full_pool_dev,A,43,5,18,20,23,0.4651,0.2174
+full_pool_dev,B,43,7,21,15,28,0.3488,0.25
+full_pool_dev,C,43,0,36,7,36,0.1628,0.0
+full_pool_dev,D,43,2,30,11,32,0.2558,0.0625
+full_pool_dev,E,23,0,20,3,20,0.1304,0.0

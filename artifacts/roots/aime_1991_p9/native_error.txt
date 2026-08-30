@@ -1,0 +1,35 @@
+
+Error 1:
+
+Corresponding Code:
+```lean4
+    have h₇₉ : (m : ℚ) = 29 / 15 := by
+      rw [← sub_eq_zero]
+      have h₇₉₁ : (m : ℝ) = (1 + Real.cos x) / Real.sin x := by
+        linarith
+      rw [<error>h₇₉₁</error>]
+      rw [h₇₈]
+
+```
+
+Error Message: tactic 'rewrite' failed, did not find instance of the pattern in the target expression
+  ↑m
+x : ℝ
+m : ℚ
+h₀ : 1 / x.cos + x.tan = 22 / 7
+h₁ : 1 / x.sin + 1 / x.tan = ↑m
+h₂ : x.cos ≠ 0
+h₃ : 1 + x.sin = 22 / 7 * x.cos
+h₄ : x.sin ^ 2 + x.cos ^ 2 = 1
+h₅ : x.cos = 308 / 533
+h₆ : x.sin = 435 / 533
+h₇₁ : 1 / x.sin + 1 / (x.sin / x.cos) = ↑m
+h₇₂ : x.sin = 435 / 533
+h₇₃ : x.cos = 308 / 533
+h₇₄ : x.tan = x.sin / x.cos
+h₇₅ : 1 / x.sin + 1 / (x.sin / x.cos) = ↑m
+h₇₆ : 1 / x.sin + x.cos / x.sin = ↑m
+h₇₇ : (1 + x.cos) / x.sin = ↑m
+h₇₈ : (1 + x.cos) / x.sin = ↑(29 / 15)
+h₇₉₁ : ↑m = (1 + x.cos) / x.sin
+⊢ m - 29 / 15 = 0

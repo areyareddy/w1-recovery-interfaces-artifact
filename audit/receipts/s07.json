@@ -1,0 +1,36 @@
+{
+  "finished_utc": "2026-08-28T03:18:52Z",
+  "inputs": {
+    "audit\\context_capacity.csv": "790ec899f248f4f2b8bf4629113d5e732233ad0091b83eb3c01ce74e765eceb2",
+    "audit\\determinism.json": "aabc31c5bb5b382c6097f6c0daef309c1a93d2d739c57fbeb4fe0ff8ff4af58b"
+  },
+  "outputs": {
+    "audit\\runtime_projection.csv": "8ca7a647eecfecc2ce3d121a1eea4432c12e3331fbad3af475e23e4b164bd2a8"
+  },
+  "stats": {
+    "completion_token_prior": {
+      "mean": 7726,
+      "n": 332,
+      "p50": 7673,
+      "p90": 12288
+    },
+    "decode_tokens_per_second": 131.1,
+    "full_pool_353_central_hms": "7h19m20s",
+    "lean_latency_prior_seconds": {
+      "mean": 15.3,
+      "n": 332,
+      "p50": 0.8,
+      "p90": 33.5
+    },
+    "lean_workers_assumed": 1,
+    "prefill_to_decode_ratio": 77.0,
+    "prefill_tokens_per_second": 10100.7,
+    "primary_181_central_hms": "3h45m12s",
+    "primary_181_decode_share": 0.789,
+    "primary_181_p90_hms": "6h25m06s",
+    "primary_181_verifier_share": 0.205,
+    "verifier_reach_rate": 1.0
+  },
+  "step": "s07",
+  "title": "Runtime projection"
+}

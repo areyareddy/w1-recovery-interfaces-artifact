@@ -1,0 +1,135 @@
+{
+  "corpus_ceiling": {
+    "arms": [
+      "baseline",
+      "nav2",
+      "nav3"
+    ],
+    "available": true,
+    "ceiling_without_new_generation": 110,
+    "n_attempts": 606,
+    "n_failed_but_verified_elsewhere": 47,
+    "n_never_verified_already_roots": 63,
+    "n_never_verified_on_any_arm": 63,
+    "n_problems": 202,
+    "n_roots_in_study": 83,
+    "n_unused_failed_problems": 27,
+    "n_with_at_least_one_failure": 110,
+    "note": "The ceiling without fresh stage-one generation is the count of problems with at least one failure. Reaching 150-200 roots would require new stage-one generation on unused miniF2F problems plus re-running classification and guidance rendering, which is a camera-ready item rather than a planning oversight.",
+    "source": "CoLM epp_confirmatory_202/evaluation/attempts.jsonl"
+  },
+  "length_mediation": {
+    "block1": {
+      "C_terminal_state_on_lost_rescues": {
+        "lean_failed": 5,
+        "truncated": 2
+      },
+      "all_roots": {
+        "mean_tokens_A": 6638.2,
+        "mean_tokens_C": 4742.3,
+        "median_tokens_A": 5616.0,
+        "median_tokens_C": 3055.5,
+        "n": 40,
+        "ratio_C_over_A": 0.714
+      },
+      "lost_rescues": {
+        "mean_tokens_A": 3912.9,
+        "mean_tokens_C": 4650.4,
+        "median_tokens_A": 3263,
+        "median_tokens_C": 2240,
+        "n": 7,
+        "ratio_C_over_A": 1.188
+      },
+      "neither_verified": {
+        "mean_tokens_A": 7437.6,
+        "mean_tokens_C": 4799.5,
+        "median_tokens_A": 6230,
+        "median_tokens_C": 3127,
+        "n": 31,
+        "ratio_C_over_A": 0.645
+      }
+    },
+    "block2": {
+      "C_terminal_state_on_lost_rescues": {
+        "lean_failed": 7,
+        "truncated": 1
+      },
+      "all_roots": {
+        "mean_tokens_A": 6771.1,
+        "mean_tokens_C": 5885.4,
+        "median_tokens_A": 6605.0,
+        "median_tokens_C": 3744.5,
+        "n": 40,
+        "ratio_C_over_A": 0.869
+      },
+      "lost_rescues": {
+        "mean_tokens_A": 3848.4,
+        "mean_tokens_C": 2871.4,
+        "median_tokens_A": 2382.0,
+        "median_tokens_C": 1686.5,
+        "n": 8,
+        "ratio_C_over_A": 0.746
+      },
+      "neither_verified": {
+        "mean_tokens_A": 7596.7,
+        "mean_tokens_C": 6751.2,
+        "median_tokens_A": 7591,
+        "median_tokens_C": 4390,
+        "n": 31,
+        "ratio_C_over_A": 0.889
+      }
+    },
+    "conditional_by_stage_one_group": {
+      "block1": {
+        "diffuse_complete": {
+          "mean_A": 5385.5,
+          "mean_C": 2488,
+          "n_A": 15,
+          "n_C": 15,
+          "ratio_C_over_A": 0.462
+        },
+        "incomplete": {
+          "mean_A": 8518.9,
+          "mean_C": 8534.8,
+          "n_A": 15,
+          "n_C": 15,
+          "ratio_C_over_A": 1.002
+        },
+        "localized_complete": {
+          "mean_A": 5696.1,
+          "mean_C": 2435.1,
+          "n_A": 10,
+          "n_C": 10,
+          "ratio_C_over_A": 0.428
+        }
+      },
+      "block2": {
+        "diffuse_complete": {
+          "mean_A": 4715.6,
+          "mean_C": 4106.1,
+          "n_A": 15,
+          "n_C": 15,
+          "ratio_C_over_A": 0.871
+        },
+        "incomplete": {
+          "mean_A": 8934.7,
+          "mean_C": 9843.3,
+          "n_A": 15,
+          "n_C": 15,
+          "ratio_C_over_A": 1.102
+        },
+        "localized_complete": {
+          "mean_A": 6608.9,
+          "mean_C": 2617.7,
+          "n_A": 10,
+          "n_C": 10,
+          "ratio_C_over_A": 0.396
+        }
+      }
+    },
+    "verdict": {
+      "mediator_supported": false,
+      "why": "On the roots that carry the harm the direction is not stable: the C/A token ratio is 1.188 in block 1 and 0.746 in block 2. A mediator of the deficit cannot flip sign between replications of the same contrast. The aggregate C<A is driven by the roots where nothing was rescued."
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "finished_utc": "2026-08-28T02:39:59Z",
+  "inputs": {},
+  "outputs": {
+    "artifacts\\roots": "cc9a1d215891bc72f721f2430b14f1f97ea56fde4d4341c296c2497146d7bf17",
+    "audit\\e_eligibility.csv": "cd00bde6a4fc50b32c76ff524bc3e2d207e17183beea04b788d78c3cb1d07fa0",
+    "audit\\r2_guidance_audit.csv": "1b30b73ce8246b3e00188c00be29171bce4a72854feffde8bd850ef53611724b",
+    "audit\\step1_freeze.json": "dbf83d550e0d727a4e5f72b54a5b2e508fa4469c39cb649737e4d5fff6e8f74e",
+    "data\\roots.jsonl": "6132d7463347621a9bdd0c4fcd8d62dcde7836b377cfef0214f5b12abfdb418b"
+  },
+  "stats": {
+    "coarse": {
+      "diffuse_complete": 30,
+      "incomplete": 32,
+      "localized_complete": 21
+    },
+    "dev": 43,
+    "e_eligible_eval": 21,
+    "e_eligible_total": 44,
+    "eval": 40,
+    "feedback_kind": {
+      "budget_exhausted": 32,
+      "native_error": 44,
+      "stdout_unparseable": 1,
+      "verifier_timeout": 6
+    },
+    "fine": {
+      "linarith_failed": 17,
+      "other": 6,
+      "simp_failed": 2,
+      "timeout": 6,
+      "truncated": 32,
+      "unknown_identifier": 2,
+      "unsolved_goals": 18
+    },
+    "roots": 83,
+    "roots_jsonl_sha256": "6132d7463347621a9bdd0c4fcd8d62dcde7836b377cfef0214f5b12abfdb418b"
+  },
+  "step": "s00",
+  "title": "Freeze the 83-root set"
+}

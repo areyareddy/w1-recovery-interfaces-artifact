@@ -1,0 +1,56 @@
+
+Error 1:
+
+Corresponding Code:
+```lean4
+theorem amc12a_2020_p15 (a b : ℂ) (h₀ : a ^ 3 - 8 = 0) (h₁ : b ^ 3 - 8 * b ^ 2 - 8 * b + 64 = 0) :
+    Complex.abs (a - b) ≤ 2 * Real.sqrt 21 := by
+  have h_main : Complex.abs (a - b) ≤ 2 * Real.sqrt 21 := <error>by
+    have h₂ : a ^ 3 = 8 := by
+      rw [← sub_eq_zero]
+      linear_combination h₀
+    have h₃ : b ^ 3 - 8 * b ^ 2 - 8 * b + 64 = 0 := by
+      exact h₁
+
+      ... --[Truncated]-- ...
+        })</error>
+  exact h_main
+
+```
+
+Error Message: unsolved goals
+case inl.inr.inl
+h₀ : 2 ^ 3 - 8 = 0
+h₂ : 2 ^ 3 = 8
+h₁ h₃ : (2 * ↑√2) ^ 3 - 8 * (2 * ↑√2) ^ 2 - 8 * (2 * ↑√2) + 64 = 0
+⊢ 0 ≤ √21 ∧ 4 - √2 * 8 + 8 ≤ 84
+
+case inl.inr.inr
+h₀ : 2 ^ 3 - 8 = 0
+h₂ : 2 ^ 3 = 8
+h₁ h₃ : (-2 * ↑√2) ^ 3 - 8 * (-2 * ↑√2) ^ 2 - 8 * (-2 * ↑√2) + 64 = 0
+⊢ 0 ≤ √21 ∧ 4 + √2 * 8 + 8 ≤ 84
+
+case inr.inl.inr.inl
+h₀ : (-1 + Complex.I * ↑√3) ^ 3 - 8 = 0
+h₂ : (-1 + Complex.I * ↑√3) ^ 3 = 8
+h₁ h₃ : (2 * ↑√2) ^ 3 - 8 * (2 * ↑√2) ^ 2 - 8 * (2 * ↑√2) + 64 = 0
+⊢ 0 ≤ √21 ∧ 4 + √2 * 4 + 8 ≤ 84
+
+case inr.inl.inr.inr
+h₀ : (-1 + Complex.I * ↑√3) ^ 3 - 8 = 0
+h₂ : (-1 + Complex.I * ↑√3) ^ 3 = 8
+h₁ h₃ : (-2 * ↑√2) ^ 3 - 8 * (-2 * ↑√2) ^ 2 - 8 * (-2 * ↑√2) + 64 = 0
+⊢ 0 ≤ √21 ∧ 4 - √2 * 4 + 8 ≤ 84
+
+case inr.inr.inr.inl
+h₀ : (-1 - Complex.I * ↑√3) ^ 3 - 8 = 0
+h₂ : (-1 - Complex.I * ↑√3) ^ 3 = 8
+h₁ h₃ : (2 * ↑√2) ^ 3 - 8 * (2 * ↑√2) ^ 2 - 8 * (2 * ↑√2) + 64 = 0
+⊢ 0 ≤ √21 ∧ 4 + √2 * 4 + 8 ≤ 84
+
+case inr.inr.inr.inr
+h₀ : (-1 - Complex.I * ↑√3) ^ 3 - 8 = 0
+h₂ : (-1 - Complex.I * ↑√3) ^ 3 = 8
+h₁ h₃ : (-2 * ↑√2) ^ 3 - 8 * (-2 * ↑√2) ^ 2 - 8 * (-2 * ↑√2) + 64 = 0
+⊢ 0 ≤ √21 ∧ 4 - √2 * 4 + 8 ≤ 84

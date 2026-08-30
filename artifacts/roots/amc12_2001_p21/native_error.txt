@@ -1,0 +1,54 @@
+
+Error 1:
+
+Corresponding Code:
+```lean4
+      by_contra h
+      have h₆ : c = 0 := by
+        omega
+      simp [h₆] at h₂ h₃
+      <;> norm_num at h₂ h₃ <;> <error>nlinarith</error>
+    have h₆ : b ≤ 147 := by
+
+```
+
+Error Message: linarith failed to find a contradiction
+a b c d : ℕ
+h₀ : a * b * c * d = 8!
+h₁ : a * b + a + b = 524
+h₄ : b ≥ 1
+h : ¬c ≥ 1
+h₆ : c = 0
+h₂ : b = 146
+h₃ : d = 104
+⊢ False
+failed
+
+Error 2:
+
+Corresponding Code:
+```lean4
+      have h₅ : b = 0 := by
+        omega
+      simp [h₅] at h₂ h₃
+      <;> norm_num at h₂ h₃ <;> nlinarith
+    have h₅ : c ≥ 1 := <error>by
+      by_contra h
+      have h₆ : c = 0 := by
+        omega
+      simp [h₆] at h₂ h₃
+      <;> norm_num at h₂ h₃ <;> nlinarith</error>
+    have h₆ : b ≤ 147 := by
+
+```
+
+Error Message: unsolved goals
+a b c d : ℕ
+h₀ : a * b * c * d = 8!
+h₁ : a * b + a + b = 524
+h₄ : b ≥ 1
+h : ¬c ≥ 1
+h₆ : c = 0
+h₂ : b = 146
+h₃ : d = 104
+⊢ False

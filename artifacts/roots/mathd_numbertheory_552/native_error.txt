@@ -1,0 +1,73 @@
+
+Error 1:
+
+Corresponding Code:
+```lean4
+          -- Use the Euclidean algorithm to find the gcd
+          rw [Nat.gcd_comm]
+          -- Simplify the expression using the Euclidean algorithm
+          have h₁₁ : 12 * x + 7 = 2 * (5 * x + 2) + (7 - 2 * 5 * x) := by
+            <error>omega</error>
+          rw [h₁₁]
+
+```
+
+Error Message: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  b ≥ 0
+  b ≥ 0
+  a ≥ 0
+where
+ a := ↑((f x).gcd (g x))
+ b := ↑↑x
+
+Error 2:
+
+Corresponding Code:
+```lean4
+          rw [Nat.gcd_comm]
+          -- Simplify the expression using the Euclidean algorithm
+          have h₁₁ : 12 * x + 7 = 2 * (5 * x + 2) + (7 - 2 * 5 * x) := by
+            omega
+          rw [<error>h₁₁</error>]
+          -- Continue with the Euclidean algorithm
+
+```
+
+Error Message: tactic 'rewrite' failed, did not find instance of the pattern in the target expression
+  12 * x + 7
+f g h : ℕ+ → ℕ
+h₀ : ∀ (x : ℕ+), f x = 12 * ↑x + 7
+h₁ : ∀ (x : ℕ+), g x = 5 * ↑x + 2
+h₂ : ∀ (x : ℕ+), h x = (f x).gcd (g x)
+h₃ : Fintype ↑(Set.range h)
+x : ℕ+
+h₅ : h x = (f x).gcd (g x)
+h₆ : f x = 12 * ↑x + 7
+h₇ : g x = 5 * ↑x + 2
+h₉ : x ≥ 1
+h₁₁ : 12 * x + 7 = 2 * (5 * x + 2) + (7 - 2 * 5 * x)
+⊢ (5 * ↑x + 2).gcd (12 * ↑x + 7) = 1
+
+Error 3:
+
+Corresponding Code:
+```lean4
+        use 1
+        simp_all
+        <;> aesop
+    have h₆ : (∑ k in (Set.range h).toFinset, k) = 12 := by
+      rw [<error>h₅</error>]
+      norm_num
+
+```
+
+Error Message: tactic 'rewrite' failed, motive is not type correct
+f g h : ℕ+ → ℕ
+h₀ : ∀ (x : ℕ+), f x = 12 * ↑x + 7
+h₁ : ∀ (x : ℕ+), g x = 5 * ↑x + 2
+h₂ : ∀ (x : ℕ+), h x = (f x).gcd (g x)
+h₃ : Fintype ↑(Set.range h)
+h₄ : ∀ (x : ℕ+), h x = 1
+h₅ : Set.range h = {1}
+⊢ ∑ k ∈ (Set.range h).toFinset, k = 12

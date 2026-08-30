@@ -1,0 +1,8 @@
+Similar Lean-verified proofs commonly used:
+- simpa
+- norm_num
+- omega
+- simp
+
+These are optional suggestions; use only when applicable, and select exact tactics and arguments from the current theorem.
+

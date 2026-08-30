@@ -1,0 +1,32 @@
+{
+  "finished_utc": "2026-08-28T05:00:22Z",
+  "inputs": {
+    "scripts\\pilot_common.py": "829d2c630c96bd8fc04c111f7f8dad0709d213779359a76672a7558e2510de6d",
+    "src\\runner.py": "75e0ad81219843a8cd87b3bc0a3e93cd8ec6e000e4f18394a39efb6b83eb7716"
+  },
+  "outputs": {
+    "audit\\pilot_summary.json": "d19250dfb8359ba087598688ed21c90989179b3ac410568fdaac93be2fa6f680",
+    "data\\pilot_prompts.jsonl": "5ba38b95d9da3b5f08274f6eeeb212c20b5bc961b7e2014d0a8a3cff021a3767"
+  },
+  "stats": {
+    "by_arm": {
+      "A|lean_failed": 7,
+      "A|truncated": 6,
+      "C|lean_failed": 9,
+      "C|truncated": 4,
+      "E|lean_failed": 8
+    },
+    "generation_wall_seconds": 1494.4,
+    "lean_timeouts": 0,
+    "max_tokens": 12288,
+    "outcomes": {
+      "lean_failed": 24,
+      "truncated": 10
+    },
+    "pilot_branches": 34,
+    "result": "PASS",
+    "verifier_wall_seconds": 165.3
+  },
+  "step": "s10",
+  "title": "Pilot on the 13 excluded roots"
+}

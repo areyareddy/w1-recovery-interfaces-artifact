@@ -1,0 +1,13 @@
+split,regime,policy,verified_roots,n,draws,tokens,wall_seconds,seconds_per_verified,tokens_per_verified,verified_per_1000s,median_time_to_first_success
+eval,full_budget,long,9,40,40,265527,2557.3,284.1,29503.0,3.519,23.1
+eval,full_budget,split2,11,40,80,374589,3501.5,318.3,34053.5,3.141,38.4
+eval,full_budget,split3,8,40,120,426766,3344.5,418.1,53345.8,2.392,47.4
+eval,stop_after_first_success,long,9,40,40,265527,2557.3,284.1,29503.0,3.519,23.1
+eval,stop_after_first_success,split2,11,40,73,356592,3358.1,305.3,32417.5,3.276,22.8
+eval,stop_after_first_success,split3,8,40,107,397549,3137.2,392.2,49693.6,2.55,18.9
+dev,full_budget,long,5,43,43,369855,3170.3,634.1,73971.0,1.577,53.4
+dev,full_budget,split2,9,43,86,474883,3674.4,408.3,52764.8,2.449,72.4
+dev,full_budget,split3,5,43,129,499554,3595.3,719.1,99910.8,1.391,79.6
+dev,stop_after_first_success,long,5,43,43,369855,3170.3,634.1,73971.0,1.577,53.4
+dev,stop_after_first_success,split2,9,43,83,461882,3539.9,393.3,51320.2,2.542,72.1
+dev,stop_after_first_success,split3,5,43,124,484121,3487.3,697.5,96824.2,1.434,79.6

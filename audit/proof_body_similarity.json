@@ -1,0 +1,668 @@
+{
+  "contrasts": [
+    {
+      "ci95": [
+        0.366,
+        0.5967
+      ],
+      "cohort": "primary_eval",
+      "contrast": "C-A",
+      "mean_diff": 0.4842,
+      "metric": "S_body",
+      "n_pairs": 35,
+      "paired_mean_x": 0.7341,
+      "paired_mean_y": 0.2499
+    },
+    {
+      "ci95": [
+        0.4557,
+        0.7142
+      ],
+      "cohort": "primary_eval",
+      "contrast": "C-A",
+      "mean_diff": 0.587,
+      "metric": "lcs_tactic",
+      "n_pairs": 33,
+      "paired_mean_x": 0.7394,
+      "paired_mean_y": 0.1524
+    },
+    {
+      "ci95": [
+        0.2057,
+        0.3711
+      ],
+      "cohort": "primary_eval",
+      "contrast": "C-A",
+      "mean_diff": 0.2888,
+      "metric": "token_S",
+      "n_pairs": 40,
+      "paired_mean_x": 0.496,
+      "paired_mean_y": 0.2072
+    },
+    {
+      "ci95": [
+        0.357,
+        0.5942
+      ],
+      "cohort": "primary_eval",
+      "contrast": "D-B",
+      "mean_diff": 0.478,
+      "metric": "S_body",
+      "n_pairs": 34,
+      "paired_mean_x": 0.7017,
+      "paired_mean_y": 0.2237
+    },
+    {
+      "ci95": [
+        0.5471,
+        0.7799
+      ],
+      "cohort": "primary_eval",
+      "contrast": "D-B",
+      "mean_diff": 0.6708,
+      "metric": "lcs_tactic",
+      "n_pairs": 32,
+      "paired_mean_x": 0.7943,
+      "paired_mean_y": 0.1236
+    },
+    {
+      "ci95": [
+        0.2259,
+        0.4069
+      ],
+      "cohort": "primary_eval",
+      "contrast": "D-B",
+      "mean_diff": 0.3144,
+      "metric": "token_S",
+      "n_pairs": 40,
+      "paired_mean_x": 0.5041,
+      "paired_mean_y": 0.1898
+    },
+    {
+      "ci95": [
+        0.4334,
+        0.6212
+      ],
+      "cohort": "eval_block2",
+      "contrast": "C-A",
+      "mean_diff": 0.5319,
+      "metric": "S_body",
+      "n_pairs": 34,
+      "paired_mean_x": 0.7677,
+      "paired_mean_y": 0.2358
+    },
+    {
+      "ci95": [
+        0.5524,
+        0.7708
+      ],
+      "cohort": "eval_block2",
+      "contrast": "C-A",
+      "mean_diff": 0.6673,
+      "metric": "lcs_tactic",
+      "n_pairs": 31,
+      "paired_mean_x": 0.8096,
+      "paired_mean_y": 0.1423
+    },
+    {
+      "ci95": [
+        0.2442,
+        0.4088
+      ],
+      "cohort": "eval_block2",
+      "contrast": "C-A",
+      "mean_diff": 0.326,
+      "metric": "token_S",
+      "n_pairs": 40,
+      "paired_mean_x": 0.5239,
+      "paired_mean_y": 0.1978
+    },
+    {
+      "ci95": [
+        0.4884,
+        0.6824
+      ],
+      "cohort": "eval_block2",
+      "contrast": "D-B",
+      "mean_diff": 0.5879,
+      "metric": "S_body",
+      "n_pairs": 36,
+      "paired_mean_x": 0.7978,
+      "paired_mean_y": 0.2099
+    },
+    {
+      "ci95": [
+        0.5802,
+        0.8105
+      ],
+      "cohort": "eval_block2",
+      "contrast": "D-B",
+      "mean_diff": 0.7027,
+      "metric": "lcs_tactic",
+      "n_pairs": 32,
+      "paired_mean_x": 0.823,
+      "paired_mean_y": 0.1203
+    },
+    {
+      "ci95": [
+        0.1865,
+        0.3506
+      ],
+      "cohort": "eval_block2",
+      "contrast": "D-B",
+      "mean_diff": 0.2676,
+      "metric": "token_S",
+      "n_pairs": 40,
+      "paired_mean_x": 0.4671,
+      "paired_mean_y": 0.1995
+    },
+    {
+      "ci95": [
+        0.4591,
+        0.6695
+      ],
+      "cohort": "full_pool_dev",
+      "contrast": "C-A",
+      "mean_diff": 0.5672,
+      "metric": "S_body",
+      "n_pairs": 39,
+      "paired_mean_x": 0.7446,
+      "paired_mean_y": 0.1775
+    },
+    {
+      "ci95": [
+        0.5096,
+        0.7373
+      ],
+      "cohort": "full_pool_dev",
+      "contrast": "C-A",
+      "mean_diff": 0.6261,
+      "metric": "lcs_tactic",
+      "n_pairs": 37,
+      "paired_mean_x": 0.7195,
+      "paired_mean_y": 0.0934
+    },
+    {
+      "ci95": [
+        0.1926,
+        0.3396
+      ],
+      "cohort": "full_pool_dev",
+      "contrast": "C-A",
+      "mean_diff": 0.2652,
+      "metric": "token_S",
+      "n_pairs": 43,
+      "paired_mean_x": 0.4408,
+      "paired_mean_y": 0.1756
+    },
+    {
+      "ci95": [
+        0.4588,
+        0.6641
+      ],
+      "cohort": "full_pool_dev",
+      "contrast": "D-B",
+      "mean_diff": 0.5649,
+      "metric": "S_body",
+      "n_pairs": 38,
+      "paired_mean_x": 0.7607,
+      "paired_mean_y": 0.1958
+    },
+    {
+      "ci95": [
+        0.54,
+        0.77
+      ],
+      "cohort": "full_pool_dev",
+      "contrast": "D-B",
+      "mean_diff": 0.6582,
+      "metric": "lcs_tactic",
+      "n_pairs": 36,
+      "paired_mean_x": 0.7431,
+      "paired_mean_y": 0.0848
+    },
+    {
+      "ci95": [
+        0.1489,
+        0.2774
+      ],
+      "cohort": "full_pool_dev",
+      "contrast": "D-B",
+      "mean_diff": 0.2104,
+      "metric": "token_S",
+      "n_pairs": 43,
+      "paired_mean_x": 0.3981,
+      "paired_mean_y": 0.1877
+    }
+  ],
+  "coverage": {
+    "fraction": 0.916,
+    "lcs_one_sided_zero": 129,
+    "lcs_undefined": 58,
+    "n_branches": 536,
+    "n_covered": 491
+  },
+  "fresh_ceiling": {
+    "arm": "B",
+    "cohort": "primary_eval",
+    "max_S": 0.5988,
+    "root_id": "mathd_numbertheory_235"
+  },
+  "localization": [
+    {
+      "cohort": "primary_eval",
+      "gap_ci95": [
+        0.0959,
+        0.3093
+      ],
+      "mean_diff_body": 0.4842,
+      "mean_diff_whole": 0.2822,
+      "mean_gap": 0.202,
+      "n": 35,
+      "n_gap_positive": 29
+    },
+    {
+      "cohort": "eval_block2",
+      "gap_ci95": [
+        0.1617,
+        0.3235
+      ],
+      "mean_diff_body": 0.5319,
+      "mean_diff_whole": 0.2881,
+      "mean_gap": 0.2438,
+      "n": 34,
+      "n_gap_positive": 30
+    },
+    {
+      "cohort": "full_pool_dev",
+      "gap_ci95": [
+        0.1859,
+        0.3833
+      ],
+      "mean_diff_body": 0.5672,
+      "mean_diff_whole": 0.283,
+      "mean_gap": 0.2841,
+      "n": 39,
+      "n_gap_positive": 31
+    }
+  ],
+  "near_verbatim": {
+    "pooled_C": {
+      "byte_identical": 3,
+      "mean_lcs_tactic": 0.9993,
+      "n": 13,
+      "n_lcs_defined": 12
+    },
+    "rows": [
+      {
+        "arm": "A",
+        "byte_identical": 0,
+        "cohort": "primary_eval",
+        "max_S": 0.439,
+        "mean_lcs_tactic": null,
+        "n": 40,
+        "n_lcs_defined": 0,
+        "near_verbatim": 0,
+        "pct": 0.0,
+        "roots": []
+      },
+      {
+        "arm": "B",
+        "byte_identical": 0,
+        "cohort": "primary_eval",
+        "max_S": 0.5988,
+        "mean_lcs_tactic": null,
+        "n": 40,
+        "n_lcs_defined": 0,
+        "near_verbatim": 0,
+        "pct": 0.0,
+        "roots": []
+      },
+      {
+        "arm": "C",
+        "byte_identical": 3,
+        "cohort": "primary_eval",
+        "max_S": 1.0,
+        "mean_lcs_tactic": 0.999,
+        "n": 40,
+        "n_lcs_defined": 4,
+        "near_verbatim": 4,
+        "pct": 10.0,
+        "roots": [
+          "algebra_2varlineareq_fp3zeq11_3tfm1m5zeqn68_feqn10_zeq7",
+          "amc12_2001_p21",
+          "amc12a_2019_p12",
+          "mathd_numbertheory_235"
+        ]
+      },
+      {
+        "arm": "D",
+        "byte_identical": 2,
+        "cohort": "primary_eval",
+        "max_S": 1.0,
+        "mean_lcs_tactic": 0.8997,
+        "n": 40,
+        "n_lcs_defined": 6,
+        "near_verbatim": 6,
+        "pct": 15.0,
+        "roots": [
+          "aime_1987_p5",
+          "amc12_2001_p21",
+          "amc12a_2019_p12",
+          "amc12b_2020_p21",
+          "imo_1965_p2",
+          "mathd_numbertheory_235"
+        ]
+      },
+      {
+        "arm": "E",
+        "byte_identical": 0,
+        "cohort": "primary_eval",
+        "max_S": 0.6954,
+        "mean_lcs_tactic": null,
+        "n": 21,
+        "n_lcs_defined": 0,
+        "near_verbatim": 0,
+        "pct": 0.0,
+        "roots": []
+      },
+      {
+        "arm": "A",
+        "byte_identical": 0,
+        "cohort": "eval_block2",
+        "max_S": 0.4786,
+        "mean_lcs_tactic": null,
+        "n": 40,
+        "n_lcs_defined": 0,
+        "near_verbatim": 0,
+        "pct": 0.0,
+        "roots": []
+      },
+      {
+        "arm": "B",
+        "byte_identical": 0,
+        "cohort": "eval_block2",
+        "max_S": 0.3786,
+        "mean_lcs_tactic": null,
+        "n": 40,
+        "n_lcs_defined": 0,
+        "near_verbatim": 0,
+        "pct": 0.0,
+        "roots": []
+      },
+      {
+        "arm": "C",
+        "byte_identical": 0,
+        "cohort": "eval_block2",
+        "max_S": 0.9959,
+        "mean_lcs_tactic": 0.999,
+        "n": 40,
+        "n_lcs_defined": 4,
+        "near_verbatim": 4,
+        "pct": 10.0,
+        "roots": [
+          "amc12_2001_p21",
+          "amc12a_2019_p12",
+          "amc12b_2020_p6",
+          "numbertheory_3pow2pownm1mod2pownp3eq2pownp2"
+        ]
+      },
+      {
+        "arm": "D",
+        "byte_identical": 1,
+        "cohort": "eval_block2",
+        "max_S": 1.0,
+        "mean_lcs_tactic": 0.998,
+        "n": 40,
+        "n_lcs_defined": 2,
+        "near_verbatim": 3,
+        "pct": 7.5,
+        "roots": [
+          "amc12_2001_p21",
+          "amc12a_2019_p12",
+          "mathd_numbertheory_277"
+        ]
+      },
+      {
+        "arm": "A",
+        "byte_identical": 0,
+        "cohort": "full_pool_dev",
+        "max_S": 0.2975,
+        "mean_lcs_tactic": null,
+        "n": 43,
+        "n_lcs_defined": 0,
+        "near_verbatim": 0,
+        "pct": 0.0,
+        "roots": []
+      },
+      {
+        "arm": "B",
+        "byte_identical": 0,
+        "cohort": "full_pool_dev",
+        "max_S": 0.3244,
+        "mean_lcs_tactic": null,
+        "n": 43,
+        "n_lcs_defined": 0,
+        "near_verbatim": 0,
+        "pct": 0.0,
+        "roots": []
+      },
+      {
+        "arm": "C",
+        "byte_identical": 0,
+        "cohort": "full_pool_dev",
+        "max_S": 0.9946,
+        "mean_lcs_tactic": 1.0,
+        "n": 43,
+        "n_lcs_defined": 4,
+        "near_verbatim": 5,
+        "pct": 11.6,
+        "roots": [
+          "algebra_ineq_nto1onlt2m1on",
+          "amc12a_2021_p19",
+          "amc12b_2021_p13",
+          "amc12b_2021_p3",
+          "induction_sumkexp3eqsumksq"
+        ]
+      },
+      {
+        "arm": "D",
+        "byte_identical": 0,
+        "cohort": "full_pool_dev",
+        "max_S": 0.9562,
+        "mean_lcs_tactic": 1.0,
+        "n": 43,
+        "n_lcs_defined": 1,
+        "near_verbatim": 1,
+        "pct": 2.3,
+        "roots": [
+          "induction_sumkexp3eqsumksq"
+        ]
+      },
+      {
+        "arm": "E",
+        "byte_identical": 0,
+        "cohort": "full_pool_dev",
+        "max_S": 0.6955,
+        "mean_lcs_tactic": null,
+        "n": 23,
+        "n_lcs_defined": 0,
+        "near_verbatim": 0,
+        "pct": 0.0,
+        "roots": []
+      }
+    ],
+    "threshold": 0.9
+  },
+  "summary": [
+    {
+      "arm": "A",
+      "cohort": "primary_eval",
+      "coverage": 0.875,
+      "mean_S": 0.2072,
+      "mean_S_body": 0.2499,
+      "mean_lcs_tactic_defined": 0.1359,
+      "n": 40,
+      "n_covered": 35,
+      "n_lcs_defined": 37,
+      "n_lcs_undefined": 3
+    },
+    {
+      "arm": "B",
+      "cohort": "primary_eval",
+      "coverage": 0.85,
+      "mean_S": 0.1898,
+      "mean_S_body": 0.2237,
+      "mean_lcs_tactic_defined": 0.1098,
+      "n": 40,
+      "n_covered": 34,
+      "n_lcs_defined": 36,
+      "n_lcs_undefined": 4
+    },
+    {
+      "arm": "C",
+      "cohort": "primary_eval",
+      "coverage": 0.95,
+      "mean_S": 0.496,
+      "mean_S_body": 0.7373,
+      "mean_lcs_tactic_defined": 0.6972,
+      "n": 40,
+      "n_covered": 38,
+      "n_lcs_defined": 35,
+      "n_lcs_undefined": 5
+    },
+    {
+      "arm": "D",
+      "cohort": "primary_eval",
+      "coverage": 0.95,
+      "mean_S": 0.5041,
+      "mean_S_body": 0.7276,
+      "mean_lcs_tactic_defined": 0.7703,
+      "n": 40,
+      "n_covered": 38,
+      "n_lcs_defined": 33,
+      "n_lcs_undefined": 7
+    },
+    {
+      "arm": "E",
+      "cohort": "primary_eval",
+      "coverage": 1.0,
+      "mean_S": 0.3726,
+      "mean_S_body": 0.7689,
+      "mean_lcs_tactic_defined": 0.7572,
+      "n": 21,
+      "n_covered": 21,
+      "n_lcs_defined": 21,
+      "n_lcs_undefined": 0
+    },
+    {
+      "arm": "A",
+      "cohort": "eval_block2",
+      "coverage": 0.925,
+      "mean_S": 0.1978,
+      "mean_S_body": 0.2206,
+      "mean_lcs_tactic_defined": 0.1225,
+      "n": 40,
+      "n_covered": 37,
+      "n_lcs_defined": 36,
+      "n_lcs_undefined": 4
+    },
+    {
+      "arm": "B",
+      "cohort": "eval_block2",
+      "coverage": 0.9,
+      "mean_S": 0.1995,
+      "mean_S_body": 0.2099,
+      "mean_lcs_tactic_defined": 0.1013,
+      "n": 40,
+      "n_covered": 36,
+      "n_lcs_defined": 38,
+      "n_lcs_undefined": 2
+    },
+    {
+      "arm": "C",
+      "cohort": "eval_block2",
+      "coverage": 0.875,
+      "mean_S": 0.5239,
+      "mean_S_body": 0.7744,
+      "mean_lcs_tactic_defined": 0.8096,
+      "n": 40,
+      "n_covered": 35,
+      "n_lcs_defined": 31,
+      "n_lcs_undefined": 9
+    },
+    {
+      "arm": "D",
+      "cohort": "eval_block2",
+      "coverage": 0.95,
+      "mean_S": 0.4671,
+      "mean_S_body": 0.7833,
+      "mean_lcs_tactic_defined": 0.798,
+      "n": 40,
+      "n_covered": 38,
+      "n_lcs_defined": 33,
+      "n_lcs_undefined": 7
+    },
+    {
+      "arm": "A",
+      "cohort": "full_pool_dev",
+      "coverage": 0.907,
+      "mean_S": 0.1756,
+      "mean_S_body": 0.1775,
+      "mean_lcs_tactic_defined": 0.0886,
+      "n": 43,
+      "n_covered": 39,
+      "n_lcs_defined": 39,
+      "n_lcs_undefined": 4
+    },
+    {
+      "arm": "B",
+      "cohort": "full_pool_dev",
+      "coverage": 0.907,
+      "mean_S": 0.1877,
+      "mean_S_body": 0.1968,
+      "mean_lcs_tactic_defined": 0.0826,
+      "n": 43,
+      "n_covered": 39,
+      "n_lcs_defined": 37,
+      "n_lcs_undefined": 6
+    },
+    {
+      "arm": "C",
+      "cohort": "full_pool_dev",
+      "coverage": 0.9302,
+      "mean_S": 0.4408,
+      "mean_S_body": 0.7443,
+      "mean_lcs_tactic_defined": 0.6826,
+      "n": 43,
+      "n_covered": 40,
+      "n_lcs_defined": 39,
+      "n_lcs_undefined": 4
+    },
+    {
+      "arm": "D",
+      "cohort": "full_pool_dev",
+      "coverage": 0.907,
+      "mean_S": 0.3981,
+      "mean_S_body": 0.7488,
+      "mean_lcs_tactic_defined": 0.6688,
+      "n": 43,
+      "n_covered": 39,
+      "n_lcs_defined": 40,
+      "n_lcs_undefined": 3
+    },
+    {
+      "arm": "E",
+      "cohort": "full_pool_dev",
+      "coverage": 0.9565,
+      "mean_S": 0.3765,
+      "mean_S_body": 0.739,
+      "mean_lcs_tactic_defined": 0.6787,
+      "n": 23,
+      "n_covered": 22,
+      "n_lcs_defined": 23,
+      "n_lcs_undefined": 0
+    }
+  ],
+  "tokenized": true
+}

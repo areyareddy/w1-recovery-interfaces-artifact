@@ -1,0 +1,33 @@
+{
+  "finished_utc": "2026-08-28T03:37:58Z",
+  "inputs": {
+    "data\\guidance_render.jsonl": "4a49a9f1ce13753ff56192c4254a3a9ea38a0c5398699eca64387cb371fb249e",
+    "data\\roots.jsonl": "6132d7463347621a9bdd0c4fcd8d62dcde7836b377cfef0214f5b12abfdb418b",
+    "src\\goedel_native.py": "968dfaecc5193045236ef3bce9bdcf100f04a2baf155c57f6d67e164a7754d49",
+    "src\\policy.py": "e9c52bf78e1cb9db4e422f8770e980b248b0c0246d6f4b152ad99dae3468d826",
+    "src\\prompts.py": "2d3690f6e2e63c47b11dd66963aec65908288df7a5a84be2d1c488b8d4e850a2"
+  },
+  "outputs": {
+    "data\\prompts.jsonl": "7258ae486182f43b6c4ec791d631f5766cbda656e505065f06fdabedd5bc76be"
+  },
+  "stats": {
+    "branches_total": 376,
+    "distinct_payloads": 376,
+    "e_branches": 44,
+    "full_pool_353": 353,
+    "max_payload_branch": "imo_1997_p5|D",
+    "max_payload_chars": 45884,
+    "median_payload_chars_D": 21373,
+    "per_arm": {
+      "A": 83,
+      "B": 83,
+      "C": 83,
+      "D": 83,
+      "E": 44
+    },
+    "primary_run_eval_181": 181,
+    "wrapper_sha256": "04978bed4a6332b3be2299d0fb77e4837d8c4f764e8f60d5ab770c7509976585"
+  },
+  "step": "s02",
+  "title": "Prompt builder, arms A-E"
+}

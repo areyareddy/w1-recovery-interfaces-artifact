@@ -1,0 +1,188 @@
+
+Error 1:
+
+Corresponding Code:
+```lean4
+        <;> linarith
+      have h₄₆ : Real.log x = 0 := by
+        have h₄₇ : Real.log 2 ≠ 0 := Real.log_ne_zero_of_pos_of_ne_one (by norm_num) (by norm_num)
+        field_simp [h₄₇] at h₄₅
+        <;> <error>linarith</error>
+      have h₄₈ : x = 1 := by
+
+```
+
+Error Message: linarith failed to find a contradiction
+case h1.h
+x y : ℝ
+h₀ : x ≠ 1 ∧ y ≠ 1
+h₁ : x.log / Real.log 2 = Real.log 16 / y.log
+h₂ : x * y = 64
+h₃ : Real.log 16 = 4 * Real.log 2
+h₄₁ : x.log / Real.log 2 = 4 * Real.log 2 / y.log
+h₄₂ : Real.log 16 = 4 * Real.log 2
+h₄₃ : x.log / Real.log 2 = 4 * Real.log 2 / 0
+h : y.log = 0
+h₄₇ : Real.log 2 ≠ 0
+h₄₅ : x = 0 ∨ x = 1 ∨ x = -1
+a✝ : x.log < 0
+⊢ False
+failed
+
+Error 2:
+
+Corresponding Code:
+```lean4
+      have h₄₅ : Real.log x / Real.log 2 = 0 := by
+        field_simp [Real.log_eq_zero, Real.log_ne_zero_of_pos_of_ne_one (by norm_num : (0 : ℝ) < 2) (by norm_num : (2 : ℝ) ≠ 1)] at h₄₃ ⊢
+        <;> simp_all [Real.log_eq_zero, Real.log_ne_zero_of_pos_of_ne_one]
+        <;> linarith
+      have h₄₆ : Real.log x = 0 := <error>by
+        have h₄₇ : Real.log 2 ≠ 0 := Real.log_ne_zero_of_pos_of_ne_one (by norm_num) (by norm_num)
+        field_simp [h₄₇] at h₄₅
+        <;> linarith</error>
+      have h₄₈ : x = 1 := by
+
+```
+
+Error Message: unsolved goals
+x y : ℝ
+h₀ : x ≠ 1 ∧ y ≠ 1
+h₁ : x.log / Real.log 2 = Real.log 16 / y.log
+h₂ : x * y = 64
+h₃ : Real.log 16 = 4 * Real.log 2
+h₄₁ : x.log / Real.log 2 = 4 * Real.log 2 / y.log
+h₄₂ : Real.log 16 = 4 * Real.log 2
+h₄₃ : x.log / Real.log 2 = 4 * Real.log 2 / 0
+h : y.log = 0
+h₄₇ : Real.log 2 ≠ 0
+h₄₅ : x = 0 ∨ x = 1 ∨ x = -1
+⊢ x.log = 0
+
+Error 3:
+
+Corresponding Code:
+```lean4
+      have h₄₈ : x = 1 := by
+        have h₄₉ : Real.log x = 0 := h₄₆
+        have h₄₁₀ : Real.log x = 0 := h₄₉
+        have h₄₁₁ : x = 1 := by
+          rw [← Real.exp_log (<error>show x ≠ 0 by
+            by_contra h₄₁₂
+            have h₄₁₃ : x = 0 := by linarith
+            have h₄₁₄ : Real.log x = 0 := by
+              rw [h₄₁₃]
+              simp [Real.log_zero]
+
+              ... --[Truncated]-- ...
+            <;> linarith</error>
+          )]
+
+```
+
+Error Message: type mismatch
+  this
+has type
+  x ≠ 0 : Prop
+but is expected to have type
+  0 < ?m.15537 : Prop
+
+Error 4:
+
+Corresponding Code:
+```lean4
+      have h₄₈ : x = 1 := by
+        have h₄₉ : Real.log x = 0 := h₄₆
+        have h₄₁₀ : Real.log x = 0 := h₄₉
+        have h₄₁₁ : x = 1 := by
+          rw [<error>← Real.exp_log (show x ≠ 0 by
+            by_contra h₄₁₂
+            have h₄₁₃ : x = 0 := by linarith
+            have h₄₁₄ : Real.log x = 0 := by
+              rw [h₄₁₃]
+              simp [Real.log_zero]
+
+              ... --[Truncated]-- ...
+          )</error>]
+          rw [h₄₁₀]
+
+```
+
+Error Message: tactic 'rewrite' failed, pattern is a metavariable
+  ?m.15537
+from equation
+  ?m.15537 = rexp ?m.15537.log
+x y : ℝ
+h₀ : x ≠ 1 ∧ y ≠ 1
+h₁ : x.log / Real.log 2 = Real.log 16 / y.log
+h₂ : x * y = 64
+h₃ : Real.log 16 = 4 * Real.log 2
+h₄₁ : x.log / Real.log 2 = 4 * Real.log 2 / y.log
+h₄₂ : Real.log 16 = 4 * Real.log 2
+h₄₃ : x.log / Real.log 2 = 4 * Real.log 2 / 0
+h : y.log = 0
+h₄₅ : x.log / Real.log 2 = 0
+h₄₆ h₄₉ h₄₁₀ : x.log = 0
+⊢ x = 1
+
+Error 5:
+
+Corresponding Code:
+```lean4
+      <;> simp [Real.log_pow]
+      <;> ring_nf
+      <;> norm_num
+    have h₅₂ : Real.log (x * y) = Real.log x + Real.log y := by
+      rw [Real.log_mul (<error>by
+        by_contra h
+        have h₅₃ : x = 0 := by
+          by_contra h₅₄
+          have h₅₅ : x ≠ 0 := h₅₄
+          simp_all [Real.log_eq_zero]
+
+          ... --[Truncated]-- ...
+        <;> aesop</error>
+      ) (by
+
+```
+
+Error Message: unsolved goals
+y : ℝ
+h₀ : ¬y = 1
+h₁ : 0 = 4 * Real.log 2 / y.log
+h₂ : 4 * Real.log 2 / y.log * y = 64
+h₃ : Real.log 16 = 4 * Real.log 2
+h₄ : (4 * Real.log 2 / y.log).log * y.log = 4 * Real.log 2 ^ 2
+⊢ False
+
+Error 6:
+
+Corresponding Code:
+```lean4
+  
+  have h₇ : (Real.log (x / y) / Real.log 2) ^ 2 = 20 := by
+    have h₇₁ : Real.log (x / y) = Real.log x - Real.log y := by
+      have h₇₂ : Real.log (x / y) = Real.log x - Real.log y := by
+        rw [Real.log_div (<error>by
+          by_contra h₇₃
+          have h₇₄ : x = 0 := by
+            by_contra h₇₅
+            have h₇₆ : x ≠ 0 := h₇₅
+            simp_all [Real.log_eq_zero]
+
+            ... --[Truncated]-- ...
+          <;> aesop</error>
+        ) (by
+
+```
+
+Error Message: unsolved goals
+y : ℝ
+h₀ : ¬y = 1
+h₁ : 0 = 4 * Real.log 2 / y.log
+h₂ : 4 * Real.log 2 / y.log * y = 64
+h₃ : Real.log 16 = 4 * Real.log 2
+h₄ : (4 * Real.log 2 / y.log).log * y.log = 4 * Real.log 2 ^ 2
+h₅ : (4 * Real.log 2 / y.log).log + y.log = 6 * Real.log 2
+h₆ : ((4 * Real.log 2 / y.log).log - y.log) ^ 2 = 20 * Real.log 2 ^ 2
+⊢ False

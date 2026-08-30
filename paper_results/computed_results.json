@@ -1,0 +1,5146 @@
+{
+  "anchoring": {
+    "eval_block2": {
+      "C-A": {
+        "ci95": [
+          0.24396187187499996,
+          0.4087439112500001
+        ],
+        "contrast": "C-A",
+        "mean_diff": 0.32604375,
+        "mean_x": 0.523853625,
+        "mean_y": 0.197809875,
+        "median_diff": 0.3549135,
+        "n": 40,
+        "positive": 33
+      },
+      "D-B": {
+        "ci95": [
+          0.18620976374999998,
+          0.3505869674999999
+        ],
+        "contrast": "D-B",
+        "mean_diff": 0.2675959,
+        "mean_x": 0.467054,
+        "mean_y": 0.1994581,
+        "median_diff": 0.2932965,
+        "n": 40,
+        "positive": 32
+      }
+    },
+    "full_pool_dev": {
+      "C-A": {
+        "ci95": [
+          0.19314779941860466,
+          0.34027363430232554
+        ],
+        "contrast": "C-A",
+        "mean_diff": 0.2651661162790698,
+        "mean_x": 0.4407857441860465,
+        "mean_y": 0.17561962790697674,
+        "median_diff": 0.199627,
+        "n": 43,
+        "positive": 39
+      },
+      "D-B": {
+        "ci95": [
+          0.14918741337209301,
+          0.2765077622093023
+        ],
+        "contrast": "D-B",
+        "mean_diff": 0.210443,
+        "mean_x": 0.39813316279069766,
+        "mean_y": 0.18769016279069767,
+        "median_diff": 0.14203500000000002,
+        "n": 43,
+        "positive": 38
+      }
+    },
+    "primary_eval": {
+      "C-A": {
+        "ci95": [
+          0.20443679812500004,
+          0.3721561243750001
+        ],
+        "contrast": "C-A",
+        "mean_diff": 0.288802825,
+        "mean_x": 0.495991225,
+        "mean_y": 0.2071884,
+        "median_diff": 0.29621400000000003,
+        "n": 40,
+        "positive": 33
+      },
+      "D-B": {
+        "ci95": [
+          0.22512033125,
+          0.40623432125000003
+        ],
+        "contrast": "D-B",
+        "mean_diff": 0.31435665,
+        "mean_x": 0.5041349,
+        "mean_y": 0.18977825,
+        "median_diff": 0.23758849999999998,
+        "n": 40,
+        "positive": 33
+      }
+    }
+  },
+  "failure_step_reuse": {
+    "blocks": {
+      "eval_block2": {
+        "arms": {
+          "A": {
+            "exact_line": 8,
+            "tactic_head": 14
+          },
+          "B": {
+            "exact_line": 10,
+            "tactic_head": 16
+          },
+          "C": {
+            "exact_line": 20,
+            "tactic_head": 18
+          },
+          "D": {
+            "exact_line": 21,
+            "tactic_head": 19
+          }
+        },
+        "contrasts": {
+          "C-A:exact_failed_line_reused": {
+            "both": 7,
+            "ci95": [
+              0.3333333333333333,
+              0.8095238095238095
+            ],
+            "effect": 0.5714285714285714,
+            "n": 21,
+            "neither": 0,
+            "p_exact_mcnemar": 0.0018310546875,
+            "x_only": 13,
+            "y_only": 1
+          },
+          "C-A:failed_tactic_head_reused": {
+            "both": 13,
+            "ci95": [
+              0.0,
+              0.45
+            ],
+            "effect": 0.2,
+            "n": 20,
+            "neither": 1,
+            "p_exact_mcnemar": 0.21875,
+            "x_only": 5,
+            "y_only": 1
+          },
+          "D-B:exact_failed_line_reused": {
+            "both": 10,
+            "ci95": [
+              0.3333333333333333,
+              0.7142857142857143
+            ],
+            "effect": 0.5238095238095238,
+            "n": 21,
+            "neither": 0,
+            "p_exact_mcnemar": 0.0009765625,
+            "x_only": 11,
+            "y_only": 0
+          },
+          "D-B:failed_tactic_head_reused": {
+            "both": 16,
+            "ci95": [
+              0.0,
+              0.3
+            ],
+            "effect": 0.15,
+            "n": 20,
+            "neither": 1,
+            "p_exact_mcnemar": 0.25,
+            "x_only": 3,
+            "y_only": 0
+          }
+        },
+        "n": 21
+      },
+      "primary_eval": {
+        "arms": {
+          "A": {
+            "exact_line": 5,
+            "tactic_head": 14
+          },
+          "B": {
+            "exact_line": 7,
+            "tactic_head": 15
+          },
+          "C": {
+            "exact_line": 20,
+            "tactic_head": 19
+          },
+          "D": {
+            "exact_line": 20,
+            "tactic_head": 19
+          }
+        },
+        "contrasts": {
+          "C-A:exact_failed_line_reused": {
+            "both": 5,
+            "ci95": [
+              0.5238095238095238,
+              0.9047619047619048
+            ],
+            "effect": 0.7142857142857143,
+            "n": 21,
+            "neither": 1,
+            "p_exact_mcnemar": 6.103515625e-05,
+            "x_only": 15,
+            "y_only": 0
+          },
+          "C-A:failed_tactic_head_reused": {
+            "both": 14,
+            "ci95": [
+              0.1,
+              0.45
+            ],
+            "effect": 0.25,
+            "n": 20,
+            "neither": 1,
+            "p_exact_mcnemar": 0.0625,
+            "x_only": 5,
+            "y_only": 0
+          },
+          "D-B:exact_failed_line_reused": {
+            "both": 7,
+            "ci95": [
+              0.42857142857142855,
+              0.8095238095238095
+            ],
+            "effect": 0.6190476190476191,
+            "n": 21,
+            "neither": 1,
+            "p_exact_mcnemar": 0.000244140625,
+            "x_only": 13,
+            "y_only": 0
+          },
+          "D-B:failed_tactic_head_reused": {
+            "both": 15,
+            "ci95": [
+              0.05,
+              0.4
+            ],
+            "effect": 0.2,
+            "n": 20,
+            "neither": 1,
+            "p_exact_mcnemar": 0.125,
+            "x_only": 4,
+            "y_only": 0
+          }
+        },
+        "n": 21
+      }
+    },
+    "located_unique_roots": 44,
+    "rows": [
+      {
+        "arm": "A",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 0,
+        "failed_line": "simp [h\u2082, Finset.sum_range_succ, Finset.sum_range_succ, Finset.sum_range_succ] at h\u2083 \u22a2",
+        "failed_tactic_head": "simp",
+        "failed_tactic_head_reused": 1,
+        "root_id": "aime_1984_p1"
+      },
+      {
+        "arm": "A",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 0,
+        "failed_line": "nlinarith [sq_nonneg (x ^ 2 - 4), sq_nonneg (y ^ 2 - 49), sq_nonneg (x ^ 2 - 1), sq_nonneg (y ^ 2 - 1)]",
+        "failed_tactic_head": "nlinarith",
+        "failed_tactic_head_reused": 1,
+        "root_id": "aime_1987_p5"
+      },
+      {
+        "arm": "A",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 0,
+        "failed_line": "rw [h\u2082\u2082]",
+        "failed_tactic_head": "rewrite",
+        "failed_tactic_head_reused": 0,
+        "root_id": "algebra_2varlineareq_fp3zeq11_3tfm1m5zeqn68_feqn10_zeq7"
+      },
+      {
+        "arm": "A",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 0,
+        "failed_line": "linarith",
+        "failed_tactic_head": "linarith",
+        "failed_tactic_head_reused": 1,
+        "root_id": "algebra_cubrtrp1oncubrtreq3_rcubp1onrcubeq5778"
+      },
+      {
+        "arm": "A",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 0,
+        "failed_line": "exact by",
+        "failed_tactic_head": "exact",
+        "failed_tactic_head_reused": 0,
+        "root_id": "algebra_others_exirrpowirrrat"
+      },
+      {
+        "arm": "A",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 0,
+        "failed_line": "<;> norm_num at h\u2082 h\u2083 <;> nlinarith",
+        "failed_tactic_head": "norm_num",
+        "failed_tactic_head_reused": 1,
+        "root_id": "amc12_2001_p21"
+      },
+      {
+        "arm": "A",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 0,
+        "failed_line": "omega",
+        "failed_tactic_head": "omega",
+        "failed_tactic_head_reused": 1,
+        "root_id": "amc12a_2003_p5"
+      },
+      {
+        "arm": "A",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 0,
+        "failed_line": "<;> linarith",
+        "failed_tactic_head": "linarith",
+        "failed_tactic_head_reused": 1,
+        "root_id": "amc12a_2019_p12"
+      },
+      {
+        "arm": "A",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 0,
+        "failed_line": "have h\u2084 : (1 /. 2 + 1 /. 3 + 1 /. 7 + 1 /. (n : \u211a)).den = 1 := by simpa using h\u2081",
+        "failed_tactic_head": "have",
+        "failed_tactic_head_reused": 1,
+        "root_id": "amc12b_2002_p4"
+      },
+      {
+        "arm": "A",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 1,
+        "failed_line": "<;> omega",
+        "failed_tactic_head": "omega",
+        "failed_tactic_head_reused": 1,
+        "root_id": "amc12b_2020_p6"
+      },
+      {
+        "arm": "A",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 1,
+        "failed_line": "have h_main : p \u2223 a ^ p - a := by",
+        "failed_tactic_head": "have",
+        "failed_tactic_head_reused": 1,
+        "root_id": "induction_pprime_pdvdapowpma"
+      },
+      {
+        "arm": "A",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 0,
+        "failed_line": "apply Equiv.apply_inv",
+        "failed_tactic_head": "apply",
+        "failed_tactic_head_reused": 1,
+        "root_id": "mathd_algebra_188"
+      },
+      {
+        "arm": "A",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 0,
+        "failed_line": "have h_contradiction : False := by",
+        "failed_tactic_head": "have",
+        "failed_tactic_head_reused": 1,
+        "root_id": "mathd_algebra_313"
+      },
+      {
+        "arm": "A",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 1,
+        "failed_line": "<;> rfl",
+        "failed_tactic_head": "rfl",
+        "failed_tactic_head_reused": 1,
+        "root_id": "mathd_numbertheory_135"
+      },
+      {
+        "arm": "A",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 0,
+        "failed_line": "rw [h1, h2]",
+        "failed_tactic_head": "rw",
+        "failed_tactic_head_reused": 0,
+        "root_id": "mathd_numbertheory_235"
+      },
+      {
+        "arm": "A",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 1,
+        "failed_line": "nlinarith",
+        "failed_tactic_head": "nlinarith",
+        "failed_tactic_head_reused": 1,
+        "root_id": "mathd_numbertheory_296"
+      },
+      {
+        "arm": "A",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 0,
+        "failed_line": "<;> rfl",
+        "failed_tactic_head": "rfl",
+        "failed_tactic_head_reused": 1,
+        "root_id": "mathd_numbertheory_343"
+      },
+      {
+        "arm": "A",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 0,
+        "failed_line": "nlinarith",
+        "failed_tactic_head": "nlinarith",
+        "failed_tactic_head_reused": 0,
+        "root_id": "mathd_numbertheory_495"
+      },
+      {
+        "arm": "A",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 1,
+        "failed_line": "| succ n =>",
+        "failed_tactic_head": null,
+        "failed_tactic_head_reused": null,
+        "root_id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2"
+      },
+      {
+        "arm": "A",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 0,
+        "failed_line": "omega",
+        "failed_tactic_head": "omega",
+        "failed_tactic_head_reused": 0,
+        "root_id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown"
+      },
+      {
+        "arm": "A",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 0,
+        "failed_line": "tauto",
+        "failed_tactic_head": "tauto",
+        "failed_tactic_head_reused": 0,
+        "root_id": "numbertheory_notequiv2i2jasqbsqdiv8"
+      },
+      {
+        "arm": "B",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 0,
+        "failed_line": "simp [h\u2082, Finset.sum_range_succ, Finset.sum_range_succ, Finset.sum_range_succ] at h\u2083 \u22a2",
+        "failed_tactic_head": "simp",
+        "failed_tactic_head_reused": 1,
+        "root_id": "aime_1984_p1"
+      },
+      {
+        "arm": "B",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 0,
+        "failed_line": "nlinarith [sq_nonneg (x ^ 2 - 4), sq_nonneg (y ^ 2 - 49), sq_nonneg (x ^ 2 - 1), sq_nonneg (y ^ 2 - 1)]",
+        "failed_tactic_head": "nlinarith",
+        "failed_tactic_head_reused": 1,
+        "root_id": "aime_1987_p5"
+      },
+      {
+        "arm": "B",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 0,
+        "failed_line": "rw [h\u2082\u2082]",
+        "failed_tactic_head": "rewrite",
+        "failed_tactic_head_reused": 0,
+        "root_id": "algebra_2varlineareq_fp3zeq11_3tfm1m5zeqn68_feqn10_zeq7"
+      },
+      {
+        "arm": "B",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 1,
+        "failed_line": "linarith",
+        "failed_tactic_head": "linarith",
+        "failed_tactic_head_reused": 1,
+        "root_id": "algebra_cubrtrp1oncubrtreq3_rcubp1onrcubeq5778"
+      },
+      {
+        "arm": "B",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 0,
+        "failed_line": "exact by",
+        "failed_tactic_head": "exact",
+        "failed_tactic_head_reused": 0,
+        "root_id": "algebra_others_exirrpowirrrat"
+      },
+      {
+        "arm": "B",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 0,
+        "failed_line": "<;> norm_num at h\u2082 h\u2083 <;> nlinarith",
+        "failed_tactic_head": "norm_num",
+        "failed_tactic_head_reused": 1,
+        "root_id": "amc12_2001_p21"
+      },
+      {
+        "arm": "B",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 1,
+        "failed_line": "omega",
+        "failed_tactic_head": "omega",
+        "failed_tactic_head_reused": 1,
+        "root_id": "amc12a_2003_p5"
+      },
+      {
+        "arm": "B",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 1,
+        "failed_line": "<;> linarith",
+        "failed_tactic_head": "linarith",
+        "failed_tactic_head_reused": 1,
+        "root_id": "amc12a_2019_p12"
+      },
+      {
+        "arm": "B",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 0,
+        "failed_line": "have h\u2084 : (1 /. 2 + 1 /. 3 + 1 /. 7 + 1 /. (n : \u211a)).den = 1 := by simpa using h\u2081",
+        "failed_tactic_head": "have",
+        "failed_tactic_head_reused": 1,
+        "root_id": "amc12b_2002_p4"
+      },
+      {
+        "arm": "B",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 1,
+        "failed_line": "<;> omega",
+        "failed_tactic_head": "omega",
+        "failed_tactic_head_reused": 1,
+        "root_id": "amc12b_2020_p6"
+      },
+      {
+        "arm": "B",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 0,
+        "failed_line": "have h_main : p \u2223 a ^ p - a := by",
+        "failed_tactic_head": "have",
+        "failed_tactic_head_reused": 1,
+        "root_id": "induction_pprime_pdvdapowpma"
+      },
+      {
+        "arm": "B",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 0,
+        "failed_line": "apply Equiv.apply_inv",
+        "failed_tactic_head": "apply",
+        "failed_tactic_head_reused": 1,
+        "root_id": "mathd_algebra_188"
+      },
+      {
+        "arm": "B",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 0,
+        "failed_line": "have h_contradiction : False := by",
+        "failed_tactic_head": "have",
+        "failed_tactic_head_reused": 1,
+        "root_id": "mathd_algebra_313"
+      },
+      {
+        "arm": "B",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 1,
+        "failed_line": "<;> rfl",
+        "failed_tactic_head": "rfl",
+        "failed_tactic_head_reused": 1,
+        "root_id": "mathd_numbertheory_135"
+      },
+      {
+        "arm": "B",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 0,
+        "failed_line": "rw [h1, h2]",
+        "failed_tactic_head": "rw",
+        "failed_tactic_head_reused": 1,
+        "root_id": "mathd_numbertheory_235"
+      },
+      {
+        "arm": "B",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 0,
+        "failed_line": "nlinarith",
+        "failed_tactic_head": "nlinarith",
+        "failed_tactic_head_reused": 1,
+        "root_id": "mathd_numbertheory_296"
+      },
+      {
+        "arm": "B",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 0,
+        "failed_line": "<;> rfl",
+        "failed_tactic_head": "rfl",
+        "failed_tactic_head_reused": 0,
+        "root_id": "mathd_numbertheory_343"
+      },
+      {
+        "arm": "B",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 0,
+        "failed_line": "nlinarith",
+        "failed_tactic_head": "nlinarith",
+        "failed_tactic_head_reused": 0,
+        "root_id": "mathd_numbertheory_495"
+      },
+      {
+        "arm": "B",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 1,
+        "failed_line": "| succ n =>",
+        "failed_tactic_head": null,
+        "failed_tactic_head_reused": null,
+        "root_id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2"
+      },
+      {
+        "arm": "B",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 0,
+        "failed_line": "omega",
+        "failed_tactic_head": "omega",
+        "failed_tactic_head_reused": 0,
+        "root_id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown"
+      },
+      {
+        "arm": "B",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 1,
+        "failed_line": "tauto",
+        "failed_tactic_head": "tauto",
+        "failed_tactic_head_reused": 1,
+        "root_id": "numbertheory_notequiv2i2jasqbsqdiv8"
+      },
+      {
+        "arm": "C",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 1,
+        "failed_line": "simp [h\u2082, Finset.sum_range_succ, Finset.sum_range_succ, Finset.sum_range_succ] at h\u2083 \u22a2",
+        "failed_tactic_head": "simp",
+        "failed_tactic_head_reused": 1,
+        "root_id": "aime_1984_p1"
+      },
+      {
+        "arm": "C",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 1,
+        "failed_line": "nlinarith [sq_nonneg (x ^ 2 - 4), sq_nonneg (y ^ 2 - 49), sq_nonneg (x ^ 2 - 1), sq_nonneg (y ^ 2 - 1)]",
+        "failed_tactic_head": "nlinarith",
+        "failed_tactic_head_reused": 1,
+        "root_id": "aime_1987_p5"
+      },
+      {
+        "arm": "C",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 1,
+        "failed_line": "rw [h\u2082\u2082]",
+        "failed_tactic_head": "rewrite",
+        "failed_tactic_head_reused": 0,
+        "root_id": "algebra_2varlineareq_fp3zeq11_3tfm1m5zeqn68_feqn10_zeq7"
+      },
+      {
+        "arm": "C",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 1,
+        "failed_line": "linarith",
+        "failed_tactic_head": "linarith",
+        "failed_tactic_head_reused": 1,
+        "root_id": "algebra_cubrtrp1oncubrtreq3_rcubp1onrcubeq5778"
+      },
+      {
+        "arm": "C",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 1,
+        "failed_line": "exact by",
+        "failed_tactic_head": "exact",
+        "failed_tactic_head_reused": 1,
+        "root_id": "algebra_others_exirrpowirrrat"
+      },
+      {
+        "arm": "C",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 1,
+        "failed_line": "<;> norm_num at h\u2082 h\u2083 <;> nlinarith",
+        "failed_tactic_head": "norm_num",
+        "failed_tactic_head_reused": 1,
+        "root_id": "amc12_2001_p21"
+      },
+      {
+        "arm": "C",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 1,
+        "failed_line": "omega",
+        "failed_tactic_head": "omega",
+        "failed_tactic_head_reused": 1,
+        "root_id": "amc12a_2003_p5"
+      },
+      {
+        "arm": "C",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 1,
+        "failed_line": "<;> linarith",
+        "failed_tactic_head": "linarith",
+        "failed_tactic_head_reused": 1,
+        "root_id": "amc12a_2019_p12"
+      },
+      {
+        "arm": "C",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 1,
+        "failed_line": "have h\u2084 : (1 /. 2 + 1 /. 3 + 1 /. 7 + 1 /. (n : \u211a)).den = 1 := by simpa using h\u2081",
+        "failed_tactic_head": "have",
+        "failed_tactic_head_reused": 1,
+        "root_id": "amc12b_2002_p4"
+      },
+      {
+        "arm": "C",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 1,
+        "failed_line": "<;> omega",
+        "failed_tactic_head": "omega",
+        "failed_tactic_head_reused": 1,
+        "root_id": "amc12b_2020_p6"
+      },
+      {
+        "arm": "C",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 1,
+        "failed_line": "have h_main : p \u2223 a ^ p - a := by",
+        "failed_tactic_head": "have",
+        "failed_tactic_head_reused": 1,
+        "root_id": "induction_pprime_pdvdapowpma"
+      },
+      {
+        "arm": "C",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 1,
+        "failed_line": "apply Equiv.apply_inv",
+        "failed_tactic_head": "apply",
+        "failed_tactic_head_reused": 1,
+        "root_id": "mathd_algebra_188"
+      },
+      {
+        "arm": "C",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 0,
+        "failed_line": "have h_contradiction : False := by",
+        "failed_tactic_head": "have",
+        "failed_tactic_head_reused": 1,
+        "root_id": "mathd_algebra_313"
+      },
+      {
+        "arm": "C",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 1,
+        "failed_line": "<;> rfl",
+        "failed_tactic_head": "rfl",
+        "failed_tactic_head_reused": 1,
+        "root_id": "mathd_numbertheory_135"
+      },
+      {
+        "arm": "C",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 1,
+        "failed_line": "rw [h1, h2]",
+        "failed_tactic_head": "rw",
+        "failed_tactic_head_reused": 1,
+        "root_id": "mathd_numbertheory_235"
+      },
+      {
+        "arm": "C",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 1,
+        "failed_line": "nlinarith",
+        "failed_tactic_head": "nlinarith",
+        "failed_tactic_head_reused": 1,
+        "root_id": "mathd_numbertheory_296"
+      },
+      {
+        "arm": "C",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 1,
+        "failed_line": "<;> rfl",
+        "failed_tactic_head": "rfl",
+        "failed_tactic_head_reused": 1,
+        "root_id": "mathd_numbertheory_343"
+      },
+      {
+        "arm": "C",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 1,
+        "failed_line": "nlinarith",
+        "failed_tactic_head": "nlinarith",
+        "failed_tactic_head_reused": 1,
+        "root_id": "mathd_numbertheory_495"
+      },
+      {
+        "arm": "C",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 1,
+        "failed_line": "| succ n =>",
+        "failed_tactic_head": null,
+        "failed_tactic_head_reused": null,
+        "root_id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2"
+      },
+      {
+        "arm": "C",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 1,
+        "failed_line": "omega",
+        "failed_tactic_head": "omega",
+        "failed_tactic_head_reused": 1,
+        "root_id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown"
+      },
+      {
+        "arm": "C",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 1,
+        "failed_line": "tauto",
+        "failed_tactic_head": "tauto",
+        "failed_tactic_head_reused": 1,
+        "root_id": "numbertheory_notequiv2i2jasqbsqdiv8"
+      },
+      {
+        "arm": "D",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 1,
+        "failed_line": "simp [h\u2082, Finset.sum_range_succ, Finset.sum_range_succ, Finset.sum_range_succ] at h\u2083 \u22a2",
+        "failed_tactic_head": "simp",
+        "failed_tactic_head_reused": 1,
+        "root_id": "aime_1984_p1"
+      },
+      {
+        "arm": "D",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 1,
+        "failed_line": "nlinarith [sq_nonneg (x ^ 2 - 4), sq_nonneg (y ^ 2 - 49), sq_nonneg (x ^ 2 - 1), sq_nonneg (y ^ 2 - 1)]",
+        "failed_tactic_head": "nlinarith",
+        "failed_tactic_head_reused": 1,
+        "root_id": "aime_1987_p5"
+      },
+      {
+        "arm": "D",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 1,
+        "failed_line": "rw [h\u2082\u2082]",
+        "failed_tactic_head": "rewrite",
+        "failed_tactic_head_reused": 0,
+        "root_id": "algebra_2varlineareq_fp3zeq11_3tfm1m5zeqn68_feqn10_zeq7"
+      },
+      {
+        "arm": "D",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 1,
+        "failed_line": "linarith",
+        "failed_tactic_head": "linarith",
+        "failed_tactic_head_reused": 1,
+        "root_id": "algebra_cubrtrp1oncubrtreq3_rcubp1onrcubeq5778"
+      },
+      {
+        "arm": "D",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 1,
+        "failed_line": "exact by",
+        "failed_tactic_head": "exact",
+        "failed_tactic_head_reused": 1,
+        "root_id": "algebra_others_exirrpowirrrat"
+      },
+      {
+        "arm": "D",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 1,
+        "failed_line": "<;> norm_num at h\u2082 h\u2083 <;> nlinarith",
+        "failed_tactic_head": "norm_num",
+        "failed_tactic_head_reused": 1,
+        "root_id": "amc12_2001_p21"
+      },
+      {
+        "arm": "D",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 1,
+        "failed_line": "omega",
+        "failed_tactic_head": "omega",
+        "failed_tactic_head_reused": 1,
+        "root_id": "amc12a_2003_p5"
+      },
+      {
+        "arm": "D",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 1,
+        "failed_line": "<;> linarith",
+        "failed_tactic_head": "linarith",
+        "failed_tactic_head_reused": 1,
+        "root_id": "amc12a_2019_p12"
+      },
+      {
+        "arm": "D",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 1,
+        "failed_line": "have h\u2084 : (1 /. 2 + 1 /. 3 + 1 /. 7 + 1 /. (n : \u211a)).den = 1 := by simpa using h\u2081",
+        "failed_tactic_head": "have",
+        "failed_tactic_head_reused": 1,
+        "root_id": "amc12b_2002_p4"
+      },
+      {
+        "arm": "D",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 1,
+        "failed_line": "<;> omega",
+        "failed_tactic_head": "omega",
+        "failed_tactic_head_reused": 1,
+        "root_id": "amc12b_2020_p6"
+      },
+      {
+        "arm": "D",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 0,
+        "failed_line": "have h_main : p \u2223 a ^ p - a := by",
+        "failed_tactic_head": "have",
+        "failed_tactic_head_reused": 1,
+        "root_id": "induction_pprime_pdvdapowpma"
+      },
+      {
+        "arm": "D",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 1,
+        "failed_line": "apply Equiv.apply_inv",
+        "failed_tactic_head": "apply",
+        "failed_tactic_head_reused": 1,
+        "root_id": "mathd_algebra_188"
+      },
+      {
+        "arm": "D",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 1,
+        "failed_line": "have h_contradiction : False := by",
+        "failed_tactic_head": "have",
+        "failed_tactic_head_reused": 1,
+        "root_id": "mathd_algebra_313"
+      },
+      {
+        "arm": "D",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 1,
+        "failed_line": "<;> rfl",
+        "failed_tactic_head": "rfl",
+        "failed_tactic_head_reused": 1,
+        "root_id": "mathd_numbertheory_135"
+      },
+      {
+        "arm": "D",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 1,
+        "failed_line": "rw [h1, h2]",
+        "failed_tactic_head": "rw",
+        "failed_tactic_head_reused": 1,
+        "root_id": "mathd_numbertheory_235"
+      },
+      {
+        "arm": "D",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 1,
+        "failed_line": "nlinarith",
+        "failed_tactic_head": "nlinarith",
+        "failed_tactic_head_reused": 1,
+        "root_id": "mathd_numbertheory_296"
+      },
+      {
+        "arm": "D",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 1,
+        "failed_line": "<;> rfl",
+        "failed_tactic_head": "rfl",
+        "failed_tactic_head_reused": 1,
+        "root_id": "mathd_numbertheory_343"
+      },
+      {
+        "arm": "D",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 1,
+        "failed_line": "nlinarith",
+        "failed_tactic_head": "nlinarith",
+        "failed_tactic_head_reused": 1,
+        "root_id": "mathd_numbertheory_495"
+      },
+      {
+        "arm": "D",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 1,
+        "failed_line": "| succ n =>",
+        "failed_tactic_head": null,
+        "failed_tactic_head_reused": null,
+        "root_id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2"
+      },
+      {
+        "arm": "D",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 1,
+        "failed_line": "omega",
+        "failed_tactic_head": "omega",
+        "failed_tactic_head_reused": 1,
+        "root_id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown"
+      },
+      {
+        "arm": "D",
+        "cohort": "primary_eval",
+        "exact_failed_line_reused": 1,
+        "failed_line": "tauto",
+        "failed_tactic_head": "tauto",
+        "failed_tactic_head_reused": 1,
+        "root_id": "numbertheory_notequiv2i2jasqbsqdiv8"
+      },
+      {
+        "arm": "A",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 0,
+        "failed_line": "simp [h\u2082, Finset.sum_range_succ, Finset.sum_range_succ, Finset.sum_range_succ] at h\u2083 \u22a2",
+        "failed_tactic_head": "simp",
+        "failed_tactic_head_reused": 1,
+        "root_id": "aime_1984_p1"
+      },
+      {
+        "arm": "A",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 0,
+        "failed_line": "nlinarith [sq_nonneg (x ^ 2 - 4), sq_nonneg (y ^ 2 - 49), sq_nonneg (x ^ 2 - 1), sq_nonneg (y ^ 2 - 1)]",
+        "failed_tactic_head": "nlinarith",
+        "failed_tactic_head_reused": 1,
+        "root_id": "aime_1987_p5"
+      },
+      {
+        "arm": "A",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 0,
+        "failed_line": "rw [h\u2082\u2082]",
+        "failed_tactic_head": "rewrite",
+        "failed_tactic_head_reused": 0,
+        "root_id": "algebra_2varlineareq_fp3zeq11_3tfm1m5zeqn68_feqn10_zeq7"
+      },
+      {
+        "arm": "A",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 1,
+        "failed_line": "linarith",
+        "failed_tactic_head": "linarith",
+        "failed_tactic_head_reused": 1,
+        "root_id": "algebra_cubrtrp1oncubrtreq3_rcubp1onrcubeq5778"
+      },
+      {
+        "arm": "A",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 0,
+        "failed_line": "exact by",
+        "failed_tactic_head": "exact",
+        "failed_tactic_head_reused": 0,
+        "root_id": "algebra_others_exirrpowirrrat"
+      },
+      {
+        "arm": "A",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 0,
+        "failed_line": "<;> norm_num at h\u2082 h\u2083 <;> nlinarith",
+        "failed_tactic_head": "norm_num",
+        "failed_tactic_head_reused": 1,
+        "root_id": "amc12_2001_p21"
+      },
+      {
+        "arm": "A",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 1,
+        "failed_line": "omega",
+        "failed_tactic_head": "omega",
+        "failed_tactic_head_reused": 1,
+        "root_id": "amc12a_2003_p5"
+      },
+      {
+        "arm": "A",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 1,
+        "failed_line": "<;> linarith",
+        "failed_tactic_head": "linarith",
+        "failed_tactic_head_reused": 1,
+        "root_id": "amc12a_2019_p12"
+      },
+      {
+        "arm": "A",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 0,
+        "failed_line": "have h\u2084 : (1 /. 2 + 1 /. 3 + 1 /. 7 + 1 /. (n : \u211a)).den = 1 := by simpa using h\u2081",
+        "failed_tactic_head": "have",
+        "failed_tactic_head_reused": 1,
+        "root_id": "amc12b_2002_p4"
+      },
+      {
+        "arm": "A",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 0,
+        "failed_line": "<;> omega",
+        "failed_tactic_head": "omega",
+        "failed_tactic_head_reused": 0,
+        "root_id": "amc12b_2020_p6"
+      },
+      {
+        "arm": "A",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 1,
+        "failed_line": "have h_main : p \u2223 a ^ p - a := by",
+        "failed_tactic_head": "have",
+        "failed_tactic_head_reused": 1,
+        "root_id": "induction_pprime_pdvdapowpma"
+      },
+      {
+        "arm": "A",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 0,
+        "failed_line": "apply Equiv.apply_inv",
+        "failed_tactic_head": "apply",
+        "failed_tactic_head_reused": 1,
+        "root_id": "mathd_algebra_188"
+      },
+      {
+        "arm": "A",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 0,
+        "failed_line": "have h_contradiction : False := by",
+        "failed_tactic_head": "have",
+        "failed_tactic_head_reused": 1,
+        "root_id": "mathd_algebra_313"
+      },
+      {
+        "arm": "A",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 1,
+        "failed_line": "<;> rfl",
+        "failed_tactic_head": "rfl",
+        "failed_tactic_head_reused": 1,
+        "root_id": "mathd_numbertheory_135"
+      },
+      {
+        "arm": "A",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 0,
+        "failed_line": "rw [h1, h2]",
+        "failed_tactic_head": "rw",
+        "failed_tactic_head_reused": 0,
+        "root_id": "mathd_numbertheory_235"
+      },
+      {
+        "arm": "A",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 0,
+        "failed_line": "nlinarith",
+        "failed_tactic_head": "nlinarith",
+        "failed_tactic_head_reused": 0,
+        "root_id": "mathd_numbertheory_296"
+      },
+      {
+        "arm": "A",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 1,
+        "failed_line": "<;> rfl",
+        "failed_tactic_head": "rfl",
+        "failed_tactic_head_reused": 1,
+        "root_id": "mathd_numbertheory_343"
+      },
+      {
+        "arm": "A",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 1,
+        "failed_line": "nlinarith",
+        "failed_tactic_head": "nlinarith",
+        "failed_tactic_head_reused": 1,
+        "root_id": "mathd_numbertheory_495"
+      },
+      {
+        "arm": "A",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 0,
+        "failed_line": "| succ n =>",
+        "failed_tactic_head": null,
+        "failed_tactic_head_reused": null,
+        "root_id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2"
+      },
+      {
+        "arm": "A",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 1,
+        "failed_line": "omega",
+        "failed_tactic_head": "omega",
+        "failed_tactic_head_reused": 1,
+        "root_id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown"
+      },
+      {
+        "arm": "A",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 0,
+        "failed_line": "tauto",
+        "failed_tactic_head": "tauto",
+        "failed_tactic_head_reused": 0,
+        "root_id": "numbertheory_notequiv2i2jasqbsqdiv8"
+      },
+      {
+        "arm": "B",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 0,
+        "failed_line": "simp [h\u2082, Finset.sum_range_succ, Finset.sum_range_succ, Finset.sum_range_succ] at h\u2083 \u22a2",
+        "failed_tactic_head": "simp",
+        "failed_tactic_head_reused": 1,
+        "root_id": "aime_1984_p1"
+      },
+      {
+        "arm": "B",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 0,
+        "failed_line": "nlinarith [sq_nonneg (x ^ 2 - 4), sq_nonneg (y ^ 2 - 49), sq_nonneg (x ^ 2 - 1), sq_nonneg (y ^ 2 - 1)]",
+        "failed_tactic_head": "nlinarith",
+        "failed_tactic_head_reused": 1,
+        "root_id": "aime_1987_p5"
+      },
+      {
+        "arm": "B",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 0,
+        "failed_line": "rw [h\u2082\u2082]",
+        "failed_tactic_head": "rewrite",
+        "failed_tactic_head_reused": 0,
+        "root_id": "algebra_2varlineareq_fp3zeq11_3tfm1m5zeqn68_feqn10_zeq7"
+      },
+      {
+        "arm": "B",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 1,
+        "failed_line": "linarith",
+        "failed_tactic_head": "linarith",
+        "failed_tactic_head_reused": 1,
+        "root_id": "algebra_cubrtrp1oncubrtreq3_rcubp1onrcubeq5778"
+      },
+      {
+        "arm": "B",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 0,
+        "failed_line": "exact by",
+        "failed_tactic_head": "exact",
+        "failed_tactic_head_reused": 0,
+        "root_id": "algebra_others_exirrpowirrrat"
+      },
+      {
+        "arm": "B",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 0,
+        "failed_line": "<;> norm_num at h\u2082 h\u2083 <;> nlinarith",
+        "failed_tactic_head": "norm_num",
+        "failed_tactic_head_reused": 1,
+        "root_id": "amc12_2001_p21"
+      },
+      {
+        "arm": "B",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 1,
+        "failed_line": "omega",
+        "failed_tactic_head": "omega",
+        "failed_tactic_head_reused": 1,
+        "root_id": "amc12a_2003_p5"
+      },
+      {
+        "arm": "B",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 0,
+        "failed_line": "<;> linarith",
+        "failed_tactic_head": "linarith",
+        "failed_tactic_head_reused": 1,
+        "root_id": "amc12a_2019_p12"
+      },
+      {
+        "arm": "B",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 0,
+        "failed_line": "have h\u2084 : (1 /. 2 + 1 /. 3 + 1 /. 7 + 1 /. (n : \u211a)).den = 1 := by simpa using h\u2081",
+        "failed_tactic_head": "have",
+        "failed_tactic_head_reused": 1,
+        "root_id": "amc12b_2002_p4"
+      },
+      {
+        "arm": "B",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 0,
+        "failed_line": "<;> omega",
+        "failed_tactic_head": "omega",
+        "failed_tactic_head_reused": 1,
+        "root_id": "amc12b_2020_p6"
+      },
+      {
+        "arm": "B",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 1,
+        "failed_line": "have h_main : p \u2223 a ^ p - a := by",
+        "failed_tactic_head": "have",
+        "failed_tactic_head_reused": 1,
+        "root_id": "induction_pprime_pdvdapowpma"
+      },
+      {
+        "arm": "B",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 0,
+        "failed_line": "apply Equiv.apply_inv",
+        "failed_tactic_head": "apply",
+        "failed_tactic_head_reused": 1,
+        "root_id": "mathd_algebra_188"
+      },
+      {
+        "arm": "B",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 1,
+        "failed_line": "have h_contradiction : False := by",
+        "failed_tactic_head": "have",
+        "failed_tactic_head_reused": 1,
+        "root_id": "mathd_algebra_313"
+      },
+      {
+        "arm": "B",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 1,
+        "failed_line": "<;> rfl",
+        "failed_tactic_head": "rfl",
+        "failed_tactic_head_reused": 1,
+        "root_id": "mathd_numbertheory_135"
+      },
+      {
+        "arm": "B",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 0,
+        "failed_line": "rw [h1, h2]",
+        "failed_tactic_head": "rw",
+        "failed_tactic_head_reused": 0,
+        "root_id": "mathd_numbertheory_235"
+      },
+      {
+        "arm": "B",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 0,
+        "failed_line": "nlinarith",
+        "failed_tactic_head": "nlinarith",
+        "failed_tactic_head_reused": 0,
+        "root_id": "mathd_numbertheory_296"
+      },
+      {
+        "arm": "B",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 1,
+        "failed_line": "<;> rfl",
+        "failed_tactic_head": "rfl",
+        "failed_tactic_head_reused": 1,
+        "root_id": "mathd_numbertheory_343"
+      },
+      {
+        "arm": "B",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 1,
+        "failed_line": "nlinarith",
+        "failed_tactic_head": "nlinarith",
+        "failed_tactic_head_reused": 1,
+        "root_id": "mathd_numbertheory_495"
+      },
+      {
+        "arm": "B",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 1,
+        "failed_line": "| succ n =>",
+        "failed_tactic_head": null,
+        "failed_tactic_head_reused": null,
+        "root_id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2"
+      },
+      {
+        "arm": "B",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 1,
+        "failed_line": "omega",
+        "failed_tactic_head": "omega",
+        "failed_tactic_head_reused": 1,
+        "root_id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown"
+      },
+      {
+        "arm": "B",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 1,
+        "failed_line": "tauto",
+        "failed_tactic_head": "tauto",
+        "failed_tactic_head_reused": 1,
+        "root_id": "numbertheory_notequiv2i2jasqbsqdiv8"
+      },
+      {
+        "arm": "C",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 1,
+        "failed_line": "simp [h\u2082, Finset.sum_range_succ, Finset.sum_range_succ, Finset.sum_range_succ] at h\u2083 \u22a2",
+        "failed_tactic_head": "simp",
+        "failed_tactic_head_reused": 1,
+        "root_id": "aime_1984_p1"
+      },
+      {
+        "arm": "C",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 1,
+        "failed_line": "nlinarith [sq_nonneg (x ^ 2 - 4), sq_nonneg (y ^ 2 - 49), sq_nonneg (x ^ 2 - 1), sq_nonneg (y ^ 2 - 1)]",
+        "failed_tactic_head": "nlinarith",
+        "failed_tactic_head_reused": 1,
+        "root_id": "aime_1987_p5"
+      },
+      {
+        "arm": "C",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 1,
+        "failed_line": "rw [h\u2082\u2082]",
+        "failed_tactic_head": "rewrite",
+        "failed_tactic_head_reused": 0,
+        "root_id": "algebra_2varlineareq_fp3zeq11_3tfm1m5zeqn68_feqn10_zeq7"
+      },
+      {
+        "arm": "C",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 1,
+        "failed_line": "linarith",
+        "failed_tactic_head": "linarith",
+        "failed_tactic_head_reused": 1,
+        "root_id": "algebra_cubrtrp1oncubrtreq3_rcubp1onrcubeq5778"
+      },
+      {
+        "arm": "C",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 1,
+        "failed_line": "exact by",
+        "failed_tactic_head": "exact",
+        "failed_tactic_head_reused": 1,
+        "root_id": "algebra_others_exirrpowirrrat"
+      },
+      {
+        "arm": "C",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 1,
+        "failed_line": "<;> norm_num at h\u2082 h\u2083 <;> nlinarith",
+        "failed_tactic_head": "norm_num",
+        "failed_tactic_head_reused": 1,
+        "root_id": "amc12_2001_p21"
+      },
+      {
+        "arm": "C",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 1,
+        "failed_line": "omega",
+        "failed_tactic_head": "omega",
+        "failed_tactic_head_reused": 1,
+        "root_id": "amc12a_2003_p5"
+      },
+      {
+        "arm": "C",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 1,
+        "failed_line": "<;> linarith",
+        "failed_tactic_head": "linarith",
+        "failed_tactic_head_reused": 1,
+        "root_id": "amc12a_2019_p12"
+      },
+      {
+        "arm": "C",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 1,
+        "failed_line": "have h\u2084 : (1 /. 2 + 1 /. 3 + 1 /. 7 + 1 /. (n : \u211a)).den = 1 := by simpa using h\u2081",
+        "failed_tactic_head": "have",
+        "failed_tactic_head_reused": 1,
+        "root_id": "amc12b_2002_p4"
+      },
+      {
+        "arm": "C",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 1,
+        "failed_line": "<;> omega",
+        "failed_tactic_head": "omega",
+        "failed_tactic_head_reused": 1,
+        "root_id": "amc12b_2020_p6"
+      },
+      {
+        "arm": "C",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 1,
+        "failed_line": "have h_main : p \u2223 a ^ p - a := by",
+        "failed_tactic_head": "have",
+        "failed_tactic_head_reused": 1,
+        "root_id": "induction_pprime_pdvdapowpma"
+      },
+      {
+        "arm": "C",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 1,
+        "failed_line": "apply Equiv.apply_inv",
+        "failed_tactic_head": "apply",
+        "failed_tactic_head_reused": 1,
+        "root_id": "mathd_algebra_188"
+      },
+      {
+        "arm": "C",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 1,
+        "failed_line": "have h_contradiction : False := by",
+        "failed_tactic_head": "have",
+        "failed_tactic_head_reused": 1,
+        "root_id": "mathd_algebra_313"
+      },
+      {
+        "arm": "C",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 1,
+        "failed_line": "<;> rfl",
+        "failed_tactic_head": "rfl",
+        "failed_tactic_head_reused": 1,
+        "root_id": "mathd_numbertheory_135"
+      },
+      {
+        "arm": "C",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 1,
+        "failed_line": "rw [h1, h2]",
+        "failed_tactic_head": "rw",
+        "failed_tactic_head_reused": 1,
+        "root_id": "mathd_numbertheory_235"
+      },
+      {
+        "arm": "C",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 1,
+        "failed_line": "nlinarith",
+        "failed_tactic_head": "nlinarith",
+        "failed_tactic_head_reused": 1,
+        "root_id": "mathd_numbertheory_296"
+      },
+      {
+        "arm": "C",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 1,
+        "failed_line": "<;> rfl",
+        "failed_tactic_head": "rfl",
+        "failed_tactic_head_reused": 1,
+        "root_id": "mathd_numbertheory_343"
+      },
+      {
+        "arm": "C",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 1,
+        "failed_line": "nlinarith",
+        "failed_tactic_head": "nlinarith",
+        "failed_tactic_head_reused": 1,
+        "root_id": "mathd_numbertheory_495"
+      },
+      {
+        "arm": "C",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 1,
+        "failed_line": "| succ n =>",
+        "failed_tactic_head": null,
+        "failed_tactic_head_reused": null,
+        "root_id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2"
+      },
+      {
+        "arm": "C",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 0,
+        "failed_line": "omega",
+        "failed_tactic_head": "omega",
+        "failed_tactic_head_reused": 0,
+        "root_id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown"
+      },
+      {
+        "arm": "C",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 1,
+        "failed_line": "tauto",
+        "failed_tactic_head": "tauto",
+        "failed_tactic_head_reused": 1,
+        "root_id": "numbertheory_notequiv2i2jasqbsqdiv8"
+      },
+      {
+        "arm": "D",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 1,
+        "failed_line": "simp [h\u2082, Finset.sum_range_succ, Finset.sum_range_succ, Finset.sum_range_succ] at h\u2083 \u22a2",
+        "failed_tactic_head": "simp",
+        "failed_tactic_head_reused": 1,
+        "root_id": "aime_1984_p1"
+      },
+      {
+        "arm": "D",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 1,
+        "failed_line": "nlinarith [sq_nonneg (x ^ 2 - 4), sq_nonneg (y ^ 2 - 49), sq_nonneg (x ^ 2 - 1), sq_nonneg (y ^ 2 - 1)]",
+        "failed_tactic_head": "nlinarith",
+        "failed_tactic_head_reused": 1,
+        "root_id": "aime_1987_p5"
+      },
+      {
+        "arm": "D",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 1,
+        "failed_line": "rw [h\u2082\u2082]",
+        "failed_tactic_head": "rewrite",
+        "failed_tactic_head_reused": 0,
+        "root_id": "algebra_2varlineareq_fp3zeq11_3tfm1m5zeqn68_feqn10_zeq7"
+      },
+      {
+        "arm": "D",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 1,
+        "failed_line": "linarith",
+        "failed_tactic_head": "linarith",
+        "failed_tactic_head_reused": 1,
+        "root_id": "algebra_cubrtrp1oncubrtreq3_rcubp1onrcubeq5778"
+      },
+      {
+        "arm": "D",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 1,
+        "failed_line": "exact by",
+        "failed_tactic_head": "exact",
+        "failed_tactic_head_reused": 1,
+        "root_id": "algebra_others_exirrpowirrrat"
+      },
+      {
+        "arm": "D",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 1,
+        "failed_line": "<;> norm_num at h\u2082 h\u2083 <;> nlinarith",
+        "failed_tactic_head": "norm_num",
+        "failed_tactic_head_reused": 1,
+        "root_id": "amc12_2001_p21"
+      },
+      {
+        "arm": "D",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 1,
+        "failed_line": "omega",
+        "failed_tactic_head": "omega",
+        "failed_tactic_head_reused": 1,
+        "root_id": "amc12a_2003_p5"
+      },
+      {
+        "arm": "D",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 1,
+        "failed_line": "<;> linarith",
+        "failed_tactic_head": "linarith",
+        "failed_tactic_head_reused": 1,
+        "root_id": "amc12a_2019_p12"
+      },
+      {
+        "arm": "D",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 1,
+        "failed_line": "have h\u2084 : (1 /. 2 + 1 /. 3 + 1 /. 7 + 1 /. (n : \u211a)).den = 1 := by simpa using h\u2081",
+        "failed_tactic_head": "have",
+        "failed_tactic_head_reused": 1,
+        "root_id": "amc12b_2002_p4"
+      },
+      {
+        "arm": "D",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 1,
+        "failed_line": "<;> omega",
+        "failed_tactic_head": "omega",
+        "failed_tactic_head_reused": 1,
+        "root_id": "amc12b_2020_p6"
+      },
+      {
+        "arm": "D",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 1,
+        "failed_line": "have h_main : p \u2223 a ^ p - a := by",
+        "failed_tactic_head": "have",
+        "failed_tactic_head_reused": 1,
+        "root_id": "induction_pprime_pdvdapowpma"
+      },
+      {
+        "arm": "D",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 1,
+        "failed_line": "apply Equiv.apply_inv",
+        "failed_tactic_head": "apply",
+        "failed_tactic_head_reused": 1,
+        "root_id": "mathd_algebra_188"
+      },
+      {
+        "arm": "D",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 1,
+        "failed_line": "have h_contradiction : False := by",
+        "failed_tactic_head": "have",
+        "failed_tactic_head_reused": 1,
+        "root_id": "mathd_algebra_313"
+      },
+      {
+        "arm": "D",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 1,
+        "failed_line": "<;> rfl",
+        "failed_tactic_head": "rfl",
+        "failed_tactic_head_reused": 1,
+        "root_id": "mathd_numbertheory_135"
+      },
+      {
+        "arm": "D",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 1,
+        "failed_line": "rw [h1, h2]",
+        "failed_tactic_head": "rw",
+        "failed_tactic_head_reused": 1,
+        "root_id": "mathd_numbertheory_235"
+      },
+      {
+        "arm": "D",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 1,
+        "failed_line": "nlinarith",
+        "failed_tactic_head": "nlinarith",
+        "failed_tactic_head_reused": 1,
+        "root_id": "mathd_numbertheory_296"
+      },
+      {
+        "arm": "D",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 1,
+        "failed_line": "<;> rfl",
+        "failed_tactic_head": "rfl",
+        "failed_tactic_head_reused": 1,
+        "root_id": "mathd_numbertheory_343"
+      },
+      {
+        "arm": "D",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 1,
+        "failed_line": "nlinarith",
+        "failed_tactic_head": "nlinarith",
+        "failed_tactic_head_reused": 1,
+        "root_id": "mathd_numbertheory_495"
+      },
+      {
+        "arm": "D",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 1,
+        "failed_line": "| succ n =>",
+        "failed_tactic_head": null,
+        "failed_tactic_head_reused": null,
+        "root_id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2"
+      },
+      {
+        "arm": "D",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 1,
+        "failed_line": "omega",
+        "failed_tactic_head": "omega",
+        "failed_tactic_head_reused": 1,
+        "root_id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown"
+      },
+      {
+        "arm": "D",
+        "cohort": "eval_block2",
+        "exact_failed_line_reused": 1,
+        "failed_line": "tauto",
+        "failed_tactic_head": "tauto",
+        "failed_tactic_head_reused": 1,
+        "root_id": "numbertheory_notequiv2i2jasqbsqdiv8"
+      }
+    ]
+  },
+  "fixed_root_multiseed": {
+    "C-A_verification": {
+      "ci95": [
+        -0.2875,
+        -0.1
+      ],
+      "mean": -0.1875,
+      "n_roots": 40
+    },
+    "T0": {
+      "ci95": [
+        0.24061049968749998,
+        0.37546947281250015
+      ],
+      "mean": 0.30742328750000003,
+      "median": 0.2510855,
+      "n_roots": 40
+    },
+    "T1": {
+      "ci95": [
+        0.21749680093749998,
+        0.3650241546875
+      ],
+      "mean": 0.290976275,
+      "median": 0.28605749999999996,
+      "n_roots": 40
+    }
+  },
+  "mechanism": {
+    "diffuse_complete": {
+      "A_mean_tokens": 5050.566666666667,
+      "A_only": 7,
+      "A_trunc_rate": 0.13333333333333333,
+      "C_mean_tokens": 3297.0666666666666,
+      "C_only": 0,
+      "C_trunc_rate": 0.06666666666666667,
+      "mean_anchoring_diff": 0.31005346666666667,
+      "n_root_seed": 30
+    },
+    "incomplete": {
+      "A_mean_tokens": 8726.766666666666,
+      "A_only": 2,
+      "A_trunc_rate": 0.43333333333333335,
+      "C_mean_tokens": 9189.033333333333,
+      "C_only": 0,
+      "C_trunc_rate": 0.5666666666666667,
+      "mean_anchoring_diff": 0.305051,
+      "n_root_seed": 30
+    },
+    "localized_complete": {
+      "A_mean_tokens": 6152.5,
+      "A_only": 6,
+      "A_trunc_rate": 0.05,
+      "C_mean_tokens": 2526.4,
+      "C_only": 0,
+      "C_trunc_rate": 0,
+      "mean_anchoring_diff": 0.30703645,
+      "n_root_seed": 20
+    }
+  },
+  "native_dev": {
+    "anchoring": {
+      "C-A": {
+        "ci95": [
+          0.21441281304347823,
+          0.42263214891304335
+        ],
+        "contrast": "C-A",
+        "mean_diff": 0.31684891304347823,
+        "mean_x": 0.5204464347826087,
+        "mean_y": 0.20359752173913043,
+        "median_diff": 0.21606499999999998,
+        "n": 23,
+        "positive": 21
+      },
+      "D-B": {
+        "ci95": [
+          0.1794235934782609,
+          0.3283168739130434
+        ],
+        "contrast": "D-B",
+        "mean_diff": 0.25190278260869564,
+        "mean_x": 0.46637873913043476,
+        "mean_y": 0.21447595652173912,
+        "median_diff": 0.23841,
+        "n": 23,
+        "positive": 22
+      },
+      "E-A": {
+        "ci95": [
+          0.11144106630434779,
+          0.23960336739130425
+        ],
+        "contrast": "E-A",
+        "mean_diff": 0.17293678260869566,
+        "mean_x": 0.3765343043478261,
+        "mean_y": 0.20359752173913043,
+        "median_diff": 0.143166,
+        "n": 23,
+        "positive": 20
+      }
+    },
+    "n": 23,
+    "verification": {
+      "C-A": {
+        "ci95": [
+          -0.391304347826087,
+          -0.043478260869565216
+        ],
+        "effect": -0.21739130434782608,
+        "x_only": 0,
+        "y_only": 5
+      },
+      "D-B": {
+        "ci95": [
+          -0.43478260869565216,
+          -0.08695652173913043
+        ],
+        "effect": -0.2608695652173913,
+        "x_only": 0,
+        "y_only": 6
+      },
+      "E-A": {
+        "ci95": [
+          -0.391304347826087,
+          -0.043478260869565216
+        ],
+        "effect": -0.21739130434782608,
+        "x_only": 0,
+        "y_only": 5
+      }
+    }
+  },
+  "native_primary": {
+    "anchoring": {
+      "C-A": {
+        "ci95": [
+          0.23459187261904757,
+          0.4449094023809524
+        ],
+        "contrast": "C-A",
+        "mean_diff": 0.3392208095238095,
+        "mean_x": 0.5961292380952381,
+        "mean_y": 0.2569084285714286,
+        "median_diff": 0.34210500000000005,
+        "n": 21,
+        "positive": 19
+      },
+      "D-B": {
+        "ci95": [
+          0.2495411976190476,
+          0.47676735
+        ],
+        "contrast": "D-B",
+        "mean_diff": 0.36082514285714284,
+        "mean_x": 0.5934390952380952,
+        "mean_y": 0.2326139523809524,
+        "median_diff": 0.345263,
+        "n": 21,
+        "positive": 19
+      },
+      "E-A": {
+        "ci95": [
+          0.04295909761904764,
+          0.19081237499999998
+        ],
+        "contrast": "E-A",
+        "mean_diff": 0.11573571428571429,
+        "mean_x": 0.37264414285714287,
+        "mean_y": 0.2569084285714286,
+        "median_diff": 0.13975000000000004,
+        "n": 21,
+        "positive": 14
+      }
+    },
+    "n": 21,
+    "verification": {
+      "C-A": {
+        "ci95": [
+          -0.42857142857142855,
+          -0.09523809523809523
+        ],
+        "effect": -0.23809523809523808,
+        "x_only": 0,
+        "y_only": 5
+      },
+      "D-B": {
+        "ci95": [
+          -0.14285714285714285,
+          0.0
+        ],
+        "effect": -0.047619047619047616,
+        "x_only": 0,
+        "y_only": 1
+      },
+      "E-A": {
+        "ci95": [
+          -0.3333333333333333,
+          0.047619047619047616
+        ],
+        "effect": -0.14285714285714285,
+        "x_only": 1,
+        "y_only": 4
+      }
+    }
+  },
+  "source": {
+    "bootstrap_reps": 50000,
+    "branches": 536,
+    "independent_unit": "root",
+    "roots": 83,
+    "spec_sha256": "cd8317bef3e3523a0842674219b2b0e5760b685f43686cc9d21381322885281d"
+  },
+  "trajectory_diversity": {
+    "arms": {
+      "A": {
+        "first_different": 4,
+        "first_same": 32,
+        "first_same_rate": 0.8888888888888888,
+        "mean_sequence_lcs": 0.396621474290369,
+        "n_first_defined": 36,
+        "n_lcs_defined": 40,
+        "n_roots": 40,
+        "prefix3_same": 9,
+        "prefix3_same_rate": 0.25
+      },
+      "B": {
+        "first_different": 3,
+        "first_same": 32,
+        "first_same_rate": 0.9142857142857143,
+        "mean_sequence_lcs": 0.38009496792380587,
+        "n_first_defined": 35,
+        "n_lcs_defined": 40,
+        "n_roots": 40,
+        "prefix3_same": 13,
+        "prefix3_same_rate": 0.37142857142857144
+      },
+      "C": {
+        "first_different": 2,
+        "first_same": 33,
+        "first_same_rate": 0.9428571428571428,
+        "mean_sequence_lcs": 0.7027289446920117,
+        "n_first_defined": 35,
+        "n_lcs_defined": 40,
+        "n_roots": 40,
+        "prefix3_same": 28,
+        "prefix3_same_rate": 0.8
+      },
+      "Cp": {
+        "first_different": 3,
+        "first_same": 32,
+        "first_same_rate": 0.9142857142857143,
+        "mean_sequence_lcs": 0.3752621682500808,
+        "n_first_defined": 35,
+        "n_lcs_defined": 39,
+        "n_roots": 40,
+        "prefix3_same": 12,
+        "prefix3_same_rate": 0.34285714285714286
+      },
+      "D": {
+        "first_different": 4,
+        "first_same": 32,
+        "first_same_rate": 0.8888888888888888,
+        "mean_sequence_lcs": 0.717901825047664,
+        "n_first_defined": 36,
+        "n_lcs_defined": 40,
+        "n_roots": 40,
+        "prefix3_same": 28,
+        "prefix3_same_rate": 0.7777777777777778
+      }
+    },
+    "paired": {
+      "C-A": {
+        "ci95": [
+          0.16809430030345737,
+          0.4385417533455365
+        ],
+        "mean_lcs_difference": 0.3061074704016428,
+        "n": 40,
+        "positive": 30
+      },
+      "C-Cp": {
+        "ci95": [
+          0.17687384402049167,
+          0.45860643272119334
+        ],
+        "mean_lcs_difference": 0.3198444416904441,
+        "n": 39,
+        "positive": 29
+      },
+      "Cp-A": {
+        "ci95": [
+          -0.13504804610961357,
+          0.07367124721804923
+        ],
+        "mean_lcs_difference": -0.031529087432348925,
+        "n": 39,
+        "positive": 19
+      },
+      "D-B": {
+        "ci95": [
+          0.18761391100509,
+          0.48366870409536267
+        ],
+        "mean_lcs_difference": 0.33780685712385816,
+        "n": 40,
+        "positive": 31
+      }
+    },
+    "rows": [
+      {
+        "arm": "A",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 88,
+        "n_tactics_block2": 51,
+        "prefix3_same": 0,
+        "root_id": "aime_1984_p1",
+        "sequence_lcs": 0.5611510791366906
+      },
+      {
+        "arm": "A",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 109,
+        "n_tactics_block2": 120,
+        "prefix3_same": 0,
+        "root_id": "aime_1987_p5",
+        "sequence_lcs": 0.6462882096069869
+      },
+      {
+        "arm": "A",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 73,
+        "n_tactics_block2": 362,
+        "prefix3_same": 1,
+        "root_id": "aime_1995_p7",
+        "sequence_lcs": 0.2896551724137931
+      },
+      {
+        "arm": "A",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 60,
+        "n_tactics_block2": 70,
+        "prefix3_same": 0,
+        "root_id": "aime_1997_p9",
+        "sequence_lcs": 0.35384615384615387
+      },
+      {
+        "arm": "A",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 39,
+        "n_tactics_block2": 39,
+        "prefix3_same": 1,
+        "root_id": "algebra_2varlineareq_fp3zeq11_3tfm1m5zeqn68_feqn10_zeq7",
+        "sequence_lcs": 0.6923076923076923
+      },
+      {
+        "arm": "A",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 76,
+        "n_tactics_block2": 252,
+        "prefix3_same": 0,
+        "root_id": "algebra_cubrtrp1oncubrtreq3_rcubp1onrcubeq5778",
+        "sequence_lcs": 0.3597560975609756
+      },
+      {
+        "arm": "A",
+        "first_block1": "use",
+        "first_block2": null,
+        "first_same": null,
+        "n_tactics_block1": 4,
+        "n_tactics_block2": 0,
+        "prefix3_same": null,
+        "root_id": "algebra_others_exirrpowirrrat",
+        "sequence_lcs": 0.0
+      },
+      {
+        "arm": "A",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 119,
+        "n_tactics_block2": 95,
+        "prefix3_same": 0,
+        "root_id": "algebra_sum1onsqrt2to1onsqrt10000lt198",
+        "sequence_lcs": 0.4953271028037383
+      },
+      {
+        "arm": "A",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 191,
+        "n_tactics_block2": 47,
+        "prefix3_same": 1,
+        "root_id": "amc12_2001_p21",
+        "sequence_lcs": 0.3445378151260504
+      },
+      {
+        "arm": "A",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 19,
+        "n_tactics_block2": 33,
+        "prefix3_same": 1,
+        "root_id": "amc12a_2003_p5",
+        "sequence_lcs": 0.5
+      },
+      {
+        "arm": "A",
+        "first_block1": null,
+        "first_block2": "have",
+        "first_same": null,
+        "n_tactics_block1": 0,
+        "n_tactics_block2": 101,
+        "prefix3_same": null,
+        "root_id": "amc12a_2008_p25",
+        "sequence_lcs": 0.0
+      },
+      {
+        "arm": "A",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 127,
+        "n_tactics_block2": 267,
+        "prefix3_same": 0,
+        "root_id": "amc12a_2019_p12",
+        "sequence_lcs": 0.467005076142132
+      },
+      {
+        "arm": "A",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 12,
+        "n_tactics_block2": 11,
+        "prefix3_same": 0,
+        "root_id": "amc12a_2020_p4",
+        "sequence_lcs": 0.5217391304347826
+      },
+      {
+        "arm": "A",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 71,
+        "n_tactics_block2": 79,
+        "prefix3_same": 0,
+        "root_id": "amc12b_2002_p4",
+        "sequence_lcs": 0.6666666666666666
+      },
+      {
+        "arm": "A",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 9,
+        "n_tactics_block2": 434,
+        "prefix3_same": 0,
+        "root_id": "amc12b_2020_p21",
+        "sequence_lcs": 0.040632054176072234
+      },
+      {
+        "arm": "A",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 42,
+        "n_tactics_block2": 23,
+        "prefix3_same": 1,
+        "root_id": "amc12b_2020_p6",
+        "sequence_lcs": 0.5538461538461539
+      },
+      {
+        "arm": "A",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 9,
+        "n_tactics_block2": 96,
+        "prefix3_same": 0,
+        "root_id": "imo_1965_p2",
+        "sequence_lcs": 0.17142857142857143
+      },
+      {
+        "arm": "A",
+        "first_block1": "have",
+        "first_block2": "cases",
+        "first_same": 0,
+        "n_tactics_block1": 4,
+        "n_tactics_block2": 29,
+        "prefix3_same": 0,
+        "root_id": "imo_1969_p2",
+        "sequence_lcs": 0.18181818181818182
+      },
+      {
+        "arm": "A",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 53,
+        "n_tactics_block2": 31,
+        "prefix3_same": 0,
+        "root_id": "imo_1974_p3",
+        "sequence_lcs": 0.5952380952380952
+      },
+      {
+        "arm": "A",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 50,
+        "n_tactics_block2": 149,
+        "prefix3_same": 0,
+        "root_id": "imo_1981_p6",
+        "sequence_lcs": 0.4723618090452261
+      },
+      {
+        "arm": "A",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 1,
+        "n_tactics_block2": 2,
+        "prefix3_same": 0,
+        "root_id": "imo_1985_p6",
+        "sequence_lcs": 0.6666666666666666
+      },
+      {
+        "arm": "A",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 196,
+        "n_tactics_block2": 389,
+        "prefix3_same": 0,
+        "root_id": "imo_1997_p5",
+        "sequence_lcs": 0.5230769230769231
+      },
+      {
+        "arm": "A",
+        "first_block1": "have",
+        "first_block2": null,
+        "first_same": null,
+        "n_tactics_block1": 106,
+        "n_tactics_block2": 0,
+        "prefix3_same": null,
+        "root_id": "imo_2001_p6",
+        "sequence_lcs": 0.0
+      },
+      {
+        "arm": "A",
+        "first_block1": null,
+        "first_block2": "have",
+        "first_same": null,
+        "n_tactics_block1": 0,
+        "n_tactics_block2": 110,
+        "prefix3_same": null,
+        "root_id": "imo_2019_p1",
+        "sequence_lcs": 0.0
+      },
+      {
+        "arm": "A",
+        "first_block1": "induction",
+        "first_block2": "have",
+        "first_same": 0,
+        "n_tactics_block1": 61,
+        "n_tactics_block2": 53,
+        "prefix3_same": 0,
+        "root_id": "induction_pord1p1on2powklt5on2",
+        "sequence_lcs": 0.2807017543859649
+      },
+      {
+        "arm": "A",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 36,
+        "n_tactics_block2": 8,
+        "prefix3_same": 1,
+        "root_id": "induction_pprime_pdvdapowpma",
+        "sequence_lcs": 0.22727272727272727
+      },
+      {
+        "arm": "A",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 11,
+        "n_tactics_block2": 8,
+        "prefix3_same": 0,
+        "root_id": "mathd_algebra_188",
+        "sequence_lcs": 0.631578947368421
+      },
+      {
+        "arm": "A",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 47,
+        "n_tactics_block2": 20,
+        "prefix3_same": 0,
+        "root_id": "mathd_algebra_313",
+        "sequence_lcs": 0.44776119402985076
+      },
+      {
+        "arm": "A",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 35,
+        "n_tactics_block2": 37,
+        "prefix3_same": 1,
+        "root_id": "mathd_numbertheory_135",
+        "sequence_lcs": 0.6944444444444444
+      },
+      {
+        "arm": "A",
+        "first_block1": "have",
+        "first_block2": "use",
+        "first_same": 0,
+        "n_tactics_block1": 32,
+        "n_tactics_block2": 220,
+        "prefix3_same": 0,
+        "root_id": "mathd_numbertheory_234",
+        "sequence_lcs": 0.07142857142857142
+      },
+      {
+        "arm": "A",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 6,
+        "n_tactics_block2": 4,
+        "prefix3_same": 1,
+        "root_id": "mathd_numbertheory_235",
+        "sequence_lcs": 0.6
+      },
+      {
+        "arm": "A",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 124,
+        "n_tactics_block2": 104,
+        "prefix3_same": 0,
+        "root_id": "mathd_numbertheory_277",
+        "sequence_lcs": 0.631578947368421
+      },
+      {
+        "arm": "A",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 118,
+        "n_tactics_block2": 57,
+        "prefix3_same": 0,
+        "root_id": "mathd_numbertheory_296",
+        "sequence_lcs": 0.4342857142857143
+      },
+      {
+        "arm": "A",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 6,
+        "n_tactics_block2": 6,
+        "prefix3_same": 0,
+        "root_id": "mathd_numbertheory_343",
+        "sequence_lcs": 0.6666666666666666
+      },
+      {
+        "arm": "A",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 31,
+        "n_tactics_block2": 16,
+        "prefix3_same": 1,
+        "root_id": "mathd_numbertheory_427",
+        "sequence_lcs": 0.5957446808510638
+      },
+      {
+        "arm": "A",
+        "first_block1": "use",
+        "first_block2": "have",
+        "first_same": 0,
+        "n_tactics_block1": 2,
+        "n_tactics_block2": 126,
+        "prefix3_same": 0,
+        "root_id": "mathd_numbertheory_495",
+        "sequence_lcs": 0.015625
+      },
+      {
+        "arm": "A",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 45,
+        "n_tactics_block2": 31,
+        "prefix3_same": 0,
+        "root_id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2",
+        "sequence_lcs": 0.6052631578947368
+      },
+      {
+        "arm": "A",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 225,
+        "n_tactics_block2": 29,
+        "prefix3_same": 0,
+        "root_id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown",
+        "sequence_lcs": 0.05511811023622047
+      },
+      {
+        "arm": "A",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 30,
+        "n_tactics_block2": 25,
+        "prefix3_same": 0,
+        "root_id": "numbertheory_notequiv2i2jasqbsqdiv8",
+        "sequence_lcs": 0.5818181818181818
+      },
+      {
+        "arm": "A",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 32,
+        "n_tactics_block2": 193,
+        "prefix3_same": 0,
+        "root_id": "numbertheory_x5neqy2p4",
+        "sequence_lcs": 0.2222222222222222
+      },
+      {
+        "arm": "B",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 45,
+        "n_tactics_block2": 98,
+        "prefix3_same": 0,
+        "root_id": "aime_1984_p1",
+        "sequence_lcs": 0.43356643356643354
+      },
+      {
+        "arm": "B",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 200,
+        "n_tactics_block2": 148,
+        "prefix3_same": 0,
+        "root_id": "aime_1987_p5",
+        "sequence_lcs": 0.6149425287356322
+      },
+      {
+        "arm": "B",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 93,
+        "n_tactics_block2": 78,
+        "prefix3_same": 1,
+        "root_id": "aime_1995_p7",
+        "sequence_lcs": 0.5029239766081871
+      },
+      {
+        "arm": "B",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 127,
+        "n_tactics_block2": 128,
+        "prefix3_same": 1,
+        "root_id": "aime_1997_p9",
+        "sequence_lcs": 0.5725490196078431
+      },
+      {
+        "arm": "B",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 37,
+        "n_tactics_block2": 36,
+        "prefix3_same": 1,
+        "root_id": "algebra_2varlineareq_fp3zeq11_3tfm1m5zeqn68_feqn10_zeq7",
+        "sequence_lcs": 0.5753424657534246
+      },
+      {
+        "arm": "B",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 123,
+        "n_tactics_block2": 93,
+        "prefix3_same": 1,
+        "root_id": "algebra_cubrtrp1oncubrtreq3_rcubp1onrcubeq5778",
+        "sequence_lcs": 0.5648148148148148
+      },
+      {
+        "arm": "B",
+        "first_block1": "use",
+        "first_block2": null,
+        "first_same": null,
+        "n_tactics_block1": 64,
+        "n_tactics_block2": 0,
+        "prefix3_same": null,
+        "root_id": "algebra_others_exirrpowirrrat",
+        "sequence_lcs": 0.0
+      },
+      {
+        "arm": "B",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 46,
+        "n_tactics_block2": 43,
+        "prefix3_same": 0,
+        "root_id": "algebra_sum1onsqrt2to1onsqrt10000lt198",
+        "sequence_lcs": 0.4943820224719101
+      },
+      {
+        "arm": "B",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 82,
+        "n_tactics_block2": 60,
+        "prefix3_same": 1,
+        "root_id": "amc12_2001_p21",
+        "sequence_lcs": 0.4084507042253521
+      },
+      {
+        "arm": "B",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 31,
+        "n_tactics_block2": 37,
+        "prefix3_same": 0,
+        "root_id": "amc12a_2003_p5",
+        "sequence_lcs": 0.7058823529411765
+      },
+      {
+        "arm": "B",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 209,
+        "n_tactics_block2": 37,
+        "prefix3_same": 1,
+        "root_id": "amc12a_2008_p25",
+        "sequence_lcs": 0.2764227642276423
+      },
+      {
+        "arm": "B",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 183,
+        "n_tactics_block2": 115,
+        "prefix3_same": 0,
+        "root_id": "amc12a_2019_p12",
+        "sequence_lcs": 0.6040268456375839
+      },
+      {
+        "arm": "B",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 28,
+        "n_tactics_block2": 1,
+        "prefix3_same": 0,
+        "root_id": "amc12a_2020_p4",
+        "sequence_lcs": 0.06896551724137931
+      },
+      {
+        "arm": "B",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 51,
+        "n_tactics_block2": 47,
+        "prefix3_same": 0,
+        "root_id": "amc12b_2002_p4",
+        "sequence_lcs": 0.3673469387755102
+      },
+      {
+        "arm": "B",
+        "first_block1": "exact",
+        "first_block2": "have",
+        "first_same": 0,
+        "n_tactics_block1": 37,
+        "n_tactics_block2": 5,
+        "prefix3_same": 0,
+        "root_id": "amc12b_2020_p21",
+        "sequence_lcs": 0.23809523809523808
+      },
+      {
+        "arm": "B",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 48,
+        "n_tactics_block2": 100,
+        "prefix3_same": 0,
+        "root_id": "amc12b_2020_p6",
+        "sequence_lcs": 0.4594594594594595
+      },
+      {
+        "arm": "B",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 32,
+        "n_tactics_block2": 150,
+        "prefix3_same": 0,
+        "root_id": "imo_1965_p2",
+        "sequence_lcs": 0.01098901098901099
+      },
+      {
+        "arm": "B",
+        "first_block1": "have",
+        "first_block2": "cases",
+        "first_same": 0,
+        "n_tactics_block1": 34,
+        "n_tactics_block2": 7,
+        "prefix3_same": 0,
+        "root_id": "imo_1969_p2",
+        "sequence_lcs": 0.14634146341463414
+      },
+      {
+        "arm": "B",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 53,
+        "n_tactics_block2": 39,
+        "prefix3_same": 1,
+        "root_id": "imo_1974_p3",
+        "sequence_lcs": 0.6304347826086957
+      },
+      {
+        "arm": "B",
+        "first_block1": null,
+        "first_block2": "induction",
+        "first_same": null,
+        "n_tactics_block1": 0,
+        "n_tactics_block2": 103,
+        "prefix3_same": null,
+        "root_id": "imo_1981_p6",
+        "sequence_lcs": 0.0
+      },
+      {
+        "arm": "B",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 21,
+        "n_tactics_block2": 34,
+        "prefix3_same": 1,
+        "root_id": "imo_1985_p6",
+        "sequence_lcs": 0.36363636363636365
+      },
+      {
+        "arm": "B",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 391,
+        "n_tactics_block2": 268,
+        "prefix3_same": 0,
+        "root_id": "imo_1997_p5",
+        "sequence_lcs": 0.464339908952959
+      },
+      {
+        "arm": "B",
+        "first_block1": "have",
+        "first_block2": null,
+        "first_same": null,
+        "n_tactics_block1": 193,
+        "n_tactics_block2": 0,
+        "prefix3_same": null,
+        "root_id": "imo_2001_p6",
+        "sequence_lcs": 0.0
+      },
+      {
+        "arm": "B",
+        "first_block1": null,
+        "first_block2": "have",
+        "first_same": null,
+        "n_tactics_block1": 0,
+        "n_tactics_block2": 22,
+        "prefix3_same": null,
+        "root_id": "imo_2019_p1",
+        "sequence_lcs": 0.0
+      },
+      {
+        "arm": "B",
+        "first_block1": "exact",
+        "first_block2": "have",
+        "first_same": 0,
+        "n_tactics_block1": 80,
+        "n_tactics_block2": 29,
+        "prefix3_same": 0,
+        "root_id": "induction_pord1p1on2powklt5on2",
+        "sequence_lcs": 0.03669724770642202
+      },
+      {
+        "arm": "B",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 24,
+        "n_tactics_block2": 11,
+        "prefix3_same": 0,
+        "root_id": "induction_pprime_pdvdapowpma",
+        "sequence_lcs": 0.34285714285714286
+      },
+      {
+        "arm": "B",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 12,
+        "n_tactics_block2": 12,
+        "prefix3_same": 0,
+        "root_id": "mathd_algebra_188",
+        "sequence_lcs": 0.75
+      },
+      {
+        "arm": "B",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 43,
+        "n_tactics_block2": 28,
+        "prefix3_same": 1,
+        "root_id": "mathd_algebra_313",
+        "sequence_lcs": 0.676056338028169
+      },
+      {
+        "arm": "B",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 29,
+        "n_tactics_block2": 29,
+        "prefix3_same": 0,
+        "root_id": "mathd_numbertheory_135",
+        "sequence_lcs": 0.6896551724137931
+      },
+      {
+        "arm": "B",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 49,
+        "n_tactics_block2": 48,
+        "prefix3_same": 0,
+        "root_id": "mathd_numbertheory_234",
+        "sequence_lcs": 0.5773195876288659
+      },
+      {
+        "arm": "B",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 14,
+        "n_tactics_block2": 6,
+        "prefix3_same": 1,
+        "root_id": "mathd_numbertheory_235",
+        "sequence_lcs": 0.5
+      },
+      {
+        "arm": "B",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 74,
+        "n_tactics_block2": 113,
+        "prefix3_same": 0,
+        "root_id": "mathd_numbertheory_277",
+        "sequence_lcs": 0.4385026737967914
+      },
+      {
+        "arm": "B",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 104,
+        "n_tactics_block2": 1,
+        "prefix3_same": 0,
+        "root_id": "mathd_numbertheory_296",
+        "sequence_lcs": 0.01904761904761905
+      },
+      {
+        "arm": "B",
+        "first_block1": null,
+        "first_block2": "have",
+        "first_same": null,
+        "n_tactics_block1": 0,
+        "n_tactics_block2": 8,
+        "prefix3_same": null,
+        "root_id": "mathd_numbertheory_343",
+        "sequence_lcs": 0.0
+      },
+      {
+        "arm": "B",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 11,
+        "n_tactics_block2": 17,
+        "prefix3_same": 1,
+        "root_id": "mathd_numbertheory_427",
+        "sequence_lcs": 0.5714285714285714
+      },
+      {
+        "arm": "B",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 5,
+        "n_tactics_block2": 119,
+        "prefix3_same": 0,
+        "root_id": "mathd_numbertheory_495",
+        "sequence_lcs": 0.04838709677419355
+      },
+      {
+        "arm": "B",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 34,
+        "n_tactics_block2": 72,
+        "prefix3_same": 1,
+        "root_id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2",
+        "sequence_lcs": 0.4528301886792453
+      },
+      {
+        "arm": "B",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 267,
+        "n_tactics_block2": 78,
+        "prefix3_same": 0,
+        "root_id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown",
+        "sequence_lcs": 0.011594202898550725
+      },
+      {
+        "arm": "B",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 35,
+        "n_tactics_block2": 27,
+        "prefix3_same": 1,
+        "root_id": "numbertheory_notequiv2i2jasqbsqdiv8",
+        "sequence_lcs": 0.6774193548387096
+      },
+      {
+        "arm": "B",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 27,
+        "n_tactics_block2": 28,
+        "prefix3_same": 0,
+        "root_id": "numbertheory_x5neqy2p4",
+        "sequence_lcs": 0.9090909090909091
+      },
+      {
+        "arm": "C",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 16,
+        "n_tactics_block2": 16,
+        "prefix3_same": 1,
+        "root_id": "aime_1984_p1",
+        "sequence_lcs": 1.0
+      },
+      {
+        "arm": "C",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 60,
+        "n_tactics_block2": 67,
+        "prefix3_same": 0,
+        "root_id": "aime_1987_p5",
+        "sequence_lcs": 0.9133858267716536
+      },
+      {
+        "arm": "C",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 222,
+        "n_tactics_block2": 5,
+        "prefix3_same": 0,
+        "root_id": "aime_1995_p7",
+        "sequence_lcs": 0.02643171806167401
+      },
+      {
+        "arm": "C",
+        "first_block1": null,
+        "first_block2": "have",
+        "first_same": null,
+        "n_tactics_block1": 0,
+        "n_tactics_block2": 116,
+        "prefix3_same": null,
+        "root_id": "aime_1997_p9",
+        "sequence_lcs": 0.0
+      },
+      {
+        "arm": "C",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 97,
+        "n_tactics_block2": 97,
+        "prefix3_same": 1,
+        "root_id": "algebra_2varlineareq_fp3zeq11_3tfm1m5zeqn68_feqn10_zeq7",
+        "sequence_lcs": 1.0
+      },
+      {
+        "arm": "C",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 49,
+        "n_tactics_block2": 69,
+        "prefix3_same": 1,
+        "root_id": "algebra_cubrtrp1oncubrtreq3_rcubp1onrcubeq5778",
+        "sequence_lcs": 0.8305084745762712
+      },
+      {
+        "arm": "C",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 185,
+        "n_tactics_block2": 185,
+        "prefix3_same": 1,
+        "root_id": "algebra_others_exirrpowirrrat",
+        "sequence_lcs": 1.0
+      },
+      {
+        "arm": "C",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 113,
+        "n_tactics_block2": 87,
+        "prefix3_same": 1,
+        "root_id": "algebra_sum1onsqrt2to1onsqrt10000lt198",
+        "sequence_lcs": 0.54
+      },
+      {
+        "arm": "C",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 75,
+        "n_tactics_block2": 75,
+        "prefix3_same": 1,
+        "root_id": "amc12_2001_p21",
+        "sequence_lcs": 1.0
+      },
+      {
+        "arm": "C",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 18,
+        "n_tactics_block2": 18,
+        "prefix3_same": 1,
+        "root_id": "amc12a_2003_p5",
+        "sequence_lcs": 1.0
+      },
+      {
+        "arm": "C",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 430,
+        "n_tactics_block2": 436,
+        "prefix3_same": 1,
+        "root_id": "amc12a_2008_p25",
+        "sequence_lcs": 0.674364896073903
+      },
+      {
+        "arm": "C",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 145,
+        "n_tactics_block2": 145,
+        "prefix3_same": 1,
+        "root_id": "amc12a_2019_p12",
+        "sequence_lcs": 1.0
+      },
+      {
+        "arm": "C",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 10,
+        "n_tactics_block2": 10,
+        "prefix3_same": 1,
+        "root_id": "amc12a_2020_p4",
+        "sequence_lcs": 1.0
+      },
+      {
+        "arm": "C",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 90,
+        "n_tactics_block2": 68,
+        "prefix3_same": 1,
+        "root_id": "amc12b_2002_p4",
+        "sequence_lcs": 0.8607594936708861
+      },
+      {
+        "arm": "C",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 423,
+        "n_tactics_block2": 428,
+        "prefix3_same": 1,
+        "root_id": "amc12b_2020_p21",
+        "sequence_lcs": 0.972972972972973
+      },
+      {
+        "arm": "C",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 33,
+        "n_tactics_block2": 33,
+        "prefix3_same": 1,
+        "root_id": "amc12b_2020_p6",
+        "sequence_lcs": 1.0
+      },
+      {
+        "arm": "C",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 222,
+        "n_tactics_block2": 222,
+        "prefix3_same": 1,
+        "root_id": "imo_1965_p2",
+        "sequence_lcs": 1.0
+      },
+      {
+        "arm": "C",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 36,
+        "n_tactics_block2": 1,
+        "prefix3_same": 0,
+        "root_id": "imo_1969_p2",
+        "sequence_lcs": 0.05405405405405406
+      },
+      {
+        "arm": "C",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 26,
+        "n_tactics_block2": 21,
+        "prefix3_same": 1,
+        "root_id": "imo_1974_p3",
+        "sequence_lcs": 0.8936170212765957
+      },
+      {
+        "arm": "C",
+        "first_block1": "have",
+        "first_block2": "induction",
+        "first_same": 0,
+        "n_tactics_block1": 190,
+        "n_tactics_block2": 152,
+        "prefix3_same": 0,
+        "root_id": "imo_1981_p6",
+        "sequence_lcs": 0.017543859649122806
+      },
+      {
+        "arm": "C",
+        "first_block1": null,
+        "first_block2": "have",
+        "first_same": null,
+        "n_tactics_block1": 0,
+        "n_tactics_block2": 4,
+        "prefix3_same": null,
+        "root_id": "imo_1985_p6",
+        "sequence_lcs": 0.0
+      },
+      {
+        "arm": "C",
+        "first_block1": "have",
+        "first_block2": null,
+        "first_same": null,
+        "n_tactics_block1": 3,
+        "n_tactics_block2": 0,
+        "prefix3_same": null,
+        "root_id": "imo_1997_p5",
+        "sequence_lcs": 0.0
+      },
+      {
+        "arm": "C",
+        "first_block1": "use",
+        "first_block2": "have",
+        "first_same": 0,
+        "n_tactics_block1": 6,
+        "n_tactics_block2": 2,
+        "prefix3_same": 0,
+        "root_id": "imo_2001_p6",
+        "sequence_lcs": 0.5
+      },
+      {
+        "arm": "C",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 200,
+        "n_tactics_block2": 200,
+        "prefix3_same": 1,
+        "root_id": "imo_2019_p1",
+        "sequence_lcs": 1.0
+      },
+      {
+        "arm": "C",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 33,
+        "n_tactics_block2": 35,
+        "prefix3_same": 1,
+        "root_id": "induction_pord1p1on2powklt5on2",
+        "sequence_lcs": 0.5
+      },
+      {
+        "arm": "C",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 17,
+        "n_tactics_block2": 17,
+        "prefix3_same": 1,
+        "root_id": "induction_pprime_pdvdapowpma",
+        "sequence_lcs": 1.0
+      },
+      {
+        "arm": "C",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 12,
+        "n_tactics_block2": 12,
+        "prefix3_same": 1,
+        "root_id": "mathd_algebra_188",
+        "sequence_lcs": 1.0
+      },
+      {
+        "arm": "C",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 30,
+        "n_tactics_block2": 36,
+        "prefix3_same": 1,
+        "root_id": "mathd_algebra_313",
+        "sequence_lcs": 0.9090909090909091
+      },
+      {
+        "arm": "C",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 30,
+        "n_tactics_block2": 30,
+        "prefix3_same": 1,
+        "root_id": "mathd_numbertheory_135",
+        "sequence_lcs": 1.0
+      },
+      {
+        "arm": "C",
+        "first_block1": "have",
+        "first_block2": null,
+        "first_same": null,
+        "n_tactics_block1": 32,
+        "n_tactics_block2": 0,
+        "prefix3_same": null,
+        "root_id": "mathd_numbertheory_234",
+        "sequence_lcs": 0.0
+      },
+      {
+        "arm": "C",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 15,
+        "n_tactics_block2": 15,
+        "prefix3_same": 1,
+        "root_id": "mathd_numbertheory_235",
+        "sequence_lcs": 1.0
+      },
+      {
+        "arm": "C",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 142,
+        "n_tactics_block2": 99,
+        "prefix3_same": 1,
+        "root_id": "mathd_numbertheory_277",
+        "sequence_lcs": 0.5477178423236515
+      },
+      {
+        "arm": "C",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 113,
+        "n_tactics_block2": 117,
+        "prefix3_same": 1,
+        "root_id": "mathd_numbertheory_296",
+        "sequence_lcs": 0.9826086956521739
+      },
+      {
+        "arm": "C",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 4,
+        "n_tactics_block2": 4,
+        "prefix3_same": 1,
+        "root_id": "mathd_numbertheory_343",
+        "sequence_lcs": 1.0
+      },
+      {
+        "arm": "C",
+        "first_block1": "use",
+        "first_block2": null,
+        "first_same": null,
+        "n_tactics_block1": 2,
+        "n_tactics_block2": 0,
+        "prefix3_same": null,
+        "root_id": "mathd_numbertheory_427",
+        "sequence_lcs": 0.0
+      },
+      {
+        "arm": "C",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 239,
+        "n_tactics_block2": 239,
+        "prefix3_same": 1,
+        "root_id": "mathd_numbertheory_495",
+        "sequence_lcs": 1.0
+      },
+      {
+        "arm": "C",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 59,
+        "n_tactics_block2": 59,
+        "prefix3_same": 1,
+        "root_id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2",
+        "sequence_lcs": 1.0
+      },
+      {
+        "arm": "C",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 250,
+        "n_tactics_block2": 2,
+        "prefix3_same": 0,
+        "root_id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown",
+        "sequence_lcs": 0.015873015873015872
+      },
+      {
+        "arm": "C",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 31,
+        "n_tactics_block2": 31,
+        "prefix3_same": 1,
+        "root_id": "numbertheory_notequiv2i2jasqbsqdiv8",
+        "sequence_lcs": 1.0
+      },
+      {
+        "arm": "C",
+        "first_block1": "use",
+        "first_block2": "use",
+        "first_same": 1,
+        "n_tactics_block1": 58,
+        "n_tactics_block2": 73,
+        "prefix3_same": 0,
+        "root_id": "numbertheory_x5neqy2p4",
+        "sequence_lcs": 0.8702290076335878
+      },
+      {
+        "arm": "D",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 16,
+        "n_tactics_block2": 16,
+        "prefix3_same": 1,
+        "root_id": "aime_1984_p1",
+        "sequence_lcs": 1.0
+      },
+      {
+        "arm": "D",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 63,
+        "n_tactics_block2": 57,
+        "prefix3_same": 1,
+        "root_id": "aime_1987_p5",
+        "sequence_lcs": 0.95
+      },
+      {
+        "arm": "D",
+        "first_block1": "have",
+        "first_block2": null,
+        "first_same": null,
+        "n_tactics_block1": 138,
+        "n_tactics_block2": 0,
+        "prefix3_same": null,
+        "root_id": "aime_1995_p7",
+        "sequence_lcs": 0.0
+      },
+      {
+        "arm": "D",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 144,
+        "n_tactics_block2": 105,
+        "prefix3_same": 1,
+        "root_id": "aime_1997_p9",
+        "sequence_lcs": 0.7871485943775101
+      },
+      {
+        "arm": "D",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 97,
+        "n_tactics_block2": 97,
+        "prefix3_same": 1,
+        "root_id": "algebra_2varlineareq_fp3zeq11_3tfm1m5zeqn68_feqn10_zeq7",
+        "sequence_lcs": 1.0
+      },
+      {
+        "arm": "D",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 49,
+        "n_tactics_block2": 49,
+        "prefix3_same": 1,
+        "root_id": "algebra_cubrtrp1oncubrtreq3_rcubp1onrcubeq5778",
+        "sequence_lcs": 1.0
+      },
+      {
+        "arm": "D",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 185,
+        "n_tactics_block2": 185,
+        "prefix3_same": 1,
+        "root_id": "algebra_others_exirrpowirrrat",
+        "sequence_lcs": 1.0
+      },
+      {
+        "arm": "D",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 91,
+        "n_tactics_block2": 88,
+        "prefix3_same": 0,
+        "root_id": "algebra_sum1onsqrt2to1onsqrt10000lt198",
+        "sequence_lcs": 0.6815642458100558
+      },
+      {
+        "arm": "D",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 75,
+        "n_tactics_block2": 75,
+        "prefix3_same": 1,
+        "root_id": "amc12_2001_p21",
+        "sequence_lcs": 1.0
+      },
+      {
+        "arm": "D",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 18,
+        "n_tactics_block2": 18,
+        "prefix3_same": 1,
+        "root_id": "amc12a_2003_p5",
+        "sequence_lcs": 1.0
+      },
+      {
+        "arm": "D",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 576,
+        "n_tactics_block2": 2,
+        "prefix3_same": 0,
+        "root_id": "amc12a_2008_p25",
+        "sequence_lcs": 0.006920415224913495
+      },
+      {
+        "arm": "D",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 145,
+        "n_tactics_block2": 145,
+        "prefix3_same": 1,
+        "root_id": "amc12a_2019_p12",
+        "sequence_lcs": 1.0
+      },
+      {
+        "arm": "D",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 10,
+        "n_tactics_block2": 10,
+        "prefix3_same": 1,
+        "root_id": "amc12a_2020_p4",
+        "sequence_lcs": 1.0
+      },
+      {
+        "arm": "D",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 79,
+        "n_tactics_block2": 82,
+        "prefix3_same": 1,
+        "root_id": "amc12b_2002_p4",
+        "sequence_lcs": 0.9813664596273292
+      },
+      {
+        "arm": "D",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 412,
+        "n_tactics_block2": 429,
+        "prefix3_same": 1,
+        "root_id": "amc12b_2020_p21",
+        "sequence_lcs": 0.9797859690844233
+      },
+      {
+        "arm": "D",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 33,
+        "n_tactics_block2": 33,
+        "prefix3_same": 1,
+        "root_id": "amc12b_2020_p6",
+        "sequence_lcs": 1.0
+      },
+      {
+        "arm": "D",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 222,
+        "n_tactics_block2": 222,
+        "prefix3_same": 1,
+        "root_id": "imo_1965_p2",
+        "sequence_lcs": 1.0
+      },
+      {
+        "arm": "D",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 8,
+        "n_tactics_block2": 1,
+        "prefix3_same": 0,
+        "root_id": "imo_1969_p2",
+        "sequence_lcs": 0.2222222222222222
+      },
+      {
+        "arm": "D",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 26,
+        "n_tactics_block2": 26,
+        "prefix3_same": 1,
+        "root_id": "imo_1974_p3",
+        "sequence_lcs": 1.0
+      },
+      {
+        "arm": "D",
+        "first_block1": "induction",
+        "first_block2": "induction",
+        "first_same": 1,
+        "n_tactics_block1": 158,
+        "n_tactics_block2": 152,
+        "prefix3_same": 1,
+        "root_id": "imo_1981_p6",
+        "sequence_lcs": 0.9806451612903225
+      },
+      {
+        "arm": "D",
+        "first_block1": "have",
+        "first_block2": null,
+        "first_same": null,
+        "n_tactics_block1": 4,
+        "n_tactics_block2": 0,
+        "prefix3_same": null,
+        "root_id": "imo_1985_p6",
+        "sequence_lcs": 0.0
+      },
+      {
+        "arm": "D",
+        "first_block1": null,
+        "first_block2": "have",
+        "first_same": null,
+        "n_tactics_block1": 0,
+        "n_tactics_block2": 1,
+        "prefix3_same": null,
+        "root_id": "imo_1997_p5",
+        "sequence_lcs": 0.0
+      },
+      {
+        "arm": "D",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 2,
+        "n_tactics_block2": 126,
+        "prefix3_same": 0,
+        "root_id": "imo_2001_p6",
+        "sequence_lcs": 0.015625
+      },
+      {
+        "arm": "D",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 200,
+        "n_tactics_block2": 200,
+        "prefix3_same": 1,
+        "root_id": "imo_2019_p1",
+        "sequence_lcs": 1.0
+      },
+      {
+        "arm": "D",
+        "first_block1": "use",
+        "first_block2": "have",
+        "first_same": 0,
+        "n_tactics_block1": 8,
+        "n_tactics_block2": 117,
+        "prefix3_same": 0,
+        "root_id": "induction_pord1p1on2powklt5on2",
+        "sequence_lcs": 0.032
+      },
+      {
+        "arm": "D",
+        "first_block1": "use",
+        "first_block2": "have",
+        "first_same": 0,
+        "n_tactics_block1": 144,
+        "n_tactics_block2": 17,
+        "prefix3_same": 0,
+        "root_id": "induction_pprime_pdvdapowpma",
+        "sequence_lcs": 0.049689440993788817
+      },
+      {
+        "arm": "D",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 12,
+        "n_tactics_block2": 12,
+        "prefix3_same": 1,
+        "root_id": "mathd_algebra_188",
+        "sequence_lcs": 1.0
+      },
+      {
+        "arm": "D",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 36,
+        "n_tactics_block2": 32,
+        "prefix3_same": 1,
+        "root_id": "mathd_algebra_313",
+        "sequence_lcs": 0.9411764705882353
+      },
+      {
+        "arm": "D",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 30,
+        "n_tactics_block2": 30,
+        "prefix3_same": 1,
+        "root_id": "mathd_numbertheory_135",
+        "sequence_lcs": 1.0
+      },
+      {
+        "arm": "D",
+        "first_block1": null,
+        "first_block2": "have",
+        "first_same": null,
+        "n_tactics_block1": 0,
+        "n_tactics_block2": 25,
+        "prefix3_same": null,
+        "root_id": "mathd_numbertheory_234",
+        "sequence_lcs": 0.0
+      },
+      {
+        "arm": "D",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 15,
+        "n_tactics_block2": 15,
+        "prefix3_same": 1,
+        "root_id": "mathd_numbertheory_235",
+        "sequence_lcs": 1.0
+      },
+      {
+        "arm": "D",
+        "first_block1": "have",
+        "first_block2": "cases",
+        "first_same": 0,
+        "n_tactics_block1": 74,
+        "n_tactics_block2": 357,
+        "prefix3_same": 0,
+        "root_id": "mathd_numbertheory_277",
+        "sequence_lcs": 0.09744779582366589
+      },
+      {
+        "arm": "D",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 117,
+        "n_tactics_block2": 117,
+        "prefix3_same": 1,
+        "root_id": "mathd_numbertheory_296",
+        "sequence_lcs": 1.0
+      },
+      {
+        "arm": "D",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 4,
+        "n_tactics_block2": 4,
+        "prefix3_same": 1,
+        "root_id": "mathd_numbertheory_343",
+        "sequence_lcs": 1.0
+      },
+      {
+        "arm": "D",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 13,
+        "n_tactics_block2": 18,
+        "prefix3_same": 1,
+        "root_id": "mathd_numbertheory_427",
+        "sequence_lcs": 0.5806451612903226
+      },
+      {
+        "arm": "D",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 239,
+        "n_tactics_block2": 239,
+        "prefix3_same": 1,
+        "root_id": "mathd_numbertheory_495",
+        "sequence_lcs": 1.0
+      },
+      {
+        "arm": "D",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 59,
+        "n_tactics_block2": 59,
+        "prefix3_same": 1,
+        "root_id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2",
+        "sequence_lcs": 1.0
+      },
+      {
+        "arm": "D",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 250,
+        "n_tactics_block2": 250,
+        "prefix3_same": 1,
+        "root_id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown",
+        "sequence_lcs": 1.0
+      },
+      {
+        "arm": "D",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 31,
+        "n_tactics_block2": 31,
+        "prefix3_same": 1,
+        "root_id": "numbertheory_notequiv2i2jasqbsqdiv8",
+        "sequence_lcs": 1.0
+      },
+      {
+        "arm": "D",
+        "first_block1": "have",
+        "first_block2": "use",
+        "first_same": 0,
+        "n_tactics_block1": 85,
+        "n_tactics_block2": 159,
+        "prefix3_same": 0,
+        "root_id": "numbertheory_x5neqy2p4",
+        "sequence_lcs": 0.4098360655737705
+      },
+      {
+        "arm": "Cp",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 73,
+        "n_tactics_block2": 80,
+        "prefix3_same": 0,
+        "root_id": "aime_1984_p1",
+        "sequence_lcs": 0.6666666666666666
+      },
+      {
+        "arm": "Cp",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 6,
+        "n_tactics_block2": 32,
+        "prefix3_same": 1,
+        "root_id": "aime_1987_p5",
+        "sequence_lcs": 0.3157894736842105
+      },
+      {
+        "arm": "Cp",
+        "first_block1": null,
+        "first_block2": "have",
+        "first_same": null,
+        "n_tactics_block1": 0,
+        "n_tactics_block2": 130,
+        "prefix3_same": null,
+        "root_id": "aime_1995_p7",
+        "sequence_lcs": 0.0
+      },
+      {
+        "arm": "Cp",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 120,
+        "n_tactics_block2": 175,
+        "prefix3_same": 1,
+        "root_id": "aime_1997_p9",
+        "sequence_lcs": 0.5288135593220339
+      },
+      {
+        "arm": "Cp",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 48,
+        "n_tactics_block2": 36,
+        "prefix3_same": 1,
+        "root_id": "algebra_2varlineareq_fp3zeq11_3tfm1m5zeqn68_feqn10_zeq7",
+        "sequence_lcs": 0.7380952380952381
+      },
+      {
+        "arm": "Cp",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 3,
+        "n_tactics_block2": 172,
+        "prefix3_same": 0,
+        "root_id": "algebra_cubrtrp1oncubrtreq3_rcubp1onrcubeq5778",
+        "sequence_lcs": 0.022857142857142857
+      },
+      {
+        "arm": "Cp",
+        "first_block1": null,
+        "first_block2": null,
+        "first_same": null,
+        "n_tactics_block1": 0,
+        "n_tactics_block2": 0,
+        "prefix3_same": null,
+        "root_id": "algebra_others_exirrpowirrrat",
+        "sequence_lcs": null
+      },
+      {
+        "arm": "Cp",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 105,
+        "n_tactics_block2": 102,
+        "prefix3_same": 0,
+        "root_id": "algebra_sum1onsqrt2to1onsqrt10000lt198",
+        "sequence_lcs": 0.5314009661835749
+      },
+      {
+        "arm": "Cp",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 41,
+        "n_tactics_block2": 97,
+        "prefix3_same": 0,
+        "root_id": "amc12_2001_p21",
+        "sequence_lcs": 0.463768115942029
+      },
+      {
+        "arm": "Cp",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 103,
+        "n_tactics_block2": 39,
+        "prefix3_same": 1,
+        "root_id": "amc12a_2003_p5",
+        "sequence_lcs": 0.4084507042253521
+      },
+      {
+        "arm": "Cp",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 36,
+        "n_tactics_block2": 19,
+        "prefix3_same": 0,
+        "root_id": "amc12a_2008_p25",
+        "sequence_lcs": 0.4727272727272727
+      },
+      {
+        "arm": "Cp",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 4,
+        "n_tactics_block2": 5,
+        "prefix3_same": 0,
+        "root_id": "amc12a_2019_p12",
+        "sequence_lcs": 0.2222222222222222
+      },
+      {
+        "arm": "Cp",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 9,
+        "n_tactics_block2": 2,
+        "prefix3_same": 0,
+        "root_id": "amc12a_2020_p4",
+        "sequence_lcs": 0.18181818181818182
+      },
+      {
+        "arm": "Cp",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 24,
+        "n_tactics_block2": 37,
+        "prefix3_same": 1,
+        "root_id": "amc12b_2002_p4",
+        "sequence_lcs": 0.7213114754098361
+      },
+      {
+        "arm": "Cp",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 288,
+        "n_tactics_block2": 124,
+        "prefix3_same": 1,
+        "root_id": "amc12b_2020_p21",
+        "sequence_lcs": 0.47572815533980584
+      },
+      {
+        "arm": "Cp",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 94,
+        "n_tactics_block2": 53,
+        "prefix3_same": 0,
+        "root_id": "amc12b_2020_p6",
+        "sequence_lcs": 0.3945578231292517
+      },
+      {
+        "arm": "Cp",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 269,
+        "n_tactics_block2": 174,
+        "prefix3_same": 1,
+        "root_id": "imo_1965_p2",
+        "sequence_lcs": 0.7223476297968398
+      },
+      {
+        "arm": "Cp",
+        "first_block1": "cases",
+        "first_block2": "have",
+        "first_same": 0,
+        "n_tactics_block1": 22,
+        "n_tactics_block2": 6,
+        "prefix3_same": 0,
+        "root_id": "imo_1969_p2",
+        "sequence_lcs": 0.14285714285714285
+      },
+      {
+        "arm": "Cp",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 85,
+        "n_tactics_block2": 31,
+        "prefix3_same": 1,
+        "root_id": "imo_1974_p3",
+        "sequence_lcs": 0.46551724137931033
+      },
+      {
+        "arm": "Cp",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 172,
+        "n_tactics_block2": 386,
+        "prefix3_same": 0,
+        "root_id": "imo_1981_p6",
+        "sequence_lcs": 0.4838709677419355
+      },
+      {
+        "arm": "Cp",
+        "first_block1": "induction",
+        "first_block2": "have",
+        "first_same": 0,
+        "n_tactics_block1": 59,
+        "n_tactics_block2": 17,
+        "prefix3_same": 0,
+        "root_id": "imo_1985_p6",
+        "sequence_lcs": 0.21052631578947367
+      },
+      {
+        "arm": "Cp",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 215,
+        "n_tactics_block2": 674,
+        "prefix3_same": 1,
+        "root_id": "imo_1997_p5",
+        "sequence_lcs": 0.08098987626546682
+      },
+      {
+        "arm": "Cp",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 165,
+        "n_tactics_block2": 83,
+        "prefix3_same": 0,
+        "root_id": "imo_2001_p6",
+        "sequence_lcs": 0.49193548387096775
+      },
+      {
+        "arm": "Cp",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 147,
+        "n_tactics_block2": 2,
+        "prefix3_same": 0,
+        "root_id": "imo_2019_p1",
+        "sequence_lcs": 0.026845637583892617
+      },
+      {
+        "arm": "Cp",
+        "first_block1": "use",
+        "first_block2": "use",
+        "first_same": 1,
+        "n_tactics_block1": 88,
+        "n_tactics_block2": 101,
+        "prefix3_same": 0,
+        "root_id": "induction_pord1p1on2powklt5on2",
+        "sequence_lcs": 0.2857142857142857
+      },
+      {
+        "arm": "Cp",
+        "first_block1": "use",
+        "first_block2": "have",
+        "first_same": 0,
+        "n_tactics_block1": 272,
+        "n_tactics_block2": 98,
+        "prefix3_same": 0,
+        "root_id": "induction_pprime_pdvdapowpma",
+        "sequence_lcs": 0.0
+      },
+      {
+        "arm": "Cp",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 10,
+        "n_tactics_block2": 15,
+        "prefix3_same": 0,
+        "root_id": "mathd_algebra_188",
+        "sequence_lcs": 0.48
+      },
+      {
+        "arm": "Cp",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 61,
+        "n_tactics_block2": 19,
+        "prefix3_same": 0,
+        "root_id": "mathd_algebra_313",
+        "sequence_lcs": 0.45
+      },
+      {
+        "arm": "Cp",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 22,
+        "n_tactics_block2": 31,
+        "prefix3_same": 0,
+        "root_id": "mathd_numbertheory_135",
+        "sequence_lcs": 0.6415094339622641
+      },
+      {
+        "arm": "Cp",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 41,
+        "n_tactics_block2": 52,
+        "prefix3_same": 0,
+        "root_id": "mathd_numbertheory_234",
+        "sequence_lcs": 0.5806451612903226
+      },
+      {
+        "arm": "Cp",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 4,
+        "n_tactics_block2": 4,
+        "prefix3_same": 1,
+        "root_id": "mathd_numbertheory_235",
+        "sequence_lcs": 1.0
+      },
+      {
+        "arm": "Cp",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 30,
+        "n_tactics_block2": 51,
+        "prefix3_same": 1,
+        "root_id": "mathd_numbertheory_277",
+        "sequence_lcs": 0.6666666666666666
+      },
+      {
+        "arm": "Cp",
+        "first_block1": null,
+        "first_block2": "have",
+        "first_same": null,
+        "n_tactics_block1": 0,
+        "n_tactics_block2": 68,
+        "prefix3_same": null,
+        "root_id": "mathd_numbertheory_296",
+        "sequence_lcs": 0.0
+      },
+      {
+        "arm": "Cp",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 3,
+        "n_tactics_block2": 7,
+        "prefix3_same": 0,
+        "root_id": "mathd_numbertheory_343",
+        "sequence_lcs": 0.4
+      },
+      {
+        "arm": "Cp",
+        "first_block1": null,
+        "first_block2": "have",
+        "first_same": null,
+        "n_tactics_block1": 0,
+        "n_tactics_block2": 23,
+        "prefix3_same": null,
+        "root_id": "mathd_numbertheory_427",
+        "sequence_lcs": 0.0
+      },
+      {
+        "arm": "Cp",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 221,
+        "n_tactics_block2": 142,
+        "prefix3_same": 1,
+        "root_id": "mathd_numbertheory_495",
+        "sequence_lcs": 0.5674931129476584
+      },
+      {
+        "arm": "Cp",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 45,
+        "n_tactics_block2": 1,
+        "prefix3_same": 0,
+        "root_id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2",
+        "sequence_lcs": 0.043478260869565216
+      },
+      {
+        "arm": "Cp",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 58,
+        "n_tactics_block2": 66,
+        "prefix3_same": 0,
+        "root_id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown",
+        "sequence_lcs": 0.5967741935483871
+      },
+      {
+        "arm": "Cp",
+        "first_block1": null,
+        "first_block2": "have",
+        "first_same": null,
+        "n_tactics_block1": 0,
+        "n_tactics_block2": 63,
+        "prefix3_same": null,
+        "root_id": "numbertheory_notequiv2i2jasqbsqdiv8",
+        "sequence_lcs": 0.0
+      },
+      {
+        "arm": "Cp",
+        "first_block1": "have",
+        "first_block2": "have",
+        "first_same": 1,
+        "n_tactics_block1": 20,
+        "n_tactics_block2": 188,
+        "prefix3_same": 0,
+        "root_id": "numbertheory_x5neqy2p4",
+        "sequence_lcs": 0.15384615384615385
+      }
+    ],
+    "shared_roots": 40
+  },
+  "verification": {
+    "eval_block2": {
+      "interaction": {
+        "ci95": [
+          -0.075,
+          0.225
+        ],
+        "effect": 0.075,
+        "n": 40
+      },
+      "pairwise": {
+        "B-A": {
+          "ci95": [
+            -0.225,
+            0.075
+          ],
+          "effect": -0.075,
+          "n": 40,
+          "x_only": 3,
+          "y_only": 6
+        },
+        "C-A": {
+          "ci95": [
+            -0.325,
+            -0.075
+          ],
+          "effect": -0.2,
+          "n": 40,
+          "x_only": 0,
+          "y_only": 8
+        },
+        "D-B": {
+          "ci95": [
+            -0.25,
+            0.0
+          ],
+          "effect": -0.125,
+          "n": 40,
+          "x_only": 1,
+          "y_only": 6
+        },
+        "D-C": {
+          "ci95": [
+            -0.075,
+            0.075
+          ],
+          "effect": 0,
+          "n": 40,
+          "x_only": 1,
+          "y_only": 1
+        }
+      },
+      "rates": {
+        "A": {
+          "k": 9,
+          "n": 40,
+          "rate": 0.225,
+          "wilson95": [
+            0.12316091323540743,
+            0.37503096742310027
+          ]
+        },
+        "B": {
+          "k": 6,
+          "n": 40,
+          "rate": 0.15,
+          "wilson95": [
+            0.07061187717320358,
+            0.2907232436648971
+          ]
+        },
+        "C": {
+          "k": 1,
+          "n": 40,
+          "rate": 0.025,
+          "wilson95": [
+            0.0044268315026814095,
+            0.1288136896347409
+          ]
+        },
+        "D": {
+          "k": 1,
+          "n": 40,
+          "rate": 0.025,
+          "wilson95": [
+            0.0044268315026814095,
+            0.1288136896347409
+          ]
+        }
+      }
+    },
+    "full_pool_dev": {
+      "interaction": {
+        "ci95": [
+          -0.09302325581395349,
+          0.09302325581395349
+        ],
+        "effect": 0,
+        "n": 43
+      },
+      "pairwise": {
+        "B-A": {
+          "ci95": [
+            -0.046511627906976744,
+            0.13953488372093023
+          ],
+          "effect": 0.046511627906976744,
+          "n": 43,
+          "x_only": 3,
+          "y_only": 1
+        },
+        "C-A": {
+          "ci95": [
+            -0.20930232558139536,
+            -0.023255813953488372
+          ],
+          "effect": -0.11627906976744186,
+          "n": 43,
+          "x_only": 0,
+          "y_only": 5
+        },
+        "D-B": {
+          "ci95": [
+            -0.23255813953488372,
+            0.0
+          ],
+          "effect": -0.11627906976744186,
+          "n": 43,
+          "x_only": 1,
+          "y_only": 6
+        },
+        "D-C": {
+          "ci95": [
+            0.0,
+            0.11627906976744186
+          ],
+          "effect": 0.046511627906976744,
+          "n": 43,
+          "x_only": 2,
+          "y_only": 0
+        },
+        "E-A": {
+          "ci95": [
+            -0.391304347826087,
+            -0.043478260869565216
+          ],
+          "effect": -0.21739130434782608,
+          "n": 23,
+          "x_only": 0,
+          "y_only": 5
+        }
+      },
+      "rates": {
+        "A": {
+          "k": 5,
+          "n": 43,
+          "rate": 0.11627906976744186,
+          "wilson95": [
+            0.05070427739804166,
+            0.24479161810082128
+          ]
+        },
+        "B": {
+          "k": 7,
+          "n": 43,
+          "rate": 0.16279069767441862,
+          "wilson95": [
+            0.08116627347062008,
+            0.29972405893747167
+          ]
+        },
+        "C": {
+          "k": 0,
+          "n": 43,
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.08200980322579117
+          ]
+        },
+        "D": {
+          "k": 2,
+          "n": 43,
+          "rate": 0.046511627906976744,
+          "wilson95": [
+            0.012849260094380227,
+            0.15455498004063967
+          ]
+        },
+        "E": {
+          "k": 0,
+          "n": 23,
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.14311661845042686
+          ]
+        }
+      }
+    },
+    "primary_eval": {
+      "interaction": {
+        "ci95": [
+          0.0,
+          0.225
+        ],
+        "effect": 0.1,
+        "n": 40
+      },
+      "pairwise": {
+        "B-A": {
+          "ci95": [
+            -0.25,
+            0.0
+          ],
+          "effect": -0.125,
+          "n": 40,
+          "x_only": 1,
+          "y_only": 6
+        },
+        "C-A": {
+          "ci95": [
+            -0.3,
+            -0.075
+          ],
+          "effect": -0.175,
+          "n": 40,
+          "x_only": 0,
+          "y_only": 7
+        },
+        "D-B": {
+          "ci95": [
+            -0.175,
+            0.0
+          ],
+          "effect": -0.075,
+          "n": 40,
+          "x_only": 0,
+          "y_only": 3
+        },
+        "D-C": {
+          "ci95": [
+            -0.075,
+            0.0
+          ],
+          "effect": -0.025,
+          "n": 40,
+          "x_only": 0,
+          "y_only": 1
+        },
+        "E-A": {
+          "ci95": [
+            -0.3333333333333333,
+            0.047619047619047616
+          ],
+          "effect": -0.14285714285714285,
+          "n": 21,
+          "x_only": 1,
+          "y_only": 4
+        }
+      },
+      "rates": {
+        "A": {
+          "k": 9,
+          "n": 40,
+          "rate": 0.225,
+          "wilson95": [
+            0.12316091323540743,
+            0.37503096742310027
+          ]
+        },
+        "B": {
+          "k": 4,
+          "n": 40,
+          "rate": 0.1,
+          "wilson95": [
+            0.03957952868260638,
+            0.23051775227522298
+          ]
+        },
+        "C": {
+          "k": 2,
+          "n": 40,
+          "rate": 0.05,
+          "wilson95": [
+            0.013820667386148344,
+            0.16503877369140962
+          ]
+        },
+        "D": {
+          "k": 1,
+          "n": 40,
+          "rate": 0.025,
+          "wilson95": [
+            0.0044268315026814095,
+            0.1288136896347409
+          ]
+        },
+        "E": {
+          "k": 2,
+          "n": 21,
+          "rate": 0.09523809523809523,
+          "wilson95": [
+            0.02651876743807452,
+            0.2891413907391826
+          ]
+        }
+      }
+    }
+  },
+  "verification_pairs": {
+    "eval_block2": [
+      {
+        "A": 0,
+        "C": 0,
+        "index": 1,
+        "root_id": "aime_1984_p1",
+        "state": "neither"
+      },
+      {
+        "A": 1,
+        "C": 0,
+        "index": 2,
+        "root_id": "aime_1987_p5",
+        "state": "A_only"
+      },
+      {
+        "A": 0,
+        "C": 0,
+        "index": 3,
+        "root_id": "aime_1995_p7",
+        "state": "neither"
+      },
+      {
+        "A": 0,
+        "C": 0,
+        "index": 4,
+        "root_id": "aime_1997_p9",
+        "state": "neither"
+      },
+      {
+        "A": 1,
+        "C": 0,
+        "index": 5,
+        "root_id": "algebra_2varlineareq_fp3zeq11_3tfm1m5zeqn68_feqn10_zeq7",
+        "state": "A_only"
+      },
+      {
+        "A": 0,
+        "C": 0,
+        "index": 6,
+        "root_id": "algebra_cubrtrp1oncubrtreq3_rcubp1onrcubeq5778",
+        "state": "neither"
+      },
+      {
+        "A": 0,
+        "C": 0,
+        "index": 7,
+        "root_id": "algebra_others_exirrpowirrrat",
+        "state": "neither"
+      },
+      {
+        "A": 0,
+        "C": 0,
+        "index": 8,
+        "root_id": "algebra_sum1onsqrt2to1onsqrt10000lt198",
+        "state": "neither"
+      },
+      {
+        "A": 1,
+        "C": 0,
+        "index": 9,
+        "root_id": "amc12_2001_p21",
+        "state": "A_only"
+      },
+      {
+        "A": 0,
+        "C": 0,
+        "index": 10,
+        "root_id": "amc12a_2003_p5",
+        "state": "neither"
+      },
+      {
+        "A": 0,
+        "C": 0,
+        "index": 11,
+        "root_id": "amc12a_2008_p25",
+        "state": "neither"
+      },
+      {
+        "A": 0,
+        "C": 0,
+        "index": 12,
+        "root_id": "amc12a_2019_p12",
+        "state": "neither"
+      },
+      {
+        "A": 0,
+        "C": 0,
+        "index": 13,
+        "root_id": "amc12a_2020_p4",
+        "state": "neither"
+      },
+      {
+        "A": 0,
+        "C": 0,
+        "index": 14,
+        "root_id": "amc12b_2002_p4",
+        "state": "neither"
+      },
+      {
+        "A": 0,
+        "C": 0,
+        "index": 15,
+        "root_id": "amc12b_2020_p21",
+        "state": "neither"
+      },
+      {
+        "A": 1,
+        "C": 0,
+        "index": 16,
+        "root_id": "amc12b_2020_p6",
+        "state": "A_only"
+      },
+      {
+        "A": 0,
+        "C": 0,
+        "index": 17,
+        "root_id": "imo_1965_p2",
+        "state": "neither"
+      },
+      {
+        "A": 0,
+        "C": 0,
+        "index": 18,
+        "root_id": "imo_1969_p2",
+        "state": "neither"
+      },
+      {
+        "A": 0,
+        "C": 0,
+        "index": 19,
+        "root_id": "imo_1974_p3",
+        "state": "neither"
+      },
+      {
+        "A": 0,
+        "C": 0,
+        "index": 20,
+        "root_id": "imo_1981_p6",
+        "state": "neither"
+      },
+      {
+        "A": 0,
+        "C": 0,
+        "index": 21,
+        "root_id": "imo_1985_p6",
+        "state": "neither"
+      },
+      {
+        "A": 0,
+        "C": 0,
+        "index": 22,
+        "root_id": "imo_1997_p5",
+        "state": "neither"
+      },
+      {
+        "A": 0,
+        "C": 0,
+        "index": 23,
+        "root_id": "imo_2001_p6",
+        "state": "neither"
+      },
+      {
+        "A": 0,
+        "C": 0,
+        "index": 24,
+        "root_id": "imo_2019_p1",
+        "state": "neither"
+      },
+      {
+        "A": 0,
+        "C": 0,
+        "index": 25,
+        "root_id": "induction_pord1p1on2powklt5on2",
+        "state": "neither"
+      },
+      {
+        "A": 0,
+        "C": 0,
+        "index": 26,
+        "root_id": "induction_pprime_pdvdapowpma",
+        "state": "neither"
+      },
+      {
+        "A": 1,
+        "C": 0,
+        "index": 27,
+        "root_id": "mathd_algebra_188",
+        "state": "A_only"
+      },
+      {
+        "A": 0,
+        "C": 0,
+        "index": 28,
+        "root_id": "mathd_algebra_313",
+        "state": "neither"
+      },
+      {
+        "A": 0,
+        "C": 0,
+        "index": 29,
+        "root_id": "mathd_numbertheory_135",
+        "state": "neither"
+      },
+      {
+        "A": 0,
+        "C": 0,
+        "index": 30,
+        "root_id": "mathd_numbertheory_234",
+        "state": "neither"
+      },
+      {
+        "A": 1,
+        "C": 0,
+        "index": 31,
+        "root_id": "mathd_numbertheory_235",
+        "state": "A_only"
+      },
+      {
+        "A": 1,
+        "C": 1,
+        "index": 32,
+        "root_id": "mathd_numbertheory_277",
+        "state": "both"
+      },
+      {
+        "A": 1,
+        "C": 0,
+        "index": 33,
+        "root_id": "mathd_numbertheory_296",
+        "state": "A_only"
+      },
+      {
+        "A": 0,
+        "C": 0,
+        "index": 34,
+        "root_id": "mathd_numbertheory_343",
+        "state": "neither"
+      },
+      {
+        "A": 0,
+        "C": 0,
+        "index": 35,
+        "root_id": "mathd_numbertheory_427",
+        "state": "neither"
+      },
+      {
+        "A": 0,
+        "C": 0,
+        "index": 36,
+        "root_id": "mathd_numbertheory_495",
+        "state": "neither"
+      },
+      {
+        "A": 0,
+        "C": 0,
+        "index": 37,
+        "root_id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2",
+        "state": "neither"
+      },
+      {
+        "A": 0,
+        "C": 0,
+        "index": 38,
+        "root_id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown",
+        "state": "neither"
+      },
+      {
+        "A": 1,
+        "C": 0,
+        "index": 39,
+        "root_id": "numbertheory_notequiv2i2jasqbsqdiv8",
+        "state": "A_only"
+      },
+      {
+        "A": 0,
+        "C": 0,
+        "index": 40,
+        "root_id": "numbertheory_x5neqy2p4",
+        "state": "neither"
+      }
+    ],
+    "primary_eval": [
+      {
+        "A": 1,
+        "C": 0,
+        "index": 1,
+        "root_id": "aime_1984_p1",
+        "state": "A_only"
+      },
+      {
+        "A": 0,
+        "C": 0,
+        "index": 2,
+        "root_id": "aime_1987_p5",
+        "state": "neither"
+      },
+      {
+        "A": 0,
+        "C": 0,
+        "index": 3,
+        "root_id": "aime_1995_p7",
+        "state": "neither"
+      },
+      {
+        "A": 1,
+        "C": 0,
+        "index": 4,
+        "root_id": "aime_1997_p9",
+        "state": "A_only"
+      },
+      {
+        "A": 1,
+        "C": 0,
+        "index": 5,
+        "root_id": "algebra_2varlineareq_fp3zeq11_3tfm1m5zeqn68_feqn10_zeq7",
+        "state": "A_only"
+      },
+      {
+        "A": 0,
+        "C": 0,
+        "index": 6,
+        "root_id": "algebra_cubrtrp1oncubrtreq3_rcubp1onrcubeq5778",
+        "state": "neither"
+      },
+      {
+        "A": 0,
+        "C": 0,
+        "index": 7,
+        "root_id": "algebra_others_exirrpowirrrat",
+        "state": "neither"
+      },
+      {
+        "A": 0,
+        "C": 0,
+        "index": 8,
+        "root_id": "algebra_sum1onsqrt2to1onsqrt10000lt198",
+        "state": "neither"
+      },
+      {
+        "A": 0,
+        "C": 0,
+        "index": 9,
+        "root_id": "amc12_2001_p21",
+        "state": "neither"
+      },
+      {
+        "A": 0,
+        "C": 0,
+        "index": 10,
+        "root_id": "amc12a_2003_p5",
+        "state": "neither"
+      },
+      {
+        "A": 0,
+        "C": 0,
+        "index": 11,
+        "root_id": "amc12a_2008_p25",
+        "state": "neither"
+      },
+      {
+        "A": 0,
+        "C": 0,
+        "index": 12,
+        "root_id": "amc12a_2019_p12",
+        "state": "neither"
+      },
+      {
+        "A": 0,
+        "C": 0,
+        "index": 13,
+        "root_id": "amc12a_2020_p4",
+        "state": "neither"
+      },
+      {
+        "A": 0,
+        "C": 0,
+        "index": 14,
+        "root_id": "amc12b_2002_p4",
+        "state": "neither"
+      },
+      {
+        "A": 0,
+        "C": 0,
+        "index": 15,
+        "root_id": "amc12b_2020_p21",
+        "state": "neither"
+      },
+      {
+        "A": 0,
+        "C": 0,
+        "index": 16,
+        "root_id": "amc12b_2020_p6",
+        "state": "neither"
+      },
+      {
+        "A": 0,
+        "C": 0,
+        "index": 17,
+        "root_id": "imo_1965_p2",
+        "state": "neither"
+      },
+      {
+        "A": 0,
+        "C": 0,
+        "index": 18,
+        "root_id": "imo_1969_p2",
+        "state": "neither"
+      },
+      {
+        "A": 0,
+        "C": 0,
+        "index": 19,
+        "root_id": "imo_1974_p3",
+        "state": "neither"
+      },
+      {
+        "A": 0,
+        "C": 0,
+        "index": 20,
+        "root_id": "imo_1981_p6",
+        "state": "neither"
+      },
+      {
+        "A": 0,
+        "C": 0,
+        "index": 21,
+        "root_id": "imo_1985_p6",
+        "state": "neither"
+      },
+      {
+        "A": 0,
+        "C": 0,
+        "index": 22,
+        "root_id": "imo_1997_p5",
+        "state": "neither"
+      },
+      {
+        "A": 0,
+        "C": 0,
+        "index": 23,
+        "root_id": "imo_2001_p6",
+        "state": "neither"
+      },
+      {
+        "A": 0,
+        "C": 0,
+        "index": 24,
+        "root_id": "imo_2019_p1",
+        "state": "neither"
+      },
+      {
+        "A": 0,
+        "C": 0,
+        "index": 25,
+        "root_id": "induction_pord1p1on2powklt5on2",
+        "state": "neither"
+      },
+      {
+        "A": 0,
+        "C": 0,
+        "index": 26,
+        "root_id": "induction_pprime_pdvdapowpma",
+        "state": "neither"
+      },
+      {
+        "A": 0,
+        "C": 0,
+        "index": 27,
+        "root_id": "mathd_algebra_188",
+        "state": "neither"
+      },
+      {
+        "A": 1,
+        "C": 0,
+        "index": 28,
+        "root_id": "mathd_algebra_313",
+        "state": "A_only"
+      },
+      {
+        "A": 0,
+        "C": 0,
+        "index": 29,
+        "root_id": "mathd_numbertheory_135",
+        "state": "neither"
+      },
+      {
+        "A": 1,
+        "C": 1,
+        "index": 30,
+        "root_id": "mathd_numbertheory_234",
+        "state": "both"
+      },
+      {
+        "A": 1,
+        "C": 0,
+        "index": 31,
+        "root_id": "mathd_numbertheory_235",
+        "state": "A_only"
+      },
+      {
+        "A": 1,
+        "C": 1,
+        "index": 32,
+        "root_id": "mathd_numbertheory_277",
+        "state": "both"
+      },
+      {
+        "A": 0,
+        "C": 0,
+        "index": 33,
+        "root_id": "mathd_numbertheory_296",
+        "state": "neither"
+      },
+      {
+        "A": 0,
+        "C": 0,
+        "index": 34,
+        "root_id": "mathd_numbertheory_343",
+        "state": "neither"
+      },
+      {
+        "A": 0,
+        "C": 0,
+        "index": 35,
+        "root_id": "mathd_numbertheory_427",
+        "state": "neither"
+      },
+      {
+        "A": 0,
+        "C": 0,
+        "index": 36,
+        "root_id": "mathd_numbertheory_495",
+        "state": "neither"
+      },
+      {
+        "A": 0,
+        "C": 0,
+        "index": 37,
+        "root_id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2",
+        "state": "neither"
+      },
+      {
+        "A": 0,
+        "C": 0,
+        "index": 38,
+        "root_id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown",
+        "state": "neither"
+      },
+      {
+        "A": 1,
+        "C": 0,
+        "index": 39,
+        "root_id": "numbertheory_notequiv2i2jasqbsqdiv8",
+        "state": "A_only"
+      },
+      {
+        "A": 1,
+        "C": 0,
+        "index": 40,
+        "root_id": "numbertheory_x5neqy2p4",
+        "state": "A_only"
+      }
+    ]
+  }
+}

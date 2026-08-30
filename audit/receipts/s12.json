@@ -1,0 +1,33 @@
+{
+  "finished_utc": "2026-08-28T08:13:00Z",
+  "inputs": {
+    "spec\\frozen_spec.sha256": "382f9e94a09304872eb61a3b2df27b19ee9a60bd45a64a6e61b79bba9cc3f30b"
+  },
+  "outputs": {
+    "data\\runs.sqlite": "f35d40b1e06bcb5c45e6aa5a0c47caaa9be7d5440527d854667aafddcf420950"
+  },
+  "stats": {
+    "branches": 181,
+    "cohort": "primary_eval",
+    "elapsed_seconds": 7416.5,
+    "max_tokens": 12288,
+    "n_by_arm": {
+      "A": 40,
+      "B": 40,
+      "C": 40,
+      "D": 40,
+      "E": 21
+    },
+    "seed_block": 1,
+    "spec_sha256": "cd8317bef3e3523a0842674219b2b0e5760b685f43686cc9d21381322885281d",
+    "verified_by_arm": {
+      "A": 9,
+      "B": 4,
+      "C": 2,
+      "D": 1,
+      "E": 2
+    }
+  },
+  "step": "s12",
+  "title": "Primary run: 160 A-D + 21 E"
+}

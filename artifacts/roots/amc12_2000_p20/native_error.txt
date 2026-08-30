@@ -1,0 +1,32 @@
+
+Error 1:
+
+Corresponding Code:
+```lean4
+    have h₁₀₂ : x = 3 / 2 := h₉
+    rw [h₁₀₂] at h₁₀₁
+    have h₁₀₃ : (3 : ℝ) - (3 / 2 : ℝ) ≠ 0 := by norm_num
+    have h₁₀₄ : (3 / 2 : ℝ) / (3 - (3 / 2 : ℝ)) = 1 := by norm_num
+    rw [<error>h₁₀₁</error>]
+    <;> norm_num [h₁₀₄]
+
+```
+
+Error Message: tactic 'rewrite' failed, did not find instance of the pattern in the target expression
+  3 / 2 * y * z
+x y z : ℝ
+h₀ : 0 < x ∧ 0 < y ∧ 0 < z
+h₁ : x + 1 / y = 4
+h₂ : y + 1 / z = 1
+h₃ : z + 1 / x = 7 / 3
+h₄ : y = 1 / (4 - x)
+h₅ : z = (4 - x) / (3 - x)
+h₆ : x * y * z = x / (3 - x)
+h₇ : z = 7 / 3 - 1 / x
+h₈ : 4 * x ^ 2 - 12 * x + 9 = 0
+h₉ : x = 3 / 2
+h₁₀₁ : 3 / 2 * y * z = 3 / 2 / (3 - 3 / 2)
+h₁₀₂ : x = 3 / 2
+h₁₀₃ : 3 - 3 / 2 ≠ 0
+h₁₀₄ : 3 / 2 / (3 - 3 / 2) = 1
+⊢ x * y * z = 1

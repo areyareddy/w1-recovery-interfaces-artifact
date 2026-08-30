@@ -1,0 +1,117 @@
+### Proof and Analysis
+
+We need to prove that the sum of the first `n` cubes is equal to the square of the sum of the first `n` natural numbers. That is:
+\[ \sum_{k=0}^{n-1} k^3 = \left( \sum_{k=0}^{n-1} k \right)^2. \]
+
+First, recall the following well-known formulas:
+1. The sum of the first `n` natural numbers is:
+   \[ \sum_{k=0}^{n-1} k = \frac{(n-1)n}{2}. \]
+2. The sum of the cubes of the first `n` natural numbers is:
+   \[ \sum_{k=0}^{n-1} k^3 = \left( \frac{(n-1)n}{2} \right)^2. \]
+
+This immediately gives the desired result:
+\[ \sum_{k=0}^{n-1} k^3 = \left( \sum_{k=0}^{n-1} k \right)^2. \]
+
+However, we must be careful with the edge cases. The formula for the sum of the first `n` natural numbers is correct for `n = 0` (sum is `0`), `n = 1` (sum is `0`), and `n = 2` (sum is `1`), but the formula for the sum of cubes is only correct for `n = 0` and `n = 1` (`n = 0`: `0`, `n = 1`: `0`). 
+
+But in Lean, `Finset.range n` is `{0, ..., n-1}`, so for `n = 0`, the sum is `0` (empty sum), and for `n = 1`, the sum is `0`. The formula still holds. 
+
+But we can prove it directly by induction on `n`.
+
+#### Base Case (`n = 0`):
+Both sides are empty sums, so they are `0 = 0²`.
+
+#### Base Case (`n = 1`):
+Left side: `∑_{k=0}^0 k³ = 0³ = 0`.
+Right side: `(∑_{k=0}^0 k)² = (0)² = 0`.
+They are equal.
+
+#### Inductive Step:
+Assume the statement holds for `n = m`, i.e.,
+\[ \sum_{k=0}^{m-1} k^3 = \left( \sum_{k=0}^{m-1} k \right)^2. \]
+We must prove it for `n = m + 1`, i.e.,
+\[ \sum_{k=0}^{m} k^3 = \left( \sum_{k=0}^{m} k \right)^2. \]
+The left side is:
+\[ \sum_{k=0}^{m} k^3 = \sum_{k=0}^{m-1} k^3 + m^3 = \left( \sum_{k=0}^{m-1} k \right)^2 + m^3. \]
+The right side is:
+\[ \left( \sum_{k=0}^{m} k \right)^2 = \left( \sum_{k=0}^{m-1} k + m \right)^2 = \left( \sum_{k=0}^{m-1} k \right)^2 + 2 m \left( \sum_{k=0}^{m-1} k \right) + m^2. \]
+But we know that:
+\[ \sum_{k=0}^{m-1} k = \frac{(m-1)m}{2}. \]
+Thus, the difference between the right and left sides is:
+\[ 2 m \left( \frac{(m-1)m}{2} \right) + m^2 = m^2 (m-1) + m^2 = m^3. \]
+This shows that the right side is the left side plus `m³`, which is what we wanted to show.
+
+Alternatively, we can use the closed-form formulas for the sum of the first `n` natural numbers and the sum of their cubes, as mentioned earlier, and verify that they are consistent with the induction step.
+
+But we can also use the fact that the sum of the first `n` cubes is the square of the sum of the first `n` natural numbers. This is a well-known identity, and we can prove it directly by induction, as above, or by using the closed-form formulas and verifying that they satisfy the identity.
+
+### Step 1: Abstract Plan
+
+1. **Base Case (`n = 0`)**:
+   - Both sides are `0`.
+
+2. **Base Case (`n = 1`)**:
+   - Both sides are `0`.
+
+3. **Inductive Step**:
+   - Assume the statement holds for `n = m`.
+   - Prove it for `n = m + 1` by expanding the sums and using the induction hypothesis.
+
+Alternatively, we can use the closed-form formulas for the sum of the first `n` natural numbers and the sum of their cubes, and verify that they satisfy the identity.
+
+### Step 2: Lean 4 Proof Sketch (using `have` statements)
+
+```lean4
+theorem induction_sumkexp3eqsumksq (n : ℕ) :
+    (∑ k in Finset.range n, k ^ 3) = (∑ k in Finset.range n, k) ^ 2 := by
+  have h_main : (∑ k in Finset.range n, k ^ 3) = (∑ k in Finset.range n, k) ^ 2 := by
+    sorry
+  sorry
+```
+
+### Complete Lean 4 Proof
+
+```lean4
+theorem induction_sumkexp3eqsumksq (n : ℕ) :
+    (∑ k in Finset.range n, k ^ 3) = (∑ k in Finset.range n, k) ^ 2 := by
+  have h_main : (∑ k in Finset.range n, k ^ 3) = (∑ k in Finset.range n, k) ^ 2 := by
+    have h₁ : ∀ n : ℕ, (∑ k in Finset.range n, k ^ 3) = (∑ k in Finset.range n, k) ^ 2 := by
+      intro n
+      induction n with
+      | zero =>
+        simp
+      | succ n ih =>
+        cases n with
+        | zero =>
+          simp [Finset.sum_range_succ]
+        | succ n =>
+          simp_all [Finset.sum_range_succ, pow_two, pow_three, Nat.mul_sub_left_distrib, Nat.mul_sub_right_distrib]
+          <;> ring_nf at *
+          <;>
+            (try omega)
+          <;>
+            (try
+              {
+                nlinarith [sq_nonneg (n + 1), sq_nonneg (n + 2), sq_nonneg (n + 3), sq_nonneg (n + 4)]
+              })
+          <;>
+            (try
+              {
+                simp_all [Finset.sum_range_succ, pow_two, pow_three, Nat.mul_sub_left_distrib, Nat.mul_sub_right_distrib]
+                <;> ring_nf at *
+                <;> omega
+              })
+          <;>
+            (try
+              {
+                ring_nf at *
+                <;> omega
+              })
+          <;>
+            (try
+              {
+                nlinarith [sq_nonneg (n + 1), sq_nonneg (n + 2), sq_nonneg (n + 3), sq_nonneg (n + 4)]
+              })
+    exact h₁ n
+  exact h_main
+```

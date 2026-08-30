@@ -1,0 +1,31 @@
+{
+  "name": "primary_eval_block1",
+  "_comment": "Frozen serving + verification policy for the PRIMARY run. The server block must match scripts/start_server.ps1. max_tokens 12288 is the real budget, not the smoke value.",
+  "paths": {
+    "colm_root": "../CoLM_Jul2026_MoSpe_Navi",
+    "model": "Goedel-Prover-V2-8B.Q4_K_M.gguf",
+    "llama_server": "vendor/llama.cpp/build-cuda/bin/llama-server.exe"
+  },
+  "server": {
+    "url": "http://127.0.0.1:8080",
+    "port": 8080,
+    "context_size": 32768,
+    "parallel": 1,
+    "gpu_layers": 999
+  },
+  "lean": {
+    "wsl_distro": "Ubuntu",
+    "wsl_workspace": "/home/anonymous/lean-edge-oracle/mathlib4",
+    "timeout_seconds": 180,
+    "workers": 1
+  },
+  "sampler": {
+    "temperature": 0.7,
+    "top_p": 0.95,
+    "top_k": 40,
+    "min_p": 0.05
+  },
+  "generation": {
+    "max_tokens": 12288
+  }
+}

@@ -1,0 +1,132 @@
+
+Error 1:
+
+Corresponding Code:
+```lean4
+                      linarith
+                    -- Use the fact that log 3 is transcendental
+                    have h₉ : Irrational (Real.log 3) := by
+                      -- Use the fact that log 3 is transcendental
+                      exact <error>by
+                        -- Use the fact that log 3 is transcendental
+                        norm_num [Irrational, Set.mem_setOf_eq]
+                        <;>
+                        (try norm_num) <;>
+                        (try
+
+                        ... --[Truncated]-- ...
+                          })</error>
+                    exact h₉
+
+```
+
+Error Message: unsolved goals
+h₃ : logb 2 3 = Real.log 3 / Real.log 2
+h₇ : Real.log 3 ≠ 0
+⊢ ∀ (x : ℚ), ¬↑x = Real.log 3
+
+Error 2:
+
+Corresponding Code:
+```lean4
+                    linarith
+                  -- Use the fact that log 2 is transcendental
+                  have h₉ : Irrational (Real.log 2) := by
+                    -- Use the fact that log 2 is transcendental
+                    exact <error>by
+                      -- Use the fact that log 2 is transcendental
+                      norm_num [Irrational, Set.mem_setOf_eq]
+                      <;>
+                      (try norm_num) <;>
+                      (try
+
+                      ... --[Truncated]-- ...
+                        })</error>
+                  exact h₉
+
+```
+
+Error Message: unsolved goals
+h₃ : logb 2 3 = Real.log 3 / Real.log 2
+h₅ : Irrational (Real.log 3)
+h₈ : Real.log 2 ≠ 0
+⊢ ∀ (x : ℚ), ¬↑x = Real.log 2
+
+Error 3:
+
+Corresponding Code:
+```lean4
+                  -- Use the fact that log 3 / log 2 is irrational
+                  have h₉ : Irrational (Real.log 3) := h₅
+                  have h₁₀ : Irrational (Real.log 2) := h₆
+                  -- Use the fact that log 3 / log 2 is irrational
+                  exact <error>by
+                    -- Use the fact that log 3 / log 2 is irrational
+                    norm_num [Irrational, Set.mem_setOf_eq]
+                    <;>
+                    (try norm_num) <;>
+                    (try
+
+                    ... --[Truncated]-- ...
+                      })</error>
+              exact h₈
+
+```
+
+Error Message: unsolved goals
+h₃ : logb 2 3 = Real.log 3 / Real.log 2
+h₅ : Irrational (Real.log 3)
+h₆ : Irrational (Real.log 2)
+h₉ : Irrational (Real.log 3)
+h₁₀ : Irrational (Real.log 2)
+⊢ ∀ (x : ℚ), ¬↑x = Real.log 3 / Real.log 2
+
+Error 4:
+
+Corresponding Code:
+```lean4
+          have h₄ : Irrational (Real.logb 2 3) := h₂
+          -- Prove that 2 * log₂ 3 is irrational
+          have h₅ : Irrational (2 * Real.logb 2 3) := by
+            -- Use the fact that log₂ 3 is irrational
+            exact <error>by
+              -- Use the fact that log₂ 3 is irrational
+              norm_num [Irrational, Set.mem_setOf_eq]
+              <;>
+              (try norm_num) <;>
+              (try
+
+              ... --[Truncated]-- ...
+                })</error>
+          exact h₅
+
+```
+
+Error Message: unsolved goals
+h₂ h₄ : Irrational (logb 2 3)
+⊢ ∀ (x : ℚ), ¬↑x = 2 * logb 2 3
+
+Error 5:
+
+Corresponding Code:
+```lean4
+            exact h₆₇
+          rw [h₆]
+        exact h₄
+      -- Prove that (√2)^(2 * log₂ 3) is rational
+      have h₃ : ¬Irrational ((Real.sqrt 2 : ℝ) ^ (2 * Real.logb 2 3)) := <error>by
+        -- Prove that (√2)^(2 * log₂ 3) is rational
+        rw [h₂]
+        -- Prove that 3 is rational
+        norm_num [Irrational, Set.mem_setOf_eq]
+        <;>
+
+        ... --[Truncated]-- ...
+          })</error>
+      exact h₃
+
+```
+
+Error Message: unsolved goals
+h₂ : √2 ^ (2 * logb 2 3) = 3
+⊢ ∃ x, ↑x = 3

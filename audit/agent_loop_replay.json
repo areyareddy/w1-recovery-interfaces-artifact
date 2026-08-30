@@ -1,0 +1,77 @@
+{
+  "claim": "src/agent_loop.py is a faithful state-machine description of the executed experiments. Fixed-policy verifier-in-the-loop; the verifier closes the loop only through the stop rule. No adaptive or learned controller was implemented or evaluated.",
+  "invariants": [
+    "conformance",
+    "budget",
+    "stop_rule",
+    "accounting",
+    "determinism",
+    "non_adaptivity"
+  ],
+  "policies": {
+    "regenerate_once": {
+      "cohort": "primary_eval",
+      "deterministic": true,
+      "distinct_action_sequences": 1,
+      "draws_replayed": 40,
+      "plan": [
+        [
+          "REGENERATE",
+          12288
+        ]
+      ],
+      "roots": 40
+    },
+    "repair_once": {
+      "cohort": "primary_eval",
+      "deterministic": true,
+      "distinct_action_sequences": 1,
+      "draws_replayed": 40,
+      "plan": [
+        [
+          "REPAIR",
+          12288
+        ]
+      ],
+      "roots": 40
+    },
+    "split2": {
+      "cohort": "alloc_split2_eval",
+      "deterministic": true,
+      "distinct_action_sequences": 2,
+      "draws_replayed": 73,
+      "plan": [
+        [
+          "REGENERATE",
+          6144
+        ],
+        [
+          "REGENERATE",
+          6144
+        ]
+      ],
+      "roots": 40
+    },
+    "split3": {
+      "cohort": "alloc_split3_eval",
+      "deterministic": true,
+      "distinct_action_sequences": 3,
+      "draws_replayed": 107,
+      "plan": [
+        [
+          "REGENERATE",
+          4096
+        ],
+        [
+          "REGENERATE",
+          4096
+        ],
+        [
+          "REGENERATE",
+          4096
+        ]
+      ],
+      "roots": 40
+    }
+  }
+}
