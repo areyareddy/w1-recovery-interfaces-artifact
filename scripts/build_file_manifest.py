@@ -1,4 +1,4 @@
-"""Generate the review artifact's SHA-256 file manifest."""
+"""Generate the artifact's SHA-256 file manifest."""
 
 from __future__ import annotations
 

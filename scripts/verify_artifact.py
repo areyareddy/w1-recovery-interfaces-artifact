@@ -1,10 +1,9 @@
-"""Read-only integrity and completeness gate for the W1 review artifact.
+"""Read-only integrity and completeness gate for the W1 artifact.
 
 This gate checks the shipped databases, the 978-completion paper denominator,
 the frozen-spec digest, required files, the file manifest, and a small
-set of identity-bearing strings.  CoLM is deliberately *not* a banned term:
-the paper discloses that lineage while withholding the predecessor title and
-author identity for double-blind review.
+set of private path and identity strings.  CoLM is deliberately *not* a banned
+term: the paper cites its COLM 2026 predecessor, Proof Yahtzee.
 """
 
 from __future__ import annotations
@@ -237,7 +236,7 @@ def main() -> int:
         for problem in problems:
             print(f"  - {problem}")
         return 1
-    print("\nPASS -- complete, internally consistent, and free of the checked identity strings.")
+    print("\nPASS -- complete, internally consistent, and free of the checked private path and identity strings.")
     return 0
 
 

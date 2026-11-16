@@ -13,7 +13,7 @@ python scripts\check_databases.py
 `verify_artifact.py` opens every SQLite database read-only, runs `quick_check`,
 checks cohort sizes and completion status, reconstructs the 978-completion paper
 denominator, verifies the frozen-spec digest, checks that no SQLite sidecar is in
-the file manifest, and scans text files for the review identity strings configured in
+the file manifest, and scans text files for the private path or identity strings configured in
 the script. Do not regenerate the manifest before this check: the shipped manifest
 is the digest record being verified. `build_file_manifest.py` is a maintainer tool
 used only when intentionally freezing a new artifact revision.

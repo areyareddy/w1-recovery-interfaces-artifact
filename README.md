@@ -1,11 +1,15 @@
 # Recovery interfaces and prior-attempt anchoring in Lean proof generation
 
-Anonymous review artifact for the W1 workshop submission. The study extends a
-previous CoLM submission by testing what happens when a verifier-guided recovery
-call receives the model's rejected proof, a matched proof from another theorem,
-native Lean feedback, or permission to restart. The predecessor title and author
-identity remain withheld during double-blind review; its anonymized manuscript is
-included under `prior_work/`.
+Artifact for **Failed Proofs Are Sticky: Rejected-Proof Perseveration in Lean
+Recovery** by Arya Srikar Reddy, Workshop on Who Verifies the Agents? Toward
+Reliable Agent Development, NeurIPS 2026.
+
+The study tests what happens when a verifier-guided recovery call receives the
+model's rejected proof, a matched proof from another theorem, native Lean
+feedback, or permission to restart. It extends the predecessor paper *Proof
+Yahtzee: From Prompting to Scheduling -- Failure Signals for Token-Efficient
+Retries in Frozen Lean Provers*, accepted at COLM 2026 and currently unpublished;
+its manuscript is included under `prior_work/`.
 
 ## What is included
 
@@ -35,7 +39,7 @@ or analyzed each later control.
 3. Run `python scripts/verify_artifact.py` for the read-only integrity gate.
 4. Verify individual bytes against `FILE_MANIFEST_SHA256.csv`.
 
-## Review-export adjustments
+## Release-export adjustments
 
 The scientific records, prompts, frozen specifications, and database payloads are
 unchanged. Three non-scientific path adjustments make the code self-contained:

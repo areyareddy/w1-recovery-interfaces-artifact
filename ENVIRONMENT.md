@@ -23,5 +23,5 @@
 - Verification workers: 1 (serial)
 
 Machine-specific source paths in `configs/primary.json` have been normalized for
-double-blind portability. This changes no prompt, seed, sampler, context, budget,
+portable artifact release. This changes no prompt, seed, sampler, context, budget,
 completion, or verifier result.
