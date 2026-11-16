@@ -96,7 +96,7 @@ REQUIRED = [
     "scripts/s52_armf_analysis.py",
     "scripts/s58_mediation_and_ceiling.py",
     "scripts/build_assets.py",
-    "prior_work/Prior_Work_Title_Withheld_for_Double-Blind_Review.pdf",
+    "prior_work/Proof_Yahtzee_COLM2026.pdf",
 ]
 
 TEXT_SUFFIXES = {
