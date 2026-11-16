@@ -8,7 +8,7 @@ code-and-data artifact cited in the camera-ready paper.
 The study tests what happens when a verifier-guided recovery call receives the
 model's rejected proof, a matched proof from another theorem, native Lean
 feedback, or permission to restart. It extends the predecessor paper *Proof
-Yahtzee: From Prompting to Scheduling -- Failure Signals for Token-Efficient
+Yahtzee: From Prompting to Scheduling — Failure Signals for Token-Efficient
 Retries in Frozen Lean Provers*, accepted at COLM 2026 and currently unpublished;
 its manuscript is included under `prior_work/`.
 
