@@ -1,8 +1,9 @@
 # Recovery interfaces and prior-attempt anchoring in Lean proof generation
 
-Artifact for **Failed Proofs Are Sticky: Rejected-Proof Perseveration in Lean
-Recovery** by Arya Srikar Reddy, Workshop on Who Verifies the Agents? Toward
-Reliable Agent Development, NeurIPS 2026.
+Camera-ready artifact for **Failed Proofs Are Sticky: Rejected-Proof Perseveration
+in Lean Recovery** by Arya Srikar Reddy, Workshop on Who Verifies the Agents?
+Toward Reliable Agent Development, NeurIPS 2026. This repository is the canonical
+code-and-data artifact cited in the camera-ready paper.
 
 The study tests what happens when a verifier-guided recovery call receives the
 model's rejected proof, a matched proof from another theorem, native Lean
